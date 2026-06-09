@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Primary SEO -->
+<title>Restabee — Restaurant POS Software India | Billing, Orders & Inventory</title>
+<meta name="description" content="Restabee is India's smartest restaurant POS software. Manage billing, KOT, inventory, Swiggy/Zomato orders & GST from one dashboard. Built for small & mid-size restaurants. Get a free demo today.">
+<meta name="keywords" content="restaurant POS software India, restaurant billing software, restaurant management software, POS system restaurant, KOT software, restaurant inventory management, GST billing restaurant, Swiggy Zomato integration POS, cloud kitchen POS, dhaba billing software, cafe POS India, restaurant software Lucknow, best restaurant POS 2026">
+<meta name="author" content="Restabee">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://restabee.com/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="512x512" href="assets/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Restabee — Restaurant POS Software India">
+<meta property="og:description" content="Swift. Sharp. Always on duty. India's restaurant POS that manages billing, orders, inventory & GST in one place.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://restabee.com/">
+<meta property="og:site_name" content="Restabee">
+<meta property="og:image" content="https://restabee.com/assets/logo-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Restabee logo">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Restabee — Restaurant POS Software India">
+<meta name="twitter:description" content="Swift. Sharp. Always on duty. Restaurant billing, KOT, inventory & GST — one dashboard.">
+<meta name="twitter:image" content="https://restabee.com/assets/logo-512.png">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Restabee",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, Android, iOS",
+  "description": "Restaurant POS software for billing, order management, inventory, and GST compliance in India",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "availability": "https://schema.org/InStock"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "120"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --amber: #F5A623;
+  --amber-dark: #D4880F;
+  --amber-text: #7B4800;
+  --amber-light: #FFF3D6;
+  --charcoal: #1E1E1E;
+  --charcoal-2: #2D2D2D;
+  --charcoal-3: #3D3D3D;
+  --warm-white: #FFF8F0;
+  --teal: #00B894;
+  --teal-dark: #00956E;
+  --text-body: #4A4A4A;
+  --text-muted: #767676;
+  --border: #E8E0D5;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: #fff;
+  color: var(--charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .brand {
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,248,240,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 5%;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo img { width: 36px; height: 36px; object-fit: contain; }
+
+.brand {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+.brand span:first-child { color: var(--amber); }
+.brand span:last-child { color: var(--charcoal); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--charcoal-3);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--amber); }
+
+.nav-cta {
+  background: var(--charcoal);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--amber) !important; color: var(--charcoal) !important; }
+
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+.nav-toggle span { width: 24px; height: 2px; background: var(--charcoal); border-radius: 2px; display: block; transition: 0.3s; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  background: var(--warm-white);
+  padding: 120px 5% 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(245,166,35,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,184,148,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-hex-bg {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber-light);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--amber-text);
+  margin-bottom: 24px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-badge::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+h1 {
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--amber);
+  position: relative;
+}
+
+.hero-sub {
+  font-size: 17px;
+  color: var(--text-body);
+  max-width: 480px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--charcoal);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.35);
+}
+.btn-primary:hover {
+  background: var(--amber-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(245,166,35,0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--charcoal);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: var(--amber-light);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+.stat-num {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--charcoal);
+  letter-spacing: -1px;
+}
+.stat-num span { color: var(--amber); }
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Hero visual — dashboard mockup */
+.hero-visual {
+  position: relative;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+
+.dashboard-card {
+  background: var(--charcoal);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 40px 80px rgba(30,30,30,0.2), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+}
+
+.db-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.db-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.db-date { font-size: 11px; color: #aaa; }
+
+.db-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  background: var(--charcoal-2);
+  border-radius: 12px;
+  padding: 14px;
+}
+.metric-val {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+.metric-val.amber { color: var(--amber); }
+.metric-val.teal { color: var(--teal); }
+.metric-label { font-size: 10px; color: #aaa; margin-top: 2px; }
+.metric-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.badge-up { background: rgba(0,184,148,0.15); color: var(--teal); }
+.badge-warn { background: rgba(245,166,35,0.15); color: var(--amber); }
+
+/* Bar chart */
+.db-chart { margin-bottom: 20px; }
+.chart-label { font-size: 10px; color: #aaa; margin-bottom: 8px; }
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 60px;
+}
+.bar {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--charcoal-2);
+  transition: height 0.3s;
+}
+.bar.active { background: var(--amber); }
+.bar.teal-bar { background: var(--teal); opacity: 0.7; }
+
+/* Orders list */
+.order-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.order-row:last-child { border-bottom: none; }
+.order-table { font-size: 11px; color: #aaa; }
+.order-items { font-size: 12px; color: #fff; font-weight: 600; }
+.order-status {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+}
+.status-ready { background: rgba(0,184,148,0.15); color: var(--teal); }
+.status-cooking { background: rgba(245,166,35,0.15); color: var(--amber); }
+.status-new { background: rgba(255,255,255,0.08); color: #aaa; }
+
+/* Floating badge on dashboard */
+.float-badge {
+  position: absolute;
+  background: var(--teal);
+  color: #fff;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,184,148,0.3);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.float-badge-1 { top: -16px; right: -20px; }
+.float-badge-2 {
+  bottom: -16px; left: -20px;
+  background: var(--amber);
+  box-shadow: 0 8px 24px rgba(245,166,35,0.3);
+  color: var(--charcoal);
+}
+
+/* ── LOGOS / TRUST ── */
+.trust {
+  background: #fff;
+  padding: 32px 5%;
+  border-bottom: 1px solid var(--border);
+}
+.trust-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.trust-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.trust-divider { width: 1px; height: 28px; background: var(--border); }
+.trust-items {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5a5a5a;
+}
+.trust-item svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 96px 5%;
+}
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--amber-text);
+  background: var(--amber-light);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+}
+.section-tag svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+h2 {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 17px;
+  color: var(--text-body);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ── FEATURES ── */
+.features { background: var(--warm-white); }
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--amber-light) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.feature-card:hover {
+  border-color: var(--amber);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(245,166,35,0.12);
+}
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  width: 48px; height: 48px;
+  background: var(--amber-light);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.feature-icon svg { width: 22px; height: 22px; }
+
+.feature-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-card.featured {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: #fff;
+}
+.feature-card.featured::before {
+  background: linear-gradient(135deg, rgba(245,166,35,0.15) 0%, transparent 50%);
+}
+.feature-card.featured h3 { color: #fff; }
+.feature-card.featured p { color: #aaa; }
+.feature-card.featured .feature-icon {
+  background: rgba(245,166,35,0.15);
+}
+.feature-card.featured:hover {
+  border-color: var(--amber);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+
+/* ── HOW IT WORKS ── */
+.how { background: #fff; }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+
+.steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--amber) 0, var(--amber) 8px, transparent 8px, transparent 16px);
+  z-index: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-num {
+  width: 72px; height: 72px;
+  background: var(--warm-white);
+  border: 2px solid var(--amber);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--amber);
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ── INTEGRATIONS ── */
+.integrations { background: var(--charcoal); color: #fff; }
+
+.integrations h2 { color: #fff; }
+.integrations .section-sub { color: #aaa; }
+.integrations .section-tag {
+  background: rgba(245,166,35,0.15);
+  color: var(--amber);
+}
+
+.integrations-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.integration-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 100px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+  transition: all 0.2s;
+}
+.integration-pill:hover {
+  background: rgba(245,166,35,0.1);
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.integration-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ── TESTIMONIALS ── */
+.testimonials { background: var(--warm-white); }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+
+.testi-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.testi-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.star-icon { width: 16px; height: 16px; color: var(--amber); flex-shrink: 0; }
+
+.testi-text {
+  font-size: 15px;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testi-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--amber-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--amber-text);
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+.testi-role {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── CONTACT / PRICING ── */
+.contact { background: #fff; }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-left h2 { margin-bottom: 16px; }
+.contact-left p { color: var(--text-body); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
+
+.contact-points { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.contact-points li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-body);
+  font-weight: 500;
+}
+.check {
+  width: 22px; height: 22px;
+  background: var(--teal);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.check svg { width: 12px; height: 12px; }
+
+/* Form */
+.contact-form {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.form-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.form-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.field.full { grid-column: 1 / -1; }
+
+label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal-3);
+  letter-spacing: 0.3px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  color: var(--charcoal);
+  background: #fff;
+  transition: border-color 0.2s;
+  outline: none;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
+}
+textarea { resize: vertical; min-height: 90px; }
+select { cursor: pointer; }
+
+.form-submit {
+  width: 100%;
+  padding: 15px;
+  background: var(--amber);
+  color: var(--charcoal);
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+  margin-top: 6px;
+}
+.form-submit:hover {
+  background: var(--amber-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 30px rgba(245,166,35,0.4);
+}
+
+.form-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.form-note svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+/* Success message */
+.form-success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 16px;
+}
+.success-icon {
+  width: 64px; height: 64px;
+  background: rgba(0,184,148,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-success h3 { font-size: 20px; font-weight: 700; }
+.form-success p { font-size: 14px; color: var(--text-muted); }
+
+/* ── FAQ ── */
+.faq { background: var(--warm-white); }
+
+.faq-list {
+  margin-top: 48px;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.faq-item.open { border-color: var(--amber); }
+
+.faq-q {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  gap: 16px;
+}
+
+.faq-icon {
+  width: 24px; height: 24px;
+  background: var(--amber-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--amber); }
+.faq-icon svg { width: 12px; height: 12px; }
+.faq-item.open .faq-icon svg { stroke: var(--charcoal); }
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.2s;
+  font-size: 14px;
+  color: var(--text-body);
+  line-height: 1.7;
+  padding: 0 22px;
+}
+.faq-item.open .faq-a {
+  max-height: 200px;
+  padding: 0 22px 18px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 60px 5% 32px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 260px;
+}
+
+.footer-tagline {
+  font-size: 12px;
+  color: var(--teal);
+  font-weight: 600;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
+}
+
+.footer-col h3 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a {
+  font-size: 14px;
+  color: #aaa;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--amber); }
+
+.footer-bottom {
+  border-top: 1px solid #2A2A2A;
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-copy { font-size: 13px; color: #999; }
+.footer-copy span { color: var(--amber); }
+
+.footer-legal {
+  display: flex;
+  gap: 20px;
+}
+.footer-legal a {
+  font-size: 12px;
+  color: #aaa;
+  text-decoration: none;
+}
+.footer-legal a:hover { color: var(--amber); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+  .steps::before { display: none; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .features-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  section { padding: 64px 5%; }
+}
+
+/* Mobile nav open state */
+nav.open .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 68px; left: 0; right: 0;
+  background: var(--warm-white);
+  padding: 24px 5%;
+  border-bottom: 1px solid var(--border);
+  gap: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav id="navbar">
+  <a href="#" class="nav-logo" aria-label="Restabee Home">
+    <img src="assets/logo.png" alt="" width="36" height="36">
+    <div class="brand"><span>Resta</span><span>bee</span></div>
+  </a>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#integrations">Integrations</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Demo</a></li>
+  </ul>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true"></div>
+
+  <svg class="hero-hex-bg" width="500" height="500" viewBox="0 0 500 500" aria-hidden="true">
+    <g fill="none" stroke="#F5A623" stroke-width="1">
+      <polygon points="100,30 130,47 130,81 100,98 70,81 70,47"/>
+      <polygon points="160,30 190,47 190,81 160,98 130,81 130,47"/>
+      <polygon points="70,98 100,115 100,149 70,166 40,149 40,115"/>
+      <polygon points="130,98 160,115 160,149 130,166 100,149 100,115"/>
+      <polygon points="190,98 220,115 220,149 190,166 160,149 160,115"/>
+      <polygon points="100,166 130,183 130,217 100,234 70,217 70,183"/>
+      <polygon points="160,166 190,183 190,217 160,234 130,217 130,183"/>
+      <polygon points="70,234 100,251 100,285 70,302 40,285 40,251"/>
+      <polygon points="130,234 160,251 160,285 130,302 100,285 100,251"/>
+      <polygon points="190,234 220,251 220,285 190,302 160,285 160,251"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <img src="assets/logo-92.png" alt="" width="14" height="14" aria-hidden="true">
+        Built for Indian restaurants — 2026
+      </div>
+
+      <h1 id="hero-heading">
+        Restaurant POS that's<br>
+        <em>Swift. Sharp.</em><br>
+        Always on duty.
+      </h1>
+
+      <p class="hero-sub">
+        Restabee manages your billing, KOT, inventory, Swiggy/Zomato orders, and GST — all from one smart dashboard. No more juggling apps. No more billing errors.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Get Free Demo
+        </a>
+        <a href="#features" class="btn-secondary">
+          See Features
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">500<span>+</span></div>
+          <div class="stat-label">Restaurants served</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">4.8<span>★</span></div>
+          <div class="stat-label">Average rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">₹0</div>
+          <div class="stat-label">Setup cost</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Visual (decorative) -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="dashboard-card">
+        <div class="db-header">
+          <div class="db-title">
+            <img src="assets/logo-92.png" alt="" width="14" height="14">
+            Restabee Dashboard
+          </div>
+          <div class="db-date">Today, Apr 27</div>
+        </div>
+
+        <div class="db-metrics">
+          <div class="metric">
+            <div class="metric-val amber">₹18,420</div>
+            <div class="metric-label">Today's Revenue</div>
+            <div class="metric-badge badge-up">↑ 12%</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">84</div>
+            <div class="metric-label">Orders Today</div>
+            <div class="metric-badge badge-up">↑ 8%</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val teal">12</div>
+            <div class="metric-label">Active Tables</div>
+            <div class="metric-badge badge-warn">3 pending</div>
+          </div>
+        </div>
+
+        <div class="db-chart">
+          <div class="chart-label">HOURLY SALES</div>
+          <div class="bars">
+            <div class="bar" style="height:30%"></div>
+            <div class="bar" style="height:45%"></div>
+            <div class="bar" style="height:35%"></div>
+            <div class="bar active" style="height:80%"></div>
+            <div class="bar teal-bar" style="height:65%"></div>
+            <div class="bar" style="height:50%"></div>
+            <div class="bar active" style="height:90%"></div>
+            <div class="bar" style="height:70%"></div>
+            <div class="bar teal-bar" style="height:55%"></div>
+            <div class="bar" style="height:40%"></div>
+            <div class="bar active" style="height:75%"></div>
+            <div class="bar" style="height:60%"></div>
+          </div>
+        </div>
+
+        <div class="db-orders">
+          <div class="order-row">
+            <span class="order-table">Table 4</span>
+            <span class="order-items">Paneer Tikka, Dal Makhani</span>
+            <span class="order-status status-ready">READY</span>
+          </div>
+          <div class="order-row">
+            <span class="order-table">Swiggy #2841</span>
+            <span class="order-items">Chicken Biryani ×2</span>
+            <span class="order-status status-cooking">COOKING</span>
+          </div>
+          <div class="order-row">
+            <span class="order-table">Table 7</span>
+            <span class="order-items">Veg Platter, Lassi ×3</span>
+            <span class="order-status status-new">NEW</span>
+          </div>
+        </div>
+
+        <div class="float-badge float-badge-1">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          GST Bill Generated
+        </div>
+        <div class="float-badge float-badge-2">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          Inventory Alert: Paneer Low
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust">
+  <div class="trust-inner">
+    <span class="trust-label">Works with</span>
+    <div class="trust-divider" aria-hidden="true"></div>
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/><path d="M8 18.5h8M14 7h4l2 7h-6L12 7z"/><path d="M12 7v11.5M9 10H6L4 16h5"/></svg>
+        Swiggy
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Zomato
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        UPI / PhonePe
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        Paytm
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="11" y2="17"/></svg>
+        GST Compliant
+      </div>
+      <div class="trust-item">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        FSSAI Ready
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FEATURES ── -->
+<section class="features" id="features" aria-labelledby="features-heading">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Features
+      </div>
+      <h2 id="features-heading">Everything your restaurant needs,<br>in one place</h2>
+      <p class="section-sub">From billing a table to tracking your dal stock — Restabee handles it all so you can focus on the food.</p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card reveal featured">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+          </svg>
+        </div>
+        <h3>Smart Billing &amp; POS</h3>
+        <p>Generate GST-compliant bills in seconds. Support UPI, card, cash, and split payments. Print or WhatsApp receipts instantly.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+        </div>
+        <h3>KOT Management</h3>
+        <p>Kitchen Order Tickets sent instantly to the kitchen. Reduce miscommunication, speed up service, delight customers.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+          </svg>
+        </div>
+        <h3>Inventory Tracking</h3>
+        <p>Track ingredients down to the gram. Get low-stock alerts before you run out. Eliminate waste and theft automatically.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+        <h3>Table Management</h3>
+        <p>Visual floor plan. Manage dine-in, takeaway and delivery from one screen. No more confused waitstaff.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Swiggy &amp; Zomato Orders</h3>
+        <p>All delivery orders land directly in your Restabee dashboard. No more separate tablets cluttering your counter.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2" stroke-linecap="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+        <h3>Sales Reports &amp; Analytics</h3>
+        <p>Daily, weekly and monthly sales. Best-selling dishes. Peak hours. GST summaries. Understand your business deeply.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how" id="how-it-works" aria-labelledby="how-heading">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Process
+      </div>
+      <h2 id="how-heading">Up and running in 24 hours</h2>
+      <p class="section-sub" style="margin:0 auto;">No technical knowledge needed. Our team sets everything up for you. You just focus on your restaurant.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Request a Demo</h3>
+        <p>Fill the contact form. Our team calls you within 2 hours to understand your restaurant setup.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>We Configure It</h3>
+        <p>We set up your menu, tables, tax slabs and integrations. You don't touch a single setting.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Staff Training</h3>
+        <p>30-minute onboarding session for your team. Restabee is built to be so easy, anyone can use it.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">4</div>
+        <h3>Go Live</h3>
+        <p>Start billing. Track orders. Watch your restaurant run smoother than ever. We're on call 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INTEGRATIONS ── -->
+<section class="integrations" id="integrations" aria-labelledby="integrations-heading">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        Integrations
+      </div>
+      <h2 id="integrations-heading">Works with tools<br>you already use</h2>
+      <p class="section-sub">Restabee plugs into your existing platforms. No switching. No disruption.</p>
+    </div>
+
+    <div class="integrations-grid reveal">
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Swiggy</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Zomato</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>UPI / PhonePe</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Paytm</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Google Pay</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Razorpay</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>GST Portal</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>WhatsApp Receipts</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Tally Export</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Thermal Printer</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Android Tablets</div>
+      <div class="integration-pill"><span class="integration-dot" aria-hidden="true"></span>Kitchen Display</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testimonials" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        Reviews
+      </div>
+      <h2 id="testimonials-heading">Restaurant owners love Restabee</h2>
+      <p class="section-sub" style="margin:0 auto;">From street-side dhabas to multi-outlet restaurants — here's what they say.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars" role="img" aria-label="5 out of 5 stars">
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"Before Restabee, we were losing track of Swiggy orders every evening. Now everything comes to one screen. Our billing errors dropped to zero."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">RK</div>
+          <div>
+            <div class="testi-name">Ramesh Kumar</div>
+            <div class="testi-role">Owner, Spice Garden Restaurant, Lucknow</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars" role="img" aria-label="5 out of 5 stars">
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"Setup took less than a day. The team configured everything — my staff needed barely 20 minutes to learn it. GST reports save me 3 hours every month."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">PM</div>
+          <div>
+            <div class="testi-name">Priya Mishra</div>
+            <div class="testi-role">Owner, Café Saffron, Kanpur</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-stars" role="img" aria-label="5 out of 5 stars">
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="star-icon" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"I run 3 outlets. Restabee gives me a single dashboard for all of them. Inventory alerts have saved me from running out of stock during peak hours many times."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" aria-hidden="true">AV</div>
+          <div>
+            <div class="testi-name">Arun Verma</div>
+            <div class="testi-role">Owner, Nawabi Bites (3 outlets), Lucknow</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT / PRICING ── -->
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <div class="section-tag">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+          Get Pricing
+        </div>
+        <h2 id="contact-heading">Get a free demo &amp; custom pricing</h2>
+        <p>Every restaurant is different. Tell us about yours and we'll show you exactly how Restabee fits — with pricing that makes sense for your size and budget.</p>
+
+        <ul class="contact-points">
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            Free setup and onboarding — no hidden charges
+          </li>
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            Transparent pricing in Indian Rupees
+          </li>
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            24/7 WhatsApp and phone support
+          </li>
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            Works on Android tablets and phones
+          </li>
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            GST-compliant billing from day one
+          </li>
+          <li>
+            <div class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5"><polyline points="2 6 5 9 10 3"/></svg></div>
+            Swiggy &amp; Zomato integration included
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-right reveal">
+        <div class="contact-form" id="contactForm">
+          <div class="form-title">Book your free demo</div>
+          <div class="form-sub">Response within 2 hours · No spam · No commitment</div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" placeholder="Ramesh Kumar" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@restaurant.com">
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="restaurant">Restaurant Name *</label>
+              <input type="text" id="restaurant" name="restaurant" placeholder="Spice Garden" required>
+            </div>
+            <div class="field">
+              <label for="city">City *</label>
+              <input type="text" id="city" name="city" placeholder="Lucknow" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="type">Restaurant Type</label>
+              <select id="type" name="type">
+                <option value="">Select type</option>
+                <option>Dine-in Restaurant</option>
+                <option>QSR / Fast Food</option>
+                <option>Dhaba / Street Food</option>
+                <option>Cafe / Bakery</option>
+                <option>Cloud Kitchen</option>
+                <option>Bar &amp; Restaurant</option>
+                <option>Hotel / Resort</option>
+                <option>Multi-outlet Chain</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="outlets">Number of Outlets</label>
+              <select id="outlets" name="outlets">
+                <option value="">Select</option>
+                <option>1 outlet</option>
+                <option>2–5 outlets</option>
+                <option>6–20 outlets</option>
+                <option>20+ outlets</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Anything specific you need?</label>
+            <textarea id="message" name="message" placeholder="e.g. Swiggy integration, GST reports, inventory management..."></textarea>
+          </div>
+
+          <button class="form-submit" id="submitBtn" type="button">
+            Book Free Demo →
+          </button>
+          <p class="form-note">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Your information is safe with us. We'll never share it.
+          </p>
+        </div>
+
+        <!-- Success State -->
+        <div class="form-success" id="formSuccess" style="display:none;" role="alert">
+          <div class="success-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00B894" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Demo Booked!</h3>
+          <p>Our team will call you within 2 hours. Check your WhatsApp for a confirmation message.</p>
+          <a href="#" class="btn-secondary" style="margin-top:8px;" onclick="resetForm()">Submit another request</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        FAQ
+      </div>
+      <h2 id="faq-heading">Common questions</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-1">
+          Is Restabee suitable for a small dhaba or single-outlet restaurant?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-1">Yes, absolutely. Restabee is built first for small and mid-size restaurants in India — dhabas, cafes, QSRs, cloud kitchens. Pricing is transparent and affordable, and setup is done for you.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-2">
+          Does it integrate with Swiggy and Zomato?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-2">Yes. All Swiggy and Zomato orders automatically appear in your Restabee dashboard. No separate tablet needed. Orders go directly to the kitchen.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-3">
+          Is Restabee GST compliant?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-3">Yes. Restabee generates fully GST-compliant bills with correct tax slabs. Monthly and quarterly GST summaries are available in one click for your accountant.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-4">
+          What devices does it work on?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-4">Restabee works on Android tablets, Android phones, and any web browser. It also connects with standard Bluetooth and USB thermal printers.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-5">
+          How long does setup take?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-5">Most restaurants are fully live within 24 hours. Our team configures your menu, tables, tax settings and integrations. Staff training takes about 30 minutes.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6">
+          What kind of support do you offer?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg></div>
+        </button>
+        <div class="faq-a" id="faq-a-6">We offer 24/7 WhatsApp support, phone support during business hours, and remote assistance. You're never stuck — we respond within minutes.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-brand-logo">
+          <img src="assets/logo.png" alt="" width="30" height="30">
+          <div class="brand"><span>Resta</span><span style="color:#fff">bee</span></div>
+        </div>
+        <div class="footer-tagline">Swift. Sharp. Always on duty.</div>
+        <p>India's restaurant POS built for small and mid-size restaurants. Billing, KOT, inventory, and GST — one dashboard.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#integrations">Integrations</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#contact">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Use Cases</h3>
+        <ul>
+          <li><a href="#contact">Restaurants</a></li>
+          <li><a href="#contact">Cafes &amp; Bakeries</a></li>
+          <li><a href="#contact">Cloud Kitchens</a></li>
+          <li><a href="#contact">Dhabas</a></li>
+          <li><a href="#contact">QSR Chains</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:hello@restabee.com">hello@restabee.com</a></li>
+          <li><a href="tel:+919044415050">+91 90444 15050</a></li>
+          <li><a href="#contact">Book a Demo</a></li>
+          <li><a href="#">WhatsApp Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 <span>Restabee</span> — A product by Cloudemy Digital Technologies Pvt. Ltd.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV TOGGLE
+const navToggle = document.getElementById('navToggle');
+const navbar = document.getElementById('navbar');
+navToggle.addEventListener('click', () => {
+  const isOpen = navbar.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+});
+
+// Close nav on link click
+document.querySelectorAll('#navLinks a').forEach(a => {
+  a.addEventListener('click', () => {
+    navbar.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+// ── SCROLL REVEAL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(r => observer.observe(r));
+
+// ── NAVBAR SCROLL STYLE
+window.addEventListener('scroll', () => {
+  navbar.style.boxShadow = window.scrollY > 20
+    ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+});
+
+// ── FAQ ACCORDION
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ── FORM SUBMIT
+document.getElementById('submitBtn').addEventListener('click', () => {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const restaurant = document.getElementById('restaurant').value.trim();
+  const city = document.getElementById('city').value.trim();
+
+  if (!name || !phone || !restaurant || !city) {
+    alert('Please fill in all required fields (Name, Phone, Restaurant, City).');
+    return;
+  }
+
+  document.getElementById('contactForm').style.display = 'none';
+  const success = document.getElementById('formSuccess');
+  success.style.display = 'flex';
+});
+
+function resetForm() {
+  document.getElementById('contactForm').style.display = 'block';
+  document.getElementById('formSuccess').style.display = 'none';
+  document.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+}
+
+// ── SMOOTH SCROLL OFFSET for fixed nav
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
+    }
+  });
+});
+
+// ── STAGGER FEATURE CARDS
+document.querySelectorAll('.feature-card').forEach((card, i) => {
+  card.style.transitionDelay = `${i * 0.08}s`;
+});
+</script>
+</body>
+</html>
