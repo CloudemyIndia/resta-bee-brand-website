@@ -1,0 +1,23 @@
+---
+import '../styles/home.css';
+import displayFont from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
+import bodyFont from '@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url';
+interface Props {title?: string; description?: string;}
+const {title = 'Restaurant POS for orders, kitchen & billing | RestaBee', description = 'From the first order to the final bill. Explore RestaBee restaurant POS for orders, kitchen tickets, table service, billing and multi-outlet menu control.'} = Astro.props;
+---
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href={displayFont} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={bodyFont} as="font" type="font/woff2" crossorigin />
+    <title>{title}</title><meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="icon" type="image/png" href="/restabee-logo.png" />
+    <meta name="theme-color" content="#faf9f5" />
+    <meta property="og:title" content={title} /><meta property="og:description" content={description} />
+    <meta property="og:type" content="website" /><meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:image" content={new URL('/og-logo.png', Astro.site)} />
+  </head>
+  <body><a class="skip-link" href="#main">Skip to content</a><slot /></body>
+</html>

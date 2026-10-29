@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { gzipSync } from 'node:zlib';
+const html=readFileSync('dist/visual-prototype/index.html','utf8');
+assert(html.includes('noindex,nofollow'),'Prototype must remain noindex');
+assert(html.includes('Illustrative workflow and hardware'),'Illustration label required');
+const data=html.match(/<script[^>]*id="station-states"[^>]*>([\s\S]*?)<\/script>/);
+assert(data,'Workflow model must be serialized');
+assert.equal(JSON.parse(data[1]).length,4);
+const executable=[...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(m=>!m[1].includes('application/json'));
+const js=executable.reduce((n,m)=>n+Buffer.byteLength(m[2]),0);
+assert(js<30000,'Executable JS budget exceeded');
+assert(!html.includes('requestAnimationFrame'),'No continuous animation controller');
+console.log(`Prototype check passed: ${js} bytes executable JS, ${gzipSync(html).length} bytes gzip HTML; 4 states, noindex and illustration label verified.`);

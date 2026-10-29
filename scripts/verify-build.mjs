@@ -1,0 +1,15 @@
+import { readFileSync, readdirSync, statSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const walk = (p) => readdirSync(p).flatMap(n => {const f = `${p}/${n}`;return statSync(f).isDirectory() ? walk(f) : [f];});
+const files = walk('dist');
+assert(!files.some(f => /\.(docx|xlsx|md)$/.test(f)), 'Private/source documents must not ship');
+const home = readFileSync('dist/index.html', 'utf8');
+assert.equal((home.match(/<h1[\s>]/g) || []).length, 1, 'Exactly one H1');
+assert(home.includes('Illustrative'), 'Mockups must be labelled');
+assert(!home.includes('application/ld+json') || !home.includes('aggregateRating'), 'No invented review ratings');
+const ids = new Set([...home.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
+for (const [, id] of home.matchAll(/href="#([^"]+)"/g)) assert(ids.has(id), `Missing anchor ${id}`);
+const inlineJs = [...home.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/g)].filter(m => !m[1].includes('application/ld+json') && !m[1].includes('application/json')).reduce((n,m) => n + Buffer.byteLength(m[2]), 0);
+const js = inlineJs + files.filter(f=>f.endsWith('.js')).reduce((n,f)=>n+statSync(f).size,0);
+assert(js < 30000, `Client JavaScript budget exceeded: ${js}`);
+console.log(`Static checks passed: ${files.length} files; ${js} bytes client JavaScript; anchors and publication boundaries verified.`);

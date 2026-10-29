@@ -1,0 +1,670 @@
+
+    <!-- ── NAVBAR ── -->
+    <nav id="navbar">
+      <a href="#home" class="nav-logo" aria-label="RestaBee Home">
+        <img src="/restabee-logo.png" alt="" width="36" height="36" />
+        <div class="brand"><span>Resta</span><span>bee</span></div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="nav-cta">Get Free Demo</a></li>
+      </ul>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+        type="button"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main id="main">
+      <!-- ── HERO ── -->
+      <section class="hero" id="home" aria-labelledby="hero-heading">
+        <div class="hero-bg" aria-hidden="true"></div>
+
+        <svg
+          class="hero-hex-bg"
+          width="500"
+          height="500"
+          viewBox="0 0 500 500"
+          aria-hidden="true"
+        >
+          <g fill="none" stroke="#F5A623" stroke-width="1">
+            <polygon points="100,30 130,47 130,81 100,98 70,81 70,47" />
+            <polygon points="160,30 190,47 190,81 160,98 130,81 130,47" />
+            <polygon points="70,98 100,115 100,149 70,166 40,149 40,115" />
+            <polygon points="130,98 160,115 160,149 130,166 100,149 100,115" />
+            <polygon points="190,98 220,115 220,149 190,166 160,149 160,115" />
+            <polygon points="100,166 130,183 130,217 100,234 70,217 70,183" />
+            <polygon points="160,166 190,183 190,217 160,234 130,217 130,183" />
+            <polygon points="70,234 100,251 100,285 70,302 40,285 40,251" />
+            <polygon points="130,234 160,251 160,285 130,302 100,285 100,251" />
+            <polygon points="190,234 220,251 220,285 190,302 160,285 160,251" />
+          </g>
+        </svg>
+
+        <div class="hero-inner">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <img
+                src="/restabee-logo.png"
+                alt=""
+                width="14"
+                height="14"
+                aria-hidden="true"
+              />
+              Built for Indian restaurants
+            </div>
+
+            <h1 id="hero-heading">
+              Restaurant POS that's<br />
+              <em>Swift. Sharp.</em><br />
+              Always on duty.
+            </h1>
+
+            <p class="hero-sub">Take orders, route kitchen tickets, manage tables and settle bills in one restaurant workspace. Built around your daily service, from the first order to the final bill.</p>
+
+            <div class="hero-actions">
+              <a href="#contact" class="btn-primary">
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+                Get Free Demo
+              </a>
+              <a href="#features" class="btn-secondary"> See Features </a>
+            </div>
+
+            <div class="hero-stats"><div class="stat"><div class="stat-num">Dine-in</div><div class="stat-label">Floor & table service</div></div><div class="stat"><div class="stat-num">Takeaway</div><div class="stat-label">Counter to kitchen</div></div><div class="stat"><div class="stat-num">Delivery</div><div class="stat-label">Staff-entered orders</div></div></div>
+          </div>
+
+          <!-- Dashboard Visual (decorative) -->
+          <div class="hero-visual" role="img" aria-label="Illustrative RestaBee dashboard with sample sales, orders and kitchen statuses">
+            <div class="dashboard-card">
+              <div class="db-header">
+                <div class="db-title">
+                  <img src="/restabee-logo.png" alt="" width="14" height="14" />
+                  RestaBee Dashboard
+                </div>
+                <div class="db-date">Illustrative demo</div>
+              </div>
+
+              <div class="db-metrics">
+                <div class="metric">
+                  <div class="metric-val amber">₹18,420</div>
+                  <div class="metric-label">Issued Sales</div>
+                  <div class="metric-badge badge-up">Sample sales</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-val">84</div>
+                  <div class="metric-label">Orders Today</div>
+                  <div class="metric-badge badge-up">Sample orders</div>
+                </div>
+                <div class="metric">
+                  <div class="metric-val teal">12</div>
+                  <div class="metric-label">Active Tables</div>
+                  <div class="metric-badge badge-warn">3 pending</div>
+                </div>
+              </div>
+
+              <div class="db-chart">
+                <div class="chart-label">HOURLY SALES</div>
+                <div class="bars">
+                  <div class="bar" style="height: 30%"></div>
+                  <div class="bar" style="height: 45%"></div>
+                  <div class="bar" style="height: 35%"></div>
+                  <div class="bar active" style="height: 80%"></div>
+                  <div class="bar teal-bar" style="height: 65%"></div>
+                  <div class="bar" style="height: 50%"></div>
+                  <div class="bar active" style="height: 90%"></div>
+                  <div class="bar" style="height: 70%"></div>
+                  <div class="bar teal-bar" style="height: 55%"></div>
+                  <div class="bar" style="height: 40%"></div>
+                  <div class="bar active" style="height: 75%"></div>
+                  <div class="bar" style="height: 60%"></div>
+                </div>
+              </div>
+
+              <div class="db-orders">
+                <div class="order-row">
+                  <span class="order-table">Table 4</span>
+                  <span class="order-items">Paneer Tikka, Dal Makhani</span>
+                  <span class="order-status status-ready">READY</span>
+                </div>
+                <div class="order-row">
+                  <span class="order-table">Takeaway #2841</span>
+                  <span class="order-items">Chicken Biryani ×2</span>
+                  <span class="order-status status-cooking">COOKING</span>
+                </div>
+                <div class="order-row">
+                  <span class="order-table">Table 7</span>
+                  <span class="order-items">Veg Platter, Lassi ×3</span>
+                  <span class="order-status status-new">NEW</span>
+                </div>
+              </div>
+
+              <div class="float-badge float-badge-1">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                GST Bill Generated
+              </div>
+              <div class="float-badge float-badge-2">
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+                Kitchen: Table 4 Ready
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TRUST BAR ── -->
+      <div class="trust">
+        <div class="trust-inner">
+          <span class="trust-label">Built around</span>
+          <div class="trust-divider" aria-hidden="true"></div>
+          <div class="trust-items">
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+                <path d="M8 18.5h8M14 7h4l2 7h-6L12 7z" />
+                <path d="M12 7v11.5M9 10H6L4 16h5" />
+              </svg>
+              Dine-in
+            </div>
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M18 8h1a4 4 0 010 8h-1" />
+                <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+                <line x1="6" y1="1" x2="6" y2="4" />
+                <line x1="10" y1="1" x2="10" y2="4" />
+                <line x1="14" y1="1" x2="14" y2="4" />
+              </svg>
+              Takeaway
+            </div>
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              >
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                <line x1="1" y1="10" x2="23" y2="10" />
+              </svg>
+              Split payments
+            </div>
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+              Menu control
+            </div>
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"
+                />
+                <line x1="8" y1="9" x2="16" y2="9" />
+                <line x1="8" y1="13" x2="16" y2="13" />
+                <line x1="8" y1="17" x2="11" y2="17" />
+              </svg>
+              GST billing
+            </div>
+            <div class="trust-item">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <polyline points="9 12 11 14 15 10" />
+              </svg>
+              Team access
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── FEATURES ── -->
+      <section
+        class="features"
+        id="features"
+        aria-labelledby="features-heading"
+      >
+        <div class="section-inner">
+          <div class="reveal">
+            <div class="section-tag">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+              </svg>
+              Features
+            </div>
+            <h2 id="features-heading">
+              Everything your restaurant needs,<br />in one place
+            </h2>
+            <p class="section-sub">
+              From taking the order to closing the cash shift — keep your floor, kitchen and billing team working together.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card reveal featured">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <rect x="2" y="5" width="20" height="14" rx="2" />
+                  <line x1="2" y1="10" x2="22" y2="10" />
+                </svg>
+              </div>
+              <h3>Smart Billing &amp; POS</h3>
+              <p>Preview bills with configured tax profiles. Record cash, UPI, card and split payments. Print bills with a compatible local setup.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                  />
+                </svg>
+              </div>
+              <h3>KOT Management</h3>
+              <p>Route kitchen tickets to the right station. Share item instructions, track preparation and mark full or partial quantities ready.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"
+                  />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <h3>Central Menu Control</h3>
+              <p>Review menu changes centrally, then publish to selected outlets. Manage variants, modifiers, combos and sale availability.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <h3>Table Management</h3>
+              <p>See tables and seated parties, assign service staff, move a party and manage the handoff from seating to billing.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <h3>Orders for Every Service</h3>
+              <p>Take dine-in, takeaway and staff-entered delivery orders. Add item choices and kitchen notes before sending for preparation.</p>
+            </div>
+
+            <div class="feature-card reveal">
+              <div class="feature-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#F5A623"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <h3>Sales Reports &amp; Cash Shifts</h3>
+              <p>Review issued sales, collections, customer dues and cash-shift variance by permitted outlet and date.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── HOW IT WORKS ── -->
+      <section class="how" id="how-it-works" aria-labelledby="how-heading">
+        <div class="section-inner">
+          <div class="reveal" style="text-align: center">
+            <div class="section-tag">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Process
+            </div>
+            <h2 id="how-heading">From order to bill, one clear workflow</h2>
+            <p class="section-sub" style="margin: 0 auto">
+              Every handoff has a place. Follow the order from the floor to the kitchen and on to billing.
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step-num">1</div>
+              <h3>Take the order</h3><p>Choose dine-in, takeaway or delivery. Add variants, modifiers and instructions before sending.</p>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">2</div>
+              <h3>Send to kitchen</h3><p>Items appear in their station queues, with the details the kitchen team needs.</p>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">3</div>
+              <h3>Track preparation</h3><p>Start items, mark quantities ready and coordinate pickup and table service.</p>
+            </div>
+            <div class="step reveal">
+              <div class="step-num">4</div>
+              <h3>Settle the bill</h3><p>Preview and issue the bill, then record collections and permitted customer dues.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── INTEGRATIONS ── -->
+      <section
+        class="integrations"
+        id="operations"
+        aria-labelledby="operations-heading"
+      >
+        <div class="section-inner">
+          <div class="reveal">
+            <div class="section-tag">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"
+                />
+                <path
+                  d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"
+                />
+              </svg>
+              Operations
+            </div>
+            <h2 id="operations-heading">
+              Your team. Your service.<br />One connected workflow.
+            </h2>
+            <p class="section-sub">
+              Give each team member access to the work they handle, with outlet-scoped permissions.
+            </p>
+          </div>
+
+          <div class="integrations-grid reveal">
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Order entry</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Kitchen tickets</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Split payments</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Customer dues</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Cash shifts</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Menu publishing</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Tax profiles</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Bill printing</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Sales reports</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Table service</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Staff access</div>
+            <div class="integration-pill">
+              <span class="integration-dot" aria-hidden="true"></span>Kitchen display</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials" id="pricing" aria-labelledby="pricing-heading"><div class="section-inner"><div class="reveal" style="text-align:center"><div class="section-tag">Pricing</div><h2 id="pricing-heading">Simple pricing. Complete access.</h2><p class="section-sub" style="margin:0 auto">All released standard POS features, without feature-based upgrade tiers.</p></div><div class="restored-pricing-grid"><article class="testi-card reveal"><h3>Single Outlet</h3><div class="restored-price">₹6,999 <span>/ year</span></div><p>One restaurant. Complete access to standard POS features.</p><ul><li>3 months: ₹2,499</li><li>6 months: ₹4,299</li><li>12 months: ₹6,999</li></ul><a class="btn-primary" href="#contact">Book a demo</a></article><article class="testi-card reveal"><h3>Multi-Outlet</h3><div class="restored-price">₹5,999 <span>/ outlet / year</span></div><p>Complete POS access with centralized multi-outlet management.</p><ul><li>Minimum 2 outlets</li><li>Annual billing</li><li>2 outlets: ₹11,998 / year</li></ul><a class="btn-primary" href="#contact">Talk about your outlets</a></article></div><p class="restored-price-note">Complete payable subscription amounts, with no GST added separately. Hardware, third-party services and custom work are quoted separately. Planned modules are not yet released.</p></div></section><section class="contact" id="contact" aria-labelledby="contact-heading"><div class="section-inner"><div class="contact-inner"><div class="contact-left reveal"><div class="section-tag">Let's talk</div><h2 id="contact-heading">See RestaBee in action</h2><p>Walk through your restaurant's order, kitchen and billing workflow. Tell us about your service types, outlet count and printer setup.</p><ul class="contact-points"><li>Orders, kitchen tickets and table service</li><li>Bill preview, collections and cash shifts</li><li>Central menu and multi-outlet controls</li><li>Device and printer setup reviewed during your demo</li></ul></div><div class="contact-right reveal"><div class="contact-form"><div class="form-title">Book your demo</div><p class="form-sub">Tell us your restaurant name, city and outlet count.</p><a class="btn-primary" href="mailto:hello@restabee.com?subject=RestaBee%20demo%20request">Email to book a demo</a><p class="restored-contact-link"><a href="tel:+919044415050">Call +91 90444 15050</a></p><p class="form-sub">hello@restabee.com</p></div></div></div></div></section><!-- ── FAQ ── -->
+      <section class="faq" id="faq" aria-labelledby="faq-heading">
+        <div class="section-inner">
+          <div class="reveal">
+            <div class="section-tag">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              FAQ
+            </div>
+            <h2 id="faq-heading">Common questions</h2>
+          </div>
+
+          <div class="faq-list"><details class="faq-item reveal"><summary class="faq-q">Is RestaBee suitable for a single-outlet restaurant?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">RestaBee supports restaurant order entry, kitchen tickets, tables, billing and reports. Book a demo using your own restaurant workflow to assess the fit.</div></details><details class="faq-item reveal"><summary class="faq-q">Can I take delivery orders?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">Staff can enter delivery orders and permitted delivery or packaging charges. This is not automatic delivery-platform ingestion or courier tracking.</div></details><details class="faq-item reveal"><summary class="faq-q">Can I configure GST billing?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">RestaBee supports configured tax profiles and captured tax lines on bills. This does not include GST filing, government certification or e-invoicing integration.</div></details><details class="faq-item reveal"><summary class="faq-q">Which devices and printers can I use?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">Confirm your intended devices and printers during the demo. Bill and kitchen-ticket printing requires compatible hardware and a local setup.</div></details><details class="faq-item reveal"><summary class="faq-q">Can I split bills and payments?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">Eligible unissued checks can be arranged before billing. Collections can also be recorded across multiple payment methods. Split checks and split payments are separate controls.</div></details><details class="faq-item reveal"><summary class="faq-q">Can I manage several outlets?<span class="faq-icon" aria-hidden="true">+</span></summary><div class="faq-a">Review central menu changes and apply published updates to selected outlets. Outlet-scoped staff permissions and independent local menus are supported.</div></details></div></div></section>
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <div class="footer-brand-logo">
+              <img src="/restabee-logo.png" alt="" width="30" height="30" />
+              <div class="brand">
+                <span>Resta</span><span style="color: #fff">bee</span>
+              </div>
+            </div>
+            <div class="footer-tagline">Swift. Sharp. Always on duty.</div>
+            <p>
+              India's restaurant POS built for small and mid-size restaurants.
+              Orders, KOT, tables and billing — one workspace.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h3>Product</h3>
+            <ul>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#operations">Operations</a></li>
+              <li><a href="#how-it-works">How it works</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Use Cases</h3>
+            <ul>
+              <li><a href="#contact">Restaurants</a></li>
+              <li><a href="#contact">Cafes &amp; Bakeries</a></li>
+              <li><a href="#contact">Cloud Kitchens</a></li>
+              <li><a href="#contact">Dhabas</a></li>
+              <li><a href="#contact">QSR Chains</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul>
+              <li>
+                <a href="mailto:hello@restabee.com">hello@restabee.com</a>
+              </li>
+              <li><a href="tel:+919044415050">+91 90444 15050</a></li>
+              <li><a href="#contact">Book a Demo</a></li>
+              <li><a href="https://app.restabee.com">Open POS app</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-copy">
+            © 2026 <span>RestaBee</span> — A product by Cloudemy Digital
+            Technologies Pvt. Ltd.
+          </div>
+          <div class="footer-legal"><a href="#pricing">Pricing</a><a href="#faq">FAQs</a><a href="#contact">Book a demo</a></div>
+        </div>
+      </div>
+    </footer>
+
+    
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('#navToggle');
+  const navigation = document.querySelector<HTMLElement>('#navbar');
+  const closeMenu = () => {
+    navigation?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  };
+  toggle?.addEventListener('click', () => {
+    const open = navigation?.classList.toggle('open') ?? false;
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll<HTMLAnchorElement>('#navLinks a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+</script>

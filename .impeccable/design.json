@@ -1,0 +1,330 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T05:09:03.188255+00:00",
+  "title": "Design System: RestaBee",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.012 48.0)",
+          "oklch(26% 0.012 48.0)",
+          "oklch(38% 0.012 48.0)",
+          "oklch(49% 0.012 48.0)",
+          "oklch(61% 0.012 48.0)",
+          "oklch(72% 0.012 48.0)",
+          "oklch(84% 0.012 48.0)",
+          "oklch(95% 0.012 48.0)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.012 90.0)",
+          "oklch(26% 0.012 90.0)",
+          "oklch(38% 0.012 90.0)",
+          "oklch(49% 0.012 90.0)",
+          "oklch(61% 0.012 90.0)",
+          "oklch(72% 0.012 90.0)",
+          "oklch(84% 0.012 90.0)",
+          "oklch(95% 0.012 90.0)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.012 86.7)",
+          "oklch(26% 0.012 86.7)",
+          "oklch(38% 0.012 86.7)",
+          "oklch(49% 0.012 86.7)",
+          "oklch(61% 0.012 86.7)",
+          "oklch(72% 0.012 86.7)",
+          "oklch(84% 0.012 86.7)",
+          "oklch(95% 0.012 86.7)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Orange",
+        "tonalRamp": [
+          "oklch(15% 0.13 25.2)",
+          "oklch(26% 0.13 25.2)",
+          "oklch(38% 0.13 25.2)",
+          "oklch(49% 0.13 25.2)",
+          "oklch(61% 0.13 25.2)",
+          "oklch(72% 0.13 25.2)",
+          "oklch(84% 0.13 25.2)",
+          "oklch(95% 0.13 25.2)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "orange-ink": {
+        "role": "primary",
+        "displayName": "Orange Ink",
+        "tonalRamp": [
+          "oklch(15% 0.1 17.7)",
+          "oklch(26% 0.1 17.7)",
+          "oklch(38% 0.1 17.7)",
+          "oklch(49% 0.1 17.7)",
+          "oklch(61% 0.1 17.7)",
+          "oklch(72% 0.1 17.7)",
+          "oklch(84% 0.1 17.7)",
+          "oklch(95% 0.1 17.7)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "orange-light": {
+        "role": "primary",
+        "displayName": "Orange Light",
+        "tonalRamp": [
+          "oklch(15% 0.035 30.0)",
+          "oklch(26% 0.035 30.0)",
+          "oklch(38% 0.035 30.0)",
+          "oklch(49% 0.035 30.0)",
+          "oklch(61% 0.035 30.0)",
+          "oklch(72% 0.035 30.0)",
+          "oklch(84% 0.035 30.0)",
+          "oklch(95% 0.035 30.0)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15% 0.012 66.0)",
+          "oklch(26% 0.012 66.0)",
+          "oklch(38% 0.012 66.0)",
+          "oklch(49% 0.012 66.0)",
+          "oklch(61% 0.012 66.0)",
+          "oklch(72% 0.012 66.0)",
+          "oklch(84% 0.012 66.0)",
+          "oklch(95% 0.012 66.0)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "dark": {
+        "role": "neutral",
+        "displayName": "Dark",
+        "tonalRamp": [
+          "oklch(15% 0.012 111.4)",
+          "oklch(26% 0.012 111.4)",
+          "oklch(38% 0.012 111.4)",
+          "oklch(49% 0.012 111.4)",
+          "oklch(61% 0.012 111.4)",
+          "oklch(72% 0.012 111.4)",
+          "oklch(84% 0.012 111.4)",
+          "oklch(95% 0.012 111.4)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.1 18.3)",
+          "oklch(26% 0.1 18.3)",
+          "oklch(38% 0.1 18.3)",
+          "oklch(49% 0.1 18.3)",
+          "oklch(61% 0.1 18.3)",
+          "oklch(72% 0.1 18.3)",
+          "oklch(84% 0.1 18.3)",
+          "oklch(95% 0.1 18.3)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      },
+      "ticket-paper": {
+        "role": "neutral",
+        "displayName": "Ticket Paper",
+        "tonalRamp": [
+          "oklch(15% 0.012 48.0)",
+          "oklch(26% 0.012 48.0)",
+          "oklch(38% 0.012 48.0)",
+          "oklch(49% 0.012 48.0)",
+          "oklch(61% 0.012 48.0)",
+          "oklch(72% 0.012 48.0)",
+          "oklch(84% 0.012 48.0)",
+          "oklch(95% 0.012 48.0)"
+        ],
+        "rampPurpose": "Synthesized preview studies; not CSS tokens."
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Bricolage display",
+        "purpose": "Expressive hero hierarchy."
+      },
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Main narrative hierarchy."
+      },
+      "body": {
+        "displayName": "Instrument body",
+        "purpose": "Reading, instructions and controls."
+      }
+    },
+    "shadows": [
+      {
+        "name": "order-paper",
+        "value": "0 14px 33px -17px #6c432b66",
+        "purpose": "Main illustrative receipt."
+      },
+      {
+        "name": "kitchen-slip",
+        "value": "0 15px 22px -12px #101b1380",
+        "purpose": "Kitchen paper."
+      },
+      {
+        "name": "publication-sheet",
+        "value": "0 12px 22px -19px #3e3d2c40",
+        "purpose": "Publication sheet."
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "0 15px 24px -15px #26301f40",
+        "purpose": "Disclosure menu."
+      }
+    ],
+    "motion": [
+      {
+        "name": "action-transition",
+        "value": ".2s",
+        "purpose": "Action color and transform transitions."
+      },
+      {
+        "name": "ticket-change",
+        "value": ".3s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Ticket selection tilt."
+      },
+      {
+        "name": "ticket-arrive",
+        "value": ".7s cubic-bezier(.16,1,.3,1)",
+        "purpose": "One-time arrival, only without reduced-motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet-upper",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "950px"
+      },
+      {
+        "name": "stack",
+        "value": "700px"
+      },
+      {
+        "name": "narrow",
+        "value": "380px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Dark action",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Action with visible keyboard focus and press feedback.",
+      "html": "<button class=\"ds-button\">Book a demo</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:30px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:7px;font:600 14px/1.25 var(--body,Body,sans-serif);cursor:pointer;transition:background-color .2s,transform .2s}.ds-button:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}.ds-button:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-button{background:var(--ink,#242820);color:#fff;border-color:transparent}.ds-button:hover{background:#3c4538}"
+    },
+    {
+      "name": "Orange action",
+      "kind": "button",
+      "refersTo": "button-orange",
+      "description": "Action with visible keyboard focus and press feedback.",
+      "html": "<button class=\"ds-button\">Book a demo</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:30px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:7px;font:600 14px/1.25 var(--body,Body,sans-serif);cursor:pointer;transition:background-color .2s,transform .2s}.ds-button:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}.ds-button:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-button{background:var(--orange,#ff8a35);color:var(--ink,#242820);border-color:transparent}.ds-button:hover{background:#ff9e56}"
+    },
+    {
+      "name": "Outlined action",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Action with visible keyboard focus and press feedback.",
+      "html": "<button class=\"ds-button\">Book a demo</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;gap:30px;min-height:52px;padding:14px 23px;border:1px solid transparent;border-radius:7px;font:600 14px/1.25 var(--body,Body,sans-serif);cursor:pointer;transition:background-color .2s,transform .2s}.ds-button:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}.ds-button:active{transform:translateY(1px)}@media(prefers-reduced-motion:reduce){.ds-button{transition:none}}.ds-button{background:transparent;color:var(--ink,#242820);border-color:#babfb2}.ds-button:hover{background:#e9ece2}"
+    },
+    {
+      "name": "Enquiry field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Visible label and a lightly bordered field.",
+      "html": "<label class=\"ds-field\">Restaurant name<input placeholder=\"Your restaurant or caf\u00e9\" autocomplete=\"organization\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;font:600 12px var(--body,Body,sans-serif);color:var(--ink,#242820)}.ds-field input{border:1px solid #cfd2c4;background:var(--ticket-paper,#fffefa);border-radius:6px;min-height:44px;padding:10px 12px;font:400 13px var(--body,Body,sans-serif);color:var(--ink,#242820)}.ds-field input::placeholder{color:#73796a}.ds-field input:hover{border-color:#cfd2c4}.ds-field input:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}"
+    },
+    {
+      "name": "Workflow selection",
+      "kind": "custom",
+      "description": "A sample stage selector; selection is an explicit pressed state.",
+      "html": "<div class=\"ds-workflow\" role=\"group\" aria-label=\"Sample order\"><button aria-pressed=\"true\">01 Order taken</button><button aria-pressed=\"false\">02 Kitchen ticket</button></div>",
+      "css": ".ds-workflow{display:flex;background:#fff;font-family:var(--body,Body,sans-serif)}.ds-workflow button{border:0;border-right:1px solid var(--line,#dedfd5);background:transparent;padding:21px 22px;min-height:68px;font:400 13px var(--body,Body,sans-serif);color:var(--ink,#242820);cursor:pointer;transition:background-color .2s}.ds-workflow button[aria-pressed=true]{background:var(--orange,#ff8a35);font-weight:600}.ds-workflow button:hover{background:var(--orange-light,#ffe7cf)}.ds-workflow button[aria-pressed=true]:hover{background:#ff9e56}.ds-workflow button:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:-5px}@media(prefers-reduced-motion:reduce){.ds-workflow button{transition:none}}"
+    },
+    {
+      "name": "FAQ disclosure",
+      "kind": "custom",
+      "description": "Native expandable disclosure divided by a fine rule.",
+      "html": "<details class=\"ds-faq\"><summary>Can I see the order workflow?</summary><p>Bring your service questions to the demo.</p></details>",
+      "css": ".ds-faq{border-top:1px solid var(--line,#dedfd5);border-bottom:1px solid var(--line,#dedfd5);font:400 14px/1.85 var(--body,Body,sans-serif);color:var(--ink,#242820)}.ds-faq summary{padding:21px 0;font-weight:500;cursor:pointer;line-height:1.6}.ds-faq summary:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}.ds-faq p{color:var(--muted,#62665d);margin:0 0 21px}"
+    },
+    {
+      "name": "Navigation links",
+      "kind": "nav",
+      "description": "Restrained text links on the paper canvas.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Example navigation\"><a href=\"#product\">Product</a><a href=\"#pricing\">Pricing</a><a href=\"#demo\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:29px;padding:16px;background:var(--paper,#faf9f5);font:500 13px var(--body,Body,sans-serif);color:var(--ink,#242820)}.ds-nav a{color:inherit;text-decoration:none;text-underline-offset:5px}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:3px solid var(--focus,#a53c0e);outline-offset:5px}"
+    },
+    {
+      "name": "Illustrative order paper",
+      "kind": "card",
+      "description": "A domain-specific paper example, explicitly labelled as a sample.",
+      "html": "<article class=\"ds-paper\"><strong>Sample order</strong><p>Table 08</p><hr><p>Paneer tikka</p><aside>No onion in the garnish</aside></article>",
+      "css": ".ds-paper{max-width:278px;padding:23px 25px 19px;background:#fffefa;color:#292d25;box-shadow:0 14px 33px -17px #6c432b66;transform:rotate(-2deg);font:400 12px/1.6 var(--body,Body,sans-serif)}.ds-paper strong{font:600 15px var(--display,Display,sans-serif);letter-spacing:-.03em}.ds-paper hr{border:0;border-top:1px dashed #c4c8bc}.ds-paper aside{padding:10px 12px;background:#fff0dd;font-size:13px;font-weight:600}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Open Kitchen",
+    "overview": "An open-kitchen editorial identity places restaurant work beside clear, expressive typography. Warm paper, green-tinted ink and orange connect hospitality imagery with practical order details. The supplied logo anchors the identity; generated restaurant scenes remain explicitly illustrative.\n\nThe system changes density with the material: generous space for the narrative, compact rows for an order or collection example. Dark operational passages belong to the brand palette; they do not define a separate dark-mode theme.",
+    "keyCharacteristics": [
+      "Locally hosted expressive display type and quiet body type.",
+      "Warm hospitality imagery beside labelled operational examples.",
+      "Tonal surfaces, restrained paper shadows and clear interactive selection."
+    ],
+    "rules": [
+      {
+        "name": "The Material Contrast Rule",
+        "body": "Keep each operational example's text, surface and divider colors together; reversing only its background breaks its material hierarchy.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Use display type for hierarchy and body type for instructions, labels and controls. Do not introduce a third display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Depth Rule",
+        "body": "Reserve illustrative paper shadows for paper objects and the navigation shadow for its overlay; do not apply them indiscriminately to content sections.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the supplied logo and recognizable orange accent.",
+      "Do label generated scenes and sample interfaces as illustrative.",
+      "Do keep visible focus, keyboard selection and reduced-motion behavior.",
+      "Do keep real amounts and commercial qualifiers together."
+    ],
+    "donts": [
+      "Don't turn illustrative outlets, orders or scenes into customer proof.",
+      "Don't substitute decorative dashboard controls for meaningful interactions.",
+      "Don't imply an email draft has delivered an enquiry.",
+      "Don't treat the dark operational passage as a dark-mode implementation."
+    ]
+  }
+}
