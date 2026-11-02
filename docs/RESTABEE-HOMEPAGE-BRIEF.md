@@ -3,7 +3,7 @@
 Prepared: 25 October 2026.
 Scope: keyword targeting, search intent, content structure, proposed copy, internal linking, metadata, evidence requirements and SEO measurement for `https://restabee.com/`.
 
-This standalone brief is based on the supplied website SEO strategy, keyword page map, landing-page feature brief and public pricing document. It does not use the existing website's design or copy as a requirement. It contains no visual design direction, styling specification or instruction to preserve a layout. Proposed content is subject to product and commercial review; this document does not describe implementation status.
+This standalone brief is based on the archived website SEO strategy, preserved keyword page map, landing-page feature brief and public pricing document. It does not use the existing website's design or copy as a requirement. It contains no visual design direction, styling specification or instruction to preserve a layout. Proposed content is subject to product and commercial review; this document does not describe implementation status.
 
 ## 1. Homepage objective
 

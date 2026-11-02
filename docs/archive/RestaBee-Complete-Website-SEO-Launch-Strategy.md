@@ -1,9 +1,11 @@
+> Archived 2026-11-02: historical research only. Its WordPress recommendation and proposed pricing are superseded. Current architecture and pricing are recorded in [decision 0001](../decisions/0001-astro-marketing.md). Use the preserved keyword workbook and current homepage brief for active planning.
+
 # RestaBee — Complete Website, Keyword Architecture, SEO & Commercial Launch Plan
 
-Implementation choices: see [decision 0001](decisions/0001-astro-marketing.md) for the architecture and pricing selected after this proposal.
+Implementation choices: see [decision 0001](../decisions/0001-astro-marketing.md) for the architecture and pricing selected after this proposal.
 
 **Prepared:** 25 October 2026  |  **Domain:** https://restabee.com  |  **Audience:** India-first restaurant operators
-**Source basis:** Six uploaded Google Keyword Planner TSV-format CSV exports (period 1 October 2025–30 September 2026), uploaded `landing-page-features.md` (25 October 2026), current publicly accessible restabee.com, competitor official pages, Google Search Central and Rank Math documentation. This is a strategy and proposed marketing plan, not an implementation audit or approved offer sheet.
+**Source basis:** Six uploaded Google Keyword Planner TSV-format CSV exports (period 1 October 2025–30 September 2026), uploaded `../landing-page-features.md` (25 October 2026), current publicly accessible restabee.com, competitor official pages, Google Search Central and Rank Math documentation. This is a strategy and proposed marketing plan, not an implementation audit or approved offer sheet.
 
 ## Executive decision
 **Launch RestaBee as a restaurant operations POS, anchored in order → kitchen → service → bill; make multi-outlet controlled menu publishing the secondary differentiator.** Target independent restaurants, cafés, QSRs, takeaway businesses and small growing groups. Lead with an actual product video/screenshots, precise feature status, transparent pricing and a booked demo. Never present planned QR ordering, inventory or workforce/roster management as shipped.
@@ -529,5 +531,5 @@ For every page: **(1)** Read this page brief. **(2)** Validate the promised feat
 - Google SoftwareApplication: https://developers.google.com/search/docs/appearance/structured-data/software-app
 - Google FAQ: https://developers.google.com/search/blog/2023/08/howto-faq-changes
 - RestaBee current public landing: https://restabee.com/
-- Uploaded source files: `landing-page-features.md` (25 October 2026); six “Keyword Stats 2026-10-25” CSVs (Google Keyword Planner, date range through 30 September 2026).
+- Uploaded source files: `../landing-page-features.md` (25 October 2026); six “Keyword Stats 2026-10-25” CSVs (Google Keyword Planner, date range through 30 September 2026).
 **Limitations:** I could inspect the website and the supplied feature copy, but did not access the private `STATUS.md` feature audit referenced by the brief or run a live authenticated product acceptance test. The source brief must not be treated as release approval. The ranking and pricing suggestions are strategic proposals, not guarantees.

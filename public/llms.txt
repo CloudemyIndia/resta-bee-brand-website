@@ -1,0 +1,16 @@
+# RestaBee
+
+> RestaBee is restaurant POS software for restaurants in India, connecting dine-in, takeaway and staff-entered delivery orders with kitchen tickets, table service, billing and multi-outlet menu management.
+
+The public website describes RestaBee's product capabilities and current public pricing. Guests can send table QR orders for staff review before preparation; delivery orders are entered by staff.
+
+## Website
+
+- [Restaurant POS software homepage](https://restabee.com/): Product overview, features, supported workflows, pricing, FAQs and demo enquiry.
+
+## Product sections
+
+- [Restaurant POS features](https://restabee.com/#capabilities): Order flow, floor management, kitchen tickets, billing, menu management, reports and role access.
+- [Table QR Ordering](https://restabee.com/#qr-ordering): Guest menu browsing and staff-reviewed table orders.
+- [Pricing](https://restabee.com/#pricing): Current public subscription prices.
+- [Request a demo](https://restabee.com/#demo): Demo enquiry form.

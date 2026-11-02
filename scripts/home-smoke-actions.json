@@ -1,32 +1,121 @@
 [
-  ["scroll", ".workflow-controls"],
-  ["click", "[data-step='1']"],
-  ["eval", "if(document.querySelector('[data-ticket-status]').textContent!=='Preparing')throw Error('Kitchen state failed');if(!document.querySelector('[data-ticket-note]').textContent.includes('extra chutney'))throw Error('Instruction was lost');'Kitchen state and instruction passed'"],
-  ["key", "End", "[data-step='1']"],
-  ["eval", "if(document.querySelector('[data-ticket-status]').textContent!=='Recorded')throw Error('Collection state failed');if(!document.querySelector('[data-ticket-note]').textContent.includes('₹540'))throw Error('Mixed collection failed');if(document.querySelectorAll('[data-step][aria-pressed=true]').length!==1)throw Error('Multiple workflow selections');'Keyboard workflow and mixed collection passed'"],
-  ["key", "Home", "[data-step='3']"],
-  ["eval", "if(document.querySelector('[data-ticket-status]').textContent!=='Captured')throw Error('Workflow reset failed');'Workflow reset passed'"],
-  ["scroll", ".term-switch"],
-  ["click", "[data-term='3']"],
-  ["eval", "if(document.querySelector('[data-price]').textContent!=='₹2,499')throw Error('Quarterly price failed');if(document.querySelector('[data-period]').textContent!=='3 months')throw Error('Term mismatch');'Quarterly price passed'"],
-  ["key", "ArrowRight", "[data-term='3']"],
-  ["eval", "if(document.querySelector('[data-price]').textContent!=='₹4,299')throw Error('Six month price failed');'Six month price passed'"],
-  ["key", "End", "[data-term='6']"],
-  ["eval", "if(document.querySelector('[data-price]').textContent!=='₹6,999')throw Error('Annual price failed');if(document.querySelectorAll('[data-term][aria-pressed=true]').length!==1)throw Error('Multiple terms selected');'Annual price and single selection passed'"],
-  ["scroll", ".questions summary"],
-  ["click", ".questions summary"],
-  ["eval", "if(!document.querySelector('.questions details').open)throw Error('FAQ failed');'FAQ passed'"],
-  ["scroll", "#demo-form"],
-  ["click", ".form-submit"],
-  ["eval", "if(document.querySelector('#demo-form').checkValidity())throw Error('Empty form accepted');if(!document.querySelector('#draft-result').hidden)throw Error('Invalid draft exposed');'Empty form validation passed'"],
-  ["eval", "document.querySelector('#restaurant').value='Test Café & Kitchen';document.querySelector('#contact').value='invalid-email';document.querySelector('#outlet-count').value='1';document.querySelector('#demo-interest').value='Split bills & kitchen notes';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(document.querySelector('#demo-form').checkValidity())throw Error('Invalid email accepted');'Email validation passed'"],
-  ["eval", "document.querySelector('#contact').value='owner@example.com';document.querySelector('#contact').dispatchEvent(new Event('input',{bubbles:true}));'Demo data filled'"],
-  ["click", ".form-submit"],
-  ["eval", "const link=document.querySelector('#send-draft');const url=new URL(link.href);const body=url.searchParams.get('body');if(document.querySelector('#draft-result').hidden)throw Error('Draft missing');if(url.protocol!=='mailto:'||url.pathname!=='hello@restabee.com')throw Error('Wrong enquiry recipient');if(!body.includes('Test Café & Kitchen')||!body.includes('owner@example.com')||!body.includes('Split bills & kitchen notes'))throw Error('Draft lost data');if(!document.querySelector('#draft-result').textContent.includes('has not been sent'))throw Error('False sent confirmation');if(document.activeElement!==link)throw Error('Draft focus was not moved');'Draft encoding, recipient, focus and unsent disclosure passed'"],
-  ["eval", "document.querySelector('#restaurant').value='Changed name';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(!document.querySelector('#draft-result').hidden)throw Error('Stale draft retained');'Stale draft invalidation passed'"],
-  ["eval", "if(document.documentElement.scrollWidth>innerWidth+1)throw Error('Horizontal overflow');'Full page overflow check passed'"],
-  ["scroll", ".site-header"],
-  ["eval", "const menu=document.querySelector('.mobile-menu');if(getComputedStyle(menu).display!=='none')menu.open=true;'Mobile menu prepared'"],
-  ["key", "Escape", ".mobile-menu summary"],
-  ["eval", "if(document.querySelector('.mobile-menu').open)throw Error('Escape failed');'Menu Escape passed'"]
+  [
+    "eval",
+    "const f=document.querySelector('.site-footer');if(!f||f.querySelectorAll('.footer-link-group').length!==2)throw Error('Complete footer navigation missing');for(const href of ['#workflow','#capabilities','#outlets','#devices','#pricing','#faq','#demo','https://app.restabee.com'])if(![...f.querySelectorAll('a')].some(a=>a.getAttribute('href')===href))throw Error('Footer destination missing: '+href);if(!f.querySelector('a[href=\"mailto:hello@restabee.com\"]')||!f.querySelector('a[href=\"tel:+919044415050\"]'))throw Error('Footer contact links missing');'Footer navigation and contact links passed'"
+  ],
+  [
+    "eval",
+    "if(document.querySelectorAll('.capability-grid article').length!==8)throw Error('Homepage must list all eight capability summaries');'Eight capability summaries present'"
+  ],
+  [
+    "eval",
+    "const ticket=document.querySelector('.order-ticket');if(document.querySelector('.workflow-controls'))throw Error('Workflow buttons should not be shown beside the hero ticket');if(document.querySelector('.ticket-kind')?.textContent!=='Bill preview')throw Error('Hero ticket should be a bill preview');if(document.querySelector('.ticket-table strong')?.textContent!=='Table T3')throw Error('Sample bill should name Table T3');if(!ticket?.textContent.includes('₹200 each')||!ticket?.textContent.includes('₹400')||!ticket?.textContent.includes('₹240')||!ticket?.textContent.includes('₹640')||!ticket?.textContent.includes('₹32')||!ticket?.textContent.includes('₹672'))throw Error('Bill item prices and total are missing');if(ticket?.textContent.includes('Kitchen instruction'))throw Error('Kitchen instructions should remain on the separate kitchen ticket');if(document.querySelector('.floor-screen img')?.getAttribute('src')!=='/pos-images/restabee-restaurant-pos-floor-view-desktop.webp'||document.querySelector('.floor-screen source')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-floor-view-mobile.webp'||document.querySelector('.kitchen-screen img')?.getAttribute('src')!=='/pos-images/restabee-restaurant-pos-kitchen-display-desktop.webp'||document.querySelector('.kitchen-screen source')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-kitchen-display-mobile.webp'||document.querySelector('.menu-product-screen img')?.getAttribute('src')!=='/pos-images/restabee-restaurant-pos-central-menu-desktop.webp'||document.querySelector('.menu-product-screen source')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-central-menu-mobile.webp')throw Error('Viewport-matched floor, kitchen and central-menu screenshots missing');if(document.querySelector('.collection-example')?.textContent.includes('Table T3')!==true||!document.querySelector('.collection-total')?.textContent.includes('₹672'))throw Error('Collection sample should match the T3 bill total');const pricing=document.querySelector('#pricing');const devices=document.querySelector('#devices');const ownerSection=document.querySelector('.owner-tools-section');if(!ownerSection||!ownerSection.querySelector('.shift-screen img')||!(document.querySelector('.operations').compareDocumentPosition(ownerSection)&Node.DOCUMENT_POSITION_FOLLOWING)||!(ownerSection.compareDocumentPosition(document.querySelector('#menu-preferences'))&Node.DOCUMENT_POSITION_FOLLOWING))throw Error('Owner shift section should be separated from operations and shown before menu preferences');if(!devices||!(devices.compareDocumentPosition(pricing)&Node.DOCUMENT_POSITION_FOLLOWING))throw Error('Device showcase should appear before pricing');const deviceScreens=[...devices.querySelectorAll('img')].map(i=>i.getAttribute('src'));if(!deviceScreens.includes('/pos-images/restabee-restaurant-pos-menu-desktop.webp')||!deviceScreens.includes('/pos-images/restabee-restaurant-pos-menu-tablet.webp')||!deviceScreens.includes('/pos-images/restabee-restaurant-pos-menu-mobile.webp')||devices.querySelectorAll('figure').length!==3||document.querySelector('.shift-screen img')?.getAttribute('src')!=='/pos-images/restabee-pos-my-shift-mobile.webp'||document.querySelector('.shift-screen')?.getBoundingClientRect().width<250||document.querySelector('.report-screen img')?.getAttribute('src')!=='/pos-images/restabee-pos-reports-mobile.webp')throw Error('Desktop, tablet and phone POS screens or separate My Shift screen missing');const menuPrefs=document.querySelector('#menu-preferences');if(!menuPrefs||menuPrefs.querySelectorAll('.menu-preference-card').length!==2||menuPrefs.querySelector('.menu-preference-photos source[media=\"(min-width: 701px)\"]')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp'||menuPrefs.querySelector('.menu-preference-photos source[media=\"(max-width: 700px)\"]')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-menu-with-photos-mobile.webp'||menuPrefs.querySelector('.menu-preference-photos img')?.getAttribute('src')!=='/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp'||menuPrefs.querySelector('.menu-preference-compact source[media=\"(min-width: 951px)\"]')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-menu-desktop.webp'||menuPrefs.querySelector('.menu-preference-compact source[media=\"(min-width: 701px) and (max-width: 950px)\"]')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-menu-tablet.webp'||menuPrefs.querySelector('.menu-preference-compact source[media=\"(max-width: 700px)\"]')?.getAttribute('srcset')!=='/pos-images/restabee-restaurant-pos-menu-mobile.webp'||!menuPrefs.textContent.includes('Each user can choose'))throw Error('Per-user menu image preferences or viewport-matched screenshots missing');const glance=[...document.querySelectorAll('.glance-item')];if(glance.length!==6)throw Error('Feature glance should show six capabilities');for(const platform of ['Web','Android','iPhone','Mac','Windows'])if(!document.querySelector('.platform-line')?.textContent.includes(platform))throw Error('Missing app platform '+platform);const qrGlance=[...glance].find(e=>e.textContent.includes('Table QR ordering'));if(!qrGlance||qrGlance.querySelector('a')?.getAttribute('href')!=='#qr-ordering')throw Error('QR feature glance link missing');const qr=document.querySelector('#qr-ordering');if(!qr||!pricing||!(qr.compareDocumentPosition(pricing)&Node.DOCUMENT_POSITION_FOLLOWING))throw Error('Table QR section must appear before pricing');const qrImages=[...qr.querySelectorAll('img')].map(i=>i.getAttribute('src'));if(!qrImages.includes('/pos-images/restabee-table-qr-ordering-code-t3.webp')||!qrImages.includes('/pos-images/restabee-table-qr-ordering-menu-t3.webp')||qr.querySelector('.qr-code-art'))throw Error('Provided QR and menu screenshot must replace the custom artwork');if(!qr.textContent.includes('appears in your restaurant POS')||!qr.textContent.includes('review and accept before preparation starts')||!qr.querySelector('figcaption')?.textContent.includes('Illustrative')||qr.querySelector('.qr-ordering-copy a')?.getAttribute('href')!=='#demo')throw Error('QR flow, CTA or illustrative label missing');'Bill preview, three product screenshots, device mockups, QR section, feature glance and platforms passed'"
+  ],
+  [
+    "scroll",
+    ".term-switch"
+  ],
+  [
+    "click",
+    "[data-term='3']"
+  ],
+  [
+    "eval",
+    "if(document.querySelector('[data-price]').textContent!=='₹2,499')throw Error('Quarterly price failed');if(document.querySelector('[data-total-period]').textContent!=='total payable for 3 months')throw Error('Term mismatch');if(document.querySelector('[data-monthly-equivalent]').textContent!=='₹833 per month equivalent')throw Error('Quarterly equivalent failed');'Quarterly price and equivalent passed'"
+  ],
+  [
+    "key",
+    "ArrowRight",
+    "[data-term='3']"
+  ],
+  [
+    "eval",
+    "if(document.querySelector('[data-price]').textContent!=='₹4,299')throw Error('Six month price failed');if(document.querySelector('[data-monthly-equivalent]').textContent!=='₹717 per month equivalent')throw Error('Half-year equivalent failed');'Six month price and equivalent passed'"
+  ],
+  [
+    "key",
+    "End",
+    "[data-term='6']"
+  ],
+  [
+    "eval",
+    "if(document.querySelector('[data-price]').textContent!=='₹6,999')throw Error('Annual price failed');if(document.querySelector('[data-monthly-equivalent]').textContent!=='₹583 per month equivalent')throw Error('Annual equivalent failed');if(document.querySelectorAll('[data-term][aria-pressed=true]').length!==1)throw Error('Multiple terms selected');'Annual price and single selection passed'"
+  ],
+  [
+    "scroll",
+    ".questions summary"
+  ],
+  [
+    "click",
+    ".questions summary"
+  ],
+  [
+    "eval",
+    "if(!document.querySelector('.questions details').open)throw Error('FAQ failed');'FAQ passed'"
+  ],
+  [
+    "scroll",
+    "#demo-form"
+  ],
+  [
+    "eval",
+    "if(!document.querySelector('#contact-name').required||!document.querySelector('#restaurant').required||!document.querySelector('#city').required||!document.querySelector('#contact-phone').required||document.querySelector('#contact-email').required||!document.querySelector('#outlet-count').required)throw Error('Demo enquiry fields do not match the requested callback details');'Demo enquiry fields and optional email passed'"
+  ],
+  [
+    "scroll",
+    ".form-submit"
+  ],
+  [
+    "click",
+    ".form-submit"
+  ],
+  [
+    "eval",
+    "if(document.querySelector('#demo-form').checkValidity())throw Error('Empty form accepted');if(!document.querySelector('#draft-result').hidden)throw Error('Invalid draft exposed');'Empty form validation passed'"
+  ],
+  [
+    "eval",
+    "document.querySelector('#contact-name').value='Test Owner';document.querySelector('#restaurant').value='Test Café & Kitchen';document.querySelector('#city').value='Pune';document.querySelector('#contact-phone').value='9876543210';document.querySelector('#contact-email').value='invalid-email';document.querySelector('#outlet-count').value='1';document.querySelector('#demo-interest').value='Split bills & kitchen notes';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(document.querySelector('#demo-form').checkValidity())throw Error('Invalid optional email accepted');'Optional email validation passed'"
+  ],
+  [
+    "eval",
+    "document.querySelector('#contact-email').value='owner@example.com';document.querySelector('#contact-email').dispatchEvent(new Event('input',{bubbles:true}));'Demo data filled'"
+  ],
+  [
+    "scroll",
+    ".form-submit"
+  ],
+  [
+    "click",
+    ".form-submit"
+  ],
+  [
+    "eval",
+    "const link=document.querySelector('#send-draft');const url=new URL(link.href);const body=url.searchParams.get('body');if(document.querySelector('#draft-result').hidden)throw Error('Draft missing');if(url.protocol!=='mailto:'||url.pathname!=='hello@restabee.com')throw Error('Wrong enquiry recipient');if(!body.includes('Test Owner')||!body.includes('Test Café & Kitchen')||!body.includes('Pune')||!body.includes('9876543210')||!body.includes('owner@example.com')||!body.includes('Split bills & kitchen notes'))throw Error('Draft lost data');if(!document.querySelector('#draft-result').textContent.includes('Review the details, then send the email to RestaBee.'))throw Error('Email handoff instructions missing');if(document.activeElement!==link)throw Error('Draft focus was not moved');'Draft encoding, recipient, focus and handoff passed'"
+  ],
+  [
+    "eval",
+    "document.querySelector('#restaurant').value='Changed name';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(!document.querySelector('#draft-result').hidden)throw Error('Stale draft retained');'Stale draft invalidation passed'"
+  ],
+  [
+    "eval",
+    "if(document.documentElement.scrollWidth>innerWidth+1)throw Error('Horizontal overflow');'Full page overflow check passed'"
+  ],
+  [
+    "scroll",
+    ".site-header"
+  ],
+  [
+    "eval",
+    "const menu=document.querySelector('.mobile-menu');if(getComputedStyle(menu).display!=='none')menu.open=true;'Mobile menu prepared'"
+  ],
+  [
+    "key",
+    "Escape",
+    ".mobile-menu summary"
+  ],
+  [
+    "eval",
+    "if(document.querySelector('.mobile-menu').open)throw Error('Escape failed');'Menu Escape passed'"
+  ]
 ]
