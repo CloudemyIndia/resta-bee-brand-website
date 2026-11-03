@@ -71,7 +71,7 @@
   ],
   [
     "eval",
-    "if(document.querySelector('#demo-form').checkValidity())throw Error('Empty form accepted');if(!document.querySelector('#draft-result').hidden)throw Error('Invalid draft exposed');'Empty form validation passed'"
+    "if(document.querySelector('#demo-form').checkValidity())throw Error('Empty form accepted');if(!document.querySelector('#lead-result').hidden)throw Error('Invalid request message exposed');'Empty form validation passed'"
   ],
   [
     "eval",
@@ -79,7 +79,7 @@
   ],
   [
     "eval",
-    "document.querySelector('#contact-email').value='owner@example.com';document.querySelector('#contact-email').dispatchEvent(new Event('input',{bubbles:true}));'Demo data filled'"
+    "document.querySelector('#contact-email').value='owner@example.com';document.querySelector('#contact-email').dispatchEvent(new Event('input',{bubbles:true}));window.__originalFetch=window.fetch;window.__leadRequest=null;window.fetch=async(url,options)=>{window.__leadRequest={url,options};return{json:async()=>({success:true,message:'Thank you. Our team will contact you to arrange a demo.'})}};'Demo data filled and API success mocked'"
   ],
   [
     "scroll",
@@ -91,11 +91,11 @@
   ],
   [
     "eval",
-    "const link=document.querySelector('#send-draft');const url=new URL(link.href);const body=url.searchParams.get('body');if(document.querySelector('#draft-result').hidden)throw Error('Draft missing');if(url.protocol!=='mailto:'||url.pathname!=='hello@restabee.com')throw Error('Wrong enquiry recipient');if(!body.includes('Test Owner')||!body.includes('Test Café & Kitchen')||!body.includes('Pune')||!body.includes('9876543210')||!body.includes('owner@example.com')||!body.includes('Split bills & kitchen notes'))throw Error('Draft lost data');if(!document.querySelector('#draft-result').textContent.includes('Review the details, then send the email to RestaBee.'))throw Error('Email handoff instructions missing');if(document.activeElement!==link)throw Error('Draft focus was not moved');'Draft encoding, recipient, focus and handoff passed'"
+    "const req=window.__leadRequest;if(!req||!req.url.endsWith('/api/public/leads')||req.options.method!=='POST'||req.options.headers['Content-Type']!=='application/json')throw Error('Demo lead API request missing');const body=JSON.parse(req.options.body);for(const [key,value] of Object.entries({name:'Test Owner',restaurant:'Test Café & Kitchen',city:'Pune',phone:'9876543210',email:'owner@example.com',outlets:'1',interest:'Split bills & kitchen notes'}))if(body[key]!==value)throw Error('Lead payload mismatch for '+key);if(document.querySelector('#lead-result').hidden||!document.querySelector('#lead-result').textContent.includes('Request sent'))throw Error('API success was not confirmed');'Demo lead endpoint and success state passed'"
   ],
   [
     "eval",
-    "document.querySelector('#restaurant').value='Changed name';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(!document.querySelector('#draft-result').hidden)throw Error('Stale draft retained');'Stale draft invalidation passed'"
+    "document.querySelector('#restaurant').value='Changed name';document.querySelector('#restaurant').dispatchEvent(new Event('input',{bubbles:true}));if(!document.querySelector('#lead-result').hidden)throw Error('Stale response retained');'Stale response invalidation passed'"
   ],
   [
     "eval",
