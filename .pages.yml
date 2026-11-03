@@ -1,0 +1,450 @@
+media:
+  path: public/cms-media
+  input: public/cms-media
+  output: /cms-media
+
+content:
+  - name: marketing-pages
+    label: Marketing pages
+    type: collection
+    path: src/content/pages
+    filename: "{primary}.json"
+    format: json
+    subfolders: false
+    view:
+      primary: pageId
+    fields:
+      - name: pageId
+        label: Page identifier
+        type: string
+        readonly: true
+        required: true
+      - name: seo
+        label: Search and social metadata
+        type: object
+        fields:
+          - name: title
+            label: SEO title
+            type: string
+            required: true
+            options:
+              maxlength: 65
+          - name: description
+            label: Meta description
+            type: text
+            required: true
+            options:
+              maxlength: 170
+          - name: canonical
+            label: Canonical URL
+            type: string
+            required: true
+          - name: keywords
+            label: Target keywords
+            type: string
+            list: true
+      - name: imageAlt
+        label: Image descriptions for accessibility and search
+        type: object
+        fields:
+          - name: kitchenScene
+            type: text
+          - name: floorView
+            type: text
+          - name: kitchenDisplay
+            type: text
+          - name: shift
+            type: text
+          - name: reports
+            type: text
+          - name: menuPhotos
+            type: text
+          - name: menuCompact
+            type: text
+          - name: centralMenu
+            type: text
+          - name: deviceDesktop
+            type: text
+          - name: deviceTablet
+            type: text
+          - name: devicePhone
+            type: text
+          - name: cafeScene
+            type: text
+          - name: orderEntry
+            type: text
+      - name: copy
+        label: Page copy
+        type: object
+        fields:
+          - name: heroKicker
+            label: Hero label
+            type: string
+          - name: heroTitleLead
+            label: Homepage headline, first line
+            type: string
+          - name: heroTitleEnd
+            label: Homepage headline, second line
+            type: string
+          - name: heroTitle
+            label: Feature page headline
+            type: string
+          - name: heroDescription
+            label: Hero introduction
+            type: text
+          - name: heroCta
+            label: Hero action
+            type: string
+          - name: workflowCta
+            label: Workflow action
+            type: string
+          - name: qrCta
+            label: Table QR action
+            type: string
+          - name: demoCta
+            label: Demo action
+            type: string
+          - name: talkCta
+            label: Contact action
+            type: string
+          - name: formSubmit
+            label: Demo form button
+            type: string
+          - name: pricingCta
+            label: Billing page pricing action
+            type: string
+          - name: orderCta
+            label: Billing page workflow link
+            type: string
+          - name: workflowTitle
+            label: Workflow headline
+            type: string
+          - name: workflowDescription
+            label: Workflow description
+            type: text
+          - name: serviceIntro
+            label: Service types introduction
+            type: string
+          - name: featureGlanceKicker
+            label: Capability summary label
+            type: string
+          - name: featureGlanceTitle
+            label: Capability summary headline
+            type: string
+          - name: operationsTitle
+            label: Operations headline
+            type: string
+          - name: operationsDescription
+            label: Operations introduction
+            type: text
+          - name: floorTitle
+            label: Floor feature headline
+            type: string
+          - name: floorDescription
+            label: Floor feature description
+            type: text
+          - name: kitchenTitle
+            label: Kitchen feature headline
+            type: string
+          - name: kitchenDescription
+            label: Kitchen feature description
+            type: text
+          - name: billingTitle
+            label: Billing feature headline
+            type: string
+          - name: billingDescription
+            label: Billing feature description
+            type: text
+          - name: closeShiftTitle
+            label: Shift section headline
+            type: string
+          - name: closeShiftDescription
+            label: Shift section introduction
+            type: text
+          - name: shiftTitle
+            label: Shift card headline
+            type: string
+          - name: shiftDescription
+            label: Shift card description
+            type: text
+          - name: reportsTitle
+            label: Reports card headline
+            type: string
+          - name: reportsDescription
+            label: Reports card description
+            type: text
+          - name: menuPreferenceTitle
+            label: Menu preference headline
+            type: string
+          - name: menuPreferenceDescription
+            label: Menu preference description
+            type: text
+          - name: menuPhotoVariantTitle
+            label: Photo menu option
+            type: string
+          - name: menuPhotoVariantCaption
+            label: Photo menu caption
+            type: string
+          - name: menuCompactVariantTitle
+            label: Compact menu option
+            type: string
+          - name: menuCompactVariantCaption
+            label: Compact menu caption
+            type: string
+          - name: deviceShowcaseNote
+            label: Device showcase note
+            type: string
+          - name: capabilityFootnote
+            label: Capability footnote
+            type: text
+          - name: platformLabel
+            label: Platform list label
+            type: string
+          - name: capabilitiesTitle
+            label: Capability section headline
+            type: string
+          - name: capabilitiesDescription
+            label: Capability section introduction
+            type: text
+          - name: outletsTitle
+            label: Multi-outlet headline
+            type: string
+          - name: outletsDescription
+            label: Multi-outlet description
+            type: text
+          - name: qrTitle
+            label: Table QR headline
+            type: string
+          - name: qrDescription
+            label: Table QR description
+            type: text
+          - name: devicesTitle
+            label: Devices headline
+            type: string
+          - name: devicesDescription
+            label: Devices description
+            type: text
+          - name: pricingTitle
+            label: Pricing headline
+            type: string
+          - name: pricingDescription
+            label: Pricing description
+            type: text
+          - name: singleOutletTitle
+            label: Single-outlet plan name
+            type: string
+          - name: singleOutletSubtitle
+            label: Single-outlet plan summary
+            type: string
+          - name: multiOutletTitle
+            label: Multi-outlet plan name
+            type: string
+          - name: multiOutletSubtitle
+            label: Multi-outlet plan summary
+            type: string
+          - name: multiOutletDescription
+            label: Multi-outlet plan description
+            type: text
+          - name: pricingNote
+            label: Pricing terms note
+            type: text
+          - name: demoIntroTitle
+            label: Demo introduction headline
+            type: string
+          - name: demoIntroDescription
+            label: Demo introduction
+            type: text
+          - name: faqTitle
+            label: FAQ section headline
+            type: string
+          - name: demoTitle
+            label: Demo section headline
+            type: string
+          - name: demoDescription
+            label: Demo section description
+            type: text
+          - name: orderTitle
+            label: Billing page order headline
+            type: string
+          - name: orderDescription
+            label: Billing page order description
+            type: text
+          - name: servicesTitle
+            label: Billing services headline
+            type: string
+          - name: servicesDescription
+            label: Billing services description
+            type: text
+          - name: correctionTitle
+            label: Bill correction headline
+            type: string
+          - name: correctionDescription
+            label: Bill correction description
+            type: text
+          - name: billingScopeTitle
+            label: Billing scope headline
+            type: string
+          - name: billingScopeDescription
+            label: Billing scope description
+            type: text
+          - name: ctaTitle
+            label: Billing call-to-action headline
+            type: string
+          - name: ctaDescription
+            label: Billing call-to-action description
+            type: text
+          - name: detailTitle
+            label: Billing detail section headline
+            type: string
+          - name: screenCaption
+            label: Product screen caption
+            type: string
+          - name: printerNote
+            label: Printer setup note
+            type: text
+          - name: reviewLink
+            label: Correction workflow link
+            type: string
+          - name: pricingLink
+            label: Pricing link
+            type: string
+      - name: faqs
+        label: Frequently asked questions
+        type: object
+        list: true
+        fields:
+          - name: question
+            type: string
+            required: true
+          - name: answer
+            type: text
+            required: true
+      - name: billingLists
+        label: Billing workflow content
+        type: object
+        fields:
+          - name: steps
+            label: Billing steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: serviceTypes
+            label: Service type cards
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: details
+            label: Billing details
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: letter
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+      - name: copyLists
+        label: Page lists and cards
+        type: object
+        fields:
+          - name: serviceTypes
+            label: Service types
+            type: string
+            list: true
+          - name: platforms
+            label: Supported platforms
+            type: string
+            list: true
+          - name: glanceItems
+            label: Capability summary cards
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+              - name: href
+                type: string
+          - name: capabilities
+            label: Capability details
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: teamRoles
+            label: Team role summaries
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: role
+                type: string
+              - name: tasks
+                type: string
+          - name: planInclusions
+            label: Included feature groups
+            type: string
+            list: true
+          - name: outletExamples
+            label: Outlet counts shown in examples
+            type: number
+            list: true
+          - name: demoAgenda
+            label: Demo agenda
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+      - name: plans
+        label: Single-outlet terms
+        type: object
+        list: true
+        fields:
+          - name: months
+            type: number
+            required: true
+          - name: price
+            type: string
+            required: true
+      - name: pricing
+        label: Multi-outlet subscription values
+        type: object
+        fields:
+          - name: multiOutletAnnualPerOutlet
+            label: Annual price per outlet
+            type: string
+          - name: minimumOutlets
+            label: Minimum outlets
+            type: number
+          - name: exampleOutlets
+            label: Outlet counts in total examples
+            type: number
+            list: true

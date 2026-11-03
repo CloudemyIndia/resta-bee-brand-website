@@ -1,0 +1,22 @@
+---
+import Mark from './Mark.astro';
+---
+<footer class="site-footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-cta">
+      <div><p class="footer-eyebrow">FOR THE PEOPLE BEHIND EVERY ORDER</p><h2>Let’s talk about<br/><span>your service.</span></h2></div>
+      <a class="button button-orange" href="/#demo">Book a demo <Mark /></a>
+    </div>
+    <div class="footer-main">
+      <div class="footer-brand-column">
+        <a class="brand" href="/" aria-label="RestaBee home"><img src="/images/restabee-mark.webp" alt="" width="32" height="32" loading="lazy"/><span>restabee<span class="brand-period">.</span></span></a>
+        <p>Restaurant POS for the handoffs between the order, the kitchen and the bill.</p>
+        <div class="footer-contact-links"><a href="mailto:hello@restabee.com"><Mark name="mail"/>hello@restabee.com</a><a href="tel:+919044415050"><Mark name="phone"/>+91 90444 15050</a></div>
+      </div>
+      <nav class="footer-link-group" aria-label="Product links"><h2>Product</h2><a href="/">Restaurant POS overview</a><a href="/features/restaurant-billing-software/">Restaurant billing software</a><a href="/#pricing">Pricing</a><a href="/#workflow">How it works</a></nav>
+      <nav class="footer-link-group" aria-label="Get started links"><h2>Get started</h2><a href="/#faq">Frequently asked questions</a><a href="/#demo">Book a demo</a><a href="https://app.restabee.com">Log in to RestaBee POS</a></nav>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">restabee<span>.</span></div>
+    <div class="footer-bottom"><span>© {new Date().getFullYear()} RestaBee</span><span>Restaurant POS software · India</span><a href="#main">Back to top <Mark name="arrow" /></a></div>
+  </div>
+</footer>

@@ -2,13 +2,15 @@
 import '../styles/home.css';
 import displayFont from '@fontsource-variable/bricolage-grotesque/files/bricolage-grotesque-latin-wght-normal.woff2?url';
 import bodyFont from '@fontsource-variable/instrument-sans/files/instrument-sans-latin-wght-normal.woff2?url';
-interface Props {title?: string; description?: string; robots?: string;}
+interface Props {title?: string; description?: string; robots?: string; canonical?: string; schema?: Record<string, unknown>;}
 const {
   title = 'Restaurant POS for orders, kitchen & billing | RestaBee',
   description = 'From the first order to the final bill. Explore RestaBee restaurant POS for orders, kitchen tickets, table service, billing and multi-outlet menu control.',
   robots = 'index,follow',
+  canonical,
+  schema,
 } = Astro.props;
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const canonicalUrl = canonical ? new URL(canonical) : new URL(Astro.url.pathname, Astro.site);
 const socialImageUrl = new URL('/og-restaurant-pos.png', Astro.site);
 ---
 <!doctype html>
@@ -39,6 +41,7 @@ const socialImageUrl = new URL('/og-restaurant-pos.png', Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:image:alt" content="RestaBee restaurant POS software, from order to bill." />
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   </head>
   <body><a class="skip-link" href="#main">Skip to content</a><slot /></body>
 </html>

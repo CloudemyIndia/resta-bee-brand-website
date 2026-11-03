@@ -149,7 +149,7 @@ Compact, solid actions use the frontmatter variants. Dark actions turn to `#3c45
 Visible labels sit above lightly bordered ticket-paper fields. Fields have a `#cfd2c4` stroke, with placeholders in `#73796a`. The textarea resizes vertically. Mobile field text is (16px), with a minimum field height of (46px). Browser validation and a custom blank-restaurant message support the draft form; there is no separate designed error banner or disabled variant to inherit.
 
 ### Navigation
-A logo, restrained text links and compact demo action share the header row. The mobile menu uses native `details` and `summary`; choosing a link closes it, and Escape closes it and returns focus. Footer navigation remains a simple link row.
+`SiteHeader.astro` and `SiteFooter.astro` render the same navigation and brand footer across routes. The header links to the POS overview, the built billing page, public pricing and demo form; app login remains distinct. The mobile menu uses native `details` and `summary`. Footer links resolve to pages or homepage sections that do not yet have their own route.
 
 ### Disclosures
 FAQ rows use fine top and bottom dividers, readable body text and an inline SVG plus that rotates when open. They retain native disclosure behavior and visible keyboard focus.
@@ -160,8 +160,8 @@ Button groups expose `aria-pressed`. Workflow uses orange selection; the subscri
 ### Paper demonstrations
 The order ticket, kitchen slip, publication sheet, floor tables and collection summary use domain-specific material, spacing and labels. They are authored examples rather than screenshots. The main ticket arrives once over (.7s), and selection changes its tilt over (.3s), using `cubic-bezier(.16,1,.3,1)`. Reduced-motion preferences disable animations and transitions, restore automatic scrolling and remove hover arrow motion.
 
-### Enquiry handoff
-The form prepares a reviewable email draft, then offers the email app and clipboard fallback. The result explicitly says the enquiry has not been sent. Field changes hide an old draft. Keep preparation, review and delivery distinct in both language and visual hierarchy.
+### Enquiry feedback
+Submission results sit in an inset response card with enough space around the message and a visible focus ring when focused programmatically. Error and success states remain visually distinct and readable.
 
 ## Do's and Don'ts
 
@@ -174,5 +174,5 @@ The form prepares a reviewable email draft, then offers the email app and clipbo
 ### Don't:
 - Don't turn illustrative outlets, orders or scenes into customer proof.
 - Don't substitute decorative dashboard controls for meaningful interactions.
-- Don't imply an email draft has delivered an enquiry.
+- Don't make submission error feedback look like a browser-default outline around unpadded text.
 - Don't treat the dark operational passage as a dark-mode implementation.

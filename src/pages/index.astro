@@ -1,41 +1,34 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
 import Mark from '../components/Mark.astro';
-const faqs = [
-  ['Can restaurant POS software handle dine-in, takeaway and delivery orders?', 'Yes. Staff can create orders for each service type and manage the kitchen and billing workflow. Delivery orders are entered by staff; they are not imported from delivery platforms.'],
-  ['Can guests split a bill or pay in different ways?', 'Yes. Eligible unissued items can be arranged into separate draft bills. You can also record several payment methods against one bill. Splitting a bill and splitting a payment are separate actions.'],
-  ['Can I manage menus across several outlets?', 'Prepare a central menu, review and publish changes, then apply the publication to selected outlets. Outlets can also keep independent menus. Team access is scoped to the outlets they handle.'],
-  ['Can I add delivery or packaging charges?', 'Set flat defaults and edit permitted charges for an order. Delivery charges apply to delivery orders; packaging can be selected where applicable. Refund handling follows the configured policy.'],
-  ['Does it support GST billing and UPI?', 'You can configure tax profiles, preview bill tax lines and record UPI, cash or card collections. Payment recording does not automatically verify bank settlement. GST filing and payment-gateway integrations are outside this offer.'],
-  ['What about devices, printers and delivery platforms?', 'Confirm your devices and bill or kitchen-ticket printers during the demo. Printing needs compatible hardware and local setup. Delivery orders are entered by staff; automatic delivery-platform imports are not included.'],
-  ['What does RestaBee restaurant POS software include?', 'Orders, kitchen tickets, table service, billing, menu management, reports and team access are available in one workspace. Request a demo to review the workflows that matter to your restaurant.'],
-  ['How do I get started?', 'Request a demo and share your restaurant name, city, outlet count and the service workflow you want to review. You can discuss your intended devices and printer setup during the conversation.'],
-];
-const plans = [{months:3,price:'2,499'},{months:6,price:'4,299'},{months:12,price:'6,999'}];
-const pageTitle = 'Restaurant POS Software India | Billing & KOT | RestaBee';
-const pageDescription = 'Restaurant POS software for dine-in, takeaway and staff-entered delivery. Manage KOT, tables, GST billing, menus and reports. See prices and book a demo.';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { getEntry } from 'astro:content';
+const pageEntry = await getEntry('pages', 'home');
+if (!pageEntry) throw new Error('CMS content entry "home" is missing.');
+const { seo, copy, faqs, plans = [] } = pageEntry.data;
+const imageAlt = pageEntry.data.imageAlt!;
+const copyLists = pageEntry.data.copyLists!;
+const pricing = pageEntry.data.pricing!;
+const pageTitle = seo.title;
+const pageDescription = seo.description;
+const homeFaqs = faqs.map(({ question, answer }) => [question, answer]);
+const headingParts = (value: string) => value.split('|');
 const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV ? 'http://127.0.0.1:3007' : 'https://api.restabee.com')).replace(/\/+$/, '');
 ---
-<SiteLayout title={pageTitle} description={pageDescription}>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/" aria-label="RestaBee home"><img src="/images/restabee-mark.webp" width="36" height="36" alt="" /><span>restabee<span class="brand-period">.</span></span></a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#capabilities">Product features</a><a href="#workflow">How it works</a><a href="#outlets">Multi-outlet</a><a href="#devices">Across devices</a><a href="#pricing">Pricing</a></nav>
-      <div class="header-actions"><a class="login" href="https://app.restabee.com">Log in</a><a class="button button-dark header-demo" href="#demo">Book a demo <Mark /></a></div>
-      <details class="mobile-menu"><summary aria-label="Open navigation"><Mark name="menu" /></summary><nav aria-label="Mobile navigation"><a href="#capabilities">Product features</a><a href="#workflow">How it works</a><a href="#outlets">Multi-outlet</a><a href="#devices">Across devices</a><a href="#pricing">Pricing</a><a href="https://app.restabee.com">Log in</a><a href="#demo">Book a demo</a></nav></details>
-    </div>
-  </header>
+<SiteLayout title={pageTitle} description={pageDescription} canonical={seo.canonical}>
+  <SiteHeader />
   <main id="main">
     <section class="hero container" aria-labelledby="hero-title">
       <div class="hero-intro">
-        <div><p class="hero-kicker"><span></span>Restaurant POS software for India</p><h1 id="hero-title">Restaurant POS software.<br/> <span>From order to bill.</span></h1></div>
-        <div class="hero-pitch"><p>RestaBee is restaurant POS software for dine-in, takeaway and staff-entered delivery. Take orders, send kitchen tickets, manage tables and record bills in one workspace.</p><div class="hero-actions"><a class="button button-orange" href="#demo">Book a restaurant POS demo <Mark /></a><a class="text-link" href="#workflow">See it in action <Mark name="down" /></a></div></div>
+        <div><p class="hero-kicker"><span></span>{copy.heroKicker}</p><h1 id="hero-title">{copy.heroTitleLead}<br/> <span>{copy.heroTitleEnd}</span></h1></div>
+        <div class="hero-pitch"><p>{copy.heroDescription}</p><div class="hero-actions"><a class="button button-orange" href="#demo">{copy.heroCta} <Mark /></a><a class="text-link" href="#workflow">{copy.workflowCta} <Mark name="down" /></a></div></div>
       </div>
       <div class="service-stage" id="workflow" aria-label="Sample restaurant order">
         <figure class="kitchen-photo">
-          <img src="/images/kitchen-1440.webp" srcset="/images/kitchen-640.webp 640w, /images/kitchen-768.webp 768w, /images/kitchen-960.webp 960w, /images/kitchen-1440.webp 1440w" sizes="(max-width: 700px) calc(100vw - 40px), (min-width: 1440px) 763px, 54vw" width="1440" height="960" alt="A chef finishes a plate of paneer tikka at a restaurant kitchen pass. Illustrative scene." fetchpriority="high" />
+          <img src="/images/kitchen-1440.webp" srcset="/images/kitchen-640.webp 640w, /images/kitchen-768.webp 768w, /images/kitchen-960.webp 960w, /images/kitchen-1440.webp 1440w" sizes="(max-width: 700px) calc(100vw - 40px), (min-width: 1440px) 763px, 54vw" width="1440" height="960" alt={imageAlt.kitchenScene} fetchpriority="high" />
           <div class="photo-caption"><span class="photo-caption-line"></span><p>From the table,<br/>to the final bill.</p><span class="photo-credit">Illustrative restaurant scene</span></div>
-          <div class="photo-order"><span class="pulse-dot"></span>Table T3 <span>·</span> Paneer tikka</div>
+          <div class="photo-order"><span class="pulse-dot"></span>Table T3 <span aria-hidden="true">·</span> Paneer tikka</div>
         </figure>
         <div class="ticket-stage">
           <div class="order-ticket">
@@ -47,36 +40,31 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
           <p class="ticket-disclaimer">Illustrative bill preview · sample amounts</p>
         </div>
       </div>
-      <div class="workflow-story" id="workflow-story"><p class="workflow-label">Bill preview</p><h2>Review the bill before collection.</h2><p>Check item charges and configured tax lines before recording a payment.</p></div>
+      <div class="workflow-story" id="workflow-story"><p class="workflow-label">Bill preview</p><h2>{copy.workflowTitle}</h2><p>{copy.workflowDescription}</p></div>
     </section>
 
-    <section class="service-fit container" aria-label="Service types"><p>For the way<br/> <strong>you serve.</strong></p><ul><li>Dine-in restaurants</li><li>Cafés & counters</li><li>Takeaway</li><li>Staff-entered delivery</li></ul></section>
+    <section class="service-fit container" aria-label="Service types"><p>{copy.serviceIntro}</p><ul>{copyLists.serviceTypes.map((type) => <li>{type}</li>)}</ul></section>
 
     <section class="feature-glance" aria-labelledby="feature-glance-title">
       <div class="container">
-        <div class="feature-glance-heading"><p class="section-kicker">BUILT AROUND RESTAURANT SERVICE</p><h2 id="feature-glance-title">A clear view of the work<br/><span>behind every service.</span></h2></div>
+        <div class="feature-glance-heading"><p class="section-kicker">{copy.featureGlanceKicker}</p><h2 id="feature-glance-title">{headingParts(copy.featureGlanceTitle)[0]}<br/><span>{headingParts(copy.featureGlanceTitle)[1]}</span></h2></div>
         <div class="feature-glance-grid">
-          <article class="glance-item"><span>01</span><div><h3>Floor at a glance</h3><p>See occupied tables, waiting parties and staff assignments in one floor view.</p></div></article>
-          <article class="glance-item"><span>02</span><div><h3>Access by role</h3><p>Choose which workspaces and outlets each team role can access.</p></div></article>
-          <article class="glance-item"><span>03</span><div><h3>Central menu control</h3><p>Review changes, publish to selected outlets and keep local menus where needed.</p></div></article>
-          <article class="glance-item"><span>04</span><div><h3><a href="#qr-ordering">Table QR ordering</a></h3><p>Guests scan a table code to browse the menu and send an order for staff review.</p></div></article>
-          <article class="glance-item"><span>05</span><div><h3>Focused workspaces</h3><p>Separate views for the floor, kitchen, cashier and owner keep daily tasks clear.</p></div></article>
-          <article class="glance-item"><span>06</span><div><h3>Reports by outlet</h3><p>Review sales, collections, tax and cash-shift figures by outlet and date.</p></div></article>
+          {copyLists.glanceItems.map((item) => <article class="glance-item"><span>{item.number}</span><div><h3>{item.href ? <a href={item.href}>{item.title}</a> : item.title}</h3><p>{item.description}</p></div></article>)}
         </div>
-        <div class="platform-line"><span>RestaBee POS apps</span><p>Web <i></i> Android <i></i> iPhone <i></i> Mac <i></i> Windows</p></div>
+        <div class="platform-line"><span>{copy.platformLabel}</span><p>{copyLists.platforms.map((platform, index) => <>{index > 0 && <i></i>}{platform}</>)}</p></div>
       </div>
     </section>
 
     <section class="operations" id="product" aria-labelledby="product-title">
       <div class="container">
-        <div class="operations-intro"><h2 id="product-title">The floor is busy.<br/> <span>The details stay clear.</span></h2><p>A table move, an extra topping, a bill split three ways. RestaBee keeps the work organised through the parts of service that need attention.</p></div>
+        <div class="operations-intro"><h2 id="product-title">{headingParts(copy.operationsTitle)[0]}<br/><span>{headingParts(copy.operationsTitle)[1]}</span></h2><p>{copy.operationsDescription}</p></div>
         <div class="operations-grid">
           <article class="floor-feature">
-            <div class="feature-copy"><h3>Know where every<br/> table stands.</h3><p>See occupied tables, seat waiting parties and assign service staff. Keep table moves and bill requests with the party.</p></div>
-            <figure class="feature-screen floor-screen"><figcaption>Illustrative product screen · sample restaurant data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-floor-view-mobile.webp" width="880" height="1656"/><img src="/pos-images/restabee-restaurant-pos-floor-view-desktop.webp" width="2296" height="1656" alt="RestaBee restaurant POS floor view with table states, reservations and waiting parties." loading="lazy" decoding="async"/></picture></figure>
+            <div class="feature-copy"><h3>{copy.floorTitle}</h3><p>{copy.floorDescription}</p></div>
+            <figure class="feature-screen floor-screen"><figcaption>Illustrative product screen · sample restaurant data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-floor-view-mobile.webp" width="880" height="1656"/><img src="/pos-images/restabee-restaurant-pos-floor-view-desktop.webp" width="2296" height="1656" alt={imageAlt.floorView} loading="lazy" decoding="async"/></picture></figure>
           </article>
-          <article class="kitchen-feature"><div class="feature-copy"><h3>Two clicks.<br/>Order sent to the kitchen.</h3><p>Send each item to its preparation station. Track quantities as they move from preparing to ready for pickup.</p></div><figure class="feature-screen kitchen-screen"><figcaption>Illustrative product screen · sample restaurant data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-kitchen-display-mobile.webp" width="800" height="1656"/><img src="/pos-images/restabee-restaurant-pos-kitchen-display-desktop.webp" width="2488" height="1656" alt="RestaBee restaurant POS kitchen display with new tickets and preparation progress." loading="lazy" decoding="async"/></picture></figure></article>
-          <article class="billing-feature"><div class="feature-copy"><h3>Split the bill.<br/> Keep the record straight.</h3><p>Arrange eligible draft checks before issuing a bill. Record cash, UPI and card collections, including mixed payments.</p><a class="text-link light-link" href="#demo">Book a demo <Mark /></a></div><div class="collection-example"><div class="collection-heading"><span>Sample collection</span><span>Table T3</span></div><div class="collection-total"><span>Bill total</span><strong>₹672<span>.00</span></strong></div><div class="collection-method"><span>Cash recorded</span><b>₹300</b><Mark name="check" /></div><div class="collection-method"><span>UPI recorded</span><b>₹372</b><Mark name="check" /></div><div class="collection-balance"><span>Balance</span><b>₹0</b></div></div></article>
+          <article class="kitchen-feature"><div class="feature-copy"><h3>{copy.kitchenTitle}</h3><p>{copy.kitchenDescription}</p></div><figure class="feature-screen kitchen-screen"><figcaption>Illustrative product screen · sample restaurant data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-kitchen-display-mobile.webp" width="800" height="1656"/><img src="/pos-images/restabee-restaurant-pos-kitchen-display-desktop.webp" width="2488" height="1656" alt={imageAlt.kitchenDisplay} loading="lazy" decoding="async"/></picture></figure></article>
+          <article class="billing-feature"><div class="feature-copy"><h3>{copy.billingTitle}</h3><p>{copy.billingDescription}</p><a class="text-link light-link" href="#demo">{copy.demoCta} <Mark /></a></div><div class="collection-example"><div class="collection-heading"><span>Sample collection</span><span>Table T3</span></div><div class="collection-total"><span>Bill total</span><strong>₹672<span>.00</span></strong></div><div class="collection-method"><span>Cash recorded</span><b>₹300</b><Mark name="check" /></div><div class="collection-method"><span>UPI recorded</span><b>₹372</b><Mark name="check" /></div><div class="collection-balance"><span>Balance</span><b>₹0</b></div></div></article>
         </div>
       </div>
     </section>
@@ -84,17 +72,17 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
     <section class="owner-tools-section" aria-labelledby="owner-tools-title">
       <div class="container">
         <header class="owner-tools-intro">
-          <div><p class="section-kicker">AT CLOSE OF SHIFT</p><h2 id="owner-tools-title">And when service<br/><span>winds down.</span></h2></div>
-          <p>Review cash movement, customer balances and outlet performance after the rush.</p>
+          <div><p class="section-kicker">AT CLOSE OF SHIFT</p><h2 id="owner-tools-title">{headingParts(copy.closeShiftTitle)[0]}<br/><span>{headingParts(copy.closeShiftTitle)[1]}</span></h2></div>
+          <p>{copy.closeShiftDescription}</p>
         </header>
         <div class="owner-tools-grid">
           <article class="owner-shift-card">
-            <div class="owner-card-copy"><p class="owner-card-kicker">SHIFT RECONCILIATION</p><h3>Cash shifts & dues</h3><p>Review opening cash, drawer movements, closing counts and customer balances.</p></div>
-            <figure class="shift-screen"><img src="/pos-images/restabee-pos-my-shift-mobile.webp" width="800" height="1656" alt="RestaBee My Shift screen with drawer reconciliation, cash collected and shift controls." loading="lazy" decoding="async"/><figcaption>My shift · phone</figcaption></figure>
+            <div class="owner-card-copy"><p class="owner-card-kicker">SHIFT RECONCILIATION</p><h3>{copy.shiftTitle}</h3><p>{copy.shiftDescription}</p></div>
+            <figure class="shift-screen"><img src="/pos-images/restabee-pos-my-shift-mobile.webp" width="800" height="1656" alt={imageAlt.shift} loading="lazy" decoding="async"/><figcaption>My shift · phone</figcaption></figure>
           </article>
           <article class="owner-report-card">
-            <div class="owner-card-copy"><p class="owner-card-kicker">OWNER VIEW</p><h3>Reports & team access</h3><p>Review sales and collections by permitted outlet and date. Give each person access to their work.</p></div>
-            <figure class="report-screen"><img src="/pos-images/restabee-pos-reports-mobile.webp" width="800" height="1656" alt="RestaBee mobile Reports screen with sales and collections report categories." loading="lazy" decoding="async"/><figcaption>Reports · phone</figcaption></figure>
+            <div class="owner-card-copy"><p class="owner-card-kicker">OWNER VIEW</p><h3>Reports & team access</h3><p>{copy.reportsDescription}</p></div>
+            <figure class="report-screen"><img src="/pos-images/restabee-pos-reports-mobile.webp" width="800" height="1656" alt={imageAlt.reports} loading="lazy" decoding="async"/><figcaption>Reports · phone</figcaption></figure>
           </article>
         </div>
       </div>
@@ -103,52 +91,45 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
     <section class="menu-preferences" id="menu-preferences" aria-labelledby="menu-preferences-title">
       <div class="container">
         <div class="menu-preferences-heading">
-          <div><p class="section-kicker">A MENU THAT FITS YOUR TEAM</p><h2 id="menu-preferences-title">Photos on or off.<br/><span>Your call.</span></h2></div>
-          <p>Show dish photos in the POS menu, or switch them off for a compact item grid. Each user can choose the view that suits their service.</p>
+          <div><p class="section-kicker">A MENU THAT FITS YOUR TEAM</p><h2 id="menu-preferences-title">{headingParts(copy.menuPreferenceTitle)[0]}<br/><span>{headingParts(copy.menuPreferenceTitle)[1]}</span></h2></div>
+          <p>{copy.menuPreferenceDescription}</p>
         </div>
         <div class="menu-preference-grid">
           <figure class="menu-preference-card menu-preference-photos">
-            <div class="menu-preference-label"><span>01</span><h3>With dish photos</h3></div>
-            <picture><source media="(min-width: 701px)" srcset="/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp" width="1548" height="1016"/><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-with-photos-mobile.webp" width="872" height="1804"/><img src="/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp" width="1548" height="1016" alt="RestaBee restaurant POS menu with dish photos, item prices and an active order." loading="lazy" decoding="async"/></picture>
-            <figcaption>Dish photography in the item grid</figcaption>
+            <div class="menu-preference-label"><span>01</span><h3>{copy.menuPhotoVariantTitle}</h3></div>
+            <picture><source media="(min-width: 701px)" srcset="/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp" width="1548" height="1016"/><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-with-photos-mobile.webp" width="872" height="1804"/><img src="/pos-images/restabee-restaurant-pos-menu-with-photos-desktop.webp" width="1548" height="1016" alt={imageAlt.menuPhotos} loading="lazy" decoding="async"/></picture>
+            <figcaption>{copy.menuPhotoVariantCaption}</figcaption>
           </figure>
           <figure class="menu-preference-card menu-preference-compact">
-            <div class="menu-preference-label"><span>02</span><h3>Without dish photos</h3></div>
-            <picture><source media="(min-width: 951px)" srcset="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656"/><source media="(min-width: 701px) and (max-width: 950px)" srcset="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656"/><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656"/><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt="RestaBee restaurant POS screen with a compact item grid and no dish photos." loading="lazy" decoding="async"/></picture>
-            <figcaption>Compact item grid without photos</figcaption>
+            <div class="menu-preference-label"><span>02</span><h3>{copy.menuCompactVariantTitle}</h3></div>
+            <picture><source media="(min-width: 951px)" srcset="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656"/><source media="(min-width: 701px) and (max-width: 950px)" srcset="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656"/><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656"/><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.menuCompact} loading="lazy" decoding="async"/></picture>
+            <figcaption>{copy.menuCompactVariantCaption}</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <section class="capabilities container" id="capabilities" aria-labelledby="capabilities-title">
-      <div class="capabilities-intro"><p class="section-kicker">Restaurant POS Software, from open to close</p><h2 id="capabilities-title">The everyday work,<br/><span>all in one flow.</span></h2><p>RestaBee connects the order, the people handling it and the record that follows. Every subscription includes released standard POS features.</p></div>
+      <div class="capabilities-intro"><p class="section-kicker">Restaurant POS Software, from open to close</p><h2 id="capabilities-title">{headingParts(copy.capabilitiesTitle)[0]}<br/><span>{headingParts(copy.capabilitiesTitle)[1]}</span></h2><p>{copy.capabilitiesDescription}</p></div>
       <div class="capability-grid">
-        <article><span class="capability-number">01</span><div><h3>Orders with the details intact</h3><p>Take dine-in, takeaway and staff-entered delivery orders. Add variants, modifiers, combos and kitchen instructions before sending items for preparation.</p></div></article>
-        <article><span class="capability-number">02</span><div><h3>Tables and parties in view</h3><p>See table states, seat waiting parties, assign service staff, move a party and record staff-managed reservations. Table readiness and release stay with the team.</p></div></article>
-        <article><span class="capability-number">03</span><div><h3>Kitchen tickets by station</h3><p>Route items to preparation stations. Track full or partial quantities as they move from preparing to ready for pickup; ready, served and paid remain distinct.</p></div></article>
-        <article><span class="capability-number">04</span><div><h3>Billing with configured taxes</h3><p>Preview bills, apply permitted adjustments or discounts and record cash, UPI or card collections. Tax lines follow the restaurant’s configured profiles.</p></div></article>
-        <article><span class="capability-number">05</span><div><h3>Separate checks, clear collections</h3><p>Arrange eligible unissued items into draft checks, or record more than one payment method against a bill. These are separate actions.</p></div></article>
-        <article><span class="capability-number">06</span><div><h3>A menu each outlet can use</h3><p>Prepare central menu changes, review them and publish to selected outlets. Keep an outlet menu independent when local service needs it.</p></div></article>
-        <article><span class="capability-number">07</span><div><h3>Shifts, balances and guest records</h3><p>Review opening cash, drawer movements, shift counts and customer dues. Keep permitted guest details with linked order history—without loyalty or automated campaigns.</p></div></article>
-        <article><span class="capability-number">08</span><div><h3>Reports and access by role</h3><p>Review sales, collections, items, tax and shift variance by permitted outlet and date. Give each team member access to the work they handle.</p></div></article>
+        {copyLists.capabilities.map((item, index) => <article><span class="capability-number">{String(index + 1).padStart(2, '0')}</span><div><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
       </div>
-      <div class="team-roles" aria-label="Restaurant team roles"><p>One service.<br/><strong>Clear next steps.</strong></p><div><span>Floor</span><b>Orders, tables and parties</b></div><div><span>Kitchen</span><b>Station tickets and readiness</b></div><div><span>Cashier</span><b>Bills and recorded payments</b></div><div><span>Owner</span><b>Menus, reports and outlet access</b></div></div>
-      <p class="capability-footnote">Bills and kitchen tickets can be printed with compatible devices after local setup. Confirm intended hardware and printer needs during a demo.</p>
+      <div class="team-roles" aria-label="Restaurant team roles"><p>One service.<br/><strong>Clear next steps.</strong></p>{copyLists.teamRoles.map((item) => <div><span>{item.role}</span><b>{item.tasks}</b></div>)}</div>
+      <p class="capability-footnote">{copy.capabilityFootnote}</p>
     </section>
 
     <section class="outlets container" id="outlets" aria-labelledby="outlets-title">
-      <div class="outlets-copy"><h2 id="outlets-title">Your next outlet.<br/> <span>Your menu, ready.</span></h2><p>Build changes in one place. Review and publish them, then choose which outlets receive the update.</p><p>Keep a menu independent when an outlet needs its own way of doing things.</p><a class="text-link" href="#demo">Book a demo <Mark /></a></div>
-      <figure class="menu-product-screen"><figcaption>Central menu workspace · illustrative catalog data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-central-menu-mobile.webp" width="880" height="1656"/><img src="/pos-images/restabee-restaurant-pos-central-menu-desktop.webp" width="2106" height="1656" alt="RestaBee restaurant POS central menu with shared dishes, publication controls and Paneer Tikka at ₹200 regular." loading="lazy" decoding="async"/></picture></figure>
+      <div class="outlets-copy"><h2 id="outlets-title">{headingParts(copy.outletsTitle)[0]}<br/><span>{headingParts(copy.outletsTitle)[1]}</span></h2><p>{copy.outletsDescription}</p><a class="text-link" href="#demo">{copy.demoCta} <Mark /></a></div>
+      <figure class="menu-product-screen"><figcaption>Central menu workspace · illustrative catalog data</figcaption><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-central-menu-mobile.webp" width="880" height="1656"/><img src="/pos-images/restabee-restaurant-pos-central-menu-desktop.webp" width="2106" height="1656" alt={imageAlt.centralMenu} loading="lazy" decoding="async"/></picture></figure>
     </section>
 
     <section class="qr-ordering-section" id="qr-ordering" aria-labelledby="qr-ordering-title">
       <div class="container qr-ordering-layout">
         <div class="qr-ordering-copy">
           <p class="section-kicker">TABLE QR ORDERING</p>
-          <h2 id="qr-ordering-title">The menu, right at the table.</h2>
-          <p>Guests scan the code at their table to browse the menu and send an order. It appears in your restaurant POS for staff to review and accept before preparation starts.</p>
-          <a class="button button-orange" href="#demo">Discuss table QR ordering <Mark /></a>
+          <h2 id="qr-ordering-title">{copy.qrTitle}</h2>
+          <p>{copy.qrDescription}</p>
+          <a class="button button-orange" href="#demo">{copy.qrCta} <Mark /></a>
         </div>
         <figure class="qr-ordering-visual" aria-labelledby="qr-ordering-visual-caption">
           <div class="qr-table-card" aria-hidden="true"><span class="qr-card-label">TABLE QR ORDERING</span><img class="qr-code-image" src="/pos-images/restabee-table-qr-ordering-code-t3.webp" width="1100" height="1100" alt="" loading="lazy" decoding="async"/><strong>Table T3</strong><small>Scan to browse the menu</small></div>
@@ -163,54 +144,36 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
       <div class="container device-showcase-layout">
         <div class="device-showcase-copy">
           <p class="section-kicker">ONE RESTAURANT WORKSPACE</p>
-          <h2 id="device-showcase-title">The right screen<br/><span>for every part of service.</span></h2>
-          <p>Use the same restaurant POS software on desktop, tablet or phone. Menu items and active orders adapt to each screen.</p>
-          <p class="device-showcase-note">Scroll to see the full POS screen on each device.</p>
+          <h2 id="device-showcase-title">{headingParts(copy.devicesTitle)[0]}<br/><span>{headingParts(copy.devicesTitle)[1]}</span></h2>
+          <p>{copy.devicesDescription}</p>
+          <p class="device-showcase-note">{copy.deviceShowcaseNote}</p>
         </div>
         <div class="device-stage" role="group" aria-label="RestaBee POS menu screens on desktop, tablet and phone">
-          <figure class="device-laptop"><div class="device-laptop-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt="Compact RestaBee POS order screen on desktop." loading="lazy" decoding="async"/></div><div class="device-laptop-base"></div><figcaption>POS menu · desktop</figcaption></figure>
-          <figure class="device-tablet"><div class="device-tablet-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656" alt="Compact RestaBee POS order screen on tablet." loading="lazy" decoding="async"/></div><figcaption>POS menu · tablet</figcaption></figure>
-          <figure class="device-mobile"><div class="device-mobile-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656" alt="Compact RestaBee POS order screen on phone." loading="lazy" decoding="async"/></div><figcaption>POS menu · phone</figcaption></figure>
+          <figure class="device-laptop"><div class="device-laptop-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.deviceDesktop} loading="lazy" decoding="async"/></div><div class="device-laptop-base"></div><figcaption>POS menu · desktop</figcaption></figure>
+          <figure class="device-tablet"><div class="device-tablet-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656" alt={imageAlt.deviceTablet} loading="lazy" decoding="async"/></div><figcaption>POS menu · tablet</figcaption></figure>
+          <figure class="device-mobile"><div class="device-mobile-bezel"><img src="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656" alt={imageAlt.devicePhone} loading="lazy" decoding="async"/></div><figcaption>POS menu · phone</figcaption></figure>
         </div>
       </div>
     </section>
 
     <section class="pricing-section" id="pricing" aria-labelledby="pricing-title"><div class="container">
-      <div class="pricing-heading"><h2 id="pricing-title">Full POS access.<br/> Straightforward pricing.</h2><p>Released standard POS features in every subscription. No feature-based upgrade tiers.<br/> Choose how long you need them.</p></div>
+      <div class="pricing-heading"><h2 id="pricing-title">{headingParts(copy.pricingTitle)[0]}<br/>{headingParts(copy.pricingTitle)[1]}</h2><p>{copy.pricingDescription}</p></div>
       <div class="pricing-layout">
-        <article class="single-plan"><div class="plan-heading"><h3>One outlet</h3><span>Complete access. One restaurant.</span></div><div class="term-switch" role="group" aria-label="Single outlet subscription term">{plans.map(plan=><button type="button" data-term={plan.months} aria-pressed={plan.months===12} aria-controls="single-price">{plan.months} months</button>)}</div><div class="price" id="single-price" aria-live="polite" aria-atomic="true"><strong data-price>₹6,999</strong><span><span data-total-period>total payable for 12 months</span><small data-monthly-equivalent>₹583 per month equivalent</small></span></div><ul class="plan-includes"><li><Mark name="check"/>Orders, KOT & table service</li><li><Mark name="check"/>Billing, collections & cash shifts</li><li><Mark name="check"/>Menu management, reports & team access</li></ul><a class="button button-dark" href="#demo" data-plan-link="Single outlet, 12 months, ₹6,999">Book a demo <Mark /></a><noscript><p class="static-prices">3 months: ₹2,499 (₹833/month equivalent) · 6 months: ₹4,299 (₹717/month equivalent) · 12 months: ₹6,999 (₹583/month equivalent)</p></noscript></article>
-        <article class="multi-plan"><div class="plan-heading"><h3>Multi-outlet</h3><span>Complete access across your group.</span></div><div class="multi-price"><strong>₹5,999</strong><span>per outlet / year</span></div><p class="multi-plan-copy">All released standard POS features, with central menu publication and outlet-scoped access.</p><div class="multi-example"><span>2 outlets · annual total</span><strong>₹11,998</strong></div><div class="outlet-price-examples" aria-label="Multi-outlet annual price examples"><span>3 outlets <b>₹17,997</b></span><span>5 outlets <b>₹29,995</b></span><span>10 outlets <b>₹59,990</b></span></div><p class="minimum-term">Annual billing. Minimum two outlets.</p><a class="button button-outline" href="#demo" data-plan-link="Multi-outlet, annual, ₹5,999 per outlet">Book a demo <Mark /></a></article>
+        <article class="single-plan"><div class="plan-heading"><h3>{copy.singleOutletTitle}</h3><span>{copy.singleOutletSubtitle}</span></div><div class="term-switch" role="group" aria-label="Single outlet subscription term">{plans.map(plan=><button type="button" data-term={plan.months} data-price={plan.price} data-monthly={Math.round(Number(plan.price.replaceAll(',', '')) / plan.months)} aria-pressed={plan.months===12} aria-controls="single-price">{plan.months} months</button>)}</div><div class="price" id="single-price" aria-live="polite" aria-atomic="true"><strong data-price>₹{plans.find((plan) => plan.months === 12)?.price}</strong><span><span data-total-period>total payable for 12 months</span><small data-monthly-equivalent>₹{Math.round(Number(plans.find((plan) => plan.months === 12)?.price.replaceAll(',', '') || 0) / 12)} per month equivalent</small></span></div><ul class="plan-includes">{copyLists.planInclusions.map((item) => <li><Mark name="check"/>{item}</li>)}</ul><a class="button button-dark" href="#demo" data-plan-link={`Single outlet, 12 months, ₹${plans.find((plan) => plan.months === 12)?.price}`}>{copy.demoCta} <Mark /></a><noscript><p class="static-prices">{plans.map((plan) => `${plan.months} months: ₹${plan.price} (₹${Math.round(Number(plan.price.replaceAll(',', '')) / plan.months)}/month equivalent)`).join(' · ')}</p></noscript></article>
+        <article class="multi-plan"><div class="plan-heading"><h3>{copy.multiOutletTitle}</h3><span>{copy.multiOutletSubtitle}</span></div><div class="multi-price"><strong>₹{pricing.multiOutletAnnualPerOutlet}</strong><span>per outlet / year</span></div><p class="multi-plan-copy">{copy.multiOutletDescription}</p><div class="multi-example"><span>{pricing.minimumOutlets} outlets · annual total</span><strong>₹{(Number(pricing.multiOutletAnnualPerOutlet.replaceAll(',', '')) * pricing.minimumOutlets).toLocaleString('en-IN')}</strong></div><div class="outlet-price-examples" aria-label="Multi-outlet annual price examples">{pricing.exampleOutlets.filter((count) => count !== pricing.minimumOutlets).map((count) => <span>{count} outlets <b>₹{(Number(pricing.multiOutletAnnualPerOutlet.replaceAll(',', '')) * count).toLocaleString('en-IN')}</b></span>)}</div><p class="minimum-term">Annual billing. Minimum {pricing.minimumOutlets} outlets.</p><a class="button button-outline" href="#demo" data-plan-link={`Multi-outlet, annual, ₹${pricing.multiOutletAnnualPerOutlet} per outlet`}>{copy.demoCta} <Mark /></a></article>
       </div>
-      <p class="pricing-note">Prices are complete payable subscription amounts, with no GST added separately. Hardware, third-party services and custom work are quoted separately. Planned modules are not yet released.</p>
+      <p class="pricing-note">{copy.pricingNote}</p>
     </div></section>
 
-    <section class="demo-check container" aria-labelledby="demo-check-title"><figure><img src="/images/cafe-960.webp" srcset="/images/cafe-640.webp 640w, /images/cafe-960.webp 960w" sizes="(max-width: 700px) 100vw, 44vw" width="960" height="640" loading="lazy" decoding="async" alt="A café owner places a coffee on a table. Illustrative restaurant scene."/><figcaption>Illustrative restaurant scene</figcaption></figure><div><h2 id="demo-check-title">Make the demo<br/> about your restaurant.</h2><p>You know where service gets complicated. Bring those moments to the conversation.</p><ul class="demo-agenda"><li><div><h3>Walk through an order</h3><p>Item choices, kitchen instructions and the bill.</p></div></li><li><div><h3>Check your setup</h3><p>Tables, stations, intended devices and printers.</p></div></li><li><div><h3>Understand the subscription</h3><p>Your outlet count, term and anything quoted separately.</p></div></li></ul><a class="text-link" href="#demo">Book a demo <Mark /></a></div></section>
+    <section class="demo-check container" aria-labelledby="demo-check-title"><figure><img src="/images/cafe-960.webp" srcset="/images/cafe-640.webp 640w, /images/cafe-960.webp 960w" sizes="(max-width: 700px) 100vw, 44vw" width="960" height="640" loading="lazy" decoding="async" alt={imageAlt.cafeScene}/><figcaption>Illustrative restaurant scene</figcaption></figure><div><h2 id="demo-check-title">{headingParts(copy.demoIntroTitle)[0]}<br/>{headingParts(copy.demoIntroTitle)[1]}</h2><p>{copy.demoIntroDescription}</p><ul class="demo-agenda">{copyLists.demoAgenda.map((item) => <li><div><h3>{item.title}</h3><p>{item.description}</p></div></li>)}</ul><a class="text-link" href="#demo">{copy.demoCta} <Mark /></a></div></section>
 
-    <section class="faq container" id="faq" aria-labelledby="faq-title"><div class="faq-intro"><h2 id="faq-title">Before you<br/> make the call.</h2><a class="text-link" href="tel:+919044415050">Talk to us <Mark name="phone" /></a></div><div class="questions">{faqs.map(([q,a])=><details><summary>{q}<Mark name="plus" /></summary><p>{a}</p></details>)}</div></section>
+    <section class="faq container" id="faq" aria-labelledby="faq-title"><div class="faq-intro"><h2 id="faq-title">{headingParts(copy.faqTitle)[0]}<br/>{headingParts(copy.faqTitle)[1]}</h2><a class="text-link" href="tel:+919044415050">{copy.talkCta} <Mark name="phone" /></a></div><div class="questions">{homeFaqs.map(([q,a])=><details><summary>{q}<Mark name="plus" /></summary><p>{a}</p></details>)}</div></section>
 
-    <section class="demo-section" id="demo" aria-labelledby="demo-title"><div class="container demo-layout"><div class="demo-copy"><h2 id="demo-title">Your restaurant<br/> has a rhythm.<br/> <span>Let's find the fit.</span></h2><p>Tell us a little about your place. We can start with the parts of service that matter to you.</p><div class="contact-links"><a href="tel:+919044415050"><Mark name="phone"/>+91 90444 15050</a><a href="mailto:hello@restabee.com"><Mark name="mail"/>hello@restabee.com</a></div></div>
-      <div class="enquiry-panel"><h3>Book a demo</h3><p class="form-intro">Share your restaurant and the best way to reach you.</p><form id="demo-form" data-api-base={apiBaseUrl}><div class="form-row"><div class="form-field"><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" placeholder="Name" required /></div><div class="form-field"><label for="restaurant">Restaurant name</label><input id="restaurant" name="restaurant" autocomplete="organization" maxlength="100" placeholder="Restaurant or café" required /></div></div><div class="form-row"><div class="form-field"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" maxlength="100" placeholder="City" required /></div><div class="form-field"><label for="contact-phone">Phone number</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="Best callback number" required /></div></div><div class="form-row"><div class="form-field"><label for="contact-email">Your email <span>Optional</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com" /></div><div class="form-field"><label for="outlet-count">Outlets</label><select id="outlet-count" name="outlets" required><option value="" selected disabled>Select outlet count</option><option value="1">1 outlet</option><option value="2 to 5">2 to 5 outlets</option><option value="6+">6 or more outlets</option><option value="Opening soon">Opening soon</option></select></div></div><div class="form-field"><label for="demo-interest">What would you like to see? <span>Optional</span></label><textarea id="demo-interest" name="interest" maxlength="600" rows="2" placeholder="Kitchen tickets, split bills, managing menus…"></textarea></div><button class="button button-orange form-submit" type="submit"><span>Send demo request</span><Mark /></button><p class="form-help" id="form-help">Your request will be sent to RestaBee when you submit this form.</p></form><noscript><p class="no-script-contact">Email <a href="mailto:hello@restabee.com?subject=RestaBee%20demo%20request">hello@restabee.com</a> with your name, restaurant, city, callback number and outlet count to arrange a demo.</p></noscript><div class="draft-result" id="lead-result" tabindex="-1" hidden role="status" aria-live="polite"><h4 id="lead-result-title"></h4><p id="lead-result-message"></p><a class="text-link" id="lead-email-fallback" href="mailto:hello@restabee.com" hidden>Email hello@restabee.com <Mark name="mail" /></a></div></div>
+    <section class="demo-section" id="demo" aria-labelledby="demo-title"><div class="container demo-layout"><div class="demo-copy"><h2 id="demo-title">{headingParts(copy.demoTitle)[0]}<br/>{headingParts(copy.demoTitle)[1]}<br/> <span>{headingParts(copy.demoTitle)[2]}</span></h2><p>{copy.demoDescription}</p><div class="contact-links"><a href="tel:+919044415050"><Mark name="phone"/>+91 90444 15050</a><a href="mailto:hello@restabee.com"><Mark name="mail"/>hello@restabee.com</a></div></div>
+      <div class="enquiry-panel"><h3>Book a demo</h3><p class="form-intro">Share your restaurant and the best way to reach you.</p><form id="demo-form" data-api-base={apiBaseUrl}><div class="form-row"><div class="form-field"><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" placeholder="Name" required /></div><div class="form-field"><label for="restaurant">Restaurant name</label><input id="restaurant" name="restaurant" autocomplete="organization" maxlength="100" placeholder="Restaurant or café" required /></div></div><div class="form-row"><div class="form-field"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" maxlength="100" placeholder="City" required /></div><div class="form-field"><label for="contact-phone">Phone number</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="Best callback number" required /></div></div><div class="form-row"><div class="form-field"><label for="contact-email">Your email <span>Optional</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com" /></div><div class="form-field"><label for="outlet-count">Outlets</label><select id="outlet-count" name="outlets" required><option value="" selected disabled>Select outlet count</option><option value="1">1 outlet</option><option value="2 to 5">2 to 5 outlets</option><option value="6+">6 or more outlets</option><option value="Opening soon">Opening soon</option></select></div></div><div class="form-field"><label for="demo-interest">What would you like to see? <span>Optional</span></label><textarea id="demo-interest" name="interest" maxlength="600" rows="2" placeholder="Kitchen tickets, split bills, managing menus…"></textarea></div><button class="button button-orange form-submit" type="submit" data-initial-label={copy.formSubmit}><span>{copy.formSubmit}</span><Mark /></button><p class="form-help" id="form-help">Your request will be sent to RestaBee when you submit this form.</p></form><noscript><p class="no-script-contact">Email <a href="mailto:hello@restabee.com?subject=RestaBee%20demo%20request">hello@restabee.com</a> with your name, restaurant, city, callback number and outlet count to arrange a demo.</p></noscript><div class="draft-result" id="lead-result" tabindex="-1" hidden role="status" aria-live="polite"><h4 id="lead-result-title"></h4><p id="lead-result-message"></p><a class="text-link" id="lead-email-fallback" href="mailto:hello@restabee.com" hidden>Email hello@restabee.com <Mark name="mail" /></a></div></div>
     </div></section>
   </main>
-  <footer class="site-footer" aria-label="Site footer">
-    <div class="container">
-      <div class="footer-cta">
-        <div><p class="footer-eyebrow">FOR THE PEOPLE BEHIND EVERY ORDER</p><h2>Let’s talk about<br/><span>your service.</span></h2></div>
-        <a class="button button-orange" href="#demo">Book a demo <Mark /></a>
-      </div>
-      <div class="footer-main">
-        <div class="footer-brand-column">
-          <a class="brand" href="/" aria-label="RestaBee home"><img src="/images/restabee-mark.webp" alt="" width="32" height="32" loading="lazy"/><span>restabee<span class="brand-period">.</span></span></a>
-          <p>Restaurant POS for the handoffs between the order, the kitchen and the bill.</p>
-          <div class="footer-contact-links"><a href="mailto:hello@restabee.com"><Mark name="mail"/>hello@restabee.com</a><a href="tel:+919044415050"><Mark name="phone"/>+91 90444 15050</a></div>
-        </div>
-        <nav class="footer-link-group" aria-label="Product links"><h2>Product</h2><a href="#workflow">How it works</a><a href="#capabilities">POS features</a><a href="#outlets">Multi-outlet</a><a href="#devices">Across devices</a><a href="#pricing">Pricing</a></nav>
-        <nav class="footer-link-group" aria-label="Get started links"><h2>Get started</h2><a href="#faq">Frequently asked questions</a><a href="#demo">Book a demo</a><a href="https://app.restabee.com">Log in to RestaBee POS</a></nav>
-      </div>
-      <div class="footer-wordmark" aria-hidden="true">restabee<span>.</span></div>
-      <div class="footer-bottom"><span>© {new Date().getFullYear()} RestaBee</span><span>Restaurant POS software · India</span><a href="#main">Back to top <Mark name="arrow" /></a></div>
-    </div>
-  </footer>
+  <SiteFooter />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -245,9 +208,7 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
     const setText=(selector:string,value:string)=>{const element=document.querySelector(selector);if(element)element.textContent=value;};
     function buttonGroup(buttons:HTMLButtonElement[],change:(index:number)=>void){buttons.forEach((button,index)=>{button.addEventListener('click',()=>change(index));button.addEventListener('keydown',event=>{let next=index;if(event.key==='ArrowRight'||event.key==='ArrowDown')next=(index+1)%buttons.length;else if(event.key==='ArrowLeft'||event.key==='ArrowUp')next=(index-1+buttons.length)%buttons.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=buttons.length-1;else return;event.preventDefault();change(next);buttons[next]?.focus();});});}
     const terms=[...document.querySelectorAll<HTMLButtonElement>('[data-term]')];
-    const priceByTerm:Record<string,string>={'3':'2,499','6':'4,299','12':'6,999'};
-    const equivalentByTerm:Record<string,string>={'3':'₹833','6':'₹717','12':'₹583'};
-    buttonGroup(terms,index=>{const months=terms[index].dataset.term!;terms.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));setText('[data-price]',`₹${priceByTerm[months]}`);setText('[data-total-period]',`total payable for ${months} months`);setText('[data-monthly-equivalent]',`${equivalentByTerm[months]} per month equivalent`);const link=document.querySelector<HTMLElement>('.single-plan [data-plan-link]');if(link)link.dataset.planLink=`Single outlet, ${months} months, ₹${priceByTerm[months]}`;});
+    buttonGroup(terms,index=>{const button=terms[index];const months=button.dataset.term!;const price=button.dataset.price!;const monthly=button.dataset.monthly!;terms.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===index)));setText('[data-price]',`₹${price}`);setText('[data-total-period]',`total payable for ${months} months`);setText('[data-monthly-equivalent]',`₹${monthly} per month equivalent`);const link=document.querySelector<HTMLElement>('.single-plan [data-plan-link]');if(link)link.dataset.planLink=`Single outlet, ${months} months, ₹${price}`;});
     document.querySelectorAll<HTMLAnchorElement>('[data-plan-link]').forEach(link=>link.addEventListener('click',()=>{const outlets=document.querySelector<HTMLSelectElement>('#outlet-count');if(outlets)outlets.value=(link.dataset.planLink||'').startsWith('Multi')?'2 to 5':'1';const result=document.querySelector<HTMLElement>('#lead-result');if(result)result.hidden=true;}));
     const menu=document.querySelector<HTMLDetailsElement>('.mobile-menu');menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.open=false;}));document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu?.open){menu.open=false;menu.querySelector('summary')?.focus();}});
     const form=document.querySelector<HTMLFormElement>('#demo-form');
@@ -256,7 +217,7 @@ const apiBaseUrl = (import.meta.env.PUBLIC_API_BASE_URL || (import.meta.env.DEV 
     form?.addEventListener('submit',async event=>{event.preventDefault();if(!form.reportValidity()||form.dataset.submitting==='true')return;const data=new FormData(form);const payload={name:String(data.get('name')||'').trim(),restaurant:String(data.get('restaurant')||'').trim(),city:String(data.get('city')||'').trim(),phone:String(data.get('phone')||'').trim(),email:String(data.get('email')||'').trim(),outlets:String(data.get('outlets')||''),interest:String(data.get('interest')||'').trim()};const button=form.querySelector<HTMLButtonElement>('.form-submit');const label=button?.querySelector('span');form.dataset.submitting='true';form.setAttribute('aria-busy','true');if(button){button.disabled=true;if(label)label.textContent='Sending…';}if(result)result.hidden=true;
       const controller=new AbortController();const timeout=window.setTimeout(()=>controller.abort(),15000);
       try{const response=await fetch(`${form.dataset.apiBase}/api/public/leads`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal});const body=await response.json() as {success?:boolean;message?:string;reason?:string;errors?:Record<string,string|string[]>};if(body.success===true){formMessage('Request sent',body.message||'Thank you. Our team will contact you to arrange a demo.');form.reset();}else if(body.reason==='INVALID_REQUEST'){let firstInvalid:HTMLInputElement|HTMLSelectElement|HTMLTextAreaElement|null=null;for(const[field,raw]of Object.entries(body.errors||{})){const control=form.elements.namedItem(field);const message=Array.isArray(raw)?raw.join(' '):raw;if(typeof message==='string'&&(control instanceof HTMLInputElement||control instanceof HTMLSelectElement||control instanceof HTMLTextAreaElement)){control.setCustomValidity(message);firstInvalid??=control;}}formMessage('Check your details',body.message||'Please review the highlighted fields and try again.');if(firstInvalid){firstInvalid.focus();form.reportValidity();}}else{const message=body.reason==='LIMIT_EXCEEDED'?body.message||'Too many demo requests. Please try again later.':body.reason==='WORKFLOW_NOT_READY'?body.message||'Demo requests are temporarily unavailable. Please contact us by email.':body.message||'We could not send your request just now. Please try again or contact us by email.';formMessage('Request not sent',message,true);}
-      }catch{formMessage('Request not sent','We could not connect to RestaBee. Please try again or contact us by email.',true);}finally{window.clearTimeout(timeout);delete form.dataset.submitting;form.removeAttribute('aria-busy');if(button){button.disabled=false;if(label)label.textContent='Send demo request';}}
+      }catch{formMessage('Request not sent','We could not connect to RestaBee. Please try again or contact us by email.',true);}finally{window.clearTimeout(timeout);delete form.dataset.submitting;form.removeAttribute('aria-busy');if(button){button.disabled=false;if(label)label.textContent=button.dataset.initialLabel||'Send demo request';}}
     });
     const clearFieldError=(event:Event)=>{const target=event.target;if(target instanceof HTMLInputElement||target instanceof HTMLSelectElement||target instanceof HTMLTextAreaElement)target.setCustomValidity('');if(result)result.hidden=true;};
     form?.addEventListener('input',clearFieldError);

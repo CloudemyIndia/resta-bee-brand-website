@@ -38,11 +38,25 @@ class VisibleMainText(HTMLParser):
 
 if not PAGE.is_file():
     raise SystemExit('Build the static site first: npm run build')
+document = PAGE.read_text()
 parser = VisibleMainText()
-parser.feed(PAGE.read_text())
+parser.feed(document)
 text = ' '.join(' '.join(parser.parts).split())
 word_count = len(WORD.findall(text))
 phrase_count = len(PHRASE.findall(text))
 density = phrase_count / word_count * 100 if word_count else 0
 print(f'Primary phrase: restaurant POS')
 print(f'Visible homepage body: {phrase_count} occurrences / {word_count} words = {density:.3f}%')
+title = re.search(r'<title>(.*?)</title>', document, re.IGNORECASE | re.DOTALL)
+keyword_text = f'{title.group(1) if title else ""} {text}'
+supporting = [
+    'restaurant pos software',
+    'restaurant pos software india',
+    'pos software for restaurant',
+    'restaurant pos systems',
+    'restaurant pos system',
+]
+print('Supporting keyword coverage (visible copy or title):')
+for keyword in supporting:
+    count = len(re.findall(r'(?<!\w)' + re.escape(keyword) + r'(?!\w)', keyword_text, re.IGNORECASE))
+    print(f'  {keyword}: {count}')

@@ -4,7 +4,7 @@ Public product marketing and demo acquisition for restaurant operators.
 - Read [docs/STATUS.md](docs/STATUS.md) first on every task; it alone owns current implementation and verification state.
 - [PRODUCT.md](PRODUCT.md): durable product context and evidence links.
 - [DESIGN.md](DESIGN.md): visual system and performance constraints.
-- [Homepage handoff](docs/RESTABEE-HOMEPAGE-BRIEF.md): standalone SEO, keyword and content brief based on supplied docs; excludes visual design and implementation status.
+- [SEO page expansion plan](docs/plans/seo-page-expansion.md): page analysis, keyword ownership, build order and content strategy; not implementation status.
 - [SEO keyword and page map](docs/master%20docs/RestaBee-SEO-Keyword-Page-Map.xlsx): supplied research workbook; retain as original input.
 - [Public pricing](docs/master%20docs/RestaBee-Public-Pricing.docx): customer-facing pricing authority.
 - [Internal sales pricing policy](docs/master%20docs/RestaBee-Internal-Sales-Pricing-Policy.docx): confidential; never publish.
@@ -28,15 +28,20 @@ Public product marketing and demo acquisition for restaurant operators.
 - [Primary keyword copy and image names](docs/decisions/0026-primary-keyword-copy-and-image-names.md): applies “restaurant POS” naturally to key homepage sections and descriptive filenames while preserving image mappings.
 - [GitHub Pages hosting and SEO release](docs/decisions/0027-github-pages-hosting-and-seo-release.md): initial static-site publishing through GitHub Actions and the release SEO baseline.
 - [llms.txt site guide](docs/decisions/0028-llms-txt-site-guide.md): concise public guide for agents, kept separate from crawler policy and sitemap.
+- [SEO page expansion](docs/decisions/0030-seo-page-expansion.md): intent-specific page sequence and the continuing rule not to move or trim homepage sections before review; its temporary copy hold is superseded by decision 0032.
+- [CMS-ready Astro content](docs/decisions/0031-cms-ready-astro-content.md): keep page composition in Astro and model editor-controlled content with validated collections.
+- [Homepage copy and CMS migration](docs/decisions/0032-homepage-copy-and-cms-migration.md): current subscription wording, keyword-led homepage corrections, and the partial supersession of decision 0030’s copy hold.
+- [Astro page release gates](docs/decisions/0033-astro-page-release-gates.md): page-first CMS modeling and the required SEO, contrast, accessibility and responsive checks before review.
+- [Content and Astro authoring standards](docs/content-and-cms-standards.md): required keyword research, humanized brand copy, SEO/performance release checks, CMS-ready page modeling and shared visual patterns.
 - [docs/decisions/](docs/decisions/): numbered decisions, immutable after use.
 - [docs/BACKLOG.md](docs/BACKLOG.md): decided, unbuilt work.
 - [docs/runbook.md](docs/runbook.md): local commands, deployment and recovery.
-- [feature brief](docs/landing-page-features.md): proposed copy; never release approval.
 ## Stack
-Astro, TypeScript and static output; verified-on 2026-10-27 through package-lock.json and npm run check/build. src/pages owns routes; src/components reusable UI; src/styles theme; public contains publishable assets only.
+Astro 7.4.1, TypeScript and static output; verified-on 2026-11-03 through `npm ls astro` and `npm run check && npm run build`. `src/pages` owns routes; `src/components` reusable UI; `src/styles` theme; `public` contains publishable assets only.
 ## Hard rules
 Never run git add/commit/push or undo staging. Leave changes unstaged.
 Never publish internal sales documents, invented proof, unsupported integrations or offline claims.
 Label synthetic interface demonstrations. Keep marketing and POS deployment targets separate.
 Read capability evidence before publishing claims. Do not silently resolve contradictory intent; ask and log in STATUS Unresolved.
+Apply the content and Astro authoring standards to every new or revised public page; consult the matching keyword-map row, keep Astro Content Collections and Pages CMS fields aligned, and pass SEO, contrast, accessibility and responsive checks before review. Use the Humanizer skill for page copy. Treat trust-begging or defensive proof language as RED ALERT: notify the user and correct it within the authorized scope.
 Only this file defines documentation authority. Date/scope/test every status claim. Link facts instead of duplicating them. Delete shipped plans after extracting durable decisions.

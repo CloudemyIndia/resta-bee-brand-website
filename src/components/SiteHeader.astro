@@ -1,0 +1,26 @@
+---
+import Mark from './Mark.astro';
+const path = Astro.url.pathname;
+const billingPath = '/features/restaurant-billing-software/';
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="RestaBee home"><img src="/images/restabee-mark.webp" width="36" height="36" alt=""/><span>restabee<span class="brand-period">.</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="/" aria-current={path === '/' ? 'page' : undefined}>POS overview</a>
+      <a href={billingPath} aria-current={path === billingPath ? 'page' : undefined}>Billing software</a>
+      <a href="/#pricing">Pricing</a>
+    </nav>
+    <div class="header-actions"><a class="login" href="https://app.restabee.com">Log in</a><a class="button button-dark header-demo" href="/#demo">Book a demo <Mark /></a></div>
+    <details class="mobile-menu">
+      <summary aria-label="Navigation menu"><Mark name="menu" /></summary>
+      <nav aria-label="Mobile navigation">
+        <a href="/" aria-current={path === '/' ? 'page' : undefined}>POS overview</a>
+        <a href={billingPath} aria-current={path === billingPath ? 'page' : undefined}>Billing software</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/#demo">Book a demo</a>
+        <a href="https://app.restabee.com">Log in</a>
+      </nav>
+    </details>
+  </div>
+</header>

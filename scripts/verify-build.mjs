@@ -3,6 +3,39 @@ import assert from 'node:assert/strict';
 const walk = (p) => readdirSync(p).flatMap(n => {const f = `${p}/${n}`;return statSync(f).isDirectory() ? walk(f) : [f];});
 const files = walk('dist');
 assert(!files.some(f => /\.(docx|xlsx|md)$/.test(f)), 'Private/source documents must not ship');
+const pagesCms = readFileSync('.pages.yml', 'utf8');
+const collectionFieldsAt = pagesCms.indexOf('    fields:\n');
+assert(collectionFieldsAt >= 0, 'Pages CMS marketing collection has a fields list');
+const cmsFieldPaths = new Set();
+const fieldStack = [];
+for (const line of pagesCms.slice(collectionFieldsAt).split('\n')) {
+  const field = line.match(/^(\s*)- name:\s*([A-Za-z0-9_-]+)\s*$/);
+  if (!field) continue;
+  const indent = field[1].length;
+  while (fieldStack.length && fieldStack.at(-1).indent >= indent) fieldStack.pop();
+  const name = field[2];
+  cmsFieldPaths.add([...fieldStack.map(item => item.name), name].join('.'));
+  fieldStack.push({ indent, name });
+}
+const contentFieldPaths = new Set();
+const collectContentFields = (value, prefix = '') => {
+  if (Array.isArray(value)) {
+    for (const item of value) if (item && typeof item === 'object') collectContentFields(item, prefix);
+    return;
+  }
+  if (!value || typeof value !== 'object') return;
+  for (const [name, item] of Object.entries(value)) {
+    const path = prefix ? `${prefix}.${name}` : name;
+    contentFieldPaths.add(path);
+    collectContentFields(item, path);
+  }
+};
+const pageContentFiles = readdirSync('src/content/pages').filter(file => file.endsWith('.json'));
+assert(pageContentFiles.length > 0, 'Astro page content entries exist');
+for (const file of pageContentFiles) collectContentFields(JSON.parse(readFileSync(`src/content/pages/${file}`, 'utf8')));
+for (const path of contentFieldPaths) assert(cmsFieldPaths.has(path), `Pages CMS is missing content field ${path}`);
+for (const path of cmsFieldPaths) assert(contentFieldPaths.has(path), `Pages CMS field ${path} is unused by page content`);
+console.log(`Pages CMS fields match ${pageContentFiles.length} Astro page content entries.`);
 const home = readFileSync('dist/index.html', 'utf8');
 assert.equal((home.match(/<h1[\s>]/g) || []).length, 1, 'Exactly one H1');
 assert(home.includes('Illustrative'), 'Mockups must be labelled');
@@ -33,10 +66,30 @@ assert(readFileSync('dist/images/restabee-mark.webp').length > 1000, 'Organizati
 const robots = readFileSync('dist/robots.txt', 'utf8');
 assert(robots.includes('User-agent: *') && robots.includes('Allow: /') && robots.includes('Sitemap: https://restabee.com/sitemap.xml'), 'robots.txt permits crawling and references the canonical sitemap');
 const llms = readFileSync('dist/llms.txt', 'utf8');
-assert(llms.startsWith('# RestaBee') && llms.includes('https://restabee.com/#capabilities') && llms.includes('https://restabee.com/#pricing'), 'llms.txt provides public product context and links');
+assert(llms.startsWith('# RestaBee') && llms.includes('https://restabee.com/#capabilities') && llms.includes('https://restabee.com/#pricing') && llms.includes('https://restabee.com/features/restaurant-billing-software/'), 'llms.txt provides public product context and links');
 const sitemap = readFileSync('dist/sitemap.xml', 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-assert.deepEqual(sitemapUrls, ['https://restabee.com/'], 'Sitemap contains only the canonical public homepage');
+assert.deepEqual(sitemapUrls, ['https://restabee.com/', 'https://restabee.com/features/restaurant-billing-software/'], 'Sitemap contains the canonical public routes');
+const billing = readFileSync('dist/features/restaurant-billing-software/index.html', 'utf8');
+assert.equal((billing.match(/<h1[\s>]/g) || []).length, 1, 'Billing page has exactly one H1');
+assert(billing.includes('<title>Restaurant Billing Software in India | RestaBee</title>'), 'Billing page title targets its primary feature and India modifier');
+const billingTitle = billing.match(/<title>(.*?)<\/title>/)?.[1] || '';
+const billingDescription = billing.match(/<meta name="description" content="([^"]*)"/)?.[1] || '';
+assert(billingTitle.length <= 60 && billingDescription.length <= 160 && billingDescription.length > 0, 'Billing page title and description stay within editorial length limits');
+assert(billing.includes('<link rel="canonical" href="https://restabee.com/features/restaurant-billing-software/"'), 'Billing page has a self-canonical');
+assert(billing.includes('Configured tax profiles') && billing.includes('eligible unissued checks') && billing.includes('automatic reconciliation with banks'), 'Billing copy includes supported scope and payment boundary');
+const billingJsonLd = billing.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+assert(billingJsonLd && billing.indexOf('application/ld+json') < billing.indexOf('</head>') && !billing.includes('aggregateRating'), 'Billing page has in-head JSON-LD without invented ratings');
+const billingSchema = JSON.parse(billingJsonLd);
+assert.equal(billingSchema['@type'], 'WebPage', 'Billing route uses WebPage schema');
+assert.equal(billingSchema.breadcrumb['@type'], 'BreadcrumbList', 'Billing route schema describes its visible breadcrumb');
+for (const image of [...billing.matchAll(/<img\b[^>]*>/g)].map(match => match[0])) assert(/\balt=/.test(image) && /\bwidth=/.test(image) && /\bheight=/.test(image), 'Billing page images have alt text and reserved dimensions');
+const commonBlock = (html, tag) => html.match(new RegExp(`<${tag} class="site-${tag}"[\\s\\S]*?<\\/${tag}>`))?.[0]?.replaceAll(' aria-current="page"', '');
+assert.equal(commonBlock(home, 'header'), commonBlock(billing, 'header'), 'Homepage and feature page share the same route-oriented header');
+assert.equal(commonBlock(home, 'footer'), commonBlock(billing, 'footer'), 'Homepage and feature page share the same footer');
+assert(billing.includes('/pos-images/restabee-restaurant-pos-menu-desktop.webp') && billing.includes('/pos-images/restabee-restaurant-pos-menu-tablet.webp') && billing.includes('/pos-images/restabee-restaurant-pos-menu-mobile.webp'), 'Billing page uses the matching desktop, tablet and phone order-entry screens');
+assert(billing.includes('billing-order') && billing.includes('billing-services') && billing.includes('billing-corrections') && billing.includes('billing-faq'), 'Billing page covers order entry, service types, correction workflow and billing FAQs');
+assert((billing.match(/<details\b/g) || []).length >= 7, 'Billing page answers common billing and collection questions');
 const notFound = readFileSync('dist/404.html', 'utf8');
 assert(notFound.includes('<meta name="robots" content="noindex,follow"'), '404 page is noindex');
 const ids = new Set([...home.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));

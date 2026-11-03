@@ -1,0 +1,70 @@
+{
+  "pageId": "restaurant-billing-software",
+  "seo": {
+    "title": "Restaurant Billing Software in India | RestaBee",
+    "description": "Restaurant billing software in India for bill preparation, configured tax, eligible draft checks and payment records. Explore RestaBee’s workflow.",
+    "canonical": "https://restabee.com/features/restaurant-billing-software/",
+    "keywords": ["restaurant billing software", "billing software for restaurant", "restaurant billing software india", "restaurant billing system", "restaurant billing app", "billing software for restaurant in india"]
+  },
+  "copy": {
+    "heroKicker": "Restaurant billing software",
+    "heroTitle": "Restaurant billing software, from order to|payment.",
+    "heroDescription": "For restaurant teams in India, RestaBee restaurant billing software keeps order review, bill preparation and payment records in one configured workflow.",
+    "heroCta": "See billing in a demo",
+    "pricingCta": "View pricing",
+    "orderCta": "See the full restaurant POS workflow",
+    "demoCta": "Book a demo",
+    "workflowTitle": "From order detail to|payment record.",
+    "workflowDescription": "Restaurant billing software keeps the order, its items and collection history together in the restaurant billing system.",
+    "orderTitle": "Start with an itemised restaurant|order.",
+    "orderDescription": "Restaurant POS billing starts with the order staff enter. Add menu items and their choices, review quantities and keep the service context with the order before moving to bill preview and collection.",
+    "servicesTitle": "Bills for dine-in,|takeaway and delivery.",
+    "servicesDescription": "Keep the order type visible from entry through bill preparation, with staff completing each handoff in the restaurant POS.",
+    "detailTitle": "The details that keep|the bill in context.",
+    "correctionTitle": "Corrections keep|their own record.",
+    "correctionDescription": "Corrections to issued restaurant bills follow a separate workflow. Some require approval and create a new record. Credit notes and refunds are recorded as distinct steps.",
+    "billingScopeTitle": "Bills and|payment records.",
+    "billingScopeDescription": "RestaBee calculates displayed tax from configured restaurant profiles and records collections entered by staff. GST filing, e-invoice and e-way bill creation, and automatic reconciliation with banks, UPI networks, gateways or card terminals sit outside this billing workflow.",
+    "faqTitle": "A few useful details.",
+    "ctaTitle": "See billing in the|full workflow.",
+    "ctaDescription": "Follow an order through service, kitchen handoff and collection in a guided product demo.",
+    "screenCaption": "Add items and quantities before preparing the bill.",
+    "printerNote": "Set up a compatible printer for the chosen device.",
+    "reviewLink": "Review correction workflows in a demo",
+    "pricingLink": "See public subscription pricing"
+  },
+  "billingLists": {
+    "steps": [
+      { "number": "01", "title": "Review items", "description": "Check the order, quantities and applicable charges before preparing a bill." },
+      { "number": "02", "title": "Prepare the bill", "description": "Preview configured tax lines and apply permitted discounts or final-amount adjustments." },
+      { "number": "03", "title": "Record collection", "description": "Record cash, UPI or card, including mixed or partial collections." },
+      { "number": "04", "title": "Follow the balance", "description": "Keep an outstanding balance visible and record a later collection when it arrives." }
+    ],
+    "serviceTypes": [
+      { "number": "01 / Dine-in", "title": "Bill the table’s order", "description": "Keep item quantities and the table party together while the team reviews the bill and records one or more collections." },
+      { "number": "02 / Takeaway", "title": "Close a counter order", "description": "Enter the takeaway order in the POS, prepare its bill and record the payment through the cashier workflow." },
+      { "number": "03 / Delivery", "title": "Record staff-entered delivery", "description": "Restaurant staff create delivery orders and continue through bill preparation and collection." }
+    ],
+    "details": [
+      { "letter": "A", "title": "Configured tax profiles", "description": "Configured tax profiles determine the tax shown for each restaurant and menu item." },
+      { "letter": "B", "title": "Eligible draft checks", "description": "Prepare eligible checks and allocate item quantities before issue. Corrections to an issued bill follow a separate workflow." },
+      { "letter": "C", "title": "Discounts and final adjustments", "description": "Apply permitted flat or percentage discounts before tax, or an authorized final-amount adjustment when preparing the bill." },
+      { "letter": "D", "title": "Collection and balance records", "description": "Record cash, UPI and card collections, combine payment methods or leave an outstanding invoice balance for later collection." }
+    ]
+  },
+  "imageAlt": {
+    "orderEntry": "RestaBee restaurant POS order entry screen with a menu grid, selected items, quantities and collection controls."
+  },
+  "faqs": [
+    { "question": "Can RestaBee create bills for dine-in and takeaway orders?", "answer": "Yes. RestaBee supports staff-entered dine-in, takeaway and delivery orders, then bill preview and issue through the permitted workflow." },
+    { "question": "Can I configure restaurant tax profiles and preview tax lines?", "answer": "Tax lines follow the profiles configured for the restaurant and its items. Staff can review the calculated tax before issuing a bill." },
+    { "question": "Can one restaurant bill be split between guests?", "answer": "Staff can separate eligible unissued checks into drafts before issue. Splitting checks and splitting payment across methods are different workflows; issued bills follow the correction process." },
+    { "question": "Can staff record cash, UPI and card together?", "answer": "Staff can record cash, UPI and card collections, including mixed and partial payments." },
+    { "question": "Can the team collect an outstanding customer balance later?", "answer": "RestaBee records the amount due and lets staff add a later collection against that balance." },
+    { "question": "Can staff correct an issued restaurant invoice?", "answer": "Authorized staff correct issued bills through a separate workflow. Some corrections require approval and create a separate record. Credit notes and refunds are recorded as distinct steps." },
+    { "question": "Can I print restaurant bills from the POS?", "answer": "Set up a compatible printer for the chosen device, then print bills from the POS." },
+    { "question": "Billing software for restaurant in India: what should I check?", "answer": "Compare how each system handles order details, configured tax, discounts and payment records. RestaBee keeps those steps in one restaurant workflow." },
+    { "question": "What should a restaurant billing app include?", "answer": "A useful restaurant billing app should keep the order, bill and collection record together. In RestaBee, staff review the order and configured charges before issuing a bill." },
+    { "question": "How do I add delivery orders?", "answer": "Restaurant staff enter delivery orders in the POS, then prepare the bill and record collection in the same workflow." }
+  ]
+}

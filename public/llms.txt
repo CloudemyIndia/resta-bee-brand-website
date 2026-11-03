@@ -7,6 +7,7 @@ The public website describes RestaBee's product capabilities and current public 
 ## Website
 
 - [Restaurant POS software homepage](https://restabee.com/): Product overview, features, supported workflows, pricing, FAQs and demo enquiry.
+- [Restaurant billing software](https://restabee.com/features/restaurant-billing-software/): Bill preview and issue, configured tax profiles, eligible draft checks, payment records and outstanding balances.
 
 ## Product sections
 
