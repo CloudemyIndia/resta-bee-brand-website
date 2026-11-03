@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://restabee.com/</loc></url><url><loc>https://restabee.com/features/restaurant-billing-software/</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://restabee.com/</loc></url>
+  <url><loc>https://restabee.com/features/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-billing-software/</loc></url>
+  <url><loc>https://restabee.com/pricing/</loc></url>
+  <url><loc>https://restabee.com/features/kitchen-display-system/</loc></url>
+  <url><loc>https://restabee.com/features/kot-management/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-menu-management/</loc></url>
+  <url><loc>https://restabee.com/features/multi-outlet-restaurant-management/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-order-management/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-table-management/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-cash-management/</loc></url>
+  <url><loc>https://restabee.com/features/restaurant-sales-reports/</loc></url>
+  <url><loc>https://restabee.com/solutions/cafe-pos/</loc></url>
+  <url><loc>https://restabee.com/restaurant-management-software/</loc></url>
+  <url><loc>https://restabee.com/contact/</loc></url>
+  <url><loc>https://restabee.com/privacy-policy/</loc></url>
+</urlset>

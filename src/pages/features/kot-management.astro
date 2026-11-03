@@ -1,0 +1,122 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../components/Mark.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const pageEntry = await getEntry('pages', 'kot-management');
+if (!pageEntry) throw new Error('CMS content entry "kot-management" is missing.');
+const { seo, copy, kotLists, imageAlt } = pageEntry.data;
+if (!kotLists) throw new Error('KOT content validation failed: add the workflow steps, ticket details, comparison rows and FAQs to the kotLists content field.');
+if (!imageAlt?.kotKitchenQueue) throw new Error('KOT content validation failed: add descriptive alt text at imageAlt.kotKitchenQueue.');
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web, Android, iOS, macOS, Windows' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Kitchen order ticket system', item: seo.canonical },
+  ] },
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="kot-page">
+    <nav class="breadcrumbs container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><a href="/features/kitchen-display-system/">Kitchen display</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span></nav>
+
+    <section class="kot-hero container" aria-labelledby="kot-title">
+      <div class="kot-hero-copy">
+        <p class="kot-kicker"><span aria-hidden="true"></span>{copy.heroKicker}</p>
+        <h1 id="kot-title">{copy.heroTitle}</h1>
+        <p class="kot-lede">{copy.heroDescription}</p>
+        <div class="kot-actions"><a class="button button-orange" href="/#demo">{copy.heroCta}<Mark /></a><a class="text-link" href="#kot-workflow">{copy.workflowCta}<Mark name="down" /></a></div>
+      </div>
+      <figure class="kot-screen">
+        <figcaption><span>{copy.screenLabel}</span><span>{copy.screenDataLabel}</span></figcaption>
+        <div class="kot-device-shell"><div class="kot-bezel"><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-kitchen-display-mobile.webp" width="800" height="1656"/><img src="/pos-images/restabee-restaurant-pos-kitchen-display-desktop.webp" width="2488" height="1656" alt={imageAlt.kotKitchenQueue} loading="eager" decoding="async" fetchpriority="high"/></picture></div><div class="kot-monitor-stand" aria-hidden="true"><span></span></div></div>
+      </figure>
+    </section>
+
+    <section class="kot-definition container" aria-labelledby="kot-definition-title">
+      <div class="kot-definition-copy">
+        <p class="kot-kicker">{copy.definitionKicker}</p>
+        <h2 id="kot-definition-title">{copy.definitionTitle}</h2>
+        <p>{copy.definitionBodyOne}</p>
+        <p>{copy.definitionBodyTwo}</p>
+        <p>{copy.definitionBodyThree}</p>
+      </div>
+      <aside class="kot-definition-aside" aria-label={copy.sampleOrderLabel}>
+        <p class="kot-aside-label">{copy.screenDataLabel}</p>
+        <p class="kot-aside-table">T3</p>
+        <p class="kot-aside-item">Paneer Tikka <span>× 2</span></p>
+        <p class="kot-aside-note">“extra spicy”</p>
+        <p class="kot-aside-ref">KOT-000057</p>
+      </aside>
+    </section>
+
+    <section class="kot-workflow" id="kot-workflow" aria-labelledby="kot-workflow-title">
+      <div class="container">
+        <header class="kot-section-heading"><p class="kot-kicker">{copy.workflowKicker}</p><h2 id="kot-workflow-title">{copy.workflowTitle}</h2><p>{copy.workflowDescription}</p></header>
+        <ol class="kot-workflow-list" aria-label={copy.handoffListLabel}>{kotLists.workflowSteps.map((step) => <li><span class="kot-step-number">{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol>
+      </div>
+    </section>
+
+    <section class="kot-routing container" aria-labelledby="kot-routing-title">
+      <div class="kot-routing-copy"><p class="kot-kicker">{copy.routingKicker}</p><h2 id="kot-routing-title">{copy.routingTitle}</h2><p>{copy.routingBodyOne}</p><p>{copy.routingBodyTwo}</p></div>
+      <div class="kot-ticket-panel">
+        <div class="kot-panel-heading"><span aria-hidden="true">01</span><h3>{copy.ticketTitle}</h3></div>
+        <p>{copy.ticketDescription}</p>
+        <ul aria-label={copy.detailsListLabel}>{kotLists.ticketDetails.map((item) => <li><Mark name="check"/><div><h4>{item.title}</h4><p>{item.description}</p></div></li>)}</ul>
+      </div>
+    </section>
+
+    <section class="kot-changes" aria-labelledby="kot-changes-title">
+      <div class="container kot-changes-inner">
+        <div><p class="kot-kicker">{copy.changeKicker}</p><h2 id="kot-changes-title">{copy.changeTitle}</h2><p>{copy.changeDescription}</p></div>
+        <a class="text-link" href="/features/kitchen-display-system/">{copy.kdsLinkLabel}<Mark /></a>
+      </div>
+    </section>
+
+    <section class="kot-print container" aria-labelledby="kot-print-title">
+      <div class="kot-print-heading"><p class="kot-kicker">{copy.printKicker}</p><h2 id="kot-print-title">{copy.printTitle}</h2></div>
+      <div class="kot-print-copy"><p>{copy.printDescriptionOne}</p><p>{copy.printDescriptionTwo}</p><p>{copy.printDescriptionThree}</p><a class="text-link" href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a></div>
+    </section>
+
+    <section class="kot-comparison" aria-labelledby="kot-comparison-title">
+      <div class="container">
+        <header class="kot-section-heading"><p class="kot-kicker">{copy.comparisonKicker}</p><h2 id="kot-comparison-title">{copy.comparisonTitle}</h2><p>{copy.comparisonDescription}</p></header>
+        <div class="kot-table-wrap"><table aria-label={copy.comparisonTableLabel}><thead><tr><th scope="col">Workflow part</th><th scope="col">What it does</th></tr></thead><tbody>{kotLists.comparisonRows.map((row) => <tr><th scope="row">{row.name}</th><td>{row.purpose}</td></tr>)}</tbody></table></div>
+      </div>
+    </section>
+
+    <section class="kot-faq container" aria-labelledby="kot-faq-title">
+      <div class="kot-faq-intro"><p class="kot-kicker">{copy.faqKicker}</p><h2 id="kot-faq-title">{copy.faqTitle}</h2><p>{copy.faqDescription}</p></div>
+      <div class="kot-faq-list">{kotLists.faqs.map(({ question, answer }) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+    </section>
+
+    <section class="kot-cta"><div class="container kot-cta-inner"><div><p class="kot-kicker">{copy.ctaKicker}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaDescription}</p></div><a class="button button-orange" href="/#demo">{copy.demoCta}<Mark /></a></div></section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+<style>
+  .kot-page{overflow:hidden}.breadcrumbs{display:flex;align-items:center;gap:9px;padding-top:20px;font-size:12px;color:var(--muted)}.breadcrumbs a{text-decoration:underline;text-decoration-color:#afb3a8;text-underline-offset:3px}.breadcrumbs [aria-current=page]{color:var(--ink)}
+  .kot-kicker{display:flex;align-items:center;gap:10px;color:var(--orange-ink);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.kot-kicker>span{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+  .kot-hero{display:grid;grid-template-columns:minmax(330px,.78fr) minmax(0,1.22fr);gap:clamp(38px,6vw,82px);align-items:center;padding-block:66px 75px}.kot-hero h1{max-width:620px;font-size:clamp(49px,5.3vw,72px);line-height:1.035;letter-spacing:-.045em;margin-top:20px}.kot-lede{max-width:565px;margin-top:20px;color:#51574e;font-size:16px;line-height:1.8}.kot-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap;margin-top:27px}.kot-actions .button{gap:20px}.kot-screen{min-width:0;background:#f1eee5;border:1px solid #dedacd;border-radius:16px;padding:17px 18px 15px;box-shadow:0 22px 46px -36px #252a2480}.kot-screen figcaption{display:flex;justify-content:space-between;gap:14px;margin:0 0 12px;color:#4f554c;font-size:11px}.kot-screen figcaption span:first-child{font-weight:700;color:var(--ink)}.kot-device-shell{padding-bottom:0}.kot-bezel{overflow:hidden;border:8px solid #252a24;border-radius:14px;background:#20231f;box-shadow:0 14px 26px -20px #252a2480}.kot-bezel picture,.kot-bezel img{display:block;width:100%;height:auto}.kot-bezel img{border-radius:4px}.kot-monitor-stand{width:28%;height:24px;margin:auto;background:linear-gradient(#c7c8c0,#8a8d84);clip-path:polygon(35% 0,65% 0,76% 82%,100% 82%,100% 100%,0 100%,0 82%,24% 82%)}.kot-monitor-stand span{display:block;width:170%;height:5px;margin:18px 0 0 -35%;background:#7c8076;border-radius:5px}
+  .kot-definition{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.65fr);gap:clamp(45px,8vw,120px);align-items:center;padding-block:73px 86px;border-top:1px solid var(--line)}.kot-definition-copy h2,.kot-routing h2,.kot-print h2,.kot-changes h2,.kot-section-heading h2,.kot-faq h2,.kot-cta h2{font-size:clamp(38px,4.6vw,60px);line-height:1.08;letter-spacing:-.04em;margin-top:17px}.kot-definition-copy>p:not(.kot-kicker){max-width:700px;color:#51574e;font-size:15px;line-height:1.85;margin-top:17px}.kot-definition-aside{background:#f2efe7;border:1px solid #dedacd;border-radius:13px;padding:23px 25px}.kot-aside-label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#5c6258}.kot-aside-table{font:600 42px/1 var(--display);letter-spacing:-.04em;margin-top:20px}.kot-aside-item{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #dcded5;padding-top:14px;margin-top:14px;font-size:17px;font-weight:650}.kot-aside-item span{font-variant-numeric:tabular-nums}.kot-aside-note{color:#565d52;font-size:14px;margin-top:7px}.kot-aside-ref{font:600 12px/1.3 var(--body);letter-spacing:.04em;color:#5a604f;margin-top:19px}
+  .kot-workflow{background:#252b24;color:#f6f5ef;padding-block:79px 85px}.kot-workflow .kot-kicker,.kot-comparison .kot-kicker{color:#ffb17d}.kot-section-heading{max-width:760px}.kot-section-heading>p:last-child{max-width:700px;color:#d0d4ca;font-size:15px;line-height:1.8;margin-top:16px}.kot-workflow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;margin-top:39px;border-top:1px solid #60665b}.kot-workflow-list li{min-height:225px;padding:21px 21px 0 0;border-right:1px solid #60665b}.kot-workflow-list li+li{padding-left:22px}.kot-workflow-list li:last-child{border-right:0}.kot-step-number{font-size:11px;color:#ffb17d;font-weight:700}.kot-workflow-list h3{font-size:21px;line-height:1.24;margin-top:26px}.kot-workflow-list p{max-width:255px;margin-top:10px;font-size:13px;line-height:1.75;color:#d0d4ca}
+  .kot-routing{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(42px,7vw,92px);align-items:start;padding-block:88px}.kot-routing-copy h2{max-width:570px}.kot-routing-copy>p:not(.kot-kicker){max-width:590px;color:#51574e;font-size:15px;line-height:1.85;margin-top:18px}.kot-ticket-panel{padding:26px 28px;background:#f3f0e8;border:1px solid #dedacd;border-radius:13px}.kot-panel-heading{display:flex;align-items:start;gap:14px}.kot-panel-heading>span{flex:none;font-size:11px;color:#a43e15;font-weight:700}.kot-panel-heading h3{font-size:22px;line-height:1.25}.kot-ticket-panel>p{color:#51574e;font-size:14px;line-height:1.75;margin-top:13px}.kot-ticket-panel ul{list-style:none;border-top:1px solid #d8d9cf;margin-top:19px}.kot-ticket-panel li{display:grid;grid-template-columns:18px 1fr;gap:12px;padding:15px 0;border-bottom:1px solid #d8d9cf}.kot-ticket-panel li>svg{width:16px;height:16px;color:#287441;margin-top:3px}.kot-ticket-panel h4{font-size:15px}.kot-ticket-panel li p{color:#51574e;font-size:12px;line-height:1.7;margin-top:4px}
+  .kot-changes{background:#e7ebdf;padding-block:69px}.kot-changes .kot-kicker{color:#a43e15}.kot-changes-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:end}.kot-changes h2{max-width:670px}.kot-changes-inner>div>p:last-child{max-width:700px;color:#42493f;font-size:15px;line-height:1.8;margin-top:16px}.kot-changes .text-link{display:inline-flex;white-space:nowrap;margin-bottom:5px}
+  .kot-print{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(40px,7vw,98px);padding-block:87px}.kot-print-heading h2{max-width:520px}.kot-print-copy>p{color:#51574e;font-size:14px;line-height:1.85;margin-bottom:15px}.kot-print-copy .text-link{display:inline-flex;margin-top:5px}
+  .kot-comparison{background:#252b24;color:#f6f5ef;padding-block:80px 88px}.kot-comparison .kot-section-heading>p:last-child{max-width:700px}.kot-table-wrap{overflow-x:auto;margin-top:34px;border:1px solid #5d655b;border-radius:12px}.kot-table-wrap table{width:100%;border-collapse:collapse;text-align:left}.kot-table-wrap th,.kot-table-wrap td{padding:18px 20px;border-bottom:1px solid #50584f;font-size:14px;line-height:1.7;vertical-align:top}.kot-table-wrap th{font-size:12px;color:#ffb17d;text-align:left;font-weight:700}.kot-table-wrap thead th{background:#30372f}.kot-table-wrap tbody tr:last-child th,.kot-table-wrap tbody tr:last-child td{border-bottom:0}.kot-table-wrap tbody th{width:30%;color:#fff;font-size:14px}.kot-table-wrap td{color:#d0d4ca}
+  .kot-faq{display:grid;grid-template-columns:minmax(220px,.72fr) minmax(0,1.28fr);gap:clamp(36px,7vw,88px);padding-block:83px}.kot-faq-intro h2{max-width:420px}.kot-faq-intro>p:last-child{color:#51574e;font-size:14px;line-height:1.75;margin-top:15px}.kot-faq-list details{border-top:1px solid var(--line)}.kot-faq-list details:last-child{border-bottom:1px solid var(--line)}.kot-faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:64px;cursor:pointer;list-style:none;font-size:14px;line-height:1.5;font-weight:650}.kot-faq-list summary::-webkit-details-marker{display:none}.kot-faq-list summary span{font-size:24px;font-weight:400;color:var(--orange-ink);flex:none}.kot-faq-list details[open] summary span{transform:rotate(45deg)}.kot-faq-list details>p{padding:0 35px 18px 0;color:#51574e;font-size:13px;line-height:1.8}
+  .kot-cta{background:#f0caa8;padding-block:61px}.kot-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.kot-cta .kot-kicker{color:#783516}.kot-cta h2{max-width:700px}.kot-cta-inner>div>p:last-child{max-width:570px;color:#493e35;font-size:14px;line-height:1.75;margin-top:14px}.kot-cta .button{flex:none}
+  @media(max-width:1100px){.kot-hero{grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:34px}.kot-monitor-stand{display:none}.kot-workflow-list{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:25px}.kot-workflow-list li:nth-child(2){border-right:0}.kot-workflow-list li:nth-child(3){padding-left:0}.kot-workflow-list li{min-height:190px}}
+  @media(max-width:950px){.kot-hero{grid-template-columns:1fr;padding-block:58px 65px}.kot-hero-copy{max-width:760px}.kot-hero h1{max-width:740px;font-size:clamp(48px,8vw,66px)}.kot-definition{grid-template-columns:1fr;gap:30px;padding-block:60px}.kot-definition-aside{max-width:520px}.kot-routing,.kot-print{grid-template-columns:1fr;gap:35px;padding-block:65px}.kot-changes-inner{grid-template-columns:1fr;gap:22px}.kot-faq{gap:38px}}
+  @media(max-width:700px){.breadcrumbs{padding-top:14px;font-size:10px;gap:7px}.kot-hero{padding-block:43px 55px;gap:27px}.kot-hero h1{font-size:clamp(42px,11vw,58px);margin-top:17px}.kot-lede{font-size:14px;margin-top:16px}.kot-actions{display:grid;grid-template-columns:1fr;gap:13px;margin-top:22px}.kot-actions .button{width:100%;justify-content:space-between}.kot-screen{padding:13px 11px 12px;border-radius:13px}.kot-screen figcaption{font-size:9px;gap:8px;margin-bottom:11px}.kot-bezel{max-width:310px;margin-inline:auto;padding:6px;border-width:2px;border-radius:25px}.kot-bezel img{border-radius:18px}.kot-definition{padding-block:51px 58px}.kot-definition-copy h2,.kot-routing h2,.kot-print h2,.kot-changes h2,.kot-section-heading h2,.kot-faq h2,.kot-cta h2{font-size:clamp(35px,9vw,46px)}.kot-definition-copy>p:not(.kot-kicker){font-size:14px}.kot-definition-aside{padding:19px 20px}.kot-workflow{padding-block:58px 64px}.kot-section-heading>p:last-child{font-size:14px}.kot-workflow-list{grid-template-columns:1fr;margin-top:28px;row-gap:0}.kot-workflow-list li,.kot-workflow-list li+li{min-height:0;padding:17px 0;border-right:0;border-bottom:1px solid #60665b}.kot-workflow-list li:last-child{border-bottom:0}.kot-workflow-list h3{font-size:19px;margin-top:10px}.kot-workflow-list p{font-size:13px;max-width:none}.kot-routing{padding-block:56px;gap:27px}.kot-routing-copy>p:not(.kot-kicker){font-size:14px}.kot-ticket-panel{padding:20px 18px}.kot-panel-heading h3{font-size:19px}.kot-ticket-panel li p{font-size:12px}.kot-changes{padding-block:56px}.kot-changes-inner>div>p:last-child{font-size:14px}.kot-print{padding-block:58px;gap:26px}.kot-print-copy>p{font-size:13px}.kot-comparison{padding-block:58px 65px}.kot-table-wrap{margin-top:25px}.kot-table-wrap th,.kot-table-wrap td{padding:13px 12px;font-size:12px}.kot-table-wrap tbody th{font-size:12px;width:36%}.kot-faq{grid-template-columns:1fr;gap:21px;padding-block:60px}.kot-faq-list summary{min-height:61px;font-size:13px}.kot-faq-list details>p{font-size:12px}.kot-cta{padding-block:49px}.kot-cta-inner{display:grid;grid-template-columns:1fr;gap:23px}.kot-cta-inner>div>p:last-child{font-size:13px}.kot-cta .button{width:100%;justify-content:space-between}}
+  @media(prefers-reduced-motion:reduce){.kot-faq-list summary span{transition:none}.kot-faq-list details[open] summary span{transform:none}}
+</style>

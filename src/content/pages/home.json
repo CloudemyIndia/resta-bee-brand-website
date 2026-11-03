@@ -4,7 +4,14 @@
     "title": "Restaurant POS Software India | Billing & KOT | RestaBee",
     "description": "Restaurant POS software for dine-in, takeaway and staff-entered delivery. Manage KOT, tables, GST billing, menus and reports. See prices and book a demo.",
     "canonical": "https://restabee.com/",
-    "keywords": ["restaurant POS", "restaurant POS software", "restaurant POS software India", "POS software for restaurant", "restaurant POS systems", "restaurant POS system"]
+    "keywords": [
+      "restaurant POS",
+      "restaurant POS software",
+      "restaurant POS software India",
+      "POS software for restaurant",
+      "restaurant POS systems",
+      "restaurant POS system"
+    ]
   },
   "copy": {
     "heroKicker": "Restaurant POS software for India",
@@ -17,38 +24,37 @@
     "demoCta": "Book a demo",
     "talkCta": "Talk to us",
     "formSubmit": "Send demo request",
+    "formPrivacy": "Read how we handle your information in the",
     "workflowTitle": "Review the bill before collection.",
     "workflowDescription": "Check item charges and configured tax lines before recording a payment.",
-    "serviceIntro": "For the way you serve.",
-    "featureGlanceKicker": "Built around restaurant service",
-    "featureGlanceTitle": "A clear view of the work|behind every service.",
+    "serviceIntro": "A restaurant POS for the way you serve.",
+    "featureGlanceKicker": "Restaurant work, connected",
+    "featureGlanceTitle": "Tools for every part of service.",
     "operationsTitle": "The floor is busy.|The details stay clear.",
-    "operationsDescription": "A table move, an extra topping, a bill split three ways. RestaBee keeps the work organised through the parts of service that need attention.",
+    "operationsDescription": "RestaBee restaurant POS systems connect the floor, kitchen and billing in a shared order flow, so teams can see the work in front of them.",
     "floorTitle": "Know where every table stands.",
     "floorDescription": "See occupied tables, seat waiting parties and assign service staff. Keep table moves and bill requests with the party.",
     "kitchenTitle": "Two clicks. Order sent to the kitchen.",
     "kitchenDescription": "Send each item to its preparation station. Track quantities as they move from preparing to ready for pickup.",
-    "billingTitle": "Split the bill. Keep the record straight.",
-    "billingDescription": "Arrange eligible draft checks before issuing a bill. Record cash, UPI and card collections, including mixed payments.",
-    "closeShiftTitle": "And when service|winds down.",
-    "closeShiftDescription": "Review cash movement, customer balances and outlet performance after the rush.",
-    "shiftTitle": "Cash shifts & dues",
-    "shiftDescription": "Review opening cash, drawer movements, closing counts and customer balances.",
-    "reportsTitle": "Reports & team access",
-    "reportsDescription": "Review sales and collections by permitted outlet and date. Give each person access to their work.",
-    "menuPreferenceTitle": "Photos on or off.|Your call.",
-    "menuPreferenceDescription": "Show dish photos in the POS menu, or switch them off for a compact item grid. Each user can choose the view that suits their service.",
-    "menuPhotoVariantTitle": "With dish photos",
-    "menuPhotoVariantCaption": "Dish photography in the item grid",
-    "menuCompactVariantTitle": "Without dish photos",
-    "menuCompactVariantCaption": "Compact item grid without photos",
+    "floorScreenshotCaption": "RestaBee POS floor view · sample restaurant data",
+    "kitchenScreenshotCaption": "RestaBee POS kitchen screen · sample restaurant data",
+    "billingTitle": "Bills, split checks and collections.",
+    "billingDescription": "Review eligible items before issuing a bill, then record cash, UPI or card payments.",
+    "closeShiftTitle": "A clear close to service.",
+    "closeShiftDescription": "Review cash movement, customer balances, sales and collections after the rush.",
+    "shiftTitle": "Cash shifts and customer dues",
+    "shiftDescription": "Review opening cash, drawer movements, closing counts and balances due.",
+    "reportsTitle": "Reports and team access",
+    "reportsDescription": "Review sales and collections by outlet and date. Give each person access to the work they handle.",
     "deviceShowcaseNote": "Scroll to see the full POS screen on each device.",
+    "deviceDesktopCaption": "RestaBee POS menu · desktop · sample menu data",
+    "deviceTabletCaption": "RestaBee POS menu · tablet · sample menu data",
+    "devicePhoneCaption": "RestaBee POS menu · phone · sample menu data",
     "capabilityFootnote": "Bills and kitchen tickets can be printed with compatible devices after local setup. Confirm intended hardware and printer needs during a demo.",
     "platformLabel": "RestaBee POS apps",
-    "capabilitiesTitle": "The everyday work,|all in one flow.",
-    "capabilitiesDescription": "RestaBee connects the order, the people handling it and the record that follows, from the floor and kitchen to billing and reports.",
-    "outletsTitle": "Your next outlet.|Your menu, ready.",
-    "outletsDescription": "Build changes in one place. Review and publish them, then choose which outlets receive the update. Keep a menu independent when an outlet needs its own way of doing things.",
+    "capabilitiesTitle": "From first order|to close of day.",
+    "capabilitiesDescription": "Restaurant POS software should carry service from order entry through kitchen preparation, billing and shift review. RestaBee gives each role a focused workspace, with access scoped to the outlets they handle.",
+    "qrScreenshotCaption": "RestaBee table QR and menu · Table T3",
     "qrTitle": "The menu, right at the table.",
     "qrDescription": "Guests scan the code at their table to browse the menu and send an order. It appears in your restaurant POS for staff to review and accept before preparation starts.",
     "devicesTitle": "The right screen|for every part of service.",
@@ -63,72 +69,189 @@
     "pricingNote": "Prices are complete payable subscription amounts, with no GST added separately. Hardware, third-party services and custom work are quoted separately.",
     "demoIntroTitle": "Make the demo|about your restaurant.",
     "demoIntroDescription": "You know where service gets complicated. Bring those moments to the conversation.",
-    "faqTitle": "Before you|make the call.",
+    "faqTitle": "A few useful|details.",
     "demoTitle": "Your restaurant|has a rhythm.|Let's find the fit.",
-    "demoDescription": "Tell us a little about your place. We can start with the parts of service that matter to you."
+    "demoDescription": "Tell us a little about your place. We can start with the parts of service that matter to you.",
+    "billingFeatureCta": "Explore restaurant billing",
+    "shiftFeatureCta": "Explore all features",
+    "reportsFeatureCta": "Explore outlet reporting",
+    "billingFeatureKicker": "BILLING",
+    "billingFeatureSummary": "Keep eligible items in separate draft checks, then record cash, UPI or card against the issued bill.",
+    "closeShiftKicker": "AT CLOSE OF SHIFT",
+    "shiftKicker": "SHIFT RECONCILIATION",
+    "reportsKicker": "OWNER VIEW"
   },
   "copyLists": {
-    "serviceTypes": ["Dine-in restaurants", "Cafés & counters", "Takeaway", "Staff-entered delivery"],
-    "platforms": ["Web", "Android", "iPhone", "Mac", "Windows"],
+    "serviceTypes": [
+      "Dine-in restaurants",
+      "Cafés & counters",
+      "Takeaway",
+      "Staff-entered delivery",
+      "Table QR ordering"
+    ],
+    "platforms": [
+      "Web",
+      "Android",
+      "iPhone",
+      "Mac",
+      "Windows"
+    ],
     "glanceItems": [
-      { "number": "01", "title": "Floor at a glance", "description": "See occupied tables, waiting parties and staff assignments in one floor view." },
-      { "number": "02", "title": "Access by role", "description": "Choose which workspaces and outlets each team role can access." },
-      { "number": "03", "title": "Central menu control", "description": "Review changes, publish to selected outlets and keep local menus where needed." },
-      { "number": "04", "title": "Table QR ordering", "description": "Guests scan a table code to browse the menu and send an order for staff review.", "href": "#qr-ordering" },
-      { "number": "05", "title": "Focused workspaces", "description": "Separate views for the floor, kitchen, cashier and owner keep daily tasks clear." },
-      { "number": "06", "title": "Reports by outlet", "description": "Review sales, collections, tax and cash-shift figures by outlet and date." }
+      {
+        "number": "01",
+        "title": "Table QR ordering",
+        "description": "Guests scan a table code, browse the menu and send an order request for staff review.",
+        "href": "#qr-ordering"
+      },
+      {
+        "number": "02",
+        "title": "Kitchen tickets and prep",
+        "description": "Send item details to preparation stations and follow progress through ready for pickup.",
+        "href": "/features/kot-management/"
+      },
+      {
+        "number": "03",
+        "title": "Bills and collections",
+        "description": "Prepare eligible split checks and record cash, UPI or card against a bill.",
+        "href": "/features/restaurant-billing-software/"
+      },
+      {
+        "number": "04",
+        "title": "Restaurant menu management",
+        "description": "Maintain menu items, choices and outlet updates from a shared catalog.",
+        "href": "/features/restaurant-menu-management/"
+      },
+      {
+        "number": "05",
+        "title": "Multi-outlet POS",
+        "description": "Publish menu updates to selected outlets and scope team access by location.",
+        "href": "/features/multi-outlet-restaurant-management/"
+      },
+      {
+        "number": "06",
+        "title": "Floor and table service",
+        "description": "See table status, waiting parties and assigned staff in one floor view.",
+        "href": "#product"
+      }
     ],
     "capabilities": [
-      { "title": "Orders with the details intact", "description": "Take dine-in, takeaway and staff-entered delivery orders. Add variants, modifiers, combos and kitchen instructions before sending items for preparation." },
-      { "title": "Tables and parties in view", "description": "See table states, seat waiting parties, assign service staff, move a party and record staff-managed reservations. Table readiness and release stay with the team." },
-      { "title": "Kitchen tickets by station", "description": "Route items to preparation stations. Track full or partial quantities as they move from preparing to ready for pickup; ready, served and paid remain distinct." },
-      { "title": "Billing with configured taxes", "description": "Preview bills, apply permitted adjustments or discounts and record cash, UPI or card collections. Tax lines follow the restaurant’s configured profiles." },
-      { "title": "Separate checks, clear collections", "description": "Arrange eligible unissued items into draft checks, or record more than one payment method against a bill. These are separate actions." },
-      { "title": "A menu each outlet can use", "description": "Prepare central menu changes, review them and publish to selected outlets. Keep an outlet menu independent when local service needs it." },
-      { "title": "Shifts, balances and guest records", "description": "Review opening cash, drawer movements, shift counts and customer dues. Keep permitted guest details with linked order history; loyalty and automated campaigns are not part of this workflow." },
-      { "title": "Reports and access by role", "description": "Review sales, collections, items, tax and shift variance by permitted outlet and date. Give each team member access to the work they handle." }
+      {
+        "title": "Capture the order your way",
+        "description": "Take dine-in, takeaway and staff-entered delivery orders. Add variants, modifiers, combos and kitchen notes before sending items to preparation.",
+        "href": "/features/kot-management/"
+      },
+      {
+        "title": "Keep kitchen progress visible",
+        "description": "Route items to preparation stations and track quantities from preparing to ready. The kitchen display and kitchen order ticket each have a clear role.",
+        "href": "/features/kitchen-display-system/"
+      },
+      {
+        "title": "Prepare bills and record payments",
+        "description": "Review configured tax lines, arrange eligible unissued items into draft checks, then record cash, UPI or card collections.",
+        "href": "/features/restaurant-billing-software/"
+      },
+      {
+        "title": "Coordinate teams across outlets",
+        "description": "Review outlet menu publication, reports and role-scoped access in a restaurant POS built for one location or several.",
+        "href": "/features/multi-outlet-restaurant-management/"
+      }
     ],
     "teamRoles": [
-      { "role": "Floor", "tasks": "Orders, tables and parties" },
-      { "role": "Kitchen", "tasks": "Station tickets and readiness" },
-      { "role": "Cashier", "tasks": "Bills and recorded payments" },
-      { "role": "Owner", "tasks": "Menus, reports and outlet access" }
+      {
+        "role": "Floor",
+        "tasks": "Orders, tables and parties"
+      },
+      {
+        "role": "Kitchen",
+        "tasks": "Station tickets and readiness"
+      },
+      {
+        "role": "Cashier",
+        "tasks": "Bills and recorded payments"
+      },
+      {
+        "role": "Owner",
+        "tasks": "Menus, reports and outlet access"
+      }
     ],
-    "planInclusions": ["Orders, KOT & table service", "Billing, collections & cash shifts", "Menu management, reports & team access"],
-    "outletExamples": [3, 5, 10],
+    "planInclusions": [
+      "Orders, KOT & table service",
+      "Billing, collections & cash shifts",
+      "Menu management, reports & team access"
+    ],
+    "outletExamples": [
+      3,
+      5,
+      10
+    ],
     "demoAgenda": [
-      { "title": "Walk through an order", "description": "Item choices, kitchen instructions and the bill." },
-      { "title": "Check your setup", "description": "Tables, stations, intended devices and printers." },
-      { "title": "Understand the subscription", "description": "Your outlet count, term and anything quoted separately." }
+      {
+        "title": "Walk through an order",
+        "description": "Item choices, kitchen instructions and the bill."
+      },
+      {
+        "title": "Check your setup",
+        "description": "Tables, stations, intended devices and printers."
+      },
+      {
+        "title": "Understand the subscription",
+        "description": "Your outlet count, term and anything quoted separately."
+      }
     ]
   },
-  "pricing": { "multiOutletAnnualPerOutlet": "5,999", "minimumOutlets": 2, "exampleOutlets": [2, 3, 5, 10] },
+  "pricing": {
+    "multiOutletAnnualPerOutlet": "5,999",
+    "minimumOutlets": 2,
+    "exampleOutlets": [
+      2,
+      3,
+      5,
+      10
+    ]
+  },
   "imageAlt": {
     "kitchenScene": "A chef finishes a plate of paneer tikka at a restaurant kitchen pass. Illustrative scene.",
     "floorView": "RestaBee restaurant POS floor view with table states, reservations and waiting parties.",
     "kitchenDisplay": "RestaBee restaurant POS kitchen display with new tickets and preparation progress.",
-    "shift": "RestaBee My Shift screen with drawer reconciliation, cash collected and shift controls.",
-    "reports": "RestaBee mobile Reports screen with sales and collections report categories.",
-    "menuPhotos": "RestaBee restaurant POS menu with dish photos, item prices and an active order.",
-    "menuCompact": "RestaBee restaurant POS screen with a compact item grid and no dish photos.",
-    "centralMenu": "RestaBee restaurant POS central menu with shared dishes, publication controls and Paneer Tikka at ₹200 regular.",
     "deviceDesktop": "Compact RestaBee POS order screen on desktop.",
     "deviceTablet": "Compact RestaBee POS order screen on tablet.",
     "devicePhone": "Compact RestaBee POS order screen on phone.",
     "cafeScene": "A café owner places a coffee on a table. Illustrative restaurant scene."
   },
   "faqs": [
-    { "question": "Can restaurant POS software handle dine-in, takeaway and delivery orders?", "answer": "Yes. Staff can create orders for each service type and manage the kitchen and billing workflow. Delivery orders are entered by staff; they are not imported from delivery platforms." },
-    { "question": "Can guests split a bill or pay in different ways?", "answer": "Yes. Eligible unissued items can be arranged into separate draft bills. You can also record several payment methods against one bill. Splitting a bill and splitting a payment are separate actions." },
-    { "question": "Can I manage menus across several outlets?", "answer": "Prepare a central menu, review and publish changes, then apply the publication to selected outlets. Outlets can also keep independent menus. Team access is scoped to the outlets they handle." },
-    { "question": "Can I add delivery or packaging charges?", "answer": "Set flat defaults and edit permitted charges for an order. Delivery charges apply to delivery orders; packaging can be selected where applicable. Refund handling follows the configured policy." },
-    { "question": "Does it support GST billing and UPI?", "answer": "You can configure tax profiles, preview bill tax lines and record UPI, cash or card collections. Payment recording does not automatically verify bank settlement. GST filing and payment-gateway integrations are outside this offer." },
-    { "question": "What about devices, printers and delivery platforms?", "answer": "Confirm your devices and bill or kitchen-ticket printers during the demo. Printing needs compatible hardware and local setup. Delivery orders are entered by staff; automatic delivery-platform imports are not included." },
-    { "question": "What does RestaBee restaurant POS software include?", "answer": "Orders, kitchen tickets, table service, billing, menu management, reports and team access are available in one workspace. Request a demo to review the workflows that matter to your restaurant." },
-    { "question": "What should POS software for restaurant operations cover?", "answer": "It should carry the order through table service, kitchen preparation, billing and payment records. RestaBee connects those steps in one workspace." },
-    { "question": "How do restaurant POS systems support more than one outlet?", "answer": "RestaBee lets teams prepare central menu changes, publish them to selected outlets and scope access to the outlets each person handles." },
-    { "question": "What should a restaurant POS system make easier to manage?", "answer": "Teams can review tables, orders, kitchen progress, bills, collections and outlet reports from their assigned workspaces." },
-    { "question": "How do I get started?", "answer": "Request a demo and share your restaurant name, city, outlet count and the service workflow you want to review. You can discuss your intended devices and printer setup during the conversation." }
+    {
+      "question": "Can restaurant POS software handle dine-in, takeaway, delivery and Table QR orders?",
+      "answer": "POS software for restaurant teams should support dine-in, takeaway and staff-entered delivery. RestaBee also lets guests scan a table code, browse the menu and send an order request for staff review."
+    },
+    {
+      "question": "Can I split a bill or record different payment methods?",
+      "answer": "Eligible unissued items can be arranged into separate draft checks. You can also record cash, UPI or card against one bill. Splitting a check and splitting a payment are separate actions."
+    },
+    {
+      "question": "Can a restaurant POS system manage menus and access across outlets?",
+      "answer": "Prepare menu changes, review them and publish to selected outlets. Each team member can have access scoped to the outlets and workspaces they handle."
+    },
+    {
+      "question": "Which devices and printers can I use?",
+      "answer": "RestaBee is available on Web, Android, iPhone, Mac and Windows. Bill and kitchen-ticket printing uses compatible printers after local setup."
+    },
+    {
+      "question": "What can we cover in a demo?",
+      "answer": "Walk through an order, kitchen handoff and bill, then discuss your tables, team roles, outlet count, devices and printer setup."
+    }
   ],
-  "plans": [{ "months": 3, "price": "2,499" }, { "months": 6, "price": "4,299" }, { "months": 12, "price": "6,999" }]
+  "plans": [
+    {
+      "months": 3,
+      "price": "2,499"
+    },
+    {
+      "months": 6,
+      "price": "4,299"
+    },
+    {
+      "months": 12,
+      "price": "6,999"
+    }
+  ]
 }

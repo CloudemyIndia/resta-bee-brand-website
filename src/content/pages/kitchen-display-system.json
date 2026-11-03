@@ -1,0 +1,92 @@
+{
+  "pageId": "kitchen-display-system",
+  "seo": {
+    "title": "Kitchen Display System for Restaurants | RestaBee",
+    "description": "Kitchen display system for restaurant teams: route tickets by station, track item preparation and mark ready quantities. Explore RestaBee KDS.",
+    "canonical": "https://restabee.com/features/kitchen-display-system/",
+    "keywords": [
+      "kitchen display system",
+      "kitchen display system for restaurant",
+      "kitchen display systems",
+      "restaurant kitchen display system",
+      "kitchen display software",
+      "POS with kitchen display",
+      "restaurant KDS"
+    ]
+  },
+  "copy": {
+    "breadcrumbLabel": "Kitchen display system",
+    "heroKicker": "Restaurant KDS",
+    "heroTitle": "Kitchen Display System for Restaurants",
+    "heroDescription": "RestaBee’s kitchen display system for restaurant teams routes order items to assigned stations, where staff can start preparation, update ready quantities and acknowledge changes.",
+    "heroCta": "Book a demo",
+    "workflowCta": "See the kitchen workflow",
+    "screenTitle": "The kitchen queue",
+    "screenLabel": "RestaBee Kitchen Queue",
+    "screenDataLabel": "Sample restaurant data",
+    "workflowKicker": "A clear ticket path",
+    "workflowTitle": "From new ticket to ready quantity",
+    "workflowDescription": "Kitchen display systems give the team a shared view of what is waiting, what is being prepared and what is ready to leave the station.",
+    "stationKicker": "Station by station",
+    "stationTitle": "Send each item to its preparation station",
+    "stationDescription": "Orders are split into kitchen tickets according to the stations assigned to their menu items. Filter the queue to the stations assigned to a staff member, or review all assigned stations together.",
+    "ticketDetailsTitle": "Keep the details with the ticket",
+    "ticketDetailsDescription": "A restaurant kitchen display system keeps service context beside each item, so the kitchen can check what to prepare and where it belongs.",
+    "quantityKicker": "Item-level progress",
+    "quantityTitle": "Mark what is ready, including part of an order",
+    "quantityDescription": "Staff can start an item, mark the full quantity ready or record a partial ready quantity. The remaining amount stays visible until preparation is complete.",
+    "changesTitle": "Make order changes visible to the kitchen",
+    "changesKicker": "Amendments and cancellations",
+    "changesDescription": "When an order is amended or an item is cancelled after it reaches the kitchen, the change appears for acknowledgement. Staff review it before continuing work on that ticket.",
+    "printTitle": "Kitchen display software that works with the print queue",
+    "printKicker": "Digital and printed tickets",
+    "printDescription": "The screen shows changing ticket status and station filters. RestaBee also includes a print queue for kitchens that use paper tickets. Choose the workflow that fits the station and its setup.",
+    "faqKicker": "Kitchen display system questions",
+    "faqTitle": "How the kitchen queue works",
+    "faqDescription": "Answers about station assignment, ready quantities, order changes and printed tickets.",
+    "ctaTitle": "See RestaBee in your kitchen workflow",
+    "ctaKicker": "Kitchen workflow demo",
+    "ctaDescription": "Review kitchen stations, ticket progress and the handoff from order entry in a guided product demo.",
+    "demoCta": "Book a demo",
+    "billingLinkLabel": "Explore restaurant billing",
+    "pricingLinkLabel": "View subscription pricing",
+    "kotLinkLabel": "See kitchen order ticket management",
+    "ticketDetailsAriaLabel": "Details shown on kitchen tickets",
+    "stagesAriaLabel": "Kitchen ticket progress stages"
+  },
+  "kitchenLists": {
+    "workflowSteps": [
+      {"number":"01","title":"Route by station","description":"Menu items are assigned to preparation stations. Sent orders appear in the queues for those stations."},
+      {"number":"02","title":"Start preparation","description":"Kitchen staff move a ticket or item from new to preparing when work begins."},
+      {"number":"03","title":"Update ready quantities","description":"Mark all or part of an item ready. The queue keeps the remaining quantity visible."},
+      {"number":"04","title":"Acknowledge changes","description":"Review an amendment or cancellation shown on a ticket before taking the next kitchen action."}
+    ],
+    "ticketDetails": [
+      {"title":"Order context","description":"Table, takeaway or delivery label, order number and ticket age."},
+      {"title":"Preparation station","description":"The station assigned to the item, such as hot kitchen or beverage counter."},
+      {"title":"Item and quantity","description":"Menu item, variant, quantity and ready count."},
+      {"title":"Kitchen instructions","description":"Notes and item choices that help staff prepare the order as entered."}
+    ],
+    "stages": [
+      {"title":"New","description":"The item is waiting for preparation."},
+      {"title":"Preparing","description":"The kitchen has started work on the item."},
+      {"title":"Ready","description":"The full item quantity is ready for pickup or the next service handoff."}
+    ],
+    "changeDetails": [
+      {"number":"01","title":"The ticket shows a change","description":"An amendment or cancellation is marked for review."},
+      {"number":"02","title":"Staff review the note","description":"The kitchen can see the change and any affected prepared quantity."},
+      {"number":"03","title":"The change is acknowledged","description":"Staff acknowledge the update before proceeding with another action on the ticket."}
+    ]
+  },
+  "faqs": [
+    {"question":"What does a kitchen display system do?","answer":"A kitchen display system places incoming order items in a digital kitchen queue. Staff can view the assigned station, start preparation and update item readiness."},
+    {"question":"Can a kitchen display system for restaurant teams route tickets by station?","answer":"Yes. Menu items can be assigned to preparation stations. The kitchen queue can show all assigned stations or be filtered to a specific station."},
+    {"question":"Can staff mark only part of an item quantity ready?","answer":"Yes. Staff can record a partial ready quantity. The remaining quantity stays on the ticket until it is ready."},
+    {"question":"Can we keep printed kitchen tickets?","answer":"Yes. RestaBee includes a print queue alongside its kitchen display software. Printer setup depends on the chosen device and station configuration."},
+    {"question":"What happens when an order changes after it is sent?","answer":"The kitchen ticket marks the amendment or cancellation for acknowledgement. Staff can review the change before continuing with the ticket."},
+    {"question":"Does POS with kitchen display support item notes?","answer":"Kitchen tickets show item choices and notes entered with the order, alongside its station and quantity details."}
+  ],
+  "imageAlt": {
+    "kitchenQueue": "RestaBee Kitchen Queue showing new, preparing and ready tickets, station assignments, item quantities and preparation controls. Sample restaurant data."
+  }
+}

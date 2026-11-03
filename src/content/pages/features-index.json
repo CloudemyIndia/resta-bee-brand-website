@@ -1,0 +1,143 @@
+{
+  "pageId": "features-index",
+  "seo": {
+    "title": "Restaurant POS Features for Daily Service | RestaBee",
+    "description": "Explore RestaBee features for order entry, floor service, kitchen tickets, billing, menu control, QR ordering, reports and multi-outlet operations.",
+    "canonical": "https://restabee.com/features/",
+    "keywords": []
+  },
+  "copy": {
+    "heroKicker": "RestaBee product features",
+    "heroTitle": "The tools behind|a smoother service.",
+    "heroDescription": "Move from order entry to kitchen preparation, table service and billing in one restaurant workspace. Explore each part of the RestaBee POS and open the feature page for the workflow you want to see.",
+    "screenLabel": "RestaBee POS order entry",
+    "screenDataLabel": "Sample restaurant data",
+    "screenCaption": "Browse the menu, add choices and send the order to its next step.",
+    "directoryKicker": "Explore by workflow",
+    "directoryTitle": "Find the feature for the work at hand.",
+    "directoryDescription": "Start with the part of service you want to improve. Each feature connects to the next handoff, so staff can keep the order and its context moving through the restaurant.",
+    "orderSectionTitle": "Take orders and serve tables",
+    "kitchenSectionTitle": "Coordinate the kitchen and menu",
+    "managementSectionTitle": "Keep oversight across the business",
+    "workflowKicker": "One connected restaurant workflow",
+    "workflowTitle": "From the first item to the final collection.",
+    "workflowDescription": "Staff enter dine-in, takeaway or delivery orders in the POS. Table orders can also begin from a QR menu, with the guest’s selection sent for staff review. The order then moves to the relevant preparation station, while the team tracks service and prepares the bill through the restaurant workflow.",
+    "workflowLinkLabel": "See restaurant billing",
+    "operationsTitle": "Useful views for each role.",
+    "operationsDescription": "Floor teams need a clear view of tables and active parties. Kitchen teams work from preparation tickets and item status. Cashiers handle bills and collections, while owners review reports and team access within their assigned scope. RestaBee brings these workspaces together while each person focuses on the tasks available to them.",
+    "platformTitle": "Use the screens that fit your team.",
+    "platformDescription": "RestaBee is available across web, Android, iPhone, Mac and Windows. Choose a device for the work in front of you, from order entry at the counter to a kitchen queue or an owner’s report view.",
+    "ctaTitle": "See RestaBee in your restaurant workflow.",
+    "ctaDescription": "Walk through the features that matter to your service style and outlet setup.",
+    "ctaLabel": "Book a demo"
+  },
+  "imageAlt": {
+    "featureDirectoryScreen": "RestaBee POS order-entry screen on desktop, showing menu items, an active order and payment controls; sample restaurant data."
+  },
+  "featureDirectory": [
+    {
+      "number": "01",
+      "category": "orders",
+      "title": "Restaurant order management",
+      "description": "Enter dine-in, takeaway and staff-entered delivery orders, capture menu choices and send preparation details to the assigned kitchen station.",
+      "href": "/features/restaurant-order-management/",
+      "linkLabel": "Explore order management"
+    },
+    {
+      "number": "02",
+      "category": "orders",
+      "title": "Restaurant billing",
+      "description": "Review the order, prepare the bill, apply configured charges and record collections through the permitted workflow.",
+      "href": "/features/restaurant-billing-software/",
+      "linkLabel": "Explore restaurant billing"
+    },
+    {
+      "number": "03",
+      "category": "orders",
+      "title": "Floor and table service",
+      "description": "See table status, active parties and service details together. Open the floor view for table availability, reservations, waiting parties and table-side order context.",
+      "href": "/features/restaurant-table-management/",
+      "linkLabel": "Explore table management"
+    },
+    {
+      "number": "04",
+      "category": "orders",
+      "title": "Table QR ordering",
+      "description": "Guests scan a table QR code to browse the menu and send their selection. Staff review each order before it moves into preparation.",
+      "href": "/#qr-ordering",
+      "linkLabel": "Explore table QR ordering"
+    },
+    {
+      "number": "05",
+      "category": "kitchen",
+      "title": "Kitchen order tickets",
+      "description": "Route ordered items to their preparation station with quantities, table details and instructions. Keep ticket amendments and print-queue activity connected to the order.",
+      "href": "/features/kot-management/",
+      "linkLabel": "Explore kitchen order tickets"
+    },
+    {
+      "number": "06",
+      "category": "kitchen",
+      "title": "Kitchen display system",
+      "description": "Give kitchen teams a live queue for new, preparing and ready items. Update item progress and keep pickup status visible across preparation stages.",
+      "href": "/features/kitchen-display-system/",
+      "linkLabel": "Explore the kitchen display"
+    },
+    {
+      "number": "07",
+      "category": "kitchen",
+      "title": "Menu management",
+      "description": "Maintain menu items, variants, choices, categories and preparation stations in a central catalog. Review menu changes and apply them to selected outlets.",
+      "href": "/features/restaurant-menu-management/",
+      "linkLabel": "Explore menu management"
+    },
+    {
+      "number": "08",
+      "category": "management",
+      "title": "Multi-outlet operations",
+      "description": "Coordinate menu releases, outlet access and sales reporting across locations. Keep central decisions visible alongside outlet-level menus and assigned permissions.",
+      "href": "/features/multi-outlet-restaurant-management/",
+      "linkLabel": "Explore multi-outlet POS"
+    },
+    {
+      "number": "09",
+      "category": "management",
+      "title": "Cash shifts and drawer activity",
+      "description": "Open a shift with a recorded float, log cash movements, then review the closing count and any variance in My Shift.",
+      "href": "/features/restaurant-cash-management/",
+      "linkLabel": "Explore cash shift management"
+    },
+    {
+      "number": "10",
+      "category": "management",
+      "title": "Team roles and access",
+      "description": "Assign people access to the restaurant tasks they perform. Keep operational screens and reporting scope aligned with each person’s permitted work.",
+      "href": "/#capabilities",
+      "linkLabel": "See team access features"
+    },
+    {
+      "number": "11",
+      "category": "orders",
+      "title": "Cafe POS",
+      "description": "Set up drink variants and modifiers, take counter or dine-in orders, route items for preparation and review item sales.",
+      "href": "/solutions/cafe-pos/",
+      "linkLabel": "Explore Cafe POS"
+    },
+    {
+      "number": "12",
+      "category": "management",
+      "title": "Restaurant sales reports",
+      "description": "Review issued sales, collections, item and category performance, discounts, taxes and shift activity by the available date and outlet scope.",
+      "href": "/features/restaurant-sales-reports/",
+      "linkLabel": "Explore restaurant sales reports"
+    },
+    {
+      "number": "13",
+      "category": "management",
+      "title": "Restaurant management software",
+      "description": "See how order entry, floor service, kitchen workflows, menu control, billing and reporting connect across a restaurant day.",
+      "href": "/restaurant-management-software/",
+      "linkLabel": "Explore restaurant management software"
+    }
+  ]
+}

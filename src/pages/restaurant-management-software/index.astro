@@ -1,0 +1,101 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../components/Mark.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entry = await getEntry('pages', 'restaurant-management-software');
+if (!entry) throw new Error('CMS content entry "restaurant-management-software" is missing.');
+const { seo, copy, managementPillarLists, imageAlt, faqs } = entry.data;
+if (!managementPillarLists?.workflowSteps.length || managementPillarLists.workspaces.length < 5 || faqs.length < 4 || !imageAlt?.managementPillarDesktop || !imageAlt.managementPillarFloor || !imageAlt.managementPillarKitchen) {
+  throw new Error('Restaurant management software page content is incomplete.');
+}
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web, Android, iOS, macOS, Windows' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Restaurant management software', item: seo.canonical },
+  ] },
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="management-pillar">
+    <nav class="pillar-breadcrumb container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><span aria-current="page">{copy.pillarBreadcrumbLabel}</span></nav>
+    <section class="pillar-hero container" aria-labelledby="pillar-title">
+      <div class="pillar-hero-copy">
+        <p class="pillar-kicker">{copy.pillarHeroKicker}</p>
+        <h1 id="pillar-title">{copy.pillarHeroTitle}</h1>
+        <p class="pillar-lede">{copy.pillarHeroDescription}</p>
+        <div class="pillar-actions"><a class="button button-orange" href="/#demo">{copy.pillarHeroCta}<Mark /></a><a class="text-link" href="#restaurant-workflow">{copy.pillarWorkflowCta}<Mark name="down" /></a></div>
+      </div>
+      <figure class="pillar-hero-screen">
+        <figcaption><span>{copy.pillarScreenLabel}</span><span>{copy.pillarScreenDataLabel}</span></figcaption>
+        <div class="pillar-device pillar-desktop"><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.managementPillarDesktop} fetchpriority="high" decoding="async" /></div>
+        <p>{copy.pillarScreenCaption}</p>
+      </figure>
+    </section>
+
+    <section class="pillar-overview container" aria-labelledby="pillar-overview-title">
+      <div><p class="pillar-kicker">{copy.pillarOverviewKicker}</p><h2 id="pillar-overview-title">{copy.pillarOverviewTitle}</h2></div>
+      <div class="pillar-copy"><p>{copy.pillarOverviewParagraphOne}</p><p>{copy.pillarOverviewParagraphTwo}</p></div>
+    </section>
+
+    <section class="pillar-workflow" id="restaurant-workflow" aria-labelledby="pillar-workflow-title">
+      <div class="container">
+        <header class="pillar-section-head"><p class="pillar-kicker">{copy.pillarWorkflowKicker}</p><h2 id="pillar-workflow-title">{copy.pillarWorkflowTitle}</h2><p>{copy.pillarWorkflowDescription}</p></header>
+        <ol class="pillar-steps" aria-label={copy.pillarWorkflowListLabel}>{managementPillarLists.workflowSteps.map((step) => <li><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.description}</p></div></li>)}</ol>
+      </div>
+    </section>
+
+    <section class="pillar-workspaces container" aria-labelledby="pillar-workspace-title">
+      <header class="pillar-section-head"><p class="pillar-kicker">{copy.pillarWorkspaceKicker}</p><h2 id="pillar-workspace-title">{copy.pillarWorkspaceTitle}</h2><p>{copy.pillarWorkspaceDescription}</p></header>
+      <ul class="pillar-workspace-grid" aria-label={copy.pillarWorkspaceListLabel}>{managementPillarLists.workspaces.map((workspace, index) => <li><span class="pillar-card-number">{String(index + 1).padStart(2, '0')}</span><h3>{workspace.title}</h3><p>{workspace.description}</p><a href={workspace.href}>{workspace.linkLabel}<Mark /></a></li>)}</ul>
+    </section>
+
+    <section class="pillar-team" aria-labelledby="pillar-team-title">
+      <div class="container pillar-team-inner">
+        <div><p class="pillar-kicker">{copy.pillarTeamKicker}</p><h2 id="pillar-team-title">{copy.pillarTeamTitle}</h2></div>
+        <div class="pillar-copy"><p>{copy.pillarTeamParagraphOne}</p><p>{copy.pillarTeamParagraphTwo}</p><a class="pillar-inline-link" href="/features/multi-outlet-restaurant-management/">{copy.pillarWorkspaceListsLink}<Mark /></a></div>
+      </div>
+    </section>
+
+    <section class="pillar-daily" aria-labelledby="pillar-daily-title"><div class="container pillar-daily-inner"><header><p class="pillar-kicker">{copy.pillarDailyKicker}</p><h2 id="pillar-daily-title">{copy.pillarDailyTitle}</h2></header><div class="pillar-daily-copy"><article><h3>{copy.pillarDailySubheadOne}</h3><p>{copy.pillarDailyParagraphOne}</p></article><article><h3>{copy.pillarDailySubheadTwo}</h3><p>{copy.pillarDailyParagraphTwo}</p></article></div></div></section>
+
+    <section class="pillar-devices container" aria-labelledby="pillar-devices-title">
+      <header class="pillar-section-head"><p class="pillar-kicker">{copy.pillarDevicesKicker}</p><h2 id="pillar-devices-title">{copy.pillarDevicesTitle}</h2><p>{copy.pillarDevicesDescription}</p></header>
+      <div class="pillar-device-grid">
+        <figure class="pillar-screen-card"><figcaption><span>{copy.pillarFloorScreenLabel}</span><span>{copy.pillarScreenDataLabel}</span></figcaption><div class="pillar-device pillar-screen-wide"><img src="/pos-images/restabee-restaurant-pos-floor-view-desktop.webp" width="2296" height="1656" alt={imageAlt.managementPillarFloor} loading="lazy" decoding="async" /></div><p><a href="/features/restaurant-table-management/">{copy.pillarFloorLinkLabel}<Mark /></a></p></figure>
+        <figure class="pillar-screen-card"><figcaption><span>{copy.pillarKitchenScreenLabel}</span><span>{copy.pillarScreenDataLabel}</span></figcaption><div class="pillar-device pillar-screen-wide"><img src="/pos-images/restabee-restaurant-pos-kitchen-display-desktop.webp" width="2488" height="1656" alt={imageAlt.managementPillarKitchen} loading="lazy" decoding="async" /></div><p><a href="/features/kitchen-display-system/">{copy.pillarKitchenLinkLabel}<Mark /></a></p></figure>
+      </div>
+    </section>
+
+    <section class="pillar-fit" aria-labelledby="pillar-fit-title"><div class="container pillar-fit-inner"><div><p class="pillar-kicker">{copy.pillarFitKicker}</p><h2 id="pillar-fit-title">{copy.pillarFitTitle}</h2></div><div class="pillar-copy"><p>{copy.pillarFitParagraphOne}</p><p>{copy.pillarFitParagraphTwo}</p><a class="pillar-inline-link" href="/#qr-ordering">{copy.pillarQrLinkLabel}<Mark /></a></div></div></section>
+
+    <section class="pillar-faq container" aria-labelledby="pillar-faq-title">
+      <div class="pillar-faq-intro"><p class="pillar-kicker">{copy.pillarFaqKicker}</p><h2 id="pillar-faq-title">{copy.pillarFaqTitle}</h2><p>{copy.pillarFaqDescription}</p></div>
+      <div class="pillar-faq-list">{faqs.map(({ question, answer }) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+    </section>
+
+    <section class="pillar-cta"><div class="container pillar-cta-inner"><div><p class="pillar-kicker">{copy.pillarCtaKicker}</p><h2>{copy.pillarCtaTitle}</h2><p>{copy.pillarCtaDescription}</p></div><a class="button button-orange" href="/#demo">{copy.pillarDemoCta}<Mark /></a></div></section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+
+<style>
+.management-pillar{overflow:hidden}.pillar-breadcrumb{display:flex;align-items:center;gap:10px;padding-top:20px;color:#555b51;font-size:12px}.pillar-breadcrumb a{text-decoration:underline;text-decoration-color:#969b91;text-underline-offset:3px}.pillar-breadcrumb [aria-current=page]{color:var(--ink)}.pillar-kicker{color:#963b18;font-size:12px;font-weight:700;letter-spacing:.1em;line-height:1.5;text-transform:uppercase}.pillar-hero{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(390px,1.1fr);gap:clamp(40px,6vw,84px);align-items:center;padding-block:58px 78px}.pillar-hero h1{max-width:690px;margin-top:20px;font-size:clamp(48px,5vw,70px);line-height:1.03;letter-spacing:-.045em}.pillar-lede{max-width:620px;margin-top:21px;color:#4c534a;font-size:17px;line-height:1.75}.pillar-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:28px}.pillar-actions .button{gap:18px}.pillar-hero-screen,.pillar-screen-card{min-width:0;padding:15px;border:1px solid #dedacd;border-radius:18px;background:#fffefa;box-shadow:0 22px 46px -38px #252a2480}.pillar-hero-screen figcaption,.pillar-screen-card figcaption{display:flex;justify-content:space-between;gap:12px;margin:0 0 13px;color:#4f554c;font-size:11px}.pillar-hero-screen figcaption span:first-child,.pillar-screen-card figcaption span:first-child{font-weight:700;color:var(--ink)}.pillar-device{padding:7px;border:3px solid #252a24;border-radius:20px;background:#20231f;box-shadow:0 12px 24px #252a2424}.pillar-device img{display:block;width:100%;height:auto;border-radius:10px}.pillar-hero-screen>p,.pillar-screen-card>p{padding:12px 3px 0;color:#51574e;font-size:12px;line-height:1.6}.pillar-overview,.pillar-team-inner,.pillar-fit-inner{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(38px,7vw,94px);padding-block:76px;border-top:1px solid var(--line)}.pillar-overview h2,.pillar-section-head h2,.pillar-team h2,.pillar-fit h2,.pillar-faq h2,.pillar-cta h2{margin-top:16px;font-size:clamp(38px,4.6vw,60px);line-height:1.06;letter-spacing:-.04em}.pillar-copy p{color:#4f554c;font-size:15px;line-height:1.82}.pillar-copy p+p{margin-top:14px}.pillar-workflow{padding-block:80px 87px;background:#252b24;color:#f7f5ef}.pillar-workflow .pillar-kicker{color:#ffb17d}.pillar-section-head{max-width:760px}.pillar-section-head>p:last-child{max-width:700px;margin-top:16px;color:#d0d4ca;font-size:15px;line-height:1.8}.pillar-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1px solid #62685e;list-style:none}.pillar-steps li{min-height:190px;padding:21px 20px 0 0;border-right:1px solid #62685e}.pillar-steps li+li{padding-left:21px}.pillar-steps li:last-child{border:0}.pillar-steps li>span,.pillar-card-number{color:#963b18;font-size:11px;font-weight:700;letter-spacing:.08em}.pillar-steps li>span{color:#ffb17d}.pillar-steps h3{margin-top:22px;font-size:20px;line-height:1.3}.pillar-steps p{max-width:290px;margin-top:10px;color:#d0d4ca;font-size:13px;line-height:1.7}.pillar-workspaces{padding-block:82px 90px}.pillar-workspaces .pillar-section-head>p:last-child{color:#51574e}.pillar-workspace-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:36px;list-style:none}.pillar-workspace-grid li{display:flex;min-height:245px;flex-direction:column;align-items:flex-start;padding:23px;border:1px solid #dedacd;border-radius:16px;background:#fffefa}.pillar-workspace-grid h3{margin-top:16px;font-size:21px;line-height:1.3}.pillar-workspace-grid p{margin-top:10px;color:#51574e;font-size:13px;line-height:1.65}.pillar-workspace-grid a,.pillar-inline-link,.pillar-screen-card>p a{display:inline-flex;align-items:center;gap:9px;color:#85310e;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:4px}.pillar-workspace-grid a{margin-top:auto;padding-top:17px}.pillar-team{padding-block:72px;background:#e8ecdf}.pillar-team-inner{padding-block:0;border:0}.pillar-team .pillar-copy p,.pillar-fit .pillar-copy p{color:#41483f}.pillar-inline-link{margin-top:21px}.pillar-devices{padding-block:80px 85px}.pillar-devices .pillar-section-head>p:last-child{color:#51574e}.pillar-device-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:35px;align-items:start}.pillar-screen-card{padding:16px}.pillar-screen-card figcaption{font-size:10px}.pillar-screen-wide{padding:6px;border-radius:16px}.pillar-screen-wide img{border-radius:9px}.pillar-screen-card>p{padding-left:3px}.pillar-fit{padding-block:75px;background:#f0eee6}.pillar-fit-inner{padding-block:0;border:0}.pillar-faq{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:clamp(36px,7vw,88px);padding-block:80px}.pillar-faq-intro>p:last-child{margin-top:15px;color:#51574e;font-size:14px;line-height:1.75}.pillar-faq-list details{border-top:1px solid var(--line)}.pillar-faq-list details:last-child{border-bottom:1px solid var(--line)}.pillar-faq-list summary{display:flex;min-height:64px;align-items:center;justify-content:space-between;gap:18px;cursor:pointer;list-style:none;font-size:14px;line-height:1.5;font-weight:650}.pillar-faq-list summary::-webkit-details-marker{display:none}.pillar-faq-list summary span{flex:none;color:#963b18;font-size:24px;font-weight:400;transition:transform .18s}.pillar-faq-list details[open] summary span{transform:rotate(45deg)}.pillar-faq-list details>p{padding:0 35px 19px 0;color:#51574e;font-size:13px;line-height:1.8}.pillar-cta{padding-block:62px;background:#f0caa8}.pillar-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}.pillar-cta .pillar-kicker{color:#783516}.pillar-cta h2{max-width:700px}.pillar-cta-inner>div>p:last-child{max-width:570px;margin-top:14px;color:#493e35;font-size:14px;line-height:1.75}.pillar-cta .button{flex:none;gap:18px}
+@media(max-width:1000px){.pillar-hero{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:30px}.pillar-workspace-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pillar-steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.pillar-steps li:nth-child(2){border-right:0}.pillar-steps li:nth-child(3){padding-left:0}.pillar-steps li{min-height:160px}}
+@media(max-width:760px){.pillar-hero{grid-template-columns:1fr;padding-block:43px 59px;gap:30px}.pillar-hero h1{font-size:clamp(43px,10.5vw,60px)}.pillar-hero-screen{width:100%;max-width:700px;margin-inline:auto}.pillar-overview,.pillar-team-inner,.pillar-fit-inner{grid-template-columns:1fr;gap:23px;padding-block:60px}.pillar-workflow,.pillar-workspaces,.pillar-devices{padding-block:60px 65px}.pillar-steps{margin-top:29px}.pillar-workspace-grid{grid-template-columns:1fr;margin-top:27px}.pillar-workspace-grid li{min-height:0;padding:20px}.pillar-workspace-grid a{padding-top:14px}.pillar-device-grid{grid-template-columns:1fr;gap:16px;margin-top:27px}.pillar-screen-card{margin-top:0}.pillar-faq{grid-template-columns:1fr;gap:22px;padding-block:60px}.pillar-cta{padding-block:50px}.pillar-cta-inner{display:grid;grid-template-columns:1fr;gap:22px}.pillar-cta .button{width:100%;justify-content:space-between}}
+@media(max-width:560px){.pillar-breadcrumb{padding-top:14px;font-size:10px;gap:7px}.pillar-hero{padding-block:37px 51px;gap:26px}.pillar-hero h1{font-size:clamp(40px,11vw,53px);margin-top:15px}.pillar-lede{font-size:15px}.pillar-actions{display:grid;grid-template-columns:1fr;gap:13px;margin-top:23px}.pillar-actions .button{width:100%;justify-content:space-between}.pillar-hero-screen,.pillar-screen-card{padding:11px;border-radius:14px}.pillar-hero-screen figcaption,.pillar-screen-card figcaption{font-size:9px;gap:8px;margin-bottom:10px}.pillar-device{padding:5px;border-radius:13px}.pillar-device img{border-radius:7px}.pillar-hero-screen>p,.pillar-screen-card>p{font-size:11px}.pillar-overview h2,.pillar-section-head h2,.pillar-team h2,.pillar-fit h2,.pillar-faq h2,.pillar-cta h2{font-size:clamp(35px,9vw,46px)}.pillar-copy p{font-size:14px}.pillar-steps{grid-template-columns:1fr;row-gap:0}.pillar-steps li,.pillar-steps li+li{min-height:0;padding:18px 0;border:0;border-bottom:1px solid #62685e}.pillar-steps li:last-child{border-bottom:0}.pillar-steps h3{margin-top:9px;font-size:19px}.pillar-steps p{font-size:13px}.pillar-workspace-grid li h3{font-size:20px}.pillar-faq-list summary{min-height:61px;font-size:13px}.pillar-faq-list details>p{font-size:12px}.pillar-cta-inner>div>p:last-child{font-size:13px}}
+.pillar-daily{padding-block:74px;background:#f0eee6}.pillar-daily-inner{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(38px,7vw,90px)}.pillar-daily h2{max-width:520px;margin-top:16px;font-size:clamp(38px,4.5vw,58px);line-height:1.07;letter-spacing:-.04em}.pillar-daily-copy{display:grid;grid-template-columns:1fr 1fr;gap:25px}.pillar-daily-copy article{padding-left:20px;border-left:1px solid #c9c9bd}.pillar-daily-copy h3{font-size:19px;line-height:1.35}.pillar-daily-copy p{margin-top:12px;color:#4f554c;font-size:14px;line-height:1.8}
+@media(max-width:760px){.pillar-daily{padding-block:60px}.pillar-daily-inner{grid-template-columns:1fr;gap:24px}.pillar-daily-copy{gap:18px}}
+@media(max-width:560px){.pillar-daily h2{font-size:clamp(35px,9vw,46px)}.pillar-daily-copy{grid-template-columns:1fr;gap:20px}.pillar-daily-copy article{padding:0 0 0 16px}.pillar-daily-copy p{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.pillar-faq-list summary span{transition:none}.pillar-faq-list details[open] summary span{transform:none}}
+</style>

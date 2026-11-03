@@ -1,0 +1,73 @@
+{
+  "pageId": "privacy-policy",
+  "seo": {
+    "title": "RestaBee Privacy Policy | Cloudemy",
+    "description": "Read how Cloudemy Digital Technologies handles information across the RestaBee website, POS apps, restaurant accounts and demo requests.",
+    "canonical": "https://restabee.com/privacy-policy/",
+    "keywords": ["RestaBee privacy policy", "RestaBee data privacy"]
+  },
+  "copy": {
+    "breadcrumbLabel": "Privacy Policy",
+    "heroKicker": "RESTABEE PRIVACY POLICY",
+    "heroTitle": "How RestaBee handles information.",
+    "effectiveDate": "Effective 4 November 2026",
+    "intro": "This policy covers the RestaBee public website, demo enquiries, restaurant accounts, POS applications and related support. Cloudemy Digital Technologies Pvt. Ltd. operates RestaBee and handles information as described below.",
+    "companyName": "Cloudemy Digital Technologies Pvt. Ltd.",
+    "companyAddress": "Diamond City Plaza, B-2/23, Sector F, Jankipuram, Lucknow, Uttar Pradesh 226021, India",
+    "privacyEmail": "hello@restabee.com",
+    "requestText": "For a privacy request or question, email",
+    "requestGuidance": "Include the restaurant or account name, the information involved and the action you are requesting. We may ask for information to confirm that you are authorised to make the request.",
+    "closingTitle": "Contact about privacy",
+    "closingText": "Send privacy questions, data access, correction or deletion requests to",
+    "closingEmailLabel": "Email hello@restabee.com"
+  },
+  "privacySections": [
+    {
+      "title": "Information covered by this policy",
+      "paragraphs": [
+        "A demo request may include your name, restaurant name, city, phone number, email address, outlet count and the details you choose to add. We use these details to respond to the request and for restaurant-related follow-up and support. Lead enquiries are retained for 12 months and can be deleted earlier on request.",
+        "When a restaurant uses RestaBee, its account may contain business and operating information entered through the service. This can include outlet and menu details, orders, bills, payments recorded by staff, team accounts and role settings, shifts, reports and customer details entered by the restaurant. The restaurant determines what information it enters and who on its team can access it."
+      ]
+    },
+    {
+      "title": "How we use information",
+      "paragraphs": [
+        "Cloudemy uses information to respond to demo and sales enquiries, create and administer restaurant accounts, provide RestaBee workflows, support users, maintain the service, protect accounts and systems, and meet applicable legal requirements.",
+        "We use contact details from demo requests for restaurant-related outreach and support. You can ask us to delete a lead record or stop future outreach by emailing hello@restabee.com."
+      ]
+    },
+    {
+      "title": "Service providers and sharing",
+      "paragraphs": [
+        "Cloudemy may use service providers for website and application hosting, infrastructure, database and API operations, communications, support and lead management. They receive information needed to provide those services. We do not publish a provider list here because the active providers and processing locations have not yet been verified against the production configuration. Email hello@restabee.com to request current provider and location details.",
+        "We may also disclose information when required by law or to respond to a valid legal request, protect users and the service, or address misuse or security incidents."
+      ]
+    },
+    {
+      "title": "Retention and deletion",
+      "paragraphs": [
+        "Demo and other lead enquiries are retained for 12 months. You can request earlier deletion by emailing hello@restabee.com.",
+        "Restaurant account data is retained for 3 months after the subscription expires. The restaurant can request earlier deletion through hello@restabee.com. We will verify the requester and the account before acting on a deletion request. Some records may need to be retained where law requires it."
+      ]
+    },
+    {
+      "title": "Cookies and device storage",
+      "paragraphs": [
+        "The public marketing website does not currently load analytics or advertising tags. RestaBee applications may use essential browser or device storage for sign-in, session continuity and core service functions. Browser and device settings provide controls for stored data."
+      ]
+    },
+    {
+      "title": "Your privacy requests",
+      "paragraphs": [
+        "You can ask us to provide information about a lead record, correct contact details, delete a lead record or request earlier deletion of restaurant account data. Restaurant account requests should come from an account owner or another person authorised by the restaurant. Email hello@restabee.com and describe the request. We may ask for account or identity details to verify it before taking action.",
+        "We will review privacy concerns sent to this address and reply with the next steps."
+      ]
+    },
+    {
+      "title": "Changes to this policy",
+      "paragraphs": [
+        "We may update this policy when RestaBee services or data practices change. The effective date at the top of this page shows when the current version was published."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "pageId": "restaurant-management-software",
+  "seo": {
+    "title": "Restaurant Management Software for Restaurants | RestaBee",
+    "description": "Restaurant management software for orders, tables, kitchen workflows, menu control, billing, cash shifts and reports. Connect daily operations in one workspace.",
+    "canonical": "https://restabee.com/restaurant-management-software/",
+    "keywords": [
+      "restaurant management software",
+      "restaurant software",
+      "restaurant software india",
+      "restaurant management software india",
+      "restaurant software solutions",
+      "restaurant management system software"
+    ]
+  },
+  "imageAlt": {
+    "managementPillarDesktop": "RestaBee POS order-entry screen on desktop with menu items, order details and payment controls; sample restaurant data.",
+    "managementPillarFloor": "RestaBee Floor screen on desktop showing table states, active parties and waiting-party controls; sample restaurant data.",
+    "managementPillarKitchen": "RestaBee Kitchen Queue screen on desktop showing new, preparing and ready ticket columns; sample restaurant data."
+  },
+  "copy": {
+    "pillarBreadcrumbLabel": "Restaurant management software",
+    "pillarHeroKicker": "RESTAURANT OPERATIONS, CONNECTED",
+    "pillarHeroTitle": "Restaurant management software for daily operations.",
+    "pillarHeroDescription": "Bring order entry, table service, kitchen preparation, billing and business review into one restaurant workspace. RestaBee gives each team a clear view of the work moving through the day.",
+    "pillarHeroCta": "Book a demo",
+    "pillarWorkflowCta": "Explore the workflow",
+    "pillarScreenLabel": "RestaBee POS order entry · desktop",
+    "pillarScreenDataLabel": "Sample restaurant data",
+    "pillarScreenCaption": "Menu, active order and payment controls in the staff order-entry workspace.",
+    "pillarOverviewKicker": "A WORKSPACE FOR THE WHOLE SERVICE",
+    "pillarOverviewTitle": "Restaurant work moves through connected teams.",
+    "pillarOverviewParagraphOne": "Restaurant management software brings the operating parts of a service together. Staff take dine-in, takeaway and delivery orders, the kitchen receives preparation details, and the team tracks tables and bills as each party moves through service. Owners and managers can review sales, collections and shifts using the reports available to their role and outlet access.",
+    "pillarOverviewParagraphTwo": "RestaBee connects those jobs through focused workspaces for order entry, floor service, kitchen tickets, billing, menu management, cash shifts and reports. Each area has a dedicated view, while the order and its preparation context continue through the relevant handoffs. The restaurant team can move between those tasks without treating every part of service as a separate system. When comparing restaurant software solutions, trace how an order reaches the kitchen and bill, then see how staff handle takeaway, shifts and reports.",
+    "pillarWorkflowKicker": "FROM ORDER TO CLOSE",
+    "pillarWorkflowTitle": "A clear path through the working day.",
+    "pillarWorkflowDescription": "A restaurant management system works best when staff can see the next task and the details needed to complete it. RestaBee follows the sequence of a restaurant service, from the first order through preparation, collection and review.",
+    "pillarWorkflowListLabel": "Restaurant service workflow",
+    "pillarWorkspaceKicker": "PRODUCT WORKSPACES",
+    "pillarWorkspaceTitle": "Open the workspace for the task at hand.",
+    "pillarWorkspaceDescription": "Restaurant software needs to support the details of each role. Explore the focused pages below for the screens and workflows behind each part of RestaBee.",
+    "pillarWorkspaceListLabel": "RestaBee restaurant product workspaces",
+    "pillarTeamKicker": "TEAM ACCESS AND OPERATING SCOPE",
+    "pillarTeamTitle": "Give each role a useful view of its work.",
+    "pillarTeamParagraphOne": "Restaurant teams work across the floor, counter, kitchen and office. Role-based access helps keep each person’s available tasks aligned with their responsibilities. Staff can work with the operational views assigned to them, while owners and managers review the reports and outlets within their permitted scope.",
+    "pillarTeamParagraphTwo": "RestaBee provides restaurant software for teams in India across web, Android, iPhone, Mac and Windows. These workspaces support order entry, table oversight, kitchen preparation and owner review. Available views and tasks follow the role and outlet permissions configured for each user.",
+    "pillarDevicesKicker": "SEE THE WORKSPACES",
+    "pillarDevicesTitle": "Different screens for different parts of service.",
+    "pillarDevicesDescription": "The floor and kitchen views keep their own task context. Open the related pages to see how table status and preparation tickets appear in the product.",
+    "pillarFloorScreenLabel": "RestaBee Floor · desktop",
+    "pillarKitchenScreenLabel": "RestaBee Kitchen Queue · desktop",
+    "pillarFitKicker": "BUILT AROUND RESTAURANT WORK",
+    "pillarFitTitle": "Restaurant software for dine-in, takeaway and delivery service.",
+    "pillarFitParagraphOne": "RestaBee supports dine-in service with table assignment and floor visibility, along with takeaway and staff-entered delivery orders. Table QR ordering lets guests browse a menu and send their selection for staff review before it moves into preparation. The team can follow the relevant order details through kitchen preparation and bill completion.",
+    "pillarFitParagraphTwo": "For a single location, teams can focus on the daily service workflow. Businesses with multiple outlets can coordinate central menu releases, outlet access and reporting scope across locations. Restaurant management software for teams in India should match how orders are taken, how the kitchen is organized and what owners need to review; the linked feature pages explain the specific RestaBee workflows in detail.",
+    "pillarFaqKicker": "COMMON QUESTIONS",
+    "pillarFaqTitle": "Restaurant management software questions.",
+    "pillarFaqDescription": "A quick overview of the workflows and operating scope covered by RestaBee.",
+    "pillarCtaKicker": "SEE IT IN YOUR SERVICE FLOW",
+    "pillarCtaTitle": "Walk through the restaurant workflows your team uses.",
+    "pillarCtaDescription": "Review order entry, table service, kitchen preparation, billing and business reporting in a RestaBee demo.",
+    "pillarDemoCta": "Book a demo",
+    "pillarWorkspaceListsLink": "Explore multi-outlet roles and access",
+    "pillarFloorLinkLabel": "Explore the floor workspace",
+    "pillarKitchenLinkLabel": "Explore the kitchen display",
+    "pillarQrLinkLabel": "Explore Table QR Ordering",
+    "pillarDailyKicker": "A CLOSER LOOK AT THE HANDOFFS",
+    "pillarDailyTitle": "Keep order details moving with the work.",
+    "pillarDailySubheadOne": "Order context for preparation",
+    "pillarDailyParagraphOne": "The order carries the details the team needs at each stage: its service type, table or takeaway context, selected variants and choices, quantities, preparation notes and assigned kitchen station. Kitchen tickets and the display queue keep those preparation details available to the station team. If an order changes, the workflow records the relevant ticket update so staff can coordinate the next step.",
+    "pillarDailySubheadTwo": "Shift records for later review",
+    "pillarDailyParagraphTwo": "During a shift, staff can record opening cash, drawer additions or withdrawals and closing counts. Managers can review cash movement and variance alongside reports for issued sales, confirmed collections, item and category activity, or kitchen service. Each report uses its own date basis and the user’s permitted outlet scope, giving managers a clearer read of what the selected view represents."
+  },
+  "managementPillarLists": {
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Take the order",
+        "description": "Enter dine-in, takeaway or staff-entered delivery orders from the POS. Table QR orders can also arrive for staff review."
+      },
+      {
+        "number": "02",
+        "title": "Prepare and serve",
+        "description": "Send items to their assigned kitchen stations. Follow ticket progress and keep the service team aware of what is preparing or ready."
+      },
+      {
+        "number": "03",
+        "title": "Prepare the bill",
+        "description": "Review the order, apply the configured charges and record payment or an outstanding balance through the billing workflow."
+      },
+      {
+        "number": "04",
+        "title": "Review the shift",
+        "description": "Check cash movements, issued sales and recorded collections in the views available to the person and outlet."
+      }
+    ],
+    "workspaces": [
+      {
+        "title": "Order management",
+        "description": "Capture dine-in, takeaway and staff-entered delivery orders, record choices and pass preparation details to the kitchen.",
+        "href": "/features/restaurant-order-management/",
+        "linkLabel": "Explore order management"
+      },
+      {
+        "title": "Floor and table service",
+        "description": "Review table states, active parties, reservations, waiting parties and bill requests from the floor workspace.",
+        "href": "/features/restaurant-table-management/",
+        "linkLabel": "Explore table management"
+      },
+      {
+        "title": "Kitchen tickets and display",
+        "description": "Route ordered items to preparation stations, follow ticket updates and see kitchen progress in the queue.",
+        "href": "/features/kot-management/",
+        "linkLabel": "Explore kitchen workflows"
+      },
+      {
+        "title": "Kitchen display system",
+        "description": "Follow live new, preparing and ready queues, update item progress and keep pickup status visible to the kitchen team.",
+        "href": "/features/kitchen-display-system/",
+        "linkLabel": "Explore the kitchen display"
+      },
+      {
+        "title": "Menu management",
+        "description": "Maintain catalog items, variants, choices, categories and kitchen stations, then review menu releases for outlets.",
+        "href": "/features/restaurant-menu-management/",
+        "linkLabel": "Explore menu management"
+      },
+      {
+        "title": "Billing and collections",
+        "description": "Prepare bills from the order, apply configured tax profiles and record payments, returns or outstanding balances.",
+        "href": "/features/restaurant-billing-software/",
+        "linkLabel": "Explore restaurant billing"
+      },
+      {
+        "title": "Cash shifts and sales reports",
+        "description": "Record shift floats and drawer movements, then review sales, collections and operational reports by the available date and outlet scope.",
+        "href": "/features/restaurant-sales-reports/",
+        "linkLabel": "Explore reports and cash shifts"
+      },
+      {
+        "title": "Multi-outlet management",
+        "description": "Coordinate central menu releases, outlet access and sales reporting across locations with the configured permissions.",
+        "href": "/features/multi-outlet-restaurant-management/",
+        "linkLabel": "Explore multi-outlet operations"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What does restaurant management software cover?",
+      "answer": "It supports the connected work involved in running restaurant service, such as order entry, table management, kitchen preparation, billing, cash shifts, menu control and reports. RestaBee brings these tasks into role-based workspaces."
+    },
+    {
+      "question": "How is restaurant management software different from a billing-only POS?",
+      "answer": "A billing-only POS focuses on checkout. RestaBee also supports order entry, table and floor service, kitchen tickets, menu management, cash shift records and business reports across the restaurant workflow."
+    },
+    {
+      "question": "Can restaurant software handle dine-in, takeaway and delivery?",
+      "answer": "RestaBee supports dine-in, takeaway and staff-entered delivery orders. Table QR orders can be sent for staff review before preparation."
+    },
+    {
+      "question": "Can one restaurant management system support multiple outlets?",
+      "answer": "RestaBee supports central menu releases, outlet access and reporting scope across multiple locations. Outlet-level menus and permissions follow the setup configured for the business."
+    },
+    {
+      "question": "Which devices can teams use with RestaBee?",
+      "answer": "RestaBee is available on web, Android, iPhone, Mac and Windows. Available views and tasks depend on the role and outlet permissions configured for each user."
+    },
+    {
+      "question": "What should restaurant management system software connect?",
+      "answer": "Restaurant management system software should connect the work that moves through service: orders, tables, kitchen preparation, billing and the records managers review. RestaBee links those workflows through role-based views."
+    }
+  ]
+}

@@ -53,13 +53,10 @@ content:
             type: text
           - name: kitchenDisplay
             type: text
-          - name: shift
-            type: text
           - name: reports
             type: text
-          - name: menuPhotos
-            type: text
-          - name: menuCompact
+          - name: contactPosMenu
+            label: Contact page POS menu screenshot description
             type: text
           - name: centralMenu
             type: text
@@ -70,8 +67,48 @@ content:
           - name: devicePhone
             type: text
           - name: cafeScene
+          - name: cafePosReports
+            label: Cafe POS reports screenshot description
+            type: text
+          - name: cafePosMenu
+            label: Cafe POS menu screenshot description
+            type: text
+          - name: cashShiftPhone
+            label: My Shift phone screenshot description
+            type: text
+          - name: salesReportsPhone
+            label: Reports phone screenshot description
             type: text
           - name: orderEntry
+            type: text
+          - name: posMenu
+            type: text
+          - name: menuPhotos
+            label: POS menu screenshot with dish photos
+            type: text
+          - name: menuCompact
+            label: POS menu screenshot without dish photos
+            type: text
+          - name: kitchenQueue
+            label: Kitchen queue screenshot description
+            type: text
+          - name: kotKitchenQueue
+            label: Kitchen order ticket screenshot description
+            type: text
+          - name: featureDirectoryScreen
+            label: Features page POS screenshot description
+            type: text
+          - name: orderManagement
+            label: Order management screenshot description
+            type: text
+          - name: managementPillarDesktop
+            label: Restaurant management hero screenshot description
+            type: text
+          - name: managementPillarFloor
+            label: Restaurant floor screenshot description
+            type: text
+          - name: managementPillarKitchen
+            label: Kitchen workflow screenshot description
             type: text
       - name: copy
         label: Page copy
@@ -98,8 +135,257 @@ content:
           - name: workflowCta
             label: Workflow action
             type: string
+          - name: overviewKicker
+            label: Menu overview label
+            type: string
+          - name: overviewParagraphOne
+            label: Menu overview paragraph one
+            type: text
+          - name: overviewParagraphTwo
+            label: Menu overview paragraph two
+            type: text
+          - name: overviewParagraphThree
+            label: Menu overview paragraph three
+            type: text
+          - name: catalogKicker
+            label: Menu catalog section label
+            type: string
+          - name: catalogTitle
+            label: Menu catalog section heading
+            type: string
+          - name: catalogDescription
+            label: Menu catalog section introduction
+            type: text
+          - name: outletKicker
+            label: Outlet menu section label
+            type: string
+          - name: outletTitle
+            label: Outlet menu section heading
+            type: string
+          - name: outletParagraphOne
+            label: Outlet menu paragraph one
+            type: text
+          - name: outletParagraphTwo
+            label: Outlet menu paragraph two
+            type: text
+          - name: outletParagraphThree
+            label: Outlet menu paragraph three
+            type: text
+          - name: controlKicker
+            label: Menu controls section label
+            type: string
+          - name: controlTitle
+            label: Menu controls section heading
+            type: string
+          - name: controlParagraphOne
+            label: Menu controls paragraph one
+            type: text
+          - name: controlParagraphTwo
+            label: Menu controls paragraph two
+            type: text
+          - name: controlParagraphThree
+            label: Menu controls paragraph three
+            type: text
+          - name: sampleKicker
+            label: POS menu section label
+            type: string
+          - name: sampleTitle
+            label: POS menu section heading
+            type: string
+          - name: sampleDescription
+            label: POS menu section introduction
+            type: text
+          - name: sampleScreenLabel
+            label: POS menu screenshot label
+            type: string
+          - name: sampleScreenDataLabel
+            label: POS menu screenshot data note
+            type: string
+          - name: typesKicker
+            label: Order types section label
+            type: string
+          - name: typesTitle
+            label: Order types section heading
+            type: string
+          - name: typesDescription
+            label: Order types section introduction
+            type: text
+          - name: customizeKicker
+            label: Order customization section label
+            type: string
+          - name: customizeTitle
+            label: Order customization section heading
+            type: string
+          - name: customizeParagraphOne
+            label: Order customization paragraph one
+            type: text
+          - name: customizeParagraphTwo
+            label: Order customization paragraph two
+            type: text
+          - name: reviewKicker
+            label: Kitchen handoff section label
+            type: string
+          - name: reviewTitle
+            label: Kitchen handoff section heading
+            type: string
+          - name: reviewParagraphOne
+            label: Kitchen handoff paragraph one
+            type: text
+          - name: reviewParagraphTwo
+            label: Kitchen handoff paragraph two
+            type: text
+          - name: changesTitle
+            label: Order changes heading
+            type: string
+          - name: changesKicker
+            label: Order changes section label
+            type: string
+          - name: changesDescription
+            label: Order changes description
+            type: text
+          - name: billKicker
+            label: Bill handoff section label
+            type: string
+          - name: billTitle
+            label: Bill handoff section heading
+            type: string
+          - name: billParagraphOne
+            label: Bill handoff paragraph one
+            type: text
+          - name: billParagraphTwo
+            label: Bill handoff paragraph two
+            type: text
+          - name: orderTypesListLabel
+            label: Order types list accessible name
+            type: string
+          - name: menuViewsKicker
+            label: Menu display section label
+            type: string
+          - name: menuViewsTitle
+            label: Menu display section heading
+            type: string
+          - name: menuViewsDescription
+            label: Menu display section introduction
+            type: text
+          - name: menuPhotoVariantTitle
+            label: Dish photo menu heading
+            type: string
+          - name: menuPhotoVariantCaption
+            label: Dish photo menu screenshot caption
+            type: string
+          - name: menuCompactVariantTitle
+            label: Compact menu heading
+            type: string
+          - name: menuCompactVariantCaption
+            label: Compact menu screenshot caption
+            type: string
+          - name: catalogListLabel
+            label: Menu catalog list accessible name
+            type: string
+          - name: workflowListLabel
+            label: Workflow list accessible name
+            type: string
+          - name: outletListLabel
+            label: Outlet mode list accessible name
+            type: string
+          - name: breadcrumbLabel
+            label: Current breadcrumb
+            type: string
+          - name: screenLabel
+            label: Product screenshot label
+            type: string
+          - name: screenDataLabel
+            label: Screenshot data note
+            type: string
+          - name: screenTitle
+            label: Screen section heading
+            type: string
+          - name: workflowKicker
+            label: Workflow section label
+            type: string
+          - name: stationKicker
+            label: Kitchen station section label
+            type: string
+          - name: stationTitle
+            label: Kitchen station heading
+            type: string
+          - name: stationDescription
+            label: Kitchen station description
+            type: text
+          - name: ticketDetailsTitle
+            label: Ticket details heading
+            type: string
+          - name: ticketDetailsDescription
+            label: Ticket details description
+            type: text
+          - name: quantityKicker
+            label: Item progress section label
+            type: string
+          - name: quantityTitle
+            label: Item progress heading
+            type: string
+          - name: quantityDescription
+            label: Item progress description
+            type: text
+          - name: changesKicker
+            label: Order changes section label
+            type: string
+          - name: changesTitle
+            label: Order changes heading
+            type: string
+          - name: changesDescription
+            label: Order changes description
+            type: text
+          - name: printKicker
+            label: Digital and printed tickets label
+            type: string
+          - name: printTitle
+            label: Digital and printed tickets heading
+            type: string
+          - name: printDescription
+            label: Digital and printed tickets description
+            type: text
+          - name: faqKicker
+            label: FAQ section label
+            type: string
+          - name: faqTitle
+            label: FAQ heading
+            type: string
+          - name: faqDescription
+            label: FAQ description
+            type: text
+          - name: ctaKicker
+            label: Demo section label
+            type: string
+          - name: ctaTitle
+            label: Demo heading
+            type: string
+          - name: ctaDescription
+            label: Demo description
+            type: text
+          - name: ticketDetailsAriaLabel
+            label: Ticket list accessible name
+            type: string
+          - name: stagesAriaLabel
+            label: Ticket stages accessible name
+            type: string
+          - name: billingLinkLabel
+            label: Billing page link
+            type: string
+          - name: pricingLinkLabel
+            label: Pricing page link
+            type: string
+          - name: outletMultiLinkLabel
+            label: Multi-outlet POS related link
+            type: string
+          - name: kotLinkLabel
+            label: Kitchen order ticket page link
+            type: string
           - name: qrCta
             label: Table QR action
+            type: string
+          - name: qrScreenshotCaption
+            label: Table QR visual label
             type: string
           - name: demoCta
             label: Demo action
@@ -110,6 +396,9 @@ content:
           - name: formSubmit
             label: Demo form button
             type: string
+          - name: formPrivacy
+            label: Demo form privacy notice
+            type: text
           - name: pricingCta
             label: Billing page pricing action
             type: string
@@ -143,18 +432,33 @@ content:
           - name: floorDescription
             label: Floor feature description
             type: text
+          - name: floorScreenshotCaption
+            label: Floor screenshot caption
+            type: string
           - name: kitchenTitle
             label: Kitchen feature headline
             type: string
           - name: kitchenDescription
             label: Kitchen feature description
             type: text
+          - name: kitchenScreenshotCaption
+            label: Kitchen screenshot caption
+            type: string
           - name: billingTitle
             label: Billing feature headline
             type: string
           - name: billingDescription
             label: Billing feature description
             type: text
+          - name: billingFeatureKicker
+            label: Billing feature label
+            type: string
+          - name: billingFeatureSummary
+            label: Billing summary
+            type: text
+          - name: billingFeatureCta
+            label: Billing feature link
+            type: string
           - name: closeShiftTitle
             label: Shift section headline
             type: string
@@ -167,29 +471,35 @@ content:
           - name: shiftDescription
             label: Shift card description
             type: text
+          - name: closeShiftKicker
+            label: Close-of-shift label
+            type: string
+          - name: shiftKicker
+            label: Cash shift label
+            type: string
+          - name: reportsKicker
+            label: Reports label
+            type: string
+          - name: shiftFeatureCta
+            label: Shift feature link
+            type: string
           - name: reportsTitle
             label: Reports card headline
             type: string
           - name: reportsDescription
             label: Reports card description
             type: text
-          - name: menuPreferenceTitle
-            label: Menu preference headline
+          - name: reportsFeatureCta
+            label: Reports feature link
             type: string
-          - name: menuPreferenceDescription
-            label: Menu preference description
-            type: text
-          - name: menuPhotoVariantTitle
-            label: Photo menu option
+          - name: deviceDesktopCaption
+            label: Desktop screenshot caption
             type: string
-          - name: menuPhotoVariantCaption
-            label: Photo menu caption
+          - name: deviceTabletCaption
+            label: Tablet screenshot caption
             type: string
-          - name: menuCompactVariantTitle
-            label: Compact menu option
-            type: string
-          - name: menuCompactVariantCaption
-            label: Compact menu caption
+          - name: devicePhoneCaption
+            label: Phone screenshot caption
             type: string
           - name: deviceShowcaseNote
             label: Device showcase note
@@ -206,12 +516,6 @@ content:
           - name: capabilitiesDescription
             label: Capability section introduction
             type: text
-          - name: outletsTitle
-            label: Multi-outlet headline
-            type: string
-          - name: outletsDescription
-            label: Multi-outlet description
-            type: text
           - name: qrTitle
             label: Table QR headline
             type: string
@@ -227,14 +531,101 @@ content:
           - name: pricingTitle
             label: Pricing headline
             type: string
+          - name: heroCompareCta
+            label: Compare terms link
+            type: string
+          - name: overviewAriaLabel
+            label: Subscription overview accessible label
+            type: string
+          - name: overviewTitle
+            label: Subscription overview title
+            type: string
+          - name: singleOutletLabel
+            label: One-outlet overview label
+            type: string
+          - name: singleOutletTerms
+            label: One-outlet terms summary
+            type: string
+          - name: multipleOutletsLabel
+            label: Multi-outlet overview label
+            type: string
+          - name: multipleOutletsTerms
+            label: Multi-outlet terms summary
+            type: string
+          - name: releasedFeaturesNote
+            label: Included features note
+            type: string
           - name: pricingDescription
             label: Pricing description
             type: text
+          - name: pricingTermsTitle
+            label: Pricing terms heading
+            type: string
+          - name: includedFeaturesTitle
+            label: Included features heading
+            type: string
+          - name: includedFeaturesKicker
+            label: Included features label
+            type: string
+          - name: includedFeaturesDescription
+            label: Included features description
+            type: text
+          - name: outletExamplesTitle
+            label: Multi-outlet totals heading
+            type: string
+          - name: priceDetailsTitle
+            label: Price details heading
+            type: string
+          - name: priceDetailsKicker
+            label: Price details label
+            type: string
+          - name: priceDetailsDescription
+            label: Price details description
+            type: text
+          - name: screenshotKicker
+            label: Product screen label
+            type: string
+          - name: screenshotTitle
+            label: Product screen heading
+            type: string
+          - name: screenshotDescription
+            label: Product screen description
+            type: text
+          - name: screenshotLabel
+            label: Device screen label
+            type: string
+          - name: screenshotCaption
+            label: Product screen caption
+            type: string
+          - name: ctaBillingLinkLabel
+            label: Pricing CTA billing link
+            type: string
           - name: singleOutletTitle
             label: Single-outlet plan name
             type: string
           - name: singleOutletSubtitle
             label: Single-outlet plan summary
+            type: string
+          - name: singleOutletEyebrow
+            label: Single-outlet label
+            type: string
+          - name: annualTermLabel
+            label: Annual term label
+            type: string
+          - name: singleOutletTotalLabel
+            label: Single-outlet price note
+            type: string
+          - name: singleOutletCta
+            label: Single-outlet CTA
+            type: string
+          - name: bestValueLabel
+            label: Best-value label
+            type: string
+          - name: monthsUnit
+            label: Month unit
+            type: string
+          - name: perMonthUnit
+            label: Monthly price unit
             type: string
           - name: multiOutletTitle
             label: Multi-outlet plan name
@@ -245,6 +636,27 @@ content:
           - name: multiOutletDescription
             label: Multi-outlet plan description
             type: text
+          - name: multiOutletEyebrow
+            label: Multi-outlet label
+            type: string
+          - name: perOutletYearUnit
+            label: Annual per-outlet unit
+            type: string
+          - name: minimumOutletsTemplate
+            label: Multi-outlet minimum summary
+            type: string
+          - name: annualTotalsAriaLabel
+            label: Annual totals accessible label
+            type: string
+          - name: outletsUnit
+            label: Outlet unit
+            type: string
+          - name: perYearUnit
+            label: Annual total unit
+            type: string
+          - name: multiOutletCta
+            label: Multi-outlet CTA
+            type: string
           - name: pricingNote
             label: Pricing terms note
             type: text
@@ -254,9 +666,6 @@ content:
           - name: demoIntroDescription
             label: Demo introduction
             type: text
-          - name: faqTitle
-            label: FAQ section headline
-            type: string
           - name: demoTitle
             label: Demo section headline
             type: string
@@ -287,17 +696,14 @@ content:
           - name: billingScopeDescription
             label: Billing scope description
             type: text
-          - name: ctaTitle
-            label: Billing call-to-action headline
-            type: string
-          - name: ctaDescription
-            label: Billing call-to-action description
-            type: text
           - name: detailTitle
             label: Billing detail section headline
             type: string
           - name: screenCaption
             label: Product screen caption
+            type: string
+          - name: screenshotDataLabel
+            label: POS screenshot data note
             type: string
           - name: printerNote
             label: Printer setup note
@@ -307,6 +713,654 @@ content:
             type: string
           - name: pricingLink
             label: Pricing link
+            type: string
+          - name: definitionKicker
+            label: KOT definition label
+            type: string
+          - name: definitionTitle
+            label: KOT definition heading
+            type: string
+          - name: definitionBodyOne
+            label: KOT definition paragraph one
+            type: text
+          - name: definitionBodyTwo
+            label: KOT definition paragraph two
+            type: text
+          - name: definitionBodyThree
+            label: KOT definition paragraph three
+            type: text
+          - name: routingKicker
+            label: Station routing section label
+            type: string
+          - name: routingTitle
+            label: Station routing heading
+            type: string
+          - name: routingBodyOne
+            label: Station routing paragraph one
+            type: text
+          - name: routingBodyTwo
+            label: Station routing paragraph two
+            type: text
+          - name: ticketKicker
+            label: Ticket detail section label
+            type: string
+          - name: ticketTitle
+            label: Ticket detail heading
+            type: string
+          - name: ticketDescription
+            label: Ticket detail introduction
+            type: text
+          - name: changeKicker
+            label: Order change section label
+            type: string
+          - name: changeTitle
+            label: Order change heading
+            type: string
+          - name: changeDescription
+            label: Order change introduction
+            type: text
+          - name: printDescriptionOne
+            label: Digital ticket and KDS description
+            type: text
+          - name: printDescriptionTwo
+            label: Print queue description
+            type: text
+          - name: printDescriptionThree
+            label: Print state explanation
+            type: text
+          - name: comparisonKicker
+            label: KOT and KDS section label
+            type: string
+          - name: comparisonTitle
+            label: KOT and KDS heading
+            type: string
+          - name: comparisonDescription
+            label: KOT and KDS introduction
+            type: text
+          - name: kdsLinkLabel
+            label: Kitchen display link label
+            type: string
+          - name: sampleOrderLabel
+            label: Sample order label
+            type: string
+          - name: detailsListLabel
+            label: Ticket details list accessible name
+            type: string
+          - name: handoffListLabel
+            label: Kitchen workflow list accessible name
+            type: string
+          - name: comparisonTableLabel
+            label: KOT and KDS comparison table accessible name
+            type: string
+          - name: breadcrumbLinkLabel
+            label: Breadcrumb home link
+            type: string
+          - name: operatingKicker
+            label: Outlet operations label
+            type: string
+          - name: operatingTitle
+            label: Outlet operations heading
+            type: string
+          - name: operatingIntro
+            label: Outlet operations introduction
+            type: text
+          - name: operatingDetailOne
+            label: Central menu publishing detail
+            type: text
+          - name: operatingDetailTwo
+            label: Outlet menu choices detail
+            type: text
+          - name: operatingDetailThree
+            label: Role and outlet access detail
+            type: text
+          - name: operatingDetailFour
+            label: Outlet reports detail
+            type: text
+          - name: scenarioKicker
+            label: Three-location example label
+            type: string
+          - name: scenarioTitle
+            label: Three-location example heading
+            type: string
+          - name: scenarioIntro
+            label: Three-location example introduction
+            type: text
+          - name: scenarioDetail
+            label: Three-location example workflow
+            type: text
+          - name: scenarioClosing
+            label: Three-location example conclusion
+            type: text
+          - name: limitsKicker
+            label: Operating scope label
+            type: string
+          - name: limitsTitle
+            label: Operating scope heading
+            type: string
+          - name: limitsBodyOne
+            label: Access boundaries
+            type: text
+          - name: limitsBodyTwo
+            label: Report definitions and freshness boundary
+            type: text
+          - name: limitsBodyThree
+            label: Supported apps and scope boundary
+            type: text
+          - name: reportScreenLabel
+            label: Reports screenshot label
+            type: string
+          - name: reportScreenDataLabel
+            label: Reports sample-data caption
+            type: string
+          - name: reportScreenTitle
+            label: Reports screenshot heading
+            type: string
+          - name: reportScreenDescription
+            label: Reports screenshot description
+            type: text
+          - name: menuScreenTitle
+            label: Central menu screenshot heading
+            type: string
+          - name: menuScreenDescription
+            label: Central menu screenshot description
+            type: text
+          - name: menuLinkLabel
+            label: Menu management related link
+            type: string
+          - name: directoryKicker
+            label: Feature directory label
+            type: string
+          - name: directoryTitle
+            label: Feature directory heading
+            type: string
+          - name: directoryDescription
+            label: Feature directory introduction
+            type: text
+          - name: orderSectionTitle
+            label: Ordering and service features heading
+            type: string
+          - name: kitchenSectionTitle
+            label: Kitchen and menu features heading
+            type: string
+          - name: managementSectionTitle
+            label: Management features heading
+            type: string
+          - name: workflowKicker
+            label: Connected workflow label
+            type: string
+          - name: workflowTitle
+            label: Connected workflow heading
+            type: string
+          - name: workflowDescription
+            label: Connected workflow description
+            type: text
+          - name: workflowLinkLabel
+            label: Connected workflow link
+            type: string
+          - name: operationsTitle
+            label: Team operations heading
+            type: string
+          - name: operationsDescription
+            label: Team operations description
+            type: text
+          - name: platformTitle
+            label: Platforms heading
+            type: string
+          - name: platformDescription
+            label: Platforms description
+            type: text
+          - name: ctaTitle
+            label: Demo call to action heading
+            type: string
+          - name: ctaDescription
+            label: Demo call to action description
+            type: text
+          - name: ctaLabel
+            label: Demo action label
+            type: string
+          - name: statesKicker
+            label: states section label
+            type: text
+          - name: statesTitle
+            label: states heading
+            type: text
+          - name: statesDescription
+            label: states description
+            type: text
+          - name: statesListLabel
+            label: statesList label
+            type: text
+          - name: assignmentKicker
+            label: assignment section label
+            type: text
+          - name: assignmentTitle
+            label: assignment heading
+            type: text
+          - name: assignmentParagraphOne
+            label: assignment paragraphOne
+            type: text
+          - name: assignmentParagraphTwo
+            label: assignment paragraphTwo
+            type: text
+          - name: assignmentParagraphThree
+            label: assignment paragraphThree
+            type: text
+          - name: qrKicker
+            label: qr section label
+            type: text
+          - name: qrLinkLabel
+            label: qrLink label
+            type: text
+          - name: operationsKicker
+            label: operations section label
+            type: text
+          - name: relatedKicker
+            label: related section label
+            type: text
+          - name: relatedTitle
+            label: related heading
+            type: text
+          - name: relatedDescription
+            label: related description
+            type: text
+          - name: orderLinkLabel
+            label: orderLink label
+            type: text
+          - name: menuScreenLabel
+            label: menuScreenLabel
+            type: text
+          - name: menuScreenDataLabel
+            label: menuScreenDataLabel
+            type: text
+          - name: menuScreenCaption
+            label: menuScreenCaption
+            type: text
+          - name: serviceKicker
+            label: serviceKicker
+            type: text
+          - name: serviceTitle
+            label: serviceTitle
+            type: text
+          - name: serviceDescription
+            label: serviceDescription
+            type: text
+          - name: serviceListLabel
+            label: serviceListLabel
+            type: text
+          - name: drinkKicker
+            label: drinkKicker
+            type: text
+          - name: drinkTitle
+            label: drinkTitle
+            type: text
+          - name: drinkDescription
+            label: drinkDescription
+            type: text
+          - name: drinkParagraphOne
+            label: drinkParagraphOne
+            type: text
+          - name: drinkParagraphTwo
+            label: drinkParagraphTwo
+            type: text
+          - name: drinkParagraphThree
+            label: drinkParagraphThree
+            type: text
+          - name: setupListLabel
+            label: setupListLabel
+            type: text
+          - name: handoffKicker
+            label: handoffKicker
+            type: text
+          - name: handoffTitle
+            label: handoffTitle
+            type: text
+          - name: handoffParagraphOne
+            label: handoffParagraphOne
+            type: text
+          - name: handoffParagraphTwo
+            label: handoffParagraphTwo
+            type: text
+          - name: handoffParagraphThree
+            label: handoffParagraphThree
+            type: text
+          - name: reportKicker
+            label: reportKicker
+            type: text
+          - name: reportTitle
+            label: reportTitle
+            type: text
+          - name: reportDescription
+            label: reportDescription
+            type: text
+          - name: reportScreenCaption
+            label: reportScreenCaption
+            type: text
+          - name: platformKicker
+            label: platformKicker
+            type: text
+          - name: reportLinkLabel
+            label: reportLinkLabel
+            type: text
+          - name: controlsKicker
+            label: Cash controls section label
+            type: string
+          - name: controlsTitle
+            label: Cash controls heading
+            type: string
+          - name: controlsDescription
+            label: Cash controls introduction
+            type: text
+          - name: controlsListLabel
+            label: Cash controls list description
+            type: string
+          - name: movementKicker
+            label: Payment and dues section label
+            type: string
+          - name: movementTitle
+            label: Payment and dues heading
+            type: string
+          - name: movementParagraphOne
+            label: Payment and tender details
+            type: text
+          - name: movementParagraphTwo
+            label: Customer due details
+            type: text
+          - name: movementParagraphThree
+            label: Cash register workflow details
+            type: text
+          - name: rolesKicker
+            label: Roles section label
+            type: string
+          - name: rolesTitle
+            label: Roles heading
+            type: string
+          - name: rolesParagraphOne
+            label: Role and outlet permissions
+            type: text
+          - name: rolesParagraphTwo
+            label: Shift review scope
+            type: text
+          - name: featuresLinkLabel
+            label: Features directory link
+            type: string
+          - name: viewsKicker
+            label: Reports section label
+            type: string
+          - name: viewsTitle
+            label: Reports section heading
+            type: string
+          - name: viewsDescription
+            label: Reports section introduction
+            type: text
+          - name: viewsListLabel
+            label: Reports list accessible name
+            type: string
+          - name: scopeKicker
+            label: Reporting scope label
+            type: string
+          - name: scopeTitle
+            label: Reporting scope heading
+            type: string
+          - name: scopeParagraphOne
+            label: Reporting date definitions
+            type: text
+          - name: scopeParagraphTwo
+            label: Reporting outlet and permission scope
+            type: text
+          - name: scopeParagraphThree
+            label: Owner overview and historical report scope
+            type: text
+          - name: shiftParagraphOne
+            label: Shift activity and sales measures
+            type: text
+          - name: shiftParagraphTwo
+            label: Reports and cash shift connection
+            type: text
+          - name: cashLinkLabel
+            label: Cash management link
+            type: string
+          - name: multiOutletLinkLabel
+            label: Multi-outlet reports link
+            type: string
+          - name: auditKicker
+            label: Audit history section label
+            type: string
+          - name: auditTitle
+            label: Audit history heading
+            type: string
+          - name: auditParagraph
+            label: Audit history description
+            type: text
+          - name: pillarBreadcrumbLabel
+            label: Restaurant management breadcrumb
+            type: string
+          - name: pillarHeroKicker
+            label: Restaurant management hero label
+            type: string
+          - name: pillarHeroTitle
+            label: Restaurant management headline
+            type: string
+          - name: pillarHeroDescription
+            label: Restaurant management introduction
+            type: text
+          - name: pillarHeroCta
+            label: Restaurant management primary action
+            type: string
+          - name: pillarWorkflowCta
+            label: Restaurant management workflow action
+            type: string
+          - name: pillarScreenLabel
+            label: Restaurant management screenshot label
+            type: string
+          - name: pillarScreenDataLabel
+            label: Restaurant management screenshot data note
+            type: string
+          - name: pillarScreenCaption
+            label: Restaurant management screenshot caption
+            type: text
+          - name: pillarOverviewKicker
+            label: Restaurant management overview label
+            type: string
+          - name: pillarOverviewTitle
+            label: Restaurant management overview heading
+            type: string
+          - name: pillarOverviewParagraphOne
+            label: Restaurant management overview paragraph one
+            type: text
+          - name: pillarOverviewParagraphTwo
+            label: Restaurant management overview paragraph two
+            type: text
+          - name: pillarWorkflowKicker
+            label: Restaurant workflow label
+            type: string
+          - name: pillarWorkflowTitle
+            label: Restaurant workflow heading
+            type: string
+          - name: pillarWorkflowDescription
+            label: Restaurant workflow introduction
+            type: text
+          - name: pillarWorkflowListLabel
+            label: Restaurant workflow list accessible name
+            type: string
+          - name: pillarWorkspaceKicker
+            label: Restaurant workspace section label
+            type: string
+          - name: pillarWorkspaceTitle
+            label: Restaurant workspace section heading
+            type: string
+          - name: pillarWorkspaceDescription
+            label: Restaurant workspace section introduction
+            type: text
+          - name: pillarWorkspaceListLabel
+            label: Restaurant workspace cards accessible name
+            type: string
+          - name: pillarWorkspaceListsLink
+            label: Team permissions related page link
+            type: string
+          - name: pillarTeamKicker
+            label: Restaurant team roles label
+            type: string
+          - name: pillarTeamTitle
+            label: Restaurant team roles heading
+            type: string
+          - name: pillarTeamParagraphOne
+            label: Restaurant team roles paragraph one
+            type: text
+          - name: pillarTeamParagraphTwo
+            label: Restaurant team roles paragraph two
+            type: text
+          - name: pillarDailyKicker
+            label: Daily operating rhythm label
+            type: string
+          - name: pillarDailyTitle
+            label: Daily operating rhythm heading
+            type: string
+          - name: pillarDailySubheadOne
+            label: Order handoff subheading
+            type: string
+          - name: pillarDailySubheadTwo
+            label: Shift review subheading
+            type: string
+          - name: pillarDailyParagraphOne
+            label: Order and kitchen context
+            type: text
+          - name: pillarDailyParagraphTwo
+            label: Shift and business review
+            type: text
+          - name: pillarDevicesKicker
+            label: Restaurant devices section label
+            type: string
+          - name: pillarDevicesTitle
+            label: Restaurant devices section heading
+            type: string
+          - name: pillarDevicesDescription
+            label: Restaurant devices section introduction
+            type: text
+          - name: pillarFloorScreenLabel
+            label: Floor screenshot label
+            type: string
+          - name: pillarKitchenScreenLabel
+            label: Kitchen screenshot label
+            type: string
+          - name: pillarFloorLinkLabel
+            label: Floor feature link
+            type: string
+          - name: pillarKitchenLinkLabel
+            label: Kitchen feature link
+            type: string
+          - name: pillarFitKicker
+            label: Restaurant fit section label
+            type: string
+          - name: pillarFitTitle
+            label: Restaurant fit section heading
+            type: string
+          - name: pillarFitParagraphOne
+            label: Restaurant fit paragraph one
+            type: text
+          - name: pillarFitParagraphTwo
+            label: Restaurant fit paragraph two
+            type: text
+          - name: pillarQrLinkLabel
+            label: Table QR ordering link
+            type: string
+          - name: pillarFaqKicker
+            label: Restaurant management FAQ label
+            type: string
+          - name: pillarFaqTitle
+            label: Restaurant management FAQ heading
+            type: string
+          - name: pillarFaqDescription
+            label: Restaurant management FAQ introduction
+            type: text
+          - name: pillarCtaKicker
+            label: Restaurant management demo label
+            type: string
+          - name: pillarCtaTitle
+            label: Restaurant management demo heading
+            type: string
+          - name: pillarCtaDescription
+            label: Restaurant management demo description
+            type: text
+          - name: pillarDemoCta
+            label: Restaurant management demo action
+            type: string
+          - name: emailValue
+            label: Contact email address
+            type: string
+          - name: phoneValue
+            label: Contact phone display
+            type: string
+          - name: contactDetailsTitle
+            label: Direct contact section heading
+            type: string
+          - name: formHeading
+            label: Contact form heading
+            type: string
+          - name: formIntroduction
+            label: Contact form introduction
+            type: text
+          - name: companyLinkLabel
+            label: Company link label
+            type: string
+          - name: demoLabel
+            label: Demo section label
+            type: string
+          - name: salesTitle
+            label: Product and pricing title
+            type: string
+          - name: salesDescription
+            label: Product and pricing description
+            type: text
+          - name: supportTitle
+            label: Support title
+            type: string
+          - name: supportDescription
+            label: Support description
+            type: text
+          - name: companyKicker
+            label: Company details label
+            type: string
+          - name: companyTitle
+            label: Company details heading
+            type: string
+          - name: companyDescription
+            label: Company details description
+            type: text
+          - name: addressLabel
+            label: Company address label
+            type: string
+          - name: addressValue
+            label: Company address
+            type: text
+          - name: effectiveDate
+            label: Privacy policy effective date
+            type: string
+          - name: intro
+            label: Privacy policy introduction
+            type: text
+          - name: companyName
+            label: Privacy policy responsible company
+            type: string
+          - name: companyAddress
+            label: Privacy policy company address
+            type: text
+          - name: privacyEmail
+            label: Privacy request email address
+            type: string
+          - name: requestText
+            label: Privacy request contact instruction
+            type: text
+          - name: requestGuidance
+            label: Privacy request details
+            type: text
+          - name: closingTitle
+            label: Privacy contact closing heading
+            type: string
+          - name: closingText
+            label: Privacy contact closing text
+            type: text
+          - name: closingEmailLabel
+            label: Privacy contact email link
             type: string
       - name: faqs
         label: Frequently asked questions
@@ -319,6 +1373,20 @@ content:
           - name: answer
             type: text
             required: true
+      - name: privacySections
+        label: Privacy policy sections
+        type: object
+        list:
+          collapsible: true
+        fields:
+          - name: title
+            label: Section heading
+            type: string
+            required: true
+          - name: paragraphs
+            label: Section paragraphs
+            type: text
+            list: true
       - name: billingLists
         label: Billing workflow content
         type: object
@@ -395,6 +1463,8 @@ content:
                 type: string
               - name: description
                 type: text
+              - name: href
+                type: string
           - name: teamRoles
             label: Team role summaries
             type: object
@@ -448,3 +1518,470 @@ content:
             label: Outlet counts in total examples
             type: number
             list: true
+      - name: pricingLists
+        label: Pricing page details
+        type: object
+        fields:
+          - name: includedFeatures
+            label: Included released standard features
+            type: string
+            list: true
+          - name: separatelyQuoted
+            label: Separately quoted items
+            type: string
+            list: true
+          - name: boundaries
+            label: Pricing boundaries
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: kind
+                label: Display as text or list
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+      - name: kitchenLists
+        label: Kitchen display page content groups
+        type: object
+        fields:
+          - name: workflowSteps
+            label: Workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: ticketDetails
+            label: Kitchen ticket details
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: stages
+            label: Kitchen ticket stages
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: changeDetails
+            label: Order change steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+      - name: kotLists
+        label: Kitchen order ticket page content groups
+        type: object
+        fields:
+          - name: workflowSteps
+            label: KOT workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: ticketDetails
+            label: Ticket details
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: comparisonRows
+            label: KOT and KDS comparison
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: name
+                type: string
+              - name: purpose
+                type: text
+          - name: faqs
+            label: KOT FAQs
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: menuLists
+        label: Restaurant menu management content groups
+        type: object
+        fields:
+          - name: catalogParts
+            label: Menu catalog parts
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Menu publication workflow
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: outletModes
+            label: Outlet menu modes
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Menu management FAQs
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+
+      - name: orderLists
+        label: Restaurant order management content groups
+        type: object
+        fields:
+          - name: orderTypes
+            label: Order service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Order workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Order management FAQs
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: cafeLists
+        label: Cafe POS page content groups
+        type: object
+        fields:
+          - name: serviceTypes
+            label: Cafe service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: drinkSetup
+            label: Drink menu setup
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Cafe workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Cafe POS questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: tableLists
+        label: Restaurant table management content groups
+        type: object
+        fields:
+          - name: floorStates
+            label: Floor status and party types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Floor workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Table management questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: multiOutletLists
+        label: Multi-outlet page content groups
+        type: object
+        fields:
+          - name: workflowSteps
+            label: Outlet workflow
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: operatingParts
+            label: Shared and local operations
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: scenarioSteps
+            label: Three-location example steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Multi-outlet questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: cashLists
+        label: Restaurant cash management content groups
+        type: object
+        fields:
+          - name: controls
+            label: Cash shift controls
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Cash shift workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Cash management questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: salesReportLists
+        label: Restaurant sales report content groups
+        type: object
+        fields:
+          - name: reportGroups
+            label: Report catalog groups
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: reports
+                label: Reports in this group
+                type: object
+                list:
+                  collapsible: true
+                fields:
+                  - name: title
+                    type: string
+                  - name: description
+                    type: text
+          - name: workflowSteps
+            label: Report review steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Sales reporting questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: managementPillarLists
+        label: Restaurant management workflow and linked workspaces
+        type: object
+        fields:
+          - name: workflowSteps
+            label: Restaurant workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workspaces
+            label: Linked product workspaces
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+              - name: href
+                label: Existing published route
+                type: string
+              - name: linkLabel
+                type: string
+      - name: featureDirectory
+        label: Feature directory cards
+        type: object
+        list:
+          collapsible: true
+        fields:
+          - name: number
+            type: string
+          - name: category
+            type: string
+            options:
+              values:
+                - orders
+                - kitchen
+                - management
+          - name: title
+            type: string
+          - name: description
+            type: text
+          - name: href
+            label: Existing route or homepage section link
+            type: string
+          - name: linkLabel
+            type: string

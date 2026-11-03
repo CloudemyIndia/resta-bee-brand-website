@@ -1,0 +1,46 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('pages', 'privacy-policy');
+if (!entry?.data.privacySections?.length) throw new Error('Privacy Policy content is incomplete.');
+const { seo, copy, privacySections } = entry.data;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  description: seo.description,
+  url: seo.canonical,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: copy.breadcrumbLabel, item: seo.canonical }
+  ] }
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="privacy-page">
+    <nav class="privacy-breadcrumb container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span></nav>
+    <header class="privacy-hero container">
+      <p class="privacy-kicker"><span aria-hidden="true"></span>{copy.heroKicker}</p>
+      <h1>{copy.heroTitle}</h1>
+      <p class="privacy-date">{copy.effectiveDate}</p>
+      <p class="privacy-intro">{copy.intro}</p>
+      <div class="privacy-entity"><strong>{copy.companyName}</strong><span>{copy.companyAddress}</span><p>{copy.requestText} <a href={`mailto:${copy.privacyEmail}`}>{copy.privacyEmail}</a>.</p></div>
+    </header>
+    <div class="privacy-content container">
+      <aside class="privacy-request" aria-label="Privacy requests"><h2>{copy.closingTitle}</h2><p>{copy.closingText}</p><a href={`mailto:${copy.privacyEmail}`}>{copy.closingEmailLabel}</a></aside>
+      <div class="privacy-sections">{privacySections.map((section, index) => <section aria-labelledby={`privacy-section-${index}`}><h2 id={`privacy-section-${index}`}>{section.title}</h2>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</section>)}
+        <p class="privacy-guidance">{copy.requestGuidance}</p>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+<style>
+.privacy-page{padding-bottom:34px}.privacy-breadcrumb{display:flex;align-items:center;gap:10px;padding-top:18px;color:var(--muted);font-size:12px}.privacy-breadcrumb a{text-decoration:underline;text-underline-offset:3px}.privacy-breadcrumb [aria-current=page]{color:var(--ink)}.privacy-hero{max-width:920px;padding-block:62px 42px}.privacy-kicker{display:flex;align-items:center;gap:9px;color:#963b18;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.privacy-kicker span{width:7px;height:7px;border-radius:50%;background:var(--orange)}.privacy-hero h1{margin-top:17px;font-size:clamp(42px,6vw,68px);line-height:1.03;letter-spacing:-.047em}.privacy-date{margin-top:14px;color:#62665d;font-size:12px}.privacy-intro{max-width:760px;margin-top:24px;color:#43483f;font-size:17px;line-height:1.75}.privacy-entity{display:grid;gap:7px;margin-top:25px;padding:18px 20px;border:1px solid #dedccf;border-radius:9px;background:#fffefa;color:#454a41;font-size:12px;line-height:1.65}.privacy-entity strong{color:#242820;font-size:13px}.privacy-entity p{margin-top:5px}.privacy-entity a,.privacy-sections a{color:#713313;font-weight:650;text-decoration:underline;text-underline-offset:3px}.privacy-content{display:grid;grid-template-columns:minmax(200px,.65fr) minmax(0,1.35fr);align-items:start;gap:clamp(35px,7vw,90px);padding-block:20px 80px}.privacy-request{position:sticky;top:24px;padding:22px;border-radius:12px;background:#e8ecdf}.privacy-request h2{font-size:20px;line-height:1.2}.privacy-request p{margin-top:10px;color:#4b5146;font-size:12px;line-height:1.7}.privacy-request>a{display:inline-flex;margin-top:14px;color:#713313;font-size:12px;font-weight:650;text-decoration:underline;text-underline-offset:3px}.privacy-sections{max-width:760px}.privacy-sections section{padding-block:0 29px;margin-bottom:28px;border-bottom:1px solid #deddd4;scroll-margin-top:24px}.privacy-sections h2{font-size:22px;line-height:1.25;letter-spacing:-.02em}.privacy-sections p{margin-top:12px;color:#4d5249;font-size:14px;line-height:1.8}.privacy-guidance{padding:15px 17px;border-left:2px solid #819073;background:#f0f1e9;color:#4d5249;font-size:12px;line-height:1.75}
+@media(max-width:700px){.privacy-breadcrumb{padding-top:13px;font-size:10px;gap:7px}.privacy-hero{padding-block:39px 27px}.privacy-hero h1{font-size:clamp(40px,10vw,54px)}.privacy-intro{margin-top:18px;font-size:15px;line-height:1.72}.privacy-entity{padding:15px;font-size:11px}.privacy-content{grid-template-columns:1fr;gap:27px;padding-block:12px 58px}.privacy-request{position:static}.privacy-sections h2{font-size:20px}.privacy-sections p{font-size:13px}}
+</style>

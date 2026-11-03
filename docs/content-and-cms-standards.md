@@ -8,7 +8,7 @@ Use these standards when planning, writing, implementing or reviewing public Res
 - Keep each route focused on one search intent. Check for overlap with the homepage and existing pages before writing.
 - Cover the primary phrase in the title, H1 and opening copy where it reads naturally. Use supporting terms in relevant sections, FAQs and links. Do not repeat phrases where they add no meaning.
 - Measure primary phrase density in visible `<main>` text, excluding navigation, footer, metadata, styles, scripts and structured data. The owner’s editorial floor is **0.5%**. Aim toward **1%** when natural; never add awkward repetitions to hit a number. This is an internal QA target, not a Google ranking formula.
-- Write a useful page for the searcher’s task. There is no required word count. Add sections to answer real questions and explain supported workflows.
+- Write a useful page for the searcher’s task. For substantive new product pages, plan for more than 800 visible main-content words and aim for 1,200 or more when the intent and product evidence support that depth. These are editorial targets, not fixed gates: do not pad or repeat, and keep a page shorter when additional copy would be unhelpful or speculative.
 
 ## Copy and product claims
 
@@ -17,7 +17,8 @@ Use these standards when planning, writing, implementing or reviewing public Res
 - Describe subscription inclusion in present-release scope: “Every subscription includes the released standard POS features.” Do not imply that future features are automatically included in current subscriptions.
 - Treat pleas for trust, “real/not a demo” proof claims, reassurance badges, defensive comparisons and repeated caveats as **RED ALERT**. Notify the user with the exact signal and its likely effect. Fix it within the authorized scope. Preserve necessary facts and scope information in direct language.
 - Never invent integrations, tax filing, customer results, testimonials, pricing, compatibility, availability or other product claims. Check current capability evidence and public pricing before publishing.
-- Mark illustrative UI, sample transactions and sample restaurant data clearly. Accurate labels describe the example; they are not endorsements or customer proof.
+- For genuine product screenshots, name the RestaBee screen and label sample restaurant data separately. Do not call an actual software screenshot “illustrative,” since readers may infer the interface itself is a mockup. Mark synthetic UI, composed demonstrations and non-product imagery as illustrative where needed; labels must distinguish those visuals from actual app screens.
+- Include at least one relevant supplied product screenshot on each new product page, presented in a suitable device frame. Use responsive desktop, tablet and phone captures when available, keep the full screen uncropped, and label sample data. A product screenshot illustrates the workflow; it is not pricing or customer-outcome evidence.
 
 ## SEO and performance release checks
 

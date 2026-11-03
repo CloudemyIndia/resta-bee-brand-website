@@ -1,0 +1,45 @@
+{
+  "pageId": "contact",
+  "seo": {
+    "title": "Contact RestaBee | Sales and Product Support",
+    "description": "Contact RestaBee for a restaurant POS demo, product questions or support. Reach our team by email or phone, or ask us to walk through your restaurant setup.",
+    "canonical": "https://restabee.com/contact/",
+    "keywords": ["restabee contact", "restabee support", "restabee phone"]
+  },
+  "imageAlt": {
+    "contactPosMenu": "RestaBee POS menu on a phone showing menu categories, items, prices and an active order; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Contact",
+    "heroKicker": "RESTABEE CONTACT AND PRODUCT SUPPORT",
+    "heroTitle": "Talk with the RestaBee team.",
+    "heroDescription": "Use these RestaBee contact details for restaurant POS demos, product questions or help with your existing setup. Tell us what your team needs to manage, and we’ll point you to the right person.",
+    "emailValue": "hello@restabee.com",
+    "phoneValue": "+91 8960915050",
+    "contactDetailsTitle": "RestaBee contact details",
+    "formHeading": "Book a product demo",
+    "formIntroduction": "Tell us about your restaurant and what you want to see.",
+    "companyLinkLabel": "Company details",
+    "demoLabel": "Product walkthrough",
+    "demoTitle": "See RestaBee in your restaurant’s context.",
+    "demoDescription": "Book a demo to discuss your service style, order flow, kitchen handoff, billing and outlet setup with the team.",
+    "salesTitle": "Product and pricing",
+    "salesDescription": "Ask about restaurant POS workflows, available features, subscription terms or how RestaBee fits your outlet setup.",
+    "supportTitle": "RestaBee support",
+    "supportDescription": "For help with an existing RestaBee account, describe the screen or workflow you’re working with and include the best way to reach you.",
+    "companyKicker": "COMPANY DETAILS",
+    "companyTitle": "RestaBee is owned by Cloudemy.",
+    "companyDescription": "RestaBee is a product of Cloudemy Digital Technologies Pvt. Ltd.",
+    "addressLabel": "Registered office",
+    "addressValue": "Diamond City Plaza, B-2/23, Sector F, Jankipuram, Lucknow, Uttar Pradesh 226021, India",
+    "faqKicker": "CONTACT QUESTIONS",
+    "faqTitle": "Before you get in touch.",
+    "faqDescription": "Choose the channel that suits your question. The team can route product, pricing and account enquiries from there."
+  },
+  "faqs": [
+    { "question": "What is the RestaBee phone number?", "answer": "Call +91 8960915050 for product, pricing or account questions. You can also email hello@restabee.com." },
+    { "question": "How do I book a RestaBee demo?", "answer": "Use the demo form to share your contact details, restaurant, city and outlet count. The team can then arrange a walkthrough around your service needs." },
+    { "question": "How do I contact RestaBee support?", "answer": "Email hello@restabee.com or call +91 8960915050. Include the restaurant name and a short description of the question so the team can route it." },
+    { "question": "Where is RestaBee based?", "answer": "RestaBee is owned by Cloudemy Digital Technologies Pvt. Ltd., whose registered office is in Jankipuram, Lucknow, Uttar Pradesh." }
+  ]
+}

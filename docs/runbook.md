@@ -24,8 +24,8 @@ The existing root `CNAME` file may remain, but when a custom Actions workflow is
 
 ### SEO checks after publication
 
-- Open `https://restabee.com/robots.txt` and `https://restabee.com/sitemap.xml`; confirm the sitemap lists the canonical homepage only until more public pages ship.
-- Open `https://restabee.com/llms.txt` and confirm it serves the concise Markdown product guide and current public links.
+- Open `https://restabee.com/robots.txt` and `https://restabee.com/sitemap.xml`; confirm the sitemap lists the 16 canonical, indexable public routes and excludes the 404 and visual prototype.
+- Open `https://restabee.com/llms.txt` and confirm it serves the product overview, feature-route guide, current public links and capability boundaries.
 - In Google Search Console, verify the `restabee.com` Domain property using a DNS TXT record at the active authoritative DNS provider (currently Cloudflare by public NS lookup), submit `https://restabee.com/sitemap.xml`, then inspect the homepage URL for indexability and the selected canonical.
 - Optionally verify the site in Bing Webmaster Tools and submit the same sitemap.
 - Check social previews with the current Open Graph/Twitter image at `https://restabee.com/og-restaurant-pos.png` after the deployment is live.

@@ -1,0 +1,166 @@
+{
+  "pageId": "cafe-pos",
+  "seo": {
+    "title": "Cafe POS Software for Counter and Tables | RestaBee",
+    "description": "Cafe POS for counter and table service, drink variants, modifiers, kitchen handoff, billing and item sales reports. RestaBee keeps each order in one workspace.",
+    "canonical": "https://restabee.com/solutions/cafe-pos/",
+    "keywords": [
+      "cafe POS",
+      "cafe POS software",
+      "pos for cafe",
+      "cafe billing software",
+      "pos system for cafe",
+      "coffee shop pos software"
+    ]
+  },
+  "imageAlt": {
+    "cafePosMenu": "RestaBee POS order-entry screen showing menu items, item variants, an open order and payment controls; sample restaurant menu data.",
+    "cafePosReports": "RestaBee mobile sales report screen showing item and category sales for a selected reporting period; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Cafe POS",
+    "heroKicker": "CAFE POS FOR COUNTER AND TABLE SERVICE",
+    "heroTitle": "A cafe POS built around the way you serve.",
+    "heroDescription": "Take counter orders, serve tables, set up drink sizes and add-ons, and send preparation details to the right station. RestaBee keeps the cafe POS workflow connected from order entry through billing.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Explore the cafe workflow",
+    "menuScreenLabel": "RestaBee POS order entry",
+    "menuScreenDataLabel": "Sample restaurant menu data",
+    "menuScreenCaption": "Menu items, choices and an active order on the POS screen. Menu photos are optional.",
+    "overviewKicker": "A SERVICE FLOW FOR CAFES",
+    "overviewTitle": "Keep counter orders moving.",
+    "overviewParagraphOne": "During a morning rush, a cashier needs to find the right drink, capture its size and extras, and send it to the team preparing it. A cafe POS should make those choices clear at order entry and keep the order details together as it moves from the counter to the barista or kitchen station.",
+    "overviewParagraphTwo": "RestaBee supports counter and table service in one restaurant POS. Staff can enter takeaway orders, open dine-in tables, record item choices and send preparation details to the configured station. When a cafe serves guests at tables, Table QR ordering adds a guest menu and staff-reviewed order flow alongside the staff POS.",
+    "overviewParagraphThree": "This cafe POS software uses the same order, preparation and billing workflow as the rest of RestaBee. Set up the menu for the service you run, use the device that fits the counter or floor, and keep each order’s next step visible to the team.",
+    "serviceKicker": "ONE CAFE, DIFFERENT ORDER TYPES",
+    "serviceTitle": "Set up service for the way guests order.",
+    "serviceDescription": "Choose the order flow at entry, then carry the selected menu items and notes into preparation and billing.",
+    "serviceListLabel": "Cafe POS service types",
+    "drinkKicker": "DRINK SIZES AND ADD-ONS",
+    "drinkTitle": "Give each drink the choices it needs.",
+    "drinkDescription": "A coffee shop POS software setup can include item variants and configurable modifier groups. Staff see the available choices while adding the drink to an order.",
+    "drinkParagraphOne": "A cafe might offer one coffee in Regular and Large sizes, with a milk choice or an extra shot as an add-on. In the POS menu, each defined variant can carry its own price, while modifier groups hold the choices staff need to record for preparation. The guest’s selections travel with the item on the order.",
+    "drinkParagraphTwo": "The same structure works for tea, cold drinks, bakery items or a cafe combo. Create categories that match the menu, use variants when the serving size changes, and add modifiers for options that need a separate kitchen or barista instruction. Menu choices remain visible to staff at the point of sale.",
+    "drinkParagraphThree": "This makes the POS system for cafe service easier to use during a queue: the cashier selects the menu item, chooses the requested size or add-on, and sees the configured order details before sending. The setup reflects the cafe’s own menu definitions, so teams can keep the choices relevant to their service.",
+    "setupListLabel": "Cafe menu setup options",
+    "workflowKicker": "FROM ORDER TO PREPARATION",
+    "workflowTitle": "A short handoff from till to station.",
+    "workflowDescription": "Take an order, confirm its options and route each item into the preparation workflow. Staff can follow the same cafe POS order as it moves toward the guest.",
+    "workflowListLabel": "Cafe order workflow steps",
+    "handoffKicker": "THE ORDER AFTER IT LEAVES THE COUNTER",
+    "handoffTitle": "Send each item where it is prepared.",
+    "handoffParagraphOne": "Assign menu items to the relevant kitchen station during menu setup. When staff send an order, its items and preparation notes appear in the station workflow. The team can start items and mark them ready as preparation progresses, while the cashier can see the order context in the POS.",
+    "handoffParagraphTwo": "The cafe billing software workflow follows the order into bill preparation. Review the bill, apply configured tax details and record cash, UPI or card collections. Billing stays connected to the items entered at the counter, so staff can finish the same order record after service.",
+    "handoffParagraphThree": "A POS for cafe teams should make service options easy to tell apart. RestaBee supports counter takeaway and dine-in orders, with table service when the cafe uses tables. Delivery orders can also be entered by staff. The team selects the order type and continues through the relevant order, kitchen and billing steps.",
+    "reportKicker": "A VIEW OF WHAT SOLD",
+    "reportTitle": "Review item sales by date.",
+    "reportDescription": "Use reports to review item and category sales for a selected period, alongside other permitted sales and collection reports. Filter by date and order type where available, then use the report scope your role permits.",
+    "reportScreenLabel": "RestaBee Reports · phone",
+    "reportScreenDataLabel": "Sample restaurant data",
+    "reportScreenCaption": "Item and category reporting in the RestaBee app.",
+    "platformTitle": "Use the screens that suit the shift.",
+    "platformDescription": "Use a wider screen for order entry at the counter or check service details on a phone. The cafe POS layout adapts to desktop, tablet and phone screens.",
+    "menuLinkLabel": "See restaurant menu management",
+    "billingLinkLabel": "Explore restaurant billing",
+    "kdsLinkLabel": "See the kitchen display workflow",
+    "faqKicker": "CAFE POS QUESTIONS",
+    "faqTitle": "What cafe teams ask before choosing a POS.",
+    "faqDescription": "Menu setup, counter orders, preparation and billing in RestaBee.",
+    "ctaKicker": "SEE THE CAFE POS WORKFLOW",
+    "ctaTitle": "Walk through a cafe order in RestaBee.",
+    "ctaDescription": "Review drink choices, counter service, kitchen handoff, billing and reports with your cafe menu in view.",
+    "demoCta": "Book a demo",
+    "platformKicker": "FLEXIBLE SCREENS FOR THE SHIFT",
+    "reportLinkLabel": "Explore multi-outlet reports"
+  },
+  "cafeLists": {
+    "serviceTypes": [
+      {
+        "title": "Counter takeaway",
+        "description": "Enter a walk-in order at the counter, capture the selected items and choices, then send the order into preparation."
+      },
+      {
+        "title": "Dine-in tables",
+        "description": "Open a table for guests who stay, add items as service continues and carry the party through to billing."
+      },
+      {
+        "title": "Table QR orders",
+        "description": "Let a guest browse the menu and submit an order for staff review before it moves to preparation."
+      }
+    ],
+    "drinkSetup": [
+      {
+        "title": "Variants for serving size",
+        "description": "Define sizes such as Regular or Large, with the price configured for each variant."
+      },
+      {
+        "title": "Modifiers for drink options",
+        "description": "Add configurable choices such as milk or extra shots where they fit the cafe menu."
+      },
+      {
+        "title": "Categories for a quick menu",
+        "description": "Group coffees, teas, cold drinks and food so staff can find items during service."
+      },
+      {
+        "title": "Station routing for preparation",
+        "description": "Associate menu items with the preparation station that should receive them."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Select the service type",
+        "description": "Start counter takeaway or dine-in service and open the relevant order or table."
+      },
+      {
+        "number": "02",
+        "title": "Add the drink and choices",
+        "description": "Choose the item, select an available variant, and add the requested modifiers or notes."
+      },
+      {
+        "number": "03",
+        "title": "Send it to preparation",
+        "description": "Send the order to its configured station so the barista or kitchen team can start the items."
+      },
+      {
+        "number": "04",
+        "title": "Prepare the bill",
+        "description": "Review the order in billing and record the payment using the tender received."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does a cafe POS system do?",
+        "answer": "A cafe POS records counter or dine-in orders, keeps configured item choices with the order, sends preparation details to the assigned station and supports bill preparation and payment recording."
+      },
+      {
+        "question": "Can I set up different drink sizes?",
+        "answer": "Yes. Menu items can have named variants with their own configured prices. A cafe can use variants for serving sizes such as Regular or Large when those sizes are part of its menu."
+      },
+      {
+        "question": "Can a cafe POS record milk choices or extra shots?",
+        "answer": "Menu items can use configurable modifier groups. The cafe can define choices that fit its menu, and staff select the requested options while adding an item to an order."
+      },
+      {
+        "question": "Can the same POS handle counter and table service?",
+        "answer": "Yes. Staff can enter counter takeaway orders and dine-in table orders in RestaBee. Table QR ordering is available for guests to submit orders for staff review."
+      },
+      {
+        "question": "How do orders reach the barista or kitchen?",
+        "answer": "Menu items can be associated with configured preparation stations. When staff send the order, the station receives the items and preparation notes for its team to work on."
+      },
+      {
+        "question": "Which payments can staff record?",
+        "answer": "RestaBee records cash, UPI and card against the order. Staff can review the collection in the POS billing workflow."
+      },
+      {
+        "question": "Can I review which items sold during a day?",
+        "answer": "Reports include item and category sales for a selected date range, with permitted filters such as order type. The exact reports available depend on the user’s role and outlet access."
+      },
+      {
+        "question": "Is RestaBee coffee shop POS software?",
+        "answer": "RestaBee supports cafe counter orders, configurable drink variants and modifiers, station preparation, dine-in tables, billing and item or category reports in one POS workspace."
+      }
+    ]
+  }
+}

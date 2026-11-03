@@ -29,6 +29,8 @@
     "ctaTitle": "See billing in the|full workflow.",
     "ctaDescription": "Follow an order through service, kitchen handoff and collection in a guided product demo.",
     "screenCaption": "Add items and quantities before preparing the bill.",
+    "screenshotLabel": "RestaBee POS order entry",
+    "screenshotDataLabel": "Sample restaurant data",
     "printerNote": "Set up a compatible printer for the chosen device.",
     "reviewLink": "Review correction workflows in a demo",
     "pricingLink": "See public subscription pricing"

@@ -1,17 +1,39 @@
 # RestaBee
 
-> RestaBee is restaurant POS software for restaurants in India, connecting dine-in, takeaway and staff-entered delivery orders with kitchen tickets, table service, billing and multi-outlet menu management.
+> RestaBee is restaurant POS software for restaurants in India. It brings dine-in, takeaway and staff-entered delivery orders into one workflow for order entry, kitchen preparation, table service, billing and reporting.
 
-The public website describes RestaBee's product capabilities and current public pricing. Guests can send table QR orders for staff review before preparation; delivery orders are entered by staff.
+Use this guide to find the public product, feature, pricing and support pages. Product screenshots show the RestaBee software; any sample restaurant records shown in them are illustrative.
 
-## Website
+## Product overview
 
-- [Restaurant POS software homepage](https://restabee.com/): Product overview, features, supported workflows, pricing, FAQs and demo enquiry.
-- [Restaurant billing software](https://restabee.com/features/restaurant-billing-software/): Bill preview and issue, configured tax profiles, eligible draft checks, payment records and outstanding balances.
+- [Restaurant POS software](https://restabee.com/): How RestaBee connects restaurant orders, floor service, kitchen tickets and bills, with a product overview and demo request.
+- [Restaurant management software](https://restabee.com/restaurant-management-software/): The broader restaurant workspace for front-of-house, kitchen, cashier and owner operations.
+- [Features directory](https://restabee.com/features/): Browse the restaurant POS capabilities and open a dedicated page for each workflow.
+- [Restaurant POS capabilities](https://restabee.com/#capabilities): A concise view of the core workflows supported by the product.
+- [Pricing](https://restabee.com/pricing/): Public subscription terms for single-outlet and multi-outlet restaurants.
+- [Request a demo](https://restabee.com/#demo): Send RestaBee a restaurant enquiry.
 
-## Product sections
+## POS workflows and features
 
-- [Restaurant POS features](https://restabee.com/#capabilities): Order flow, floor management, kitchen tickets, billing, menu management, reports and role access.
-- [Table QR Ordering](https://restabee.com/#qr-ordering): Guest menu browsing and staff-reviewed table orders.
-- [Pricing](https://restabee.com/#pricing): Current public subscription prices.
-- [Request a demo](https://restabee.com/#demo): Demo enquiry form.
+- [Restaurant order management system](https://restabee.com/features/restaurant-order-management/): Dine-in, takeaway and staff-entered delivery orders, item choices, kitchen handoff and bill progression.
+- [Restaurant table management](https://restabee.com/features/restaurant-table-management/): Live floor sections, table states, waiting parties, seating, service assignments and bill requests.
+- [Table QR ordering](https://restabee.com/#qr-ordering): Guests browse a table menu and submit an order for staff review before preparation.
+- [Kitchen order ticket system](https://restabee.com/features/kot-management/): Preparation tickets, station routing, order instructions, amendments and ticket progress.
+- [Kitchen display system](https://restabee.com/features/kitchen-display-system/): Digital kitchen queues for new, preparing and ready items, including station and partial-quantity progress.
+- [Restaurant billing software](https://restabee.com/features/restaurant-billing-software/): Bill preparation and issue, configured tax, discounts, payment records and outstanding balances.
+- [Restaurant menu management software](https://restabee.com/features/restaurant-menu-management/): Shared menu catalog, review and publication, with outlet-specific menu management.
+- [Multi-outlet restaurant management](https://restabee.com/features/multi-outlet-restaurant-management/): Central menu releases, outlet access and outlet-scoped reporting for restaurant groups.
+- [Restaurant cash management](https://restabee.com/features/restaurant-cash-management/): Opening floats, cash movements, shift counts and closing variance review.
+- [Restaurant sales reports](https://restabee.com/features/restaurant-sales-reports/): Issued sales, collections, item and category sales, discounts, taxes and shift activity.
+- [Cafe POS](https://restabee.com/solutions/cafe-pos/): Cafe counter and dine-in orders, menu choices, preparation, billing and sales reports.
+
+## Company and policies
+
+- [Contact RestaBee](https://restabee.com/contact/): Contact details and the demo enquiry form.
+- [Privacy policy](https://restabee.com/privacy-policy/): Privacy practices for the RestaBee platform, restaurant accounts and demo enquiries.
+
+## Product boundaries
+
+- Delivery orders are entered by restaurant staff; the website does not describe a delivery marketplace or dispatch network.
+- Table QR orders are reviewed by staff before they are sent for preparation.
+- Pricing and included features are described on the public pricing page. Internal sales pricing documents are not public product terms.

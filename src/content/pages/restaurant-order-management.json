@@ -1,0 +1,131 @@
+{
+  "pageId": "restaurant-order-management",
+  "seo": {
+    "title": "Restaurant POS Ordering System in India | RestaBee",
+    "description": "Take dine-in, takeaway and staff-entered delivery orders in one restaurant POS ordering system, with item choices, kitchen handoff and bill preparation.",
+    "canonical": "https://restabee.com/features/restaurant-order-management/",
+    "keywords": [
+      "restaurant POS ordering system",
+      "restaurant ordering and billing system",
+      "restaurant order management system",
+      "kitchen orders"
+    ]
+  },
+  "copy": {
+    "breadcrumbLabel": "Order management",
+    "heroKicker": "Restaurant POS order management",
+    "heroTitle": "Restaurant POS ordering system",
+    "heroDescription": "Enter dine-in, takeaway and delivery orders in the POS. Keep item choices and service details with the order as it moves to the kitchen and on to bill preparation.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Follow an order",
+    "screenLabel": "RestaBee POS order entry",
+    "screenDataLabel": "Sample restaurant data",
+    "screenCaption": "Select menu items, set quantities and review the active order before its next handoff.",
+    "overviewKicker": "Order entry for each service type",
+    "overviewTitle": "One restaurant order management system for dine-in, takeaway and delivery",
+    "overviewParagraphOne": "A restaurant POS ordering system brings order entry into the same workspace staff use to prepare food and bills. Start with the service type, add the guest’s selections, record choices or instructions, then check the order before sending it to preparation. The order keeps its service context through those steps.",
+    "overviewParagraphTwo": "For dine-in, staff can connect an order with a table and its party. Takeaway orders are entered by staff for counter collection. Delivery orders are also entered by the restaurant team, with the order details carried into preparation and bill handling. This restaurant ordering and billing system supports these service types in the POS; staff manage any external delivery coordination separately.",
+    "overviewParagraphThree": "The restaurant order management system gives front-of-house and kitchen teams a shared order record. Staff can review the selected items and quantities before sending the order. Once it reaches preparation, the kitchen sees the ticket at the station assigned to those items.",
+    "typesKicker": "Start with the way the guest is served",
+    "typesTitle": "Choose the order type before adding items",
+    "typesDescription": "A restaurant POS ordering system starts by setting the service context. Table details apply to dine-in, while counter and delivery orders follow their staff-entered flow.",
+    "customizeKicker": "Choices stay with the item",
+    "customizeTitle": "Build each order with the right details",
+    "customizeParagraphOne": "The menu presents the items available for order entry. Staff add an item, select a listed variant where one is available, choose its configured add-ons and set the quantity. Combos and their included choices follow the menu setup. The team can also record an instruction such as “less spicy” when it applies to preparation.",
+    "customizeParagraphTwo": "A restaurant POS ordering system keeps these selections on the order line so the kitchen receives the relevant preparation detail with the ticket. That gives the team a clear handoff from the menu choice to the assigned preparation station. The menu page explains how categories, variants, modifiers and stations are maintained.",
+    "reviewKicker": "Review before the kitchen handoff",
+    "reviewTitle": "Check the order, then send it to preparation",
+    "reviewParagraphOne": "Before sending, staff can review the active order, selected items, quantities and choices. The POS supports a quick two-click send to the kitchen after order entry. Station assignment determines where each item appears for preparation, such as a hot kitchen or beverage counter.",
+    "reviewParagraphTwo": "The kitchen team follows new, preparing and ready work in its queue. For a digital workflow, the kitchen display shows ticket progress. A kitchen order ticket carries the preparation details and order reference. These connected views let the restaurant POS ordering system carry the guest’s selection into the kitchen workspace.",
+    "changesKicker": "Keep changes visible",
+    "changesTitle": "Keep order changes visible through preparation",
+    "changesDescription": "When a sent order needs an amendment or cancellation, the affected kitchen ticket can show the change for staff acknowledgement. The order and its preparation record remain linked, so the team can review what changed in context.",
+    "billKicker": "From order to bill",
+    "billTitle": "Continue from the order into bill preparation",
+    "billParagraphOne": "After service, staff can move from the order record into bill preparation. The bill workflow uses the order’s items and quantities, then applies the configured tax and charge setup. Staff review the bill and record the collection through the permitted workflow.",
+    "billParagraphTwo": "A restaurant ordering and billing system should make the handoff clear for the people doing each task. RestaBee keeps order entry connected to kitchen preparation and billing, while the billing workflow handles bill issue, eligible draft checks and payment records.",
+    "faqKicker": "Order entry questions",
+    "faqTitle": "Restaurant POS ordering, explained",
+    "faqDescription": "How staff create orders, capture choices and pass work to the kitchen and billing teams.",
+    "ctaKicker": "See the order workflow",
+    "ctaTitle": "Walk through order entry in RestaBee",
+    "ctaDescription": "Review dine-in, takeaway and delivery order entry, kitchen handoff and bill preparation with the RestaBee team.",
+    "demoCta": "Book a demo",
+    "workflowListLabel": "Restaurant POS ordering steps",
+    "orderTypesListLabel": "Order types supported in the POS",
+    "menuLinkLabel": "Explore restaurant menu management",
+    "kotLinkLabel": "Explore kitchen order tickets",
+    "billingLinkLabel": "Explore restaurant billing"
+  },
+  "imageAlt": {
+    "orderManagement": "RestaBee POS order-entry screen showing menu items, order type, quantities and the active order; sample restaurant data."
+  },
+  "orderLists": {
+    "orderTypes": [
+      {
+        "title": "Dine-in",
+        "description": "Select or open the table, add the party’s items and keep the table context with the order as service continues."
+      },
+      {
+        "title": "Takeaway",
+        "description": "Enter a counter order in the POS, review the items and send them to the relevant preparation station."
+      },
+      {
+        "title": "Delivery",
+        "description": "Restaurant staff record delivery orders in the POS. The order proceeds to kitchen preparation and bill handling from the same record."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Choose the service type",
+        "description": "Start a dine-in, takeaway or staff-entered delivery order. Add a table or other service details where they apply."
+      },
+      {
+        "number": "02",
+        "title": "Add items and choices",
+        "description": "Select menu items, quantities, variants and configured add-ons. Keep preparation instructions with the relevant item."
+      },
+      {
+        "number": "03",
+        "title": "Review and send",
+        "description": "Check the active order and send it to the kitchen. Items appear at the preparation station assigned in the menu."
+      },
+      {
+        "number": "04",
+        "title": "Prepare and bill",
+        "description": "Kitchen staff update preparation progress. The service team continues to bill preparation and records collection through the permitted workflow."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a restaurant POS ordering system?",
+        "answer": "It is the POS workflow restaurant staff use to enter an order, select menu items and choices, send preparation details to the kitchen and continue to bill preparation. RestaBee supports dine-in, takeaway and staff-entered delivery orders."
+      },
+      {
+        "question": "Can staff manage dine-in and takeaway orders in one POS?",
+        "answer": "Yes. Staff can start dine-in orders with table context or enter takeaway orders for counter service, then send items to their assigned preparation stations."
+      },
+      {
+        "question": "How are delivery orders entered?",
+        "answer": "Restaurant staff enter delivery orders in the POS. The order then moves through kitchen preparation and bill handling. External delivery coordination is managed separately."
+      },
+      {
+        "question": "Can an order include variants and add-ons?",
+        "answer": "Staff can select the variants and add-ons configured for the menu item. Combos and their available choices follow the restaurant’s menu setup."
+      },
+      {
+        "question": "How does the POS send kitchen orders?",
+        "answer": "Staff review the active order and send it to the kitchen. The POS routes items to their assigned preparation stations, where the team tracks ticket and item progress."
+      },
+      {
+        "question": "Can staff change an order after sending it?",
+        "answer": "An amendment or cancellation can appear on the affected kitchen ticket for staff acknowledgement. The kitchen display and KOT pages describe those preparation workflows."
+      },
+      {
+        "question": "Does the restaurant order management system prepare the bill too?",
+        "answer": "Order entry connects to bill preparation. Staff review the order details, apply the configured tax and charge setup, issue the bill through the permitted workflow and record collection."
+      }
+    ]
+  }
+}

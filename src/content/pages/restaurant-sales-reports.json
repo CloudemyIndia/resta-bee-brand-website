@@ -1,0 +1,186 @@
+{
+  "pageId": "restaurant-sales-reports",
+  "seo": {
+    "title": "Restaurant Sales Reporting Software | RestaBee",
+    "description": "Restaurant sales reporting software for issued sales, collections, item and category performance, discounts, taxes, outlet/date filters and shift variance.",
+    "canonical": "https://restabee.com/features/restaurant-sales-reports/",
+    "keywords": [
+      "restaurant sales reporting software",
+      "restaurant sales report",
+      "restaurant POS reports",
+      "restaurant analytics software",
+      "restaurant sales dashboard"
+    ]
+  },
+  "imageAlt": {
+    "salesReportsPhone": "RestaBee Reports screen on a phone listing issued sales, item sales, category sales, discounts, collections and operational reports; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Restaurant sales reports",
+    "heroKicker": "SALES, COLLECTIONS AND OPERATIONS",
+    "heroTitle": "Restaurant sales reporting software for daily review.",
+    "heroDescription": "Restaurant sales reporting software brings issued sales, collected payments and operational reports into one place. Choose a report, set its business dates and outlet scope, then review each measure in context.",
+    "heroCta": "Book a demo",
+    "workflowCta": "See how to review a report",
+    "screenLabel": "RestaBee Reports · phone",
+    "screenDataLabel": "Sample restaurant data",
+    "screenCaption": "Choose a report for sales, collections or operations, then set its dates and filters.",
+    "overviewKicker": "READ SALES AND COLLECTIONS SEPARATELY",
+    "overviewTitle": "See what was issued and what was collected.",
+    "overviewParagraphOne": "Issued sales and confirmed collections answer different questions. The sales view follows the invoice or credit posting business date. Collections and returns follow the payment or refund posting business date. A bill may be issued on one date and collected later, so its value can appear in each report on the date relevant to that event.",
+    "overviewParagraphTwo": "Restaurant sales reporting software gives owners and managers a way to review both measures in their own context. Check the issued amount for the selected period, then open collections to see payments and returns recorded during that period. Use the two views together when a sales total and the money collected do not match on the same day.",
+    "overviewParagraphThree": "A restaurant sales report also helps answer what contributed to the total. Open item or category sales to see the recorded mix, then review discounts, credits, tax or tender details where the selected report provides them. Each view keeps its own date definition and filters so the result can be read on its own terms.",
+    "viewsKicker": "REPORTS BY THE QUESTION YOU HAVE",
+    "viewsTitle": "Reports for sales, finance and service.",
+    "viewsDescription": "The report catalog groups sales, collections and operational views. Available entries depend on each person’s assigned role and outlet access.",
+    "viewsListLabel": "Restaurant sales and operations report groups",
+    "workflowKicker": "FROM REPORT SELECTION TO REVIEW",
+    "workflowTitle": "Set the scope before comparing results.",
+    "workflowDescription": "Restaurant sales reporting software works best when every figure has a clear period, outlet and measure. Follow the same review order each time.",
+    "workflowListLabel": "Steps to review restaurant sales reports",
+    "scopeKicker": "DATES, OUTLETS AND PERMISSIONS",
+    "scopeTitle": "Compare the same dates and outlet scope.",
+    "scopeParagraphOne": "Choose the reporting period before comparing totals. Sales and credits use their invoice or credit posting business date; collections and returns use the payment or refund posting business date. A date range that differs between the two reports will produce a different view of activity.",
+    "scopeParagraphTwo": "For a restaurant with more than one outlet, check the selected outlet scope alongside the dates. Role permissions control which outlet data and reports each person can open. A manager reviewing one location sees the permitted scope; an owner with broader access can compare the outlets available to their role.",
+    "scopeParagraphThree": "The owner overview and historical reports are snapshots for the selected scope. Check the report name and visible date filters to see how a value was grouped. The restaurant sales dashboard can then support a handover or review with the period and outlet visible alongside the figures.",
+    "auditParagraph": "Audit history is a separate, read-only view of recorded changes and actions. Owners, managers and accountants see events within their permitted scope. It lists the event time, actor, action, record and available reason, with sensitive contact and credential fields removed from event details. Its date range follows the audit event timestamp in the selected timezone; it uses neither invoice nor payment posting dates.",
+    "shiftKicker": "REVIEW THE CASH CLOSE TOO",
+    "shiftTitle": "Connect reported sales with the shift record.",
+    "shiftParagraphOne": "Operational reporting includes shift activity and variance within the permitted report scope. A sales figure describes the billed activity; a shift close records the drawer count against its expected cash. Review both when the question concerns service totals and the cash handed over at the end of a shift.",
+    "shiftParagraphTwo": "RestaBee restaurant sales reporting software brings these views into the same reporting area while preserving their different purposes. Use the cash shift screen for opening float, drawer movements and closing count. Use sales and collection reports for posted bills, payments, returns and the selected period’s item mix.",
+    "cashLinkLabel": "Explore restaurant cash management",
+    "multiOutletLinkLabel": "Review multi-outlet reports",
+    "faqKicker": "RESTAURANT SALES REPORT QUESTIONS",
+    "faqTitle": "Make sense of the figures in each report.",
+    "faqDescription": "Dates, outlet scope, issued amounts, collections and the operational views available in RestaBee.",
+    "ctaKicker": "SEE THE REPORT WORKFLOW",
+    "ctaTitle": "Review reports against your outlet setup.",
+    "ctaDescription": "See restaurant sales reporting software with the dates, outlets and measures your team reviews.",
+    "demoCta": "Book a demo",
+    "auditKicker": "READ-ONLY CHANGE HISTORY",
+    "auditTitle": "See the events recorded in your permitted scope."
+  },
+  "salesReportLists": {
+    "reportGroups": [
+      {
+        "title": "Sales",
+        "reports": [
+          {
+            "title": "Issued sales and credits",
+            "description": "Invoice/credit posting business date."
+          },
+          {
+            "title": "Item sales",
+            "description": "Commercial parent line allocations."
+          },
+          {
+            "title": "Category sales",
+            "description": "Captured commercial parent categories."
+          },
+          {
+            "title": "Discounts and credits",
+            "description": "Issued discounts and posted credits."
+          }
+        ]
+      },
+      {
+        "title": "Collections and finance",
+        "reports": [
+          {
+            "title": "Confirmed collections and returns",
+            "description": "Payment/refund posting business date."
+          },
+          {
+            "title": "Tax components",
+            "description": "Issued and credited tax allocations."
+          },
+          {
+            "title": "Open receivables",
+            "description": "Captured collectible balance as of selected end date."
+          },
+          {
+            "title": "Cash shifts and variance",
+            "description": "Captured shift business date."
+          },
+          {
+            "title": "Tips collected and returned",
+            "description": "Separate tip ledger posting date."
+          }
+        ]
+      },
+      {
+        "title": "Operations",
+        "reports": [
+          {
+            "title": "Orders and kitchen service",
+            "description": "Captured creation and preparation event dates."
+          },
+          {
+            "title": "Audit history",
+            "description": "Read-only recorded actions in the user’s permitted scope."
+          }
+        ]
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Choose the report",
+        "description": "Start with the question: issued sales, collected payments, item mix or shift activity."
+      },
+      {
+        "number": "02",
+        "title": "Set the business dates",
+        "description": "Use the report’s own date definition and select the period you intend to review."
+      },
+      {
+        "number": "03",
+        "title": "Check outlet and filters",
+        "description": "Confirm the permitted outlet, service or order-type filters available in that report."
+      },
+      {
+        "number": "04",
+        "title": "Read the measure in context",
+        "description": "Compare like periods and scopes, then open item, category, tender or shift details when useful."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does restaurant sales reporting software show?",
+        "answer": "RestaBee reports include issued sales and credits, item and category sales, discounts, tax, collections, returns and operational measures such as shift variance. The exact filters depend on the selected report and the user’s permissions."
+      },
+      {
+        "question": "Why are issued sales different from collections?",
+        "answer": "Issued sales use the invoice or credit posting business date. Collections and returns use the payment or refund posting business date. A bill can be issued on one date and paid later, so the two reports measure different events."
+      },
+      {
+        "question": "Can a restaurant sales report show item and category sales?",
+        "answer": "Yes. RestaBee includes item-sales and category-sales reports. Item results use commercial parent line allocations, and category results use the captured commercial parent categories."
+      },
+      {
+        "question": "Can I filter restaurant POS reports by outlet and date?",
+        "answer": "Reports use their available date and outlet filters, subject to the user’s permitted data scope. Check the selected filters before comparing results across periods or locations."
+      },
+      {
+        "question": "Does RestaBee work as restaurant analytics software?",
+        "answer": "RestaBee provides reports for sales, collections, items, categories and operations. The owner overview and historical report views are snapshots for their selected scope."
+      },
+      {
+        "question": "Is there a restaurant sales dashboard for daily review?",
+        "answer": "The owner overview brings selected business measures into a summary view. Open a specific report when you need its date definition, outlet filter or item and collection details."
+      },
+      {
+        "question": "Can reports show cash shift variance?",
+        "answer": "Operational reports include shift activity and variance within the permitted scope. The My Shift workflow records opening cash, drawer movements and the closing count."
+      },
+      {
+        "question": "Are the report values live?",
+        "answer": "The owner overview and historical reports are snapshots for the selected scope. Read the report’s period and filters when reviewing a figure or comparing it with another view."
+      },
+      {
+        "question": "Can I review an audit report?",
+        "answer": "RestaBee provides a separate, read-only Audit history view for recorded changes and actions visible to the user’s role. It shows event time, actor, action, record and available reason, uses the event timestamp in the selected timezone and removes sensitive contact and credential fields from event details."
+      }
+    ]
+  }
+}

@@ -1,0 +1,128 @@
+---
+import Mark from './Mark.astro';
+interface Props {
+  apiBaseUrl: string;
+  submitLabel: string;
+  privacyNotice: string;
+  heading?: string;
+  headingId?: string;
+  introduction?: string;
+}
+const {
+  apiBaseUrl,
+  submitLabel,
+  privacyNotice,
+  heading = 'Book a demo',
+  headingId = 'demo-form-title',
+  introduction = 'Share your restaurant and the best way to reach you.',
+} = Astro.props;
+---
+<div class="enquiry-panel">
+  <h3 id={headingId}>{heading}</h3>
+  <p class="form-intro">{introduction}</p>
+  <form id="demo-form" data-api-base={apiBaseUrl}>
+    <div class="form-row">
+      <div class="form-field"><label for="contact-name">Your name</label><input id="contact-name" name="name" autocomplete="name" maxlength="100" placeholder="Name" required /></div>
+      <div class="form-field"><label for="restaurant">Restaurant name</label><input id="restaurant" name="restaurant" autocomplete="organization" maxlength="100" placeholder="Restaurant or café" required /></div>
+    </div>
+    <div class="form-row">
+      <div class="form-field"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2" maxlength="100" placeholder="City" required /></div>
+      <div class="form-field"><label for="contact-phone">Phone number</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="32" placeholder="Best callback number" required /></div>
+    </div>
+    <div class="form-row">
+      <div class="form-field"><label for="contact-email">Your email <span>Optional</span></label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="160" placeholder="you@example.com" /></div>
+      <div class="form-field"><label for="outlet-count">Outlets</label><select id="outlet-count" name="outlets" required><option value="" selected disabled>Select outlet count</option><option value="1">1 outlet</option><option value="2 to 5">2 to 5 outlets</option><option value="6+">6 or more outlets</option><option value="Opening soon">Opening soon</option></select></div>
+    </div>
+    <div class="form-field"><label for="demo-interest">What would you like to see? <span>Optional</span></label><textarea id="demo-interest" name="interest" maxlength="600" rows="2" placeholder="Kitchen tickets, split bills, managing menus…"></textarea></div>
+    <button class="button button-orange form-submit" type="submit" data-initial-label={submitLabel}><span>{submitLabel}</span><Mark /></button>
+    <p class="form-help" id="form-help">Your request will be sent to RestaBee when you submit this form.</p>
+  <p class="form-privacy">{privacyNotice} <a href="/privacy-policy/">Privacy Policy</a>.</p>
+  </form>
+  <noscript><p class="no-script-contact">Email <a href="mailto:hello@restabee.com?subject=RestaBee%20demo%20request">hello@restabee.com</a> with your name, restaurant, city, callback number and outlet count to arrange a demo.</p></noscript>
+  <div class="draft-result" id="lead-result" tabindex="-1" hidden role="status" aria-live="polite"><h4 id="lead-result-title"></h4><p id="lead-result-message"></p><a class="text-link" id="lead-email-fallback" href="mailto:hello@restabee.com" hidden>Email hello@restabee.com <Mark name="mail" /></a></div>
+</div>
+
+<script>
+const setText = (selector: string, value: string) => {
+  const element = document.querySelector(selector);
+  if (element) element.textContent = value;
+};
+const form = document.querySelector<HTMLFormElement>('#demo-form');
+const result = document.querySelector<HTMLElement>('#lead-result');
+const formMessage = (title: string, message: string, canEmail = false) => {
+  setText('#lead-result-title', title);
+  setText('#lead-result-message', message);
+  const fallback = document.querySelector<HTMLAnchorElement>('#lead-email-fallback');
+  if (fallback) fallback.hidden = !canEmail;
+  if (result) result.hidden = false;
+  result?.focus();
+};
+form?.addEventListener('submit', async event => {
+  event.preventDefault();
+  if (!form.reportValidity() || form.dataset.submitting === 'true') return;
+  const data = new FormData(form);
+  const payload = {
+    name: String(data.get('name') || '').trim(),
+    restaurant: String(data.get('restaurant') || '').trim(),
+    city: String(data.get('city') || '').trim(),
+    phone: String(data.get('phone') || '').trim(),
+    email: String(data.get('email') || '').trim(),
+    outlets: String(data.get('outlets') || ''),
+    interest: String(data.get('interest') || '').trim(),
+  };
+  const button = form.querySelector<HTMLButtonElement>('.form-submit');
+  const label = button?.querySelector('span');
+  form.dataset.submitting = 'true';
+  form.setAttribute('aria-busy', 'true');
+  if (button) { button.disabled = true; if (label) label.textContent = 'Sending…'; }
+  if (result) result.hidden = true;
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), 15000);
+  try {
+    const response = await fetch(`${form.dataset.apiBase}/api/public/leads`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    const body = await response.json() as { success?: boolean; message?: string; reason?: string; errors?: Record<string, string | string[]> };
+    if (body.success === true) {
+      formMessage('Request sent', body.message || 'Thank you. Our team will contact you to arrange a demo.');
+      form.reset();
+    } else if (body.reason === 'INVALID_REQUEST') {
+      let firstInvalid: HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | null = null;
+      for (const [field, raw] of Object.entries(body.errors || {})) {
+        const control = form.elements.namedItem(field);
+        const message = Array.isArray(raw) ? raw.join(' ') : raw;
+        if (typeof message === 'string' && (control instanceof HTMLInputElement || control instanceof HTMLSelectElement || control instanceof HTMLTextAreaElement)) {
+          control.setCustomValidity(message);
+          firstInvalid ??= control;
+        }
+      }
+      formMessage('Check your details', body.message || 'Please review the highlighted fields and try again.');
+      if (firstInvalid) { firstInvalid.focus(); form.reportValidity(); }
+    } else {
+      const message = body.reason === 'LIMIT_EXCEEDED'
+        ? body.message || 'Too many demo requests. Please try again later.'
+        : body.reason === 'WORKFLOW_NOT_READY'
+          ? body.message || 'Demo requests are temporarily unavailable. Please contact us by email.'
+          : body.message || 'We could not send your request just now. Please try again or contact us by email.';
+      formMessage('Request not sent', message, true);
+    }
+  } catch {
+    formMessage('Request not sent', 'We could not connect to RestaBee. Please try again or contact us by email.', true);
+  } finally {
+    window.clearTimeout(timeout);
+    delete form.dataset.submitting;
+    form.removeAttribute('aria-busy');
+    if (button) { button.disabled = false; if (label) label.textContent = button.dataset.initialLabel || 'Send demo request'; }
+  }
+});
+const clearFieldError = (event: Event) => {
+  const target = event.target;
+  if (target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement) target.setCustomValidity('');
+  if (result) result.hidden = true;
+};
+form?.addEventListener('input', clearFieldError);
+form?.addEventListener('change', clearFieldError);
+</script>

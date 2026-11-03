@@ -1,0 +1,176 @@
+{
+  "pageId": "restaurant-menu-management",
+  "seo": {
+    "title": "Restaurant Menu Management Software | RestaBee",
+    "description": "Manage restaurant items, variants, modifiers and outlet menus in one workflow. Review changes, publish the central catalog and apply menus by outlet.",
+    "canonical": "https://restabee.com/features/restaurant-menu-management/",
+    "keywords": [
+      "restaurant menu management software",
+      "restaurant menu management system",
+      "menu management software",
+      "menu management system for restaurants",
+      "restaurant menu system",
+      "food menu management system"
+    ]
+  },
+  "copy": {
+    "breadcrumbLabel": "Menu management",
+    "heroKicker": "Restaurant menu management",
+    "heroTitle": "Restaurant menu management software",
+    "heroDescription": "Build a shared catalog of items, prices, variants and choices. Review menu changes, publish a release, then apply it to the outlets that should use it. Each outlet can keep its own menu where the service calls for a local setup.",
+    "heroCta": "Book a demo",
+    "workflowCta": "See the menu workflow",
+    "screenLabel": "RestaBee Central Menu",
+    "screenDataLabel": "Sample catalog data",
+    "overviewKicker": "One catalog, clear ownership",
+    "overviewTitle": "A restaurant menu management system with a deliberate publishing path",
+    "overviewParagraphOne": "Restaurant menu management software gives operators one workspace for the menu changes that come up throughout the year: a new dish is added, a price is revised, a choice is adjusted or an item is paused. RestaBee brings those records into a menu workspace where a team can maintain the catalog and review its current state before a release is published.",
+    "overviewParagraphTwo": "The restaurant menu management software keeps the work organized around the menu itself. Items, categories, variants, modifier groups, combos and kitchen stations have distinct records. Teams can search the catalog, filter by category or state, edit a definition and inspect published releases or history from the same workspace.",
+    "overviewParagraphThree": "This structure gives the restaurant a restaurant menu system that staff can maintain as service changes. The central catalog is the shared source for outlets that choose to use it; outlet menus can also remain independent or carry local customizations.",
+    "catalogKicker": "Build the selling menu",
+    "catalogTitle": "Keep dishes, choices and kitchen routing connected",
+    "catalogDescription": "Set up the parts of a menu in the same workflow that prepares them for order entry and kitchen service.",
+    "workflowKicker": "Review before release",
+    "workflowTitle": "Move each menu change from draft to outlet",
+    "workflowDescription": "This restaurant menu management software gives each menu change a clear path from editing to use. RestaBee separates catalog edits, release review and outlet application so each action has a visible scope.",
+    "outletKicker": "Central where it helps, local where needed",
+    "outletTitle": "Choose which outlets use a published menu",
+    "outletParagraphOne": "A central menu can provide a common starting point for several outlets. The owner team prepares the catalog, reviews the release and selects an outlet to review and apply it. Each application checks the outlet’s current menu baseline before the change is made.",
+    "outletParagraphTwo": "An outlet can use a published central menu, keep an independent menu or retain local customizations. That distinction lets a group share a core offering while handling outlet-specific service needs. The menu management software keeps the selected outlet and the menu release visible during review.",
+    "outletParagraphThree": "Before applying a release, RestaBee checks the outlet’s current menu revision against the version reviewed by the team. If that outlet has changed in the meantime, the update needs a fresh review against the newer baseline. This gives the restaurant menu management software a clear revision path and keeps an outlet’s independent work from being silently replaced.",
+    "controlKicker": "Menu details with operational context",
+    "controlTitle": "Keep item setup useful beyond the catalog",
+    "controlParagraphOne": "Menu definitions can include variants, add-on choices and combos. An item can also be associated with a preparation station, connecting what appears in order entry to the kitchen workflow. Categories and status filters help a team find records without treating the menu as one long list.",
+    "controlParagraphTwo": "Outlet availability can be managed at the outlet level, and the menu workspace records changes and published revisions. When an item is unavailable, staff can update its availability for service. Sent orders and previously issued bills keep the menu details captured when those records were created.",
+    "controlParagraphThree": "A food menu management system is useful when the catalog details support the next task as well as the edit itself. Staff select the item in the POS, choose its available variant or add-on, and send it through the station assigned to its preparation. RestaBee keeps those menu definitions connected across the order-entry and kitchen workflows. The restaurant menu management software updates the source menu for future orders while existing orders and bills retain their captured values.",
+    "sampleKicker": "A menu item in context",
+    "sampleTitle": "From a catalog entry to an order screen",
+    "sampleDescription": "The central catalog holds the item definition. The POS menu presents available items to staff for order entry, with the selected variant or choice carried into the order.",
+    "sampleScreenLabel": "RestaBee POS menu",
+    "sampleScreenDataLabel": "Sample restaurant data",
+    "faqKicker": "Menu management questions",
+    "faqTitle": "Restaurant menu management, explained",
+    "faqDescription": "Answers about catalog setup, outlet menus, publishing and item choices.",
+    "ctaKicker": "A menu workflow for your outlets",
+    "ctaTitle": "See menu setup and publication in RestaBee",
+    "ctaDescription": "Walk through the catalog, a menu release and the outlet review process with the RestaBee team.",
+    "demoCta": "Book a demo",
+    "pricingLinkLabel": "View POS subscription pricing",
+    "kotLinkLabel": "Explore kitchen order tickets",
+    "catalogListLabel": "Parts of the restaurant menu catalog",
+    "workflowListLabel": "Restaurant menu review and publishing workflow",
+    "outletListLabel": "Ways an outlet can use menu data",
+    "outletMultiLinkLabel": "Explore multi-outlet POS management",
+    "menuViewsKicker": "POS menu display",
+    "menuViewsTitle": "Choose a menu view for service",
+    "menuViewsDescription": "Use dish photos to help staff scan the menu visually, or keep a compact grid for quick item entry. Each view presents the same menu choices in the POS.",
+    "menuPhotoVariantTitle": "With dish photos",
+    "menuPhotoVariantCaption": "RestaBee POS menu · dish photos · sample menu data",
+    "menuCompactVariantTitle": "Without dish photos",
+    "menuCompactVariantCaption": "RestaBee POS menu · compact item grid · sample menu data"
+  },
+  "menuLists": {
+    "catalogParts": [
+      {
+        "title": "Items and categories",
+        "description": "Organize dishes in categories, with names, descriptions, food classification and an active or archived state."
+      },
+      {
+        "title": "Variants and prices",
+        "description": "Keep serving choices such as Regular and Large with their respective menu prices on the item definition."
+      },
+      {
+        "title": "Add-ons and modifiers",
+        "description": "Define optional choices and link modifier groups to the items that offer them."
+      },
+      {
+        "title": "Combos and kitchen stations",
+        "description": "Set up combo records and associate order items with the stations responsible for preparation."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Edit the catalog",
+        "description": "Update an item, category, variant, modifier group or combo in the menu workspace. Saved changes remain a draft until the team is ready to publish."
+      },
+      {
+        "number": "02",
+        "title": "Review the release",
+        "description": "Check the menu summary and the recorded changes, then publish the reviewed catalog as a menu release."
+      },
+      {
+        "number": "03",
+        "title": "Select an outlet",
+        "description": "Choose an outlet and review the proposed menu against that outlet’s current baseline. The system checks the baseline again when the change is applied."
+      },
+      {
+        "number": "04",
+        "title": "Use the outlet menu",
+        "description": "After application, the outlet’s menu is available to its order-entry workflow. Outlets on independent menus continue to manage those records locally."
+      }
+    ],
+    "outletModes": [
+      {
+        "title": "Published central menu",
+        "description": "Use a selected published release as the outlet menu, with the release and adoption state available for review."
+      },
+      {
+        "title": "Outlet customization",
+        "description": "Keep local menu customizations alongside a central menu where the outlet needs a different setup."
+      },
+      {
+        "title": "Independent outlet menu",
+        "description": "Maintain the outlet menu separately when it does not use the shared central catalog."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What does restaurant menu management software do?",
+        "answer": "Restaurant menu management software organizes menu items, categories, prices, variants, modifier choices and combos. RestaBee also supports review and publication of a central menu to selected outlets."
+      },
+      {
+        "question": "How does a menu management system for restaurants handle updates?",
+        "answer": "A menu management system for restaurants can separate catalog editing, release review and outlet application. RestaBee checks the outlet’s current menu baseline when the team reviews and applies a published change."
+      },
+      {
+        "question": "Can I manage a central menu for multiple outlets?",
+        "answer": "Yes. An owner team can prepare a central catalog, publish a release and choose an outlet to review and apply it. Each outlet can also keep an independent menu or local customizations."
+      },
+      {
+        "question": "Can every outlet have a different menu?",
+        "answer": "Outlets can maintain independent menus. An outlet can also use a published central menu or keep local customizations alongside it, depending on how the business sets up its menus."
+      },
+      {
+        "question": "What menu details can the system store?",
+        "answer": "Menu records can include categories, item details, food classification, variants and prices, modifier groups, combos and preparation-station assignments."
+      },
+      {
+        "question": "How does a food menu management system connect to order entry?",
+        "answer": "RestaBee’s food menu management system keeps menu items, variants, add-ons and kitchen-station assignments in the catalog used by the POS order workflow. Staff select the available choices while entering an order."
+      },
+      {
+        "question": "How are menu changes published?",
+        "answer": "The team edits and saves catalog changes, reviews the release, publishes it, then selects an outlet to review and apply the menu. The outlet’s current baseline is checked during that process."
+      },
+      {
+        "question": "Can I mark an item unavailable?",
+        "answer": "Availability can be changed for an outlet during service. A separate business-level sell-stop can also affect linked outlets, according to the configured access and workflow."
+      },
+      {
+        "question": "Do menu updates change orders already sent to the kitchen?",
+        "answer": "Sent orders and previously issued bills retain the menu details captured when they were created. Menu availability and newer definitions are used for subsequent order entry."
+      },
+      {
+        "question": "Does menu management connect to kitchen stations?",
+        "answer": "Menu items can be assigned to preparation stations. The order workflow uses those assignments to route items to the relevant kitchen queue or configured print route."
+      }
+    ]
+  },
+  "imageAlt": {
+    "centralMenu": "RestaBee Central Menu catalog with categories, item variants and prices, modifier groups, publication controls and menu history. Sample catalog data.",
+    "posMenu": "RestaBee POS menu showing categorized restaurant items, variants and prices beside an active order. Sample restaurant data.",
+    "menuPhotos": "RestaBee POS menu with dish photos, item prices and an active order. Sample menu data.",
+    "menuCompact": "RestaBee POS menu with a compact item grid and active order, without dish photos. Sample menu data."
+  }
+}

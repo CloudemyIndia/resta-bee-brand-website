@@ -1,0 +1,165 @@
+{
+  "pageId": "multi-outlet-restaurant-management",
+  "seo": {
+    "title": "Multi Outlet Restaurant POS | RestaBee",
+    "description": "Run menus, outlet access and sales reports across locations with a multi outlet restaurant POS. Review shared menu releases and outlet-level performance in RestaBee.",
+    "canonical": "https://restabee.com/features/multi-outlet-restaurant-management/",
+    "keywords": [
+      "multi outlet restaurant pos",
+      "franchise pos",
+      "multiple outlet pos system",
+      "restaurant chain pos",
+      "multi location restaurant pos",
+      "central menu management"
+    ]
+  },
+  "copy": {
+    "breadcrumbLabel": "Multi-outlet management",
+    "heroKicker": "Restaurant POS for multiple outlets",
+    "heroTitle": "A multi outlet restaurant POS for clear, outlet-level operations",
+    "heroDescription": "Coordinate a shared menu, outlet-specific access and sales reporting across locations. Review central menu changes, choose where they apply and see each outlet within its permitted reporting scope.",
+    "heroCta": "Book a demo",
+    "workflowCta": "See how outlets work together",
+    "overviewKicker": "One view across locations",
+    "overviewTitle": "Keep shared decisions and outlet work connected",
+    "overviewParagraphOne": "A multi outlet restaurant POS gives an owner team a consistent way to review operations across locations while preserving each outlet’s working scope. RestaBee brings outlet selection into its daily POS workflows, menu publishing and business overview. Staff work in the outlet they are assigned to, while authorized users can review more than one outlet when their access permits it.",
+    "overviewParagraphTwo": "Use the workspace to coordinate menu changes, inspect outlet-level sales and collections, and understand service activity by location. A multi outlet restaurant POS is useful when the same business needs shared decisions in some areas and local ownership in others. RestaBee supports both patterns through central menu releases, outlet menus, and outlet-scoped access and reports.",
+    "overviewParagraphThree": "The page describes the product’s current outlet workflows. It does not assume that every location has identical menus, permissions or reporting access. For a multi outlet restaurant POS, set the operating model that fits your business, then give each role the scope needed for its work.",
+    "workflowKicker": "A controlled outlet workflow",
+    "workflowTitle": "Review, select, apply, then check the outlet result",
+    "workflowDescription": "The multi outlet restaurant POS keeps the scope visible when a team prepares a shared menu change and when an authorized user reviews results across locations. Each step has a named action and outlet context.",
+    "operatingKicker": "Shared where useful, local where needed",
+    "operatingTitle": "Set up the parts your locations share",
+    "operatingIntro": "A multiple outlet POS system needs a practical split between business-wide setup and outlet decisions. RestaBee’s menu workflows support a central catalog that can be published to selected outlets. Outlets can also keep independent menus or retain local customizations alongside a shared menu. A central release is optional, and each outlet can be reviewed before the change is applied.",
+    "operatingDetailOne": "Central menu management starts with a draft catalog. An authorized user reviews the changes and publishes a release. They can then select an outlet, inspect how the release compares with that outlet’s current menu, and apply it after review. The application checks the outlet’s current baseline again, so a newer outlet change is not silently overwritten by an older review.",
+    "operatingDetailTwo": "Menu choices remain visible by outlet. One location may use the latest published central menu, another may be on an earlier release, and a third may work from an independent menu. Outlet customizations can remain alongside a central menu where the workflow supports them. This gives a restaurant chain POS a defined menu process without requiring every location to sell the same items.",
+    "operatingDetailThree": "The same outlet context matters during daily service. Staff use their assigned outlet for order entry, tables, kitchen handoffs and billing. An owner or other permitted role can review additional outlets according to the access granted to that person. Permissions govern what a team member can view or change, including menu administration and reports. When comparing a franchise POS, confirm that outlet assignments and available roles match your business structure. Access can be scoped to selected outlets; a group view is available only where the person’s permissions allow it.",
+    "operatingDetailFour": "Reports can be viewed for a selected outlet or across assigned outlets when the user is permitted to see that broader scope. Choose a reporting period, compare outlet activity, and review sales and confirmed collections using the definitions shown in the reporting workspace. These figures are operational reporting views; they do not replace accounting, bank reconciliation or tax filing.",
+    "scenarioKicker": "Example: three locations",
+    "scenarioTitle": "A shared menu with room for local choices",
+    "scenarioIntro": "Consider a restaurant group with three locations. The owner team maintains the shared catalog and reviews a release when common prices or items change. Each outlet reviews the proposed menu against its current setup before applying it. A location that needs a local variation can retain its customization or continue with an independent menu.",
+    "scenarioDetail": "During service, each team enters orders in its assigned outlet. At close, a permitted manager can review that outlet’s sales and collections for the chosen date range. A user with wider outlet access can change the report scope to include the locations assigned to them. The workflow makes clear which outlet’s menu or report is being reviewed, while the business keeps outlet-level work in context. This example illustrates the product flow; it does not describe a customer deployment or promise a particular business result.",
+    "scenarioClosing": "The same approach works when locations have different menus or access policies. Start with the shared operations that help the team, keep local decisions at outlet level, and grant broader reporting or menu permissions only to roles that need them.",
+    "limitsKicker": "Clear operating boundaries",
+    "limitsTitle": "Outlet visibility follows assigned access",
+    "limitsBodyOne": "An outlet overview is limited by the account’s configured access. A person should see the locations and actions allowed by their role and outlet assignment. Multi-outlet access does not mean every staff member can view every location. Menu publishing, outlet application and report export also depend on the relevant permissions and enabled workflows.",
+    "limitsBodyTwo": "Outlet summaries use the selected report range and the data available in the reporting workspace. Each metric has a definition, and financial sources can have separate snapshot times. Refresh the report to load a new snapshot. The interface does not claim that every number updates at the same instant.",
+    "limitsBodyThree": "RestaBee supports web, Android, iOS, macOS and Windows access through its published app experiences. The exact device and role experience depends on the app and the permissions assigned. A multi location restaurant POS should be evaluated with your own outlet setup, menu structure and reporting roles. RestaBee’s multi outlet restaurant POS keeps those outlet choices in the same workspace.",
+    "screenLabel": "RestaBee Central Menu",
+    "screenDataLabel": "Sample catalog data",
+    "menuScreenTitle": "Review a shared menu release by outlet",
+    "menuScreenDescription": "The central catalog lets an authorized team prepare and publish a release. Each outlet can be selected to review and apply the menu against its current version.",
+    "reportScreenLabel": "RestaBee Reports",
+    "reportScreenDataLabel": "Sample outlet report",
+    "faqKicker": "Multi-outlet POS questions",
+    "faqTitle": "How outlet operations work in RestaBee",
+    "faqDescription": "Answers about menus, access, reports and day-to-day outlet workflows.",
+    "ctaKicker": "For teams running more than one location",
+    "ctaTitle": "See outlet management in RestaBee",
+    "ctaDescription": "Review the central menu workflow, outlet access and reports with your own operating structure.",
+    "demoCta": "Book a demo",
+    "menuLinkLabel": "Explore restaurant menu management",
+    "pricingLinkLabel": "View POS subscription pricing",
+    "breadcrumbLinkLabel": "Restaurant POS overview",
+    "reportScreenTitle": "Read performance in the scope assigned to you",
+    "reportScreenDescription": "The business overview can show outlet performance, sales and confirmed collections for the permitted outlet scope and selected date range."
+  },
+  "multiOutletLists": {
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Prepare shared changes",
+        "description": "An authorized user updates the central catalog and reviews the menu changes before publishing a release."
+      },
+      {
+        "number": "02",
+        "title": "Choose an outlet",
+        "description": "Select a location and compare the release with the menu version currently used there."
+      },
+      {
+        "number": "03",
+        "title": "Apply after review",
+        "description": "Apply the release to the selected outlet. RestaBee checks the outlet’s current baseline when the change is committed."
+      },
+      {
+        "number": "04",
+        "title": "Review outlet results",
+        "description": "Open the business overview for a selected outlet or permitted wider scope, then choose the reporting period."
+      }
+    ],
+    "operatingParts": [
+      {
+        "title": "Central menu releases",
+        "description": "Maintain a shared catalog, review the changes and publish a named menu release for outlet review."
+      },
+      {
+        "title": "Outlet-level menu choices",
+        "description": "Use a published menu, retain local customizations alongside it or keep an independent outlet menu."
+      },
+      {
+        "title": "Role and outlet access",
+        "description": "Give each team member the permissions and outlet scope relevant to their operational responsibilities."
+      },
+      {
+        "title": "Sales and collections views",
+        "description": "Review outlet performance by date range. Broader outlet reporting follows the user’s assigned access."
+      }
+    ],
+    "scenarioSteps": [
+      {
+        "title": "Shared catalog",
+        "description": "The owner team reviews a change to common items or prices and publishes a menu release."
+      },
+      {
+        "title": "Outlet review",
+        "description": "Each location checks the release against its existing menu before applying it."
+      },
+      {
+        "title": "Local variation",
+        "description": "A location can keep a supported customization or continue with its independent menu."
+      },
+      {
+        "title": "Outlet reporting",
+        "description": "Managers review the permitted outlet’s sales and collections for the selected reporting period."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a multi outlet restaurant POS?",
+        "answer": "A multi outlet restaurant POS supports daily operations across more than one restaurant location, with outlet-level work and access. RestaBee also supports a central menu release workflow and reporting by the outlet scope permitted to each user."
+      },
+      {
+        "question": "Can each outlet have a different menu?",
+        "answer": "Yes. An outlet can use a published central menu, retain local customizations alongside it, or keep an independent menu, depending on the business setup."
+      },
+      {
+        "question": "How does central menu management work?",
+        "answer": "An authorized user prepares and reviews a central catalog, publishes a release, selects an outlet and checks the proposed changes against that outlet’s current menu before applying them."
+      },
+      {
+        "question": "Can outlet managers see every location?",
+        "answer": "Access follows each user’s permissions and assigned outlet scope. A manager can review only the outlets available to their account."
+      },
+      {
+        "question": "Can I compare sales across outlets?",
+        "answer": "The business overview can show outlet-level sales and confirmed collections. Users with the required access can choose a wider assigned scope and a date range."
+      },
+      {
+        "question": "Does a multi outlet POS system require identical workflows at every location?",
+        "answer": "A multi outlet restaurant POS does not require identical workflows at every location. Shared menu publishing is optional. Outlets can use independent menus or supported local customizations, while staff work in their assigned outlet. When evaluating a franchise POS, review outlet assignments and local menu needs against your setup."
+      },
+      {
+        "question": "Does RestaBee provide accounting or bank reconciliation across outlets?",
+        "answer": "The reporting workspace shows defined operational sales and collection metrics. It does not replace accounting or bank reconciliation."
+      },
+      {
+        "question": "Which devices can teams use?",
+        "answer": "RestaBee has published app experiences for web, Android, iOS, macOS and Windows. The available workflow depends on the app, role and assigned permissions."
+      }
+    ]
+  },
+  "imageAlt": {
+    "centralMenu": "RestaBee Central Menu workspace with a shared catalog, outlet menu controls, review and publish action, and menu items. Sample catalog data.",
+    "reports": "RestaBee Reports mobile screen showing business overview metrics and outlet reporting controls. Sample outlet report data."
+  }
+}

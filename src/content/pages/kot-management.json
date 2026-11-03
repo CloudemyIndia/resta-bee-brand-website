@@ -1,0 +1,95 @@
+{
+  "pageId": "kot-management",
+  "seo": {
+    "title": "Kitchen Order Ticket System for Restaurants | RestaBee",
+    "description": "Kitchen order ticket system for restaurants: route items by station, keep instructions with each KOT and track changes from order entry to preparation.",
+    "canonical": "https://restabee.com/features/kot-management/",
+    "keywords": [
+      "kitchen order ticket system",
+      "kitchen order ticket app",
+      "restaurant kitchen order system",
+      "kitchen order management system",
+      "kitchen order ticket printer"
+    ]
+  },
+  "copy": {
+    "breadcrumbLabel": "KOT management",
+    "heroKicker": "Kitchen order ticket management",
+    "heroTitle": "Kitchen order ticket system for restaurant kitchens",
+    "heroDescription": "Turn a sent POS order into clear, station-specific preparation details. RestaBee keeps the order context, item choices, quantities and instructions with each kitchen order ticket, with a digital queue and a print queue for configured kitchen workflows.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Follow a kitchen order ticket",
+    "screenLabel": "RestaBee Kitchen Queue",
+    "screenDataLabel": "Sample restaurant data · Table T3",
+    "definitionKicker": "From POS order to preparation",
+    "definitionTitle": "What a kitchen order ticket tells the kitchen",
+    "definitionBodyOne": "A kitchen order ticket, or KOT, is the preparation record created from items sent to the kitchen. It carries the information a cook needs to prepare the order: what was ordered, how many, the selected variant or add-ons, any preparation note, and the station responsible for the item.",
+    "definitionBodyTwo": "The kitchen order ticket system connects that record to its service context and order reference. A ticket can identify a table, takeaway or delivery order and show its KOT number, so kitchen staff can match the preparation work to the front-of-house order as it moves through service.",
+    "definitionBodyThree": "RestaBee’s KOT contains preparation details and item quantities; the customer bill is prepared separately through billing. KOTs do not include menu prices.",
+    "workflowKicker": "The order handoff",
+    "workflowTitle": "How a kitchen order ticket system moves through service",
+    "workflowDescription": "A restaurant kitchen order system starts with the order entered by staff. In RestaBee’s kitchen order ticket system, the kitchen receives the items and instructions needed at its stations while the service team keeps the order and bill in the POS.",
+    "routingKicker": "Station-wise routing",
+    "routingTitle": "Send each item to its preparation station",
+    "routingBodyOne": "A kitchen order ticket system can route items by their assigned preparation stations, such as a hot kitchen or beverage counter. When staff send an order, the kitchen ticket is associated with the station assigned to each item. The kitchen team can focus on its own station queue rather than sorting every order by hand.",
+    "routingBodyTwo": "Station access can follow staff assignments. Kitchen staff see the stations assigned to their role, and a team member with access to more than one station can review those queues from the same kitchen workspace. These connected station assignments make RestaBee a kitchen order management system for outlets with separate preparation teams. The manager configures station definitions, crew assignments and registered printer routes for the outlet.",
+    "ticketKicker": "Details that stay with the item",
+    "ticketTitle": "Keep choices and instructions beside the order",
+    "ticketDescription": "A kitchen order ticket app is useful when the details entered at order time remain easy to read at the preparation station. RestaBee’s KOT carries the selected item details and staff notes into the kitchen workflow.",
+    "changeKicker": "After an order is sent",
+    "changeTitle": "Make amendments and cancellations visible",
+    "changeDescription": "When staff change an order after the kitchen has received it, the affected ticket can show an amendment or cancellation for acknowledgement. Kitchen staff review the change in context before continuing with the ticket. The print queue can also contain a separate amendment job for a configured printer route.",
+    "printKicker": "Digital queue and printed KOTs",
+    "printTitle": "Choose how each kitchen station receives its KOT",
+    "printDescriptionOne": "In the digital workflow, the kitchen display system shows tickets by preparation station and lets staff follow new, preparing and ready items. Within the kitchen order ticket system, the KOT is the order detail; the KDS is the screen where the kitchen team reviews tickets and updates preparation progress.",
+    "printDescriptionTwo": "For paper workflows, the print queue manages KOT jobs and registered station printer routes. Teams can review queued or failed jobs, use a browser print window where appropriate, and review uncertain output before confirming a duplicate reprint. Print preferences can control automatic KOT and amendment jobs for a configured device.",
+    "printDescriptionThree": "The queue reports the job state. Physical output depends on the registered route, device and its connection. RestaBee keeps that print status separate from the order’s preparation status, so a print attempt does not mark an item ready.",
+    "comparisonKicker": "KOT and KDS",
+    "comparisonTitle": "The ticket and the kitchen screen have different jobs",
+    "comparisonDescription": "The kitchen order ticket system creates the preparation details. A kitchen display system gives staff a live workspace to sort through those tickets and record progress.",
+    "faqKicker": "KOT questions",
+    "faqTitle": "Kitchen order tickets, answered",
+    "faqDescription": "Common questions about KOT details, station routing, print jobs and the kitchen display.",
+    "ctaKicker": "See the kitchen workflow",
+    "ctaTitle": "Review a kitchen order ticket from entry to station",
+    "ctaDescription": "Walk through order entry, station assignment, ticket changes and the kitchen queue with the RestaBee team.",
+    "demoCta": "Book a demo",
+    "kdsLinkLabel": "Explore the kitchen display system",
+    "billingLinkLabel": "Explore restaurant billing",
+    "sampleOrderLabel": "Kitchen ticket example",
+    "detailsListLabel": "Information carried on a kitchen order ticket",
+    "handoffListLabel": "Kitchen order ticket workflow",
+    "comparisonTableLabel": "Kitchen order ticket, kitchen display and print queue roles"
+  },
+  "kotLists": {
+    "workflowSteps": [
+      {"number":"01","title":"Enter the order","description":"The service team chooses menu items, quantities, variants and add-ons in the POS. Staff can add a preparation note where the order needs one."},
+      {"number":"02","title":"Send items to the kitchen","description":"Once staff send the order, the kitchen receives the items and details needed for preparation, linked to the relevant order and service context."},
+      {"number":"03","title":"Route by station","description":"Items appear in the queue for their assigned preparation stations. A registered print route can receive a KOT job for paper handling."},
+      {"number":"04","title":"Review progress and changes","description":"Kitchen staff follow ticket progress in the KDS. If an order changes, the affected ticket shows the amendment or cancellation for acknowledgement."}
+    ],
+    "ticketDetails": [
+      {"title":"Order reference and service","description":"The order number, KOT number and service context help staff identify where the preparation belongs, such as Table T3 in the sample screen."},
+      {"title":"Item and quantity","description":"Each kitchen item carries its requested quantity and its own preparation status. Staff can see which items belong to their assigned station."},
+      {"title":"Variants and add-ons","description":"Selected variants and added choices stay with the item, so the kitchen works from the order the service team entered."},
+      {"title":"Preparation instructions","description":"Staff notes appear alongside the item. In the sample ticket, the note reads “extra spicy”. KOTs carry preparation details and no menu prices."}
+    ],
+    "comparisonRows": [
+      {"name":"Kitchen order ticket (KOT)","purpose":"The preparation record: items, quantities, order reference, station and instructions."},
+      {"name":"Kitchen display system (KDS)","purpose":"The digital kitchen workspace for station queues and new, preparing or ready progress."},
+      {"name":"KOT print queue","purpose":"The operational view of print jobs, registered routes, output review and duplicate reprint requests."}
+    ],
+    "faqs": [
+      {"question":"What does KOT mean in a restaurant?","answer":"KOT means kitchen order ticket. It is the preparation record sent from the POS to the kitchen, with the ordered items, quantities, selected choices and instructions needed by the assigned station."},
+      {"question":"What does a kitchen order ticket system include?","answer":"RestaBee connects sent order items to station-specific kitchen tickets, carries the order reference and preparation details, shows changes for acknowledgement, and supports a digital kitchen queue and a KOT print queue."},
+      {"question":"Does a KOT show item prices?","answer":"No. RestaBee’s KOT is a kitchen preparation document. It lists items and quantities without menu prices. The customer bill is handled separately."},
+      {"question":"Can a kitchen order ticket app route items to different stations?","answer":"Yes. Menu items can be assigned to preparation stations. Sent items are associated with their configured stations, and staff can view the stations assigned to their kitchen role."},
+      {"question":"What happens if an order changes after the KOT is sent?","answer":"An amendment or cancellation can appear on the affected kitchen ticket for staff acknowledgement. The print queue can also manage an amendment print job for the configured route."},
+      {"question":"Which kitchen order ticket printer can RestaBee use?","answer":"RestaBee can queue KOT jobs for a configured station printer route and supports a browser print window where appropriate. The available transport depends on the registered device and setup."},
+      {"question":"How is a KOT different from a kitchen display system?","answer":"The KOT contains the preparation details for an order. The KDS is the digital workspace that organizes tickets by station and shows preparation progress. RestaBee supports the ticket workflow through the kitchen queue and print queue."}
+    ]
+  },
+  "imageAlt": {
+    "kotKitchenQueue": "RestaBee Kitchen Queue showing KOT-000057 for Table T3, two Paneer Tikka items with an extra spicy note, station queues and preparation controls. Sample restaurant data."
+  }
+}

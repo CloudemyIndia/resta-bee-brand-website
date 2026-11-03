@@ -1,0 +1,150 @@
+{
+  "pageId": "pricing",
+  "seo": {
+    "title": "Restaurant POS Software Price in India | RestaBee",
+    "description": "Compare restaurant POS software prices in India: ₹6,999/year for one outlet or ₹5,999 per outlet/year for 2+ outlets. See terms and inclusions.",
+    "canonical": "https://restabee.com/pricing/",
+    "keywords": [
+      "restaurant POS software price",
+      "restaurant POS system price",
+      "restaurant billing software price",
+      "POS software price in India",
+      "POS system price"
+    ]
+  },
+  "copy": {
+    "heroKicker": "RestaBee pricing",
+    "heroTitle": "Restaurant POS software price in India",
+    "heroDescription": "Compare the restaurant POS software price for one outlet with annual multi-outlet billing. Every subscription includes the released standard POS features. Choose a 3-, 6- or 12-month term for one outlet; multi-outlet subscriptions are annual.",
+    "heroCta": "Book a demo",
+    "heroCompareCta": "Compare subscription terms",
+    "overviewAriaLabel": "Subscription options",
+    "overviewTitle": "Two ways to subscribe",
+    "singleOutletLabel": "One outlet",
+    "singleOutletTerms": "3, 6 or 12 months",
+    "multipleOutletsLabel": "Multiple outlets",
+    "multipleOutletsTerms": "Annual · 2 outlet minimum",
+    "releasedFeaturesNote": "Every subscription includes the released standard POS features.",
+    "pricingTitle": "Choose a subscription for your outlets",
+    "pricingDescription": "The amounts below show the complete payable subscription price for each term and outlet count.",
+    "pricingTermsTitle": "Single-outlet terms",
+    "includedFeaturesTitle": "Every subscription includes",
+    "includedFeaturesKicker": "One subscription",
+    "includedFeaturesDescription": "Every outlet subscription includes the released standard POS features for day-to-day restaurant service.",
+    "outletExamplesTitle": "Annual totals by outlet count",
+    "priceDetailsTitle": "What the listed price covers",
+    "priceDetailsKicker": "Before you choose",
+    "priceDetailsDescription": "For one outlet, compare the total for the term you plan to use. For multiple outlets, the total is the per-outlet annual price multiplied by the outlet count.",
+    "screenshotKicker": "Inside the subscription",
+    "screenshotTitle": "See the POS menu workspace",
+    "screenshotDescription": "Review menu items and build an order in the same workspace. The screen uses sample restaurant data.",
+    "screenshotLabel": "RestaBee POS menu",
+    "screenshotCaption": "Sample restaurant data",
+    "singleOutletTitle": "Single outlet",
+    "singleOutletEyebrow": "One restaurant",
+    "singleOutletSubtitle": "One restaurant · choose a term",
+    "annualTermLabel": "12-month subscription",
+    "singleOutletTotalLabel": "total for one outlet",
+    "singleOutletCta": "Discuss one outlet",
+    "bestValueLabel": "Best value",
+    "monthsUnit": "months",
+    "perMonthUnit": "/ month",
+    "multiOutletEyebrow": "For two or more restaurants",
+    "multiOutletTitle": "Multi-outlet",
+    "multiOutletSubtitle": "Annual billing · minimum 2 outlets",
+    "multiOutletDescription": "₹5,999 per outlet each year, with central menu publication and outlet-scoped access across multiple locations.",
+    "perOutletYearUnit": "per outlet / year",
+    "minimumOutletsTemplate": "Minimum {count} outlets · billed annually",
+    "annualTotalsAriaLabel": "Annual multi-outlet subscription totals",
+    "outletsUnit": "outlets",
+    "perYearUnit": "/ year",
+    "multiOutletCta": "Discuss multiple outlets",
+    "pricingNote": "The amounts shown are complete subscription amounts; GST is not added separately. Multi-outlet subscriptions are billed annually and require at least two outlets. Hardware, third-party services and custom work are quoted separately.",
+    "faqTitle": "Pricing questions, answered",
+    "faqKicker": "Restaurant POS pricing",
+    "faqDescription": "Compare the full payable amount for your term and outlet count before you subscribe.",
+    "ctaKicker": "RestaBee restaurant POS",
+    "ctaTitle": "See how RestaBee fits your service",
+    "ctaDescription": "Walk through orders, kitchen handoffs, billing and outlet access with your restaurant’s needs in view.",
+    "demoCta": "Book a demo",
+    "billingLinkLabel": "Explore restaurant billing",
+    "ctaBillingLinkLabel": "See restaurant billing software"
+  },
+  "plans": [
+    {
+      "months": 3,
+      "price": "2,499"
+    },
+    {
+      "months": 6,
+      "price": "4,299"
+    },
+    {
+      "months": 12,
+      "price": "6,999"
+    }
+  ],
+  "pricing": {
+    "multiOutletAnnualPerOutlet": "5,999",
+    "minimumOutlets": 2,
+    "exampleOutlets": [
+      2,
+      3,
+      5,
+      10
+    ]
+  },
+  "pricingLists": {
+    "includedFeatures": [
+      "Dine-in, takeaway and staff-entered delivery orders",
+      "Kitchen order tickets and station workflows",
+      "Table, floor and party management",
+      "GST/tax-configurable bills and split payments",
+      "Menu management, modifiers and combos",
+      "Sales reports, cash shifts and user permissions"
+    ],
+    "separatelyQuoted": [
+      "Hardware",
+      "Third-party services",
+      "Custom work"
+    ],
+    "boundaries": [
+      {"number":"01","kind":"text","title":"Complete subscription amount","description":"The published price is the full amount payable for the selected subscription term. GST is not added separately."},
+      {"number":"02","kind":"list","title":"Items quoted separately","description":""},
+      {"number":"03","kind":"text","title":"Multi-outlet billing","description":"Multi-outlet subscriptions are annual and begin at {count} outlets. Each outlet is charged at the published per-outlet rate."}
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is the restaurant POS software price for one outlet?",
+      "answer": "The restaurant POS software price for one outlet is ₹2,499 for 3 months, ₹4,299 for 6 months, or ₹6,999 for 12 months. Each amount is the complete payable subscription price for the selected term."
+    },
+    {
+      "question": "How is the restaurant POS system price calculated for multiple outlets?",
+      "answer": "Multi-outlet subscriptions cost ₹5,999 per outlet per year and start at two outlets. For example, two outlets total ₹11,998 per year; three total ₹17,997; five total ₹29,995; and ten total ₹59,990."
+    },
+    {
+      "question": "Does the restaurant billing software price change by feature?",
+      "answer": "Every subscription includes the released standard POS features, including billing, order entry, kitchen workflows, menu management, reports and team permissions."
+    },
+    {
+      "question": "Can I choose a 3-, 6- or 12-month term for multiple outlets?",
+      "answer": "The 3-, 6- and 12-month terms apply to a single outlet. Multi-outlet subscriptions are billed annually, with a minimum of two outlets."
+    },
+    {
+      "question": "Is GST added separately to the listed subscription price?",
+      "answer": "No. The listed amounts are the complete payable subscription prices, with no GST added separately."
+    },
+    {
+      "question": "What does the POS software price in India cover?",
+      "answer": "The subscription covers the released standard POS features. Hardware, third-party services and custom work are quoted separately."
+    },
+    {
+      "question": "How do I compare a POS system price across outlet counts?",
+      "answer": "For multiple outlets, multiply ₹5,999 by the number of outlets for the annual subscription total. The multi-outlet minimum is two. For one outlet, compare the complete payable amount for the 3-, 6- or 12-month term."
+    }
+  ],
+  "imageAlt": {
+    "posMenu": "Restaurant POS menu with item categories and an order panel; sample restaurant data."
+  }
+}

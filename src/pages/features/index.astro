@@ -1,0 +1,74 @@
+---
+import '../../styles/home.css';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Mark from '../../components/Mark.astro';
+import { getEntry } from 'astro:content';
+const entry = await getEntry('pages', 'features-index');
+if (!entry) throw new Error('CMS content entry "features-index" is missing.');
+const { seo, copy, imageAlt, featureDirectory } = entry.data;
+if (!featureDirectory?.length) throw new Error('Features directory content is incomplete.');
+if (!imageAlt?.featureDirectoryScreen) throw new Error('Features directory screenshot alternative text is missing.');
+const groups = [
+  { key: 'orders', title: copy.orderSectionTitle },
+  { key: 'kitchen', title: copy.kitchenSectionTitle },
+  { key: 'management', title: copy.managementSectionTitle },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web, Android, iOS, macOS, Windows' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Features', item: seo.canonical },
+  ] },
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="features-directory">
+    <nav class="features-breadcrumb container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><span aria-current="page">Features</span></nav>
+    <section class="features-hero container" aria-labelledby="features-title">
+      <div class="features-hero-copy">
+        <p class="features-kicker">{copy.heroKicker}</p>
+        <h1 id="features-title">{copy.heroTitle.split('|')[0]} <em>{copy.heroTitle.split('|')[1]}</em></h1>
+        <p class="features-lede">{copy.heroDescription}</p>
+        <a class="button button-orange" href="/#demo">{copy.ctaLabel} <Mark /></a>
+      </div>
+      <figure class="features-screen">
+        <figcaption><span>{copy.screenLabel}</span><span>{copy.screenDataLabel}</span></figcaption>
+        <div class="features-screen-bezel"><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656"/><source media="(max-width: 1100px)" srcset="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656"/><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.featureDirectoryScreen} fetchpriority="high" decoding="async"/></picture></div>
+        <p>{copy.screenCaption}</p>
+      </figure>
+    </section>
+
+    <section class="features-directory-section" aria-labelledby="directory-title">
+      <div class="container">
+        <div class="features-section-head"><p class="features-kicker">{copy.directoryKicker}</p><h2 id="directory-title">{copy.directoryTitle}</h2><p>{copy.directoryDescription}</p></div>
+        {groups.map((group) => <section class="feature-group" aria-labelledby={`group-${group.key}`}>
+          <h3 id={`group-${group.key}`}>{group.title}</h3>
+          <div class="feature-card-grid">
+            {featureDirectory.filter((item) => item.category === group.key).map((item) => <article class="feature-card">
+              <span class="feature-card-number">{item.number}</span><h4>{item.title}</h4><p>{item.description}</p><a href={item.href}>{item.linkLabel} <Mark /></a>
+            </article>)}
+          </div>
+        </section>)}
+      </div>
+    </section>
+
+    <section class="features-workflow" aria-labelledby="features-workflow-title"><div class="container features-workflow-inner"><div><p class="features-kicker">{copy.workflowKicker}</p><h2 id="features-workflow-title">{copy.workflowTitle}</h2></div><div><p>{copy.workflowDescription}</p><a class="text-link" href="/features/restaurant-billing-software/">{copy.workflowLinkLabel} <Mark /></a></div></div></section>
+    <section class="features-roles container" aria-labelledby="features-roles-title"><div><h2 id="features-roles-title">{copy.operationsTitle}</h2><p>{copy.operationsDescription}</p></div><div class="features-platform"><h3>{copy.platformTitle}</h3><p>{copy.platformDescription}</p><div class="platform-list" aria-label="Supported app platforms"><span>Web</span><i></i><span>Android</span><i></i><span>iPhone</span><i></i><span>Mac</span><i></i><span>Windows</span></div></div></section>
+    <section class="features-cta"><div class="container features-cta-inner"><div><p class="features-kicker">RestaBee for restaurant teams</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaDescription}</p></div><a class="button button-dark" href="/#demo">{copy.ctaLabel} <Mark /></a></div></section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+<style>
+.features-directory{overflow:hidden}.features-breadcrumb{display:flex;gap:12px;align-items:center;padding-top:28px;font-size:14px;color:#62665d}.features-breadcrumb a{text-decoration:underline;text-underline-offset:4px}.features-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(400px,.88fr);gap:clamp(40px,7vw,110px);align-items:center;padding-block:68px 100px}.features-kicker{font-size:14px;line-height:1.4;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#a53c0e}.features-hero h1{font-size:clamp(56px,5.4vw,78px);max-width:720px;margin-top:20px}.features-hero h1 em,.features-section-head h2 em{font-style:normal;color:#bd4817}.features-lede{max-width:620px;margin-top:24px;color:#50564d;font-size:clamp(19px,1.6vw,23px);line-height:1.55}.features-hero .button{margin-top:32px}.features-screen{min-width:0;padding:16px;border:1px solid #dedfd5;border-radius:24px;background:#fffefa;box-shadow:0 22px 50px #24282012}.features-screen figcaption{display:flex;justify-content:space-between;gap:16px;padding:0 4px 14px;font-size:13px;color:#62665d}.features-screen-bezel{padding:8px;border:1px solid #687066;border-radius:20px;background:#242820;box-shadow:0 12px 24px #24282028}.features-screen img{width:100%;height:auto;border-radius:12px}.features-screen>p{padding:12px 4px 0;color:#62665d;font-size:14px}.features-directory-section{padding:100px 0 112px;background:#f0eee6}.features-section-head{max-width:760px}.features-section-head h2,.features-workflow h2,.features-roles h2,.features-cta h2{font-size:clamp(40px,5vw,64px);margin-top:17px}.features-section-head>p:last-child{margin-top:20px;max-width:690px;font-size:19px;line-height:1.65;color:#50564d}.feature-group{margin-top:58px}.feature-group>h3{font-size:26px;padding-bottom:18px;border-bottom:1px solid #d5d4ca}.feature-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}.feature-card{position:relative;min-height:272px;padding:26px;border:1px solid #dedfd5;border-radius:18px;background:#fffefa;display:flex;flex-direction:column;align-items:flex-start}.feature-card-number{font-size:13px;font-weight:700;letter-spacing:.08em;color:#bd4817}.feature-card h4{margin-top:20px;font-size:25px}.feature-card p{margin-top:12px;color:#555a52;line-height:1.55}.feature-card a{margin-top:auto;padding-top:22px;color:#85310e;font-size:15px;font-weight:700;display:inline-flex;gap:10px;align-items:center}.feature-card a .icon{width:17px;height:17px}.features-workflow{padding:92px 0;background:#252b24;color:#f7f5ec}.features-workflow-inner{display:grid;grid-template-columns:.85fr 1.15fr;gap:9%;align-items:start}.features-workflow .features-kicker{color:#ffad72}.features-workflow h2{max-width:530px}.features-workflow-inner>div:last-child p,.features-roles p,.features-platform p{font-size:18px;line-height:1.7;color:#d6d9ce}.features-workflow .text-link{display:inline-flex;margin-top:22px;color:#ffbd8b;font-weight:700;gap:10px}.features-roles{display:grid;grid-template-columns:1fr 1fr;gap:10%;padding-block:100px}.features-roles h2{font-size:clamp(38px,4vw,54px)}.features-roles p{margin-top:20px;color:#50564d}.features-platform{padding:30px;border:1px solid #dedfd5;border-radius:18px;background:#f0eee6}.features-platform h3{font-size:28px}.features-platform p{color:#50564d}.platform-list{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:24px;font-size:14px;font-weight:700}.platform-list i{width:4px;height:4px;border-radius:50%;background:#bd4817}.features-cta{padding:82px 0;background:#f7e4d0}.features-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:40px}.features-cta .features-kicker{color:#85310e}.features-cta h2{max-width:700px}.features-cta p:last-child{margin-top:14px;color:#50564d;font-size:18px}.features-cta .button{flex:none}
+@media(max-width:900px){.features-hero{grid-template-columns:1fr;gap:42px;padding-block:54px 76px}.features-hero-copy{max-width:760px}.features-screen{max-width:780px;width:100%;margin-inline:auto}.feature-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.features-workflow-inner{grid-template-columns:1fr;gap:28px}.features-roles{gap:5%}.features-cta-inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:640px){.features-breadcrumb{padding-top:18px}.features-hero{padding-block:40px 60px;gap:36px}.features-hero h1{font-size:clamp(48px,13vw,68px)}.features-lede{font-size:18px}.features-screen{padding:10px;border-radius:18px}.features-screen-bezel{padding:5px;border-radius:13px}.features-screen img{border-radius:8px}.features-screen figcaption{font-size:11px}.features-screen>p{font-size:13px}.features-directory-section{padding:68px 0 76px}.features-section-head>p:last-child{font-size:17px}.feature-group{margin-top:42px}.feature-group>h3{font-size:23px}.feature-card-grid{grid-template-columns:1fr;gap:12px}.feature-card{min-height:0;padding:23px}.feature-card h4{margin-top:13px}.feature-card a{padding-top:18px}.features-workflow{padding:68px 0}.features-workflow-inner>div:last-child p,.features-roles p,.features-platform p{font-size:16px}.features-roles{grid-template-columns:1fr;gap:42px;padding-block:70px}.features-platform{padding:24px}.features-cta{padding:64px 0}.features-cta-inner{gap:26px}.features-cta .button{width:100%;justify-content:space-between}}
+</style>
