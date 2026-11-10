@@ -3,6 +3,7 @@
 | Claim | Scope and executed falsification command |
 | --- | --- |
 | `public/sitemap.xml` lists all 16 canonical public routes, while `public/llms.txt` groups product overview, feature pages, company policies and confirmed product boundaries | Dev verified 2026-11-04: `npm run check && npm run build` → 0 Astro errors/warnings/hints; 18 static routes; 16 CMS entries; build verifier checks the sitemap route inventory, robots sitemap reference, and required `llms.txt` page links. The sitemap excludes the 404 page and visual prototype. This change is local only and has not been deployed. |
+| The user deferred the next RestaBee page batch while starting a separate website project | Verified 2026-11-04: route-existence checks for `/solutions/qsr-pos/`, `/solutions/takeaway-pos/`, `/solutions/cloud-kitchen-pos/`, `/features/split-billing/`, `/features/restaurant-gst-billing/` and `/solutions/restaurant-pos/` all returned absent. See [BACKLOG L5](BACKLOG.md) and [decision 0055](decisions/0055-deferred-seo-page-batch.md) for the ordered queue and gates. |
 
 ## Local development — verified 2026-11-04
 | Claim | Scope and executed falsification command |
@@ -64,7 +65,7 @@ Production scope: homepage deployment and the SEO endpoints listed above were ve
 - The `/features/` desktop render was inspected before reducing the oversized hero type; the final CSS adjustment builds cleanly, but its updated visual capture and responsive browser review remain unverified. The order-management route was not rendered: `npm run preview -- --host 127.0.0.1 --port 4321` exited before readiness in the environment wrapper; local Lighthouse, keyboard/screen-reader checks and final responsive capture remain outstanding.
 - Public lead API deployment and CORS allowlisting for `https://restabee.com` and local Astro development are pending; production lead delivery and CRM persistence are unverified.
 - The previous public phone number has been replaced with owner-provided +91 8960915050 in the site source.
-- Contact-page use of the existing RestaBee email/telephone preserves the previous site’s public channels; the current owner should confirm both before deployment. A Privacy Policy also needs retention, processor/location, analytics/cookie and privacy-request details; see [BACKLOG L4](BACKLOG.md).
+- The owner supplied the current public phone number and confirmed the email contact. The Privacy Policy records the owner-confirmed retention and deletion-request terms; production processors, storage regions, backup deletion timing, application storage/cookie behavior and operational request handling still need verification under [BACKLOG L4](BACKLOG.md).
 - Supplied product screenshots contain sample restaurant data. Customer testimonials and adoption/results evidence have not been approved. Restaurant photography and operational examples are explicitly illustrative.
 - Full screen-reader review, physical-device acceptance and production field performance remain unverified.
 - GitHub repository Pages source must be set to GitHub Actions; confirm `restabee.com` and HTTPS in Pages settings, then publish from `main` and complete live checks.

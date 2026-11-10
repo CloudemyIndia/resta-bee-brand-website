@@ -30,6 +30,7 @@ Public product marketing and demo acquisition for restaurant operators.
 - [Contact route and footer links](docs/decisions/0052-contact-route-and-footer-links.md): Contact page SEO/CMS implementation, footer groups, verified owner details and privacy-policy publication gate.
 - [Contact form and navigation](docs/decisions/0053-contact-form-and-navigation.md): shared homepage/contact lead form, Contact main navigation, and owner-confirmed privacy-policy scope and retention terms.
 - [Privacy Policy and public contact details](docs/decisions/0054-privacy-policy-and-public-contact-details.md): CMS-backed policy page, form/footer links, owner-updated phone number, Cloudemy attribution and selector spacing.
+- [Deferred SEO page batch](docs/decisions/0055-deferred-seo-page-batch.md): queues the next solution, feature and educational pages with evidence and CMS gates; implementation is deferred.
 - [SEO page expansion](docs/decisions/0030-seo-page-expansion.md): intent-specific page sequence and the continuing rule not to move or trim homepage sections before review; its temporary copy hold is superseded by decision 0032.
 - [CMS-ready Astro content](docs/decisions/0031-cms-ready-astro-content.md): keep page composition in Astro and model editor-controlled content with validated collections.
 - [Homepage copy and CMS migration](docs/decisions/0032-homepage-copy-and-cms-migration.md): current subscription wording, keyword-led homepage corrections, and the partial supersession of decision 0030’s copy hold.
