@@ -392,10 +392,11 @@ const schema = {
 
 .article-layout {
   display: grid;
-  grid-template-columns: minmax(240px, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
   gap: clamp(36px, 6vw, 72px);
   padding-top: 48px;
   align-items: start;
+  min-width: 0;
 }
 
 .article-sidebar {
@@ -465,6 +466,8 @@ const schema = {
   display: none;
   margin-bottom: 32px;
   padding: 16px 20px;
+  min-width: 0;
+  max-width: 100%;
   background: #f6f5ef;
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -478,6 +481,12 @@ const schema = {
   font-weight: 700;
   color: var(--ink);
   list-style: none;
+  min-width: 0;
+  gap: 12px;
+}
+.mobile-toc summary > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .mobile-toc summary::-webkit-details-marker {
   display: none;
@@ -498,10 +507,13 @@ const schema = {
   flex-direction: column;
   gap: 8px;
   font-size: 13px;
+  min-width: 0;
+  padding-right: 2px;
 }
 .mobile-toc a {
   color: #51574e;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 .mobile-toc a:hover {
   color: #963b18;
@@ -510,9 +522,12 @@ const schema = {
 
 .article-content {
   max-width: 820px;
+  min-width: 0;
+  width: 100%;
 }
 .content-block {
   margin-bottom: 48px;
+  min-width: 0;
 }
 .content-block h2 {
   font-size: clamp(26px, 3.2vw, 36px);
@@ -600,13 +615,17 @@ const schema = {
 
 .article-table-wrapper {
   overflow-x: auto;
+  max-width: 100%;
+  min-width: 0;
+  overscroll-behavior-x: contain;
   margin-block: 28px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #fffefa;
 }
 .article-table-wrapper table {
-  width: 100%;
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   font-size: 14px;
   text-align: left;
@@ -657,6 +676,7 @@ const schema = {
   margin-top: 56px;
   padding-top: 36px;
   border-top: 1px solid var(--line);
+  min-width: 0;
 }
 .article-faqs h2 {
   font-size: clamp(24px, 3vw, 32px);
@@ -680,6 +700,11 @@ const schema = {
   font-size: 15px;
   font-weight: 650;
   color: var(--ink);
+  min-width: 0;
+}
+.faq-list summary > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .faq-list summary::-webkit-details-marker {
   display: none;
@@ -707,6 +732,7 @@ const schema = {
   background: #f1eee5;
   border: 1px solid var(--line);
   border-radius: 14px;
+  min-width: 0;
 }
 .related-features-box h2 {
   font-size: 22px;
@@ -738,12 +764,16 @@ const schema = {
   font-size: 16px;
   color: #963b18;
   margin-bottom: 6px;
+  min-width: 0;
+  gap: 10px;
+  overflow-wrap: anywhere;
 }
 .related-card p {
   font-size: 13px;
   color: #51574e;
   line-height: 1.55;
   margin-bottom: 0;
+  overflow-wrap: anywhere;
 }
 
 .bottom-article-cta {
@@ -787,7 +817,8 @@ const schema = {
 
 @media (max-width: 950px) {
   .article-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
   .article-sidebar {
     display: none;
@@ -800,6 +831,21 @@ const schema = {
   }
 }
 @media (max-width: 700px) {
+  .article-content,
+  .content-block,
+  .article-faqs,
+  .related-features-box,
+  .bottom-article-cta {
+    min-width: 0;
+    max-width: 100%;
+  }
+  .mobile-toc {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .article-table-wrapper {
+    width: 100%;
+  }
   .article-featured-image {
     margin-top: 24px;
   }
