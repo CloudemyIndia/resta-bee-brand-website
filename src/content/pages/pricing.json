@@ -68,7 +68,9 @@
     "ctaDescription": "Walk through orders, kitchen handoffs, billing and outlet access with your restaurant’s needs in view.",
     "demoCta": "Book a demo",
     "billingLinkLabel": "Explore restaurant billing",
-    "ctaBillingLinkLabel": "See restaurant billing software"
+    "ctaBillingLinkLabel": "See restaurant billing software",
+    "ctaBuyingGuideLinkLabel": "Use the restaurant POS buying checklist",
+    "ctaPosCostGuideLinkLabel": "Read the restaurant POS cost guide"
   },
   "plans": [
     {

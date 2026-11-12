@@ -27,6 +27,13 @@ Use this guide to find the public product, feature, pricing and support pages. P
 - [Restaurant sales reports](https://restabee.com/features/restaurant-sales-reports/): Issued sales, collections, item and category sales, discounts, taxes and shift activity.
 - [Cafe POS](https://restabee.com/solutions/cafe-pos/): Cafe counter and dine-in orders, menu choices, preparation, billing and sales reports.
 
+## Educational guides and resources
+
+- [Restaurant management blog](https://restabee.com/blog/): Knowledge base and operational guides for restaurant operators.
+- [What is a KOT in a restaurant](https://restabee.com/blog/what-is-kot-in-restaurant/): Guide to kitchen order tickets, meaning, standard fields and station routing.
+- [Restaurant POS buying checklist](https://restabee.com/blog/restaurant-pos-buying-checklist/): Operational 10-point test framework before buying restaurant software.
+- [Restaurant POS system price in India](https://restabee.com/blog/restaurant-pos-cost-india/): Transparent cost breakdown across software, hardware and 3-year TCO.
+
 ## Company and policies
 
 - [Contact RestaBee](https://restabee.com/contact/): Contact details and the demo enquiry form.

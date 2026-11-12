@@ -4,6 +4,7 @@ const path = Astro.url.pathname;
 const featuresPath = '/features/';
 const pricingPath = '/pricing/';
 const contactPath = '/contact/';
+const blogPath = '/blog/';
 ---
 <header class="site-header">
   <div class="container header-inner">
@@ -13,6 +14,7 @@ const contactPath = '/contact/';
       <a href={featuresPath} aria-current={path === featuresPath ? 'page' : undefined}>Features</a>
       <a href={pricingPath} aria-current={path === pricingPath ? 'page' : undefined}>Pricing</a>
       <a href={contactPath} aria-current={path === contactPath ? 'page' : undefined}>Contact</a>
+      <a href={blogPath} aria-current={path.startsWith(blogPath) ? 'page' : undefined}>Blog</a>
     </nav>
     <div class="header-actions"><a class="login" href="https://app.restabee.com">Log in</a><a class="button button-dark header-demo" href="/#demo">Book a demo <Mark /></a></div>
     <details class="mobile-menu">
@@ -22,6 +24,7 @@ const contactPath = '/contact/';
         <a href={featuresPath} aria-current={path === featuresPath ? 'page' : undefined}>Features</a>
         <a href={pricingPath} aria-current={path === pricingPath ? 'page' : undefined}>Pricing</a>
         <a href={contactPath} aria-current={path === contactPath ? 'page' : undefined}>Contact</a>
+        <a href={blogPath} aria-current={path.startsWith(blogPath) ? 'page' : undefined}>Blog</a>
         <a href="/#demo">Book a demo</a>
         <a href="https://app.restabee.com">Log in</a>
       </nav>

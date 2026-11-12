@@ -56,6 +56,7 @@
     "demoCta": "Book a demo",
     "kdsLinkLabel": "Explore the kitchen display system",
     "billingLinkLabel": "Explore restaurant billing",
+    "kotArticleLinkLabel": "Read the kitchen order ticket guide",
     "sampleOrderLabel": "Kitchen ticket example",
     "detailsListLabel": "Information carried on a kitchen order ticket",
     "handoffListLabel": "Kitchen order ticket workflow",

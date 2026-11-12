@@ -51,6 +51,7 @@
     "billingLinkLabel": "Explore restaurant billing",
     "pricingLinkLabel": "View subscription pricing",
     "kotLinkLabel": "See kitchen order ticket management",
+    "kotGuideLinkLabel": "Read the kitchen order ticket guide",
     "ticketDetailsAriaLabel": "Details shown on kitchen tickets",
     "stagesAriaLabel": "Kitchen ticket progress stages"
   },

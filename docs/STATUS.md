@@ -1,4 +1,9 @@
 # Implementation state
+## Blog listing, content and CMS fields — verified 2026-11-12
+| Claim | Scope and executed falsification command |
+| --- | --- |
+| `/blog/` renders all three guides; current article entries contain no POS screenshots; optional future custom editorial art is smaller and unframed; the print-only checklist UI and its CMS fields are removed; Blog navigation, related guide links and editable tables remain | Dev verified 2026-11-12: `ASTRO_TELEMETRY_DISABLED=1 npm run check && ASTRO_TELEMETRY_DISABLED=1 npm run build && python3 scripts/report-blog-keywords.py && node scripts/report-blog-contrast.mjs && git diff --check` → 0 Astro diagnostics; 22 static routes; CMS parity 17 page / 3 blog entries; verifier confirms three listing cards, all routes, no POS screenshot paths/device frames, no print-only controls, and custom-image sizing. All configured keyword checks pass (KOT 1,738 words / 0.863%; buying checklist 1,291 / 0.542%; cost guide 929 / 0.538%); contrast minimum 5.57:1. Local blog preview previously returned HTTP 200 with three cards; the canonical production `/blog/` returned 404 while `/` returned 200 on 2026-11-12, so blog deployment remains pending. No fresh visual browser review was completed. See [decisions/0056](decisions/0056-blog-setup-and-educational-guides.md), [0057](decisions/0057-blog-navigation-and-related-guide-links.md) and [0058](decisions/0058-blog-images-and-print-checklist.md). |
+
 ## Sitemap and LLM guide — verified 2026-11-04
 | Claim | Scope and executed falsification command |
 | --- | --- |
@@ -60,6 +65,8 @@ Visual review, dev scope, 2026-10-27: `cat .impeccable/review/finish-verdict.md`
 Production scope: homepage deployment and the SEO endpoints listed above were verified live on 2026-11-03. No GitHub Pages setting change, push, DNS change, Firebase association, email send or CRM write was performed by this agent. Search Console verification and sitemap submission remain pending owner action.
 
 ## Unresolved
+- Navigation conflict resolved by the user on 2026-11-12: Blog is added to desktop and mobile main navigation, overriding the scope in [decision 0042](decisions/0042-features-directory-and-main-navigation.md); recorded in [decision 0057](decisions/0057-blog-navigation-and-related-guide-links.md).
+- Production check on 2026-11-12: `curl -sS -L -o /tmp/restabee-live-blog.html -w '%{http_code}' https://restabee.com/blog/` → HTTP 404. The local blog is not deployed at the canonical route yet.
 - The sales reports route passes Astro/build/SEO/CMS checks, but its local preview wrapper exits before readiness; rendered desktop/mobile review, browser accessibility tooling and Lighthouse Speed Index remain unverified. The route is not deployed.
 - The restaurant management pillar passes Astro/build/SEO/CMS and source contrast checks, but `npm run preview -- --host 127.0.0.1 --port 4321` exits before readiness with `SKIP_FORMAT`; rendered desktop/mobile review, keyboard/screen-reader tooling and Lighthouse Speed Index remain unverified. The route is not deployed.
 - The `/features/` desktop render was inspected before reducing the oversized hero type; the final CSS adjustment builds cleanly, but its updated visual capture and responsive browser review remain unverified. The order-management route was not rendered: `npm run preview -- --host 127.0.0.1 --port 4321` exited before readiness in the environment wrapper; local Lighthouse, keyboard/screen-reader checks and final responsive capture remain outstanding.
@@ -71,7 +78,7 @@ Production scope: homepage deployment and the SEO endpoints listed above were ve
 - GitHub repository Pages source must be set to GitHub Actions; confirm `restabee.com` and HTTPS in Pages settings, then publish from `main` and complete live checks.
 - The project previously described DNS as Hostinger-managed, but public nameservers currently resolve to Cloudflare; confirm which account owns the active zone before adding Search Console TXT records or changing domain records.
 - If GitHub Pages fallback is needed, verify the Firebase project ID and CLI association before deployment.
-- Pages CMS GitHub authorization and edit-to-deploy verification, blog routes/publishing and remaining website pages are queued in [BACKLOG](BACKLOG.md).
+- Pages CMS GitHub authorization and edit-to-deploy publishing verification, plus the remaining website pages, are queued in [BACKLOG](BACKLOG.md).
 - The billing feature route was built and verified locally on 2026-11-03; it is not yet live. Review before publishing through the configured GitHub Pages workflow.
 - Historical [decision 0007](decisions/0007-table-qr-ordering-section.md) cites the removed homepage brief at its former path. The acted-on decision remains unchanged; check with `rg -n 'RESTABEE-HOMEPAGE-BRIEF' docs/decisions/0007-table-qr-ordering-section.md` → two historical references.
 - The sibling POS capability audit is implementation evidence dated 2026-10-25, not fresh production acceptance.

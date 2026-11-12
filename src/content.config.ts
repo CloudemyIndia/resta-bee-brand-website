@@ -170,4 +170,77 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { pages };
+const blog = defineCollection({
+  loader: glob({ base: './src/content/blog', pattern: '*.json' }),
+  schema: z.object({
+    slug: z.string(),
+    seo: z.object({
+      title: z.string().min(20).max(75),
+      description: z.string().min(50).max(170),
+      canonical: z.url(),
+      keywords: z.array(z.string()).default([]),
+    }),
+    title: z.string(),
+    subtitle: z.string(),
+    publishDate: z.string(),
+    updatedDate: z.string().optional(),
+    author: z.object({
+      name: z.string(),
+      role: z.string(),
+    }),
+    category: z.string(),
+    readTime: z.string(),
+    featured: z.boolean().default(false),
+    featuredImage: z.object({
+      src: z.string(),
+      alt: z.string(),
+      width: z.number(),
+      height: z.number(),
+      caption: z.string().optional(),
+    }).optional(),
+    excerpt: z.string(),
+    tableOfContents: z.array(z.object({
+      id: z.string(),
+      title: z.string(),
+    })),
+    sections: z.array(z.object({
+      id: z.string(),
+      heading: z.string(),
+      paragraphs: z.array(z.string()).default([]),
+      paragraphs_after: z.array(z.string()).optional(),
+      subsections: z.array(z.object({
+        heading: z.string(),
+        paragraphs: z.array(z.string()).default([]),
+      })).optional(),
+      callout: z.object({
+        title: z.string(),
+        text: z.string(),
+      }).optional(),
+      table: z.object({
+        caption: z.string().optional(),
+        headers: z.array(z.string()),
+        rows: z.array(z.object({
+          rowHeader: z.string(),
+          column2: z.string(),
+          column3: z.string().optional(),
+          column4: z.string().optional(),
+        })),
+      }).optional(),
+      checklist: z.array(z.object({
+        item: z.string(),
+        detail: z.string(),
+      })).optional(),
+    })),
+    faqs: z.array(z.object({
+      question: z.string(),
+      answer: z.string(),
+    })).default([]),
+    relatedLinks: z.array(z.object({
+      title: z.string(),
+      href: z.string(),
+      description: z.string(),
+    })).default([]),
+  }),
+});
+
+export const collections = { pages, blog };

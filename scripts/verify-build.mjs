@@ -4,38 +4,60 @@ const walk = (p) => readdirSync(p).flatMap(n => {const f = `${p}/${n}`;return st
 const files = walk('dist');
 assert(!files.some(f => /\.(docx|xlsx|md)$/.test(f)), 'Private/source documents must not ship');
 const pagesCms = readFileSync('.pages.yml', 'utf8');
-const collectionFieldsAt = pagesCms.indexOf('    fields:\n');
-assert(collectionFieldsAt >= 0, 'Pages CMS marketing collection has a fields list');
-const cmsFieldPaths = new Set();
-const fieldStack = [];
-for (const line of pagesCms.slice(collectionFieldsAt).split('\n')) {
-  const field = line.match(/^(\s*)- name:\s*([A-Za-z0-9_-]+)\s*$/);
-  if (!field) continue;
-  const indent = field[1].length;
-  while (fieldStack.length && fieldStack.at(-1).indent >= indent) fieldStack.pop();
-  const name = field[2];
-  cmsFieldPaths.add([...fieldStack.map(item => item.name), name].join('.'));
-  fieldStack.push({ indent, name });
+const blogCollectionAt = pagesCms.indexOf('- name: blog-articles');
+const marketingCmsPart = blogCollectionAt >= 0 ? pagesCms.slice(0, blogCollectionAt) : pagesCms;
+const blogCmsPart = blogCollectionAt >= 0 ? pagesCms.slice(blogCollectionAt) : '';
+
+function parseCmsFieldPaths(text) {
+  const collectionFieldsAt = text.indexOf('    fields:\n');
+  assert(collectionFieldsAt >= 0, 'Collection has a fields list');
+  const cmsFieldPaths = new Set();
+  const fieldStack = [];
+  for (const line of text.slice(collectionFieldsAt).split('\n')) {
+    const field = line.match(/^(\s*)- name:\s*([A-Za-z0-9_-]+)\s*$/);
+    if (!field) continue;
+    const indent = field[1].length;
+    while (fieldStack.length && fieldStack.at(-1).indent >= indent) fieldStack.pop();
+    const name = field[2];
+    cmsFieldPaths.add([...fieldStack.map(item => item.name), name].join('.'));
+    fieldStack.push({ indent, name });
+  }
+  return cmsFieldPaths;
 }
-const contentFieldPaths = new Set();
-const collectContentFields = (value, prefix = '') => {
+
+const collectContentFields = (value, targetSet, prefix = '') => {
   if (Array.isArray(value)) {
-    for (const item of value) if (item && typeof item === 'object') collectContentFields(item, prefix);
+    for (const item of value) if (item && typeof item === 'object') collectContentFields(item, targetSet, prefix);
     return;
   }
   if (!value || typeof value !== 'object') return;
   for (const [name, item] of Object.entries(value)) {
     const path = prefix ? `${prefix}.${name}` : name;
-    contentFieldPaths.add(path);
-    collectContentFields(item, path);
+    targetSet.add(path);
+    collectContentFields(item, targetSet, path);
   }
 };
+
+const marketingCmsFields = parseCmsFieldPaths(marketingCmsPart);
+const marketingContentFields = new Set();
 const pageContentFiles = readdirSync('src/content/pages').filter(file => file.endsWith('.json'));
 assert(pageContentFiles.length > 0, 'Astro page content entries exist');
-for (const file of pageContentFiles) collectContentFields(JSON.parse(readFileSync(`src/content/pages/${file}`, 'utf8')));
-for (const path of contentFieldPaths) assert(cmsFieldPaths.has(path), `Pages CMS is missing content field ${path}`);
-for (const path of cmsFieldPaths) assert(contentFieldPaths.has(path), `Pages CMS field ${path} is unused by page content`);
+for (const file of pageContentFiles) collectContentFields(JSON.parse(readFileSync(`src/content/pages/${file}`, 'utf8')), marketingContentFields);
+for (const path of marketingContentFields) assert(marketingCmsFields.has(path), `Pages CMS is missing marketing content field ${path}`);
+for (const path of marketingCmsFields) assert(marketingContentFields.has(path), `Pages CMS marketing field ${path} is unused by page content`);
 console.log(`Pages CMS fields match ${pageContentFiles.length} Astro page content entries.`);
+
+if (blogCmsPart) {
+  const blogCmsFields = parseCmsFieldPaths(blogCmsPart);
+  const blogContentFields = new Set();
+  const blogContentFiles = readdirSync('src/content/blog').filter(file => file.endsWith('.json'));
+  assert(blogContentFiles.length > 0, 'Astro blog content entries exist');
+  for (const file of blogContentFiles) collectContentFields(JSON.parse(readFileSync(`src/content/blog/${file}`, 'utf8')), blogContentFields);
+  for (const path of blogContentFields) assert(blogCmsFields.has(path), `Pages CMS is missing blog content field ${path}`);
+  const optionalBlogCmsFields = new Set(['featuredImage', 'featuredImage.src', 'featuredImage.alt', 'featuredImage.width', 'featuredImage.height', 'featuredImage.caption']);
+  for (const path of blogCmsFields) assert(blogContentFields.has(path) || optionalBlogCmsFields.has(path), `Pages CMS blog field ${path} is unused by blog content`);
+  console.log(`Pages CMS fields match ${blogContentFiles.length} Astro blog content entries.`);
+}
 const generatedHtml = files.filter(file => file.endsWith('.html')).map(file => readFileSync(file, 'utf8'));
 assert(generatedHtml.every(html => !html.includes('90444 15050') && !html.includes('+919044415050')), 'Generated pages do not contain the replaced phone number');
 const home = readFileSync('dist/index.html', 'utf8');
@@ -78,10 +100,10 @@ assert(readFileSync('dist/images/restabee-mark.webp').length > 1000, 'Organizati
 const robots = readFileSync('dist/robots.txt', 'utf8');
 assert(robots.includes('User-agent: *') && robots.includes('Allow: /') && robots.includes('Sitemap: https://restabee.com/sitemap.xml'), 'robots.txt permits crawling and references the canonical sitemap');
 const llms = readFileSync('dist/llms.txt', 'utf8');
-assert(llms.startsWith('# RestaBee') && llms.includes('https://restabee.com/features/') && llms.includes('https://restabee.com/#capabilities') && llms.includes('https://restabee.com/pricing/') && llms.includes('https://restabee.com/restaurant-management-software/') && llms.includes('https://restabee.com/features/restaurant-billing-software/') && llms.includes('https://restabee.com/features/kitchen-display-system/') && llms.includes('https://restabee.com/features/kot-management/') && llms.includes('https://restabee.com/features/restaurant-menu-management/') && llms.includes('https://restabee.com/features/multi-outlet-restaurant-management/') && llms.includes('https://restabee.com/features/restaurant-order-management/') && llms.includes('https://restabee.com/features/restaurant-table-management/') && llms.includes('https://restabee.com/features/restaurant-cash-management/') && llms.includes('https://restabee.com/features/restaurant-sales-reports/') && llms.includes('https://restabee.com/solutions/cafe-pos/') && llms.includes('https://restabee.com/contact/') && llms.includes('https://restabee.com/privacy-policy/'), 'llms.txt provides public product context and links');
+assert(llms.startsWith('# RestaBee') && llms.includes('https://restabee.com/features/') && llms.includes('https://restabee.com/#capabilities') && llms.includes('https://restabee.com/pricing/') && llms.includes('https://restabee.com/restaurant-management-software/') && llms.includes('https://restabee.com/features/restaurant-billing-software/') && llms.includes('https://restabee.com/features/kitchen-display-system/') && llms.includes('https://restabee.com/features/kot-management/') && llms.includes('https://restabee.com/features/restaurant-menu-management/') && llms.includes('https://restabee.com/features/multi-outlet-restaurant-management/') && llms.includes('https://restabee.com/features/restaurant-order-management/') && llms.includes('https://restabee.com/features/restaurant-table-management/') && llms.includes('https://restabee.com/features/restaurant-cash-management/') && llms.includes('https://restabee.com/features/restaurant-sales-reports/') && llms.includes('https://restabee.com/solutions/cafe-pos/') && llms.includes('https://restabee.com/contact/') && llms.includes('https://restabee.com/privacy-policy/') && llms.includes('https://restabee.com/blog/') && llms.includes('https://restabee.com/blog/what-is-kot-in-restaurant/'), 'llms.txt provides public product context and links');
 const sitemap = readFileSync('dist/sitemap.xml', 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-assert.deepEqual(sitemapUrls, ['https://restabee.com/', 'https://restabee.com/features/', 'https://restabee.com/features/restaurant-billing-software/', 'https://restabee.com/pricing/', 'https://restabee.com/features/kitchen-display-system/', 'https://restabee.com/features/kot-management/', 'https://restabee.com/features/restaurant-menu-management/', 'https://restabee.com/features/multi-outlet-restaurant-management/', 'https://restabee.com/features/restaurant-order-management/','https://restabee.com/features/restaurant-table-management/','https://restabee.com/features/restaurant-cash-management/','https://restabee.com/features/restaurant-sales-reports/','https://restabee.com/solutions/cafe-pos/','https://restabee.com/restaurant-management-software/','https://restabee.com/contact/','https://restabee.com/privacy-policy/'], 'Sitemap contains the canonical public routes');
+assert.deepEqual(sitemapUrls, ['https://restabee.com/', 'https://restabee.com/features/', 'https://restabee.com/features/restaurant-billing-software/', 'https://restabee.com/pricing/', 'https://restabee.com/features/kitchen-display-system/', 'https://restabee.com/features/kot-management/', 'https://restabee.com/features/restaurant-menu-management/', 'https://restabee.com/features/multi-outlet-restaurant-management/', 'https://restabee.com/features/restaurant-order-management/','https://restabee.com/features/restaurant-table-management/','https://restabee.com/features/restaurant-cash-management/','https://restabee.com/features/restaurant-sales-reports/','https://restabee.com/solutions/cafe-pos/','https://restabee.com/restaurant-management-software/','https://restabee.com/contact/','https://restabee.com/privacy-policy/','https://restabee.com/blog/','https://restabee.com/blog/what-is-kot-in-restaurant/','https://restabee.com/blog/restaurant-pos-buying-checklist/','https://restabee.com/blog/restaurant-pos-cost-india/'], 'Sitemap contains the canonical public routes');
 const billing = readFileSync('dist/features/restaurant-billing-software/index.html', 'utf8');
 const pricing = readFileSync('dist/pricing/index.html', 'utf8');
 const kitchen = readFileSync('dist/features/kitchen-display-system/index.html', 'utf8');
@@ -245,6 +267,7 @@ const footerHelpful = commonBlock(home, 'footer')?.match(/<nav class="footer-lin
 assert(!footerFeatures.includes('/features/">Explore all features'), 'Features directory remains in the main navigation, not duplicated in the footer Features group');
 assert(footerHelpful.includes('href="/contact/"') && footerHelpful.includes('Helpful links'), 'Helpful links footer column includes Contact us');
 assert(footerHelpful.includes('href="/privacy-policy/"'), 'Helpful links footer column includes the Privacy Policy');
+assert(footerHelpful.includes('href="/blog/"'), 'Helpful links footer column includes Blog and guides');
 assert(home.includes('href="/privacy-policy/"'), 'Homepage demo form links to the Privacy Policy');
 assert(home.includes('© 2026 RestaBee, A Cloudemy Product'), 'Shared footer carries the Cloudemy product attribution');
 assert(home.includes('tel:+918960915050') && home.includes('+91 8960915050') && !home.includes('90444 15050'), 'Homepage publishes only the updated phone number');
@@ -264,8 +287,9 @@ for (const route of [home, contact]) {
 }
 for (const image of [...contact.matchAll(/<img\b[^>]*>/g)].map(match => match[0])) assert(/\balt=/.test(image) && /\bwidth=/.test(image) && /\bheight=/.test(image), 'Contact page images have alt text and reserved dimensions');
 const mainNavigation = home.match(/<nav class="desktop-nav"[\s\S]*?<\/nav>/)?.[0] || '';
-assert.equal((mainNavigation.match(/<a\b/g) || []).length, 4, 'Main navigation lists POS overview, Features, Pricing and Contact');
+assert.equal((mainNavigation.match(/<a\b/g) || []).length, 5, 'Main navigation lists POS overview, Features, Pricing, Contact and Blog');
 assert(mainNavigation.includes('href="/contact/"') && contact.includes('aria-current="page"'), 'Contact appears in the main navigation and has the current-page state');
+assert(mainNavigation.includes('href="/blog/"'), 'Blog appears in the desktop main navigation');
 assert.equal((privacy.match(/<h1[\s>]/g) || []).length, 1, 'Privacy Policy has exactly one H1');
 assert(privacy.includes('<link rel="canonical" href="https://restabee.com/privacy-policy/"') && privacy.includes('<meta name="robots" content="index,follow"'), 'Privacy Policy has an indexable self-canonical');
 const privacyTitle = privacy.match(/<title>(.*?)<\/title>/)?.[1] || '';
@@ -372,6 +396,43 @@ assert.equal(kotSchema['@type'], 'WebPage', 'KOT page uses WebPage schema');
 assert.equal(kotSchema.breadcrumb['@type'], 'BreadcrumbList', 'KOT schema describes its visible breadcrumb');
 assert(kot.includes('/features/kitchen-display-system/') && kot.includes('/features/restaurant-billing-software/') && kot.includes('/#demo'), 'KOT page links to related product pages and demo enquiry');
 assert(kitchen.includes('/features/kot-management/'), 'Kitchen display page links to KOT management');
+
+const blogIndex = readFileSync('dist/blog/index.html', 'utf8');
+assert.equal((blogIndex.match(/<h1[\s>]/g) || []).length, 1, 'Blog index page has exactly one H1');
+assert(blogIndex.includes('<title>Restaurant Management &amp; POS Guides | RestaBee Blog</title>') || blogIndex.includes('<title>Restaurant Management & POS Guides | RestaBee Blog</title>'), 'Blog index has primary SEO title');
+assert(blogIndex.includes('<link rel="canonical" href="https://restabee.com/blog/"'), 'Blog index has self-canonical');
+assert(blogIndex.includes('CollectionPage') && blogIndex.includes('BreadcrumbList'), 'Blog index includes CollectionPage structured data');
+assert(blogIndex.includes('href="/blog/what-is-kot-in-restaurant/"') && blogIndex.includes('href="/blog/restaurant-pos-buying-checklist/"') && blogIndex.includes('href="/blog/restaurant-pos-cost-india/"'), 'Blog index links to published blog articles');
+const publishedBlogCount = readdirSync('src/content/blog').filter(file => file.endsWith('.json')).length;
+assert.equal((blogIndex.match(/class="article-card"/g) || []).length, publishedBlogCount, 'Blog index renders one card for every blog collection entry');
+assert(blogIndex.includes(`${publishedBlogCount} guides published`), 'Blog index count matches the rendered article cards');
+assert(blogIndex.includes('<a href="/blog/" aria-current="page">Blog</a>'), 'Blog index marks Blog as the current navigation page');
+
+const kotArticle = readFileSync('dist/blog/what-is-kot-in-restaurant/index.html', 'utf8');
+assert.equal((kotArticle.match(/<h1[\s>]/g) || []).length, 1, 'KOT article has exactly one H1');
+assert(kotArticle.includes('<title>What is a KOT in a Restaurant? Meaning &amp; Format | RestaBee</title>') || kotArticle.includes('<title>What is a KOT in a Restaurant? Meaning & Format | RestaBee</title>'), 'KOT article has primary SEO title');
+assert(kotArticle.includes('<link rel="canonical" href="https://restabee.com/blog/what-is-kot-in-restaurant/"'), 'KOT article has self-canonical');
+assert(kotArticle.includes('BlogPosting') && kotArticle.includes('BreadcrumbList'), 'KOT article includes BlogPosting structured data');
+assert(kotArticle.includes('href="/features/kot-management/"') && kotArticle.includes('href="/features/kitchen-display-system/"'), 'KOT article cross-links to commercial features');
+assert(kotArticle.includes('<a href="/blog/" aria-current="page">Blog</a>'), 'KOT article marks Blog as the current navigation section');
+
+const checklistArticle = readFileSync('dist/blog/restaurant-pos-buying-checklist/index.html', 'utf8');
+assert.equal((checklistArticle.match(/<h1[\s>]/g) || []).length, 1, 'Checklist article has exactly one H1');
+assert(checklistArticle.includes('BlogPosting') && checklistArticle.includes('BreadcrumbList'), 'Checklist article includes BlogPosting schema');
+assert(checklistArticle.includes('href="/pricing/"') && checklistArticle.includes('href="/features/restaurant-billing-software/"'), 'Checklist article links to pricing and billing');
+
+const costArticle = readFileSync('dist/blog/restaurant-pos-cost-india/index.html', 'utf8');
+assert.equal((costArticle.match(/<h1[\s>]/g) || []).length, 1, 'Cost article has exactly one H1');
+assert(costArticle.includes('BlogPosting') && costArticle.includes('BreadcrumbList'), 'Cost article includes BlogPosting schema');
+assert(costArticle.includes('Three-year subscription calculation at published prices checked 12 November 2026'), 'Cost article dates its three-year subscription calculation');
+const builtBlogPages = [kotArticle, checklistArticle, costArticle];
+assert(builtBlogPages.every(page => !page.includes('/pos-images/') && !page.includes('product-screen-frame') && !page.includes('article-featured-image')), 'Blog articles do not use POS screenshots or device frames');
+assert(builtBlogPages.every(page => !page.includes('print-checklist') && !page.includes('printable-checklist') && !page.includes('data-print-checklist')), 'Blog articles do not include print-only checklist controls');
+const blogArticleTemplate = readFileSync('src/pages/blog/[slug].astro', 'utf8');
+assert(blogArticleTemplate.includes('max-width: 780px') && blogArticleTemplate.includes('max-height: min(52svh, 440px)'), 'Optional custom blog images use the smaller unframed image layout');
+assert(kot.includes('href="/blog/what-is-kot-in-restaurant/"') && kitchen.includes('href="/blog/what-is-kot-in-restaurant/"'), 'KOT and kitchen-display feature pages link to the KOT guide');
+const pricingPage = readFileSync('dist/pricing/index.html', 'utf8');
+assert(pricingPage.includes('href="/blog/restaurant-pos-buying-checklist/"') && pricingPage.includes('href="/blog/restaurant-pos-cost-india/"'), 'Pricing page links to buying and cost guides');
 const notFound = readFileSync('dist/404.html', 'utf8');
 assert(notFound.includes('<meta name="robots" content="noindex,follow"'), '404 page is noindex');
 const ids = new Set([...home.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));

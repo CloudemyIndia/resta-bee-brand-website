@@ -1,0 +1,31 @@
+{
+  "pageId": "blog-index",
+  "seo": {
+    "title": "Restaurant Management & POS Guides | RestaBee Blog",
+    "description": "Practical operational guides and POS insights for restaurant owners and kitchen teams in India, covering order entry, kitchen tickets, and billing.",
+    "canonical": "https://restabee.com/blog/",
+    "keywords": [
+      "restaurant pos blog",
+      "restaurant management guide",
+      "kitchen order ticket guide",
+      "restaurant billing guide"
+    ]
+  },
+  "copy": {
+    "heroKicker": "Operational guides and industry insights",
+    "heroTitle": "Practical knowledge for the restaurant floor",
+    "heroDescription": "Clear guides on kitchen order tickets, POS buying decisions, cashier controls, billing compliance and restaurant workflows. Written for operators who manage service every day.",
+    "featuredHeading": "Featured operational guide",
+    "latestHeading": "All guides and articles",
+    "filterAll": "All articles",
+    "filterGuides": "Guides & workflows",
+    "filterOperations": "Operations & kitchen",
+    "filterPricing": "Pricing & purchasing",
+    "readGuide": "Read guide",
+    "minRead": "min read",
+    "ctaKicker": "Test RestaBee in your restaurant",
+    "ctaTitle": "See the order-to-kitchen workflow in action",
+    "ctaDescription": "Schedule a live walkthrough with our team. We will review table management, kitchen tickets, menu controls and billing for your outlet.",
+    "ctaButton": "Book a demo"
+  }
+}
