@@ -1,0 +1,162 @@
+{
+  "pageId": "takeaway-pos",
+  "seo": {
+    "title": "Takeaway POS Software for Restaurant Parcel Counters | RestaBee",
+    "description": "Takeaway POS software for parcel orders, customer tokens, packaging charges, station KOT queues and fast billing. Manage counter orders in RestaBee.",
+    "canonical": "https://restabee.com/solutions/takeaway-pos/",
+    "keywords": [
+      "takeaway pos",
+      "takeaway pos system",
+      "takeaway billing software",
+      "takeaway restaurant pos",
+      "restaurant billing app"
+    ]
+  },
+  "imageAlt": {
+    "takeawayPosMenu": "RestaBee takeaway POS screen showing parcel items, customer token details, packaging fees and payment recording; sample restaurant menu data.",
+    "takeawayPosReports": "RestaBee mobile sales report screen showing takeaway sales volume and payment summaries for a selected reporting period; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Takeaway POS",
+    "heroKicker": "TAKEAWAY AND PARCEL COUNTER SOFTWARE",
+    "heroTitle": "A takeaway POS built for busy parcel desks.",
+    "heroDescription": "Take walk-in and phone takeaway orders, add packaging charges, send preparation details to the kitchen and track customer pickup tokens. RestaBee keeps parcel operations organized from counter to handoff.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Explore the takeaway workflow",
+    "menuScreenLabel": "RestaBee POS order entry",
+    "menuScreenDataLabel": "Sample restaurant menu data",
+    "menuScreenCaption": "Takeaway order entry with item packaging, customer reference and instant tender settlement.",
+    "overviewKicker": "PARCEL COUNTER SPEED",
+    "overviewTitle": "Manage takeaway orders without confusion.",
+    "overviewParagraphOne": "Takeaway counters operate under different rules than dining rooms. Customers wait directly at the counter, food needs careful packing, and orders must be tied to clear token numbers or customer names so parcels reach the right person.",
+    "overviewParagraphTwo": "A dedicated takeaway pos lets cashiers record parcel orders in a few taps. Staff select items, specify packaging preferences, collect payment upfront and generate a numbered pickup receipt. The kitchen receives the preparation ticket marked clearly as a parcel order.",
+    "overviewParagraphThree": "RestaBee serves as an intuitive takeaway pos system for casual dining restaurants, sweet shops and counter outlets. By handling parcel orders in the same point of sale workspace as dine-in, your team avoids separate hardware while maintaining accurate cash drawers and sales reports.",
+    "serviceKicker": "FLEXIBLE PARCEL FORMATS",
+    "serviceTitle": "Tailored for takeaway restaurant operations.",
+    "serviceDescription": "Handle walk-in customer parcels, pre-ordered phone pickups and counter deliveries through an organized queue.",
+    "serviceListLabel": "Takeaway POS order formats",
+    "packagingKicker": "PACKAGING AND CONTAINER CHARGES",
+    "packagingTitle": "Automate packaging fees and container rates.",
+    "packagingDescription": "Apply item-level or order-level packaging charges automatically so your takeaway food costs stay covered.",
+    "packagingParagraphOne": "Packaging materials like foil containers, meal boxes and carry bags represent a steady operational cost. With this takeaway billing software, you can configure automatic packaging charges per item or per order so staff never forget to add container fees.",
+    "packagingParagraphTwo": "Packaging rates appear clearly as separate line items on the customer bill and tax invoice, keeping your billing clear and GST compliant. If a guest brings their own tiffin or bag, cashiers can remove or adjust the fee with a single tap.",
+    "packagingParagraphThree": "In a busy takeaway restaurant pos setup, automated packaging calculations save cashiers from mental math during peak dinner hours and ensure food margins remain protected.",
+    "packagingListLabel": "Packaging configuration options",
+    "workflowKicker": "FROM COUNTER TO HANDOFF",
+    "workflowTitle": "The complete takeaway journey.",
+    "workflowDescription": "Follow an order from customer punch through kitchen packing, token alerts and final customer collection.",
+    "workflowListLabel": "Takeaway order workflow steps",
+    "handoffKicker": "KITCHEN PACKING",
+    "handoffTitle": "Ensure kitchens pack the right items.",
+    "handoffParagraphOne": "Kitchen staff need to know when an order is for takeaway so they pack food in disposable containers instead of serving it on ceramic tableware. RestaBee prints a bold TAKEAWAY label on kitchen order tickets, along with special packaging notes.",
+    "handoffParagraphTwo": "When cooks finish preparing the dishes, the packing station cross-checks the containers against the printed token slip. Condiments, cutlery packets and paper napkins are assembled before sealing the parcel.",
+    "handoffParagraphThree": "Because RestaBee works as a unified restaurant billing app, the cashier screen updates when the kitchen marks the parcel ready. Staff call the token number or hand the parcel to the waiting guest without delay.",
+    "reportKicker": "PARCEL PERFORMANCE METRICS",
+    "reportTitle": "Track takeaway sales and container costs.",
+    "reportDescription": "Review takeaway revenue, container fee totals, top-selling parcel dishes and peak pickup windows in your daily reports.",
+    "reportScreenLabel": "RestaBee Reports · phone",
+    "reportScreenDataLabel": "Sample restaurant data",
+    "reportScreenCaption": "Takeaway sales summaries and packaging revenue in the RestaBee mobile report view.",
+    "platformKicker": "VERSATILE COUNTER HARDWARE",
+    "platformTitle": "Fits compact counter and takeaway desks.",
+    "platformDescription": "Run the takeaway pos on small-footprint touchscreens, desktop PCs, iPads or Android tablets paired with 80mm thermal receipt printers.",
+    "menuLinkLabel": "See restaurant menu management",
+    "billingLinkLabel": "Explore restaurant billing",
+    "kdsLinkLabel": "See kitchen display systems",
+    "reportLinkLabel": "Explore sales reports",
+    "orderLinkLabel": "Explore order management",
+    "faqKicker": "TAKEAWAY POS QUESTIONS",
+    "faqTitle": "Common questions about takeaway billing software.",
+    "faqDescription": "Answers about token tracking, automated packaging fees, phone orders and printer setup.",
+    "ctaKicker": "SEE THE TAKEAWAY WORKFLOW",
+    "ctaTitle": "Walk through a parcel order in RestaBee.",
+    "ctaDescription": "Review packaging charges, token generation, kitchen packing slips and payment settlement with our product team.",
+    "demoCta": "Book a demo"
+  },
+  "takeawayLists": {
+    "serviceTypes": [
+      {
+        "title": "Walk-in parcel orders",
+        "description": "Punch counter orders on the fly, collect payment upfront and print a numbered customer pickup receipt."
+      },
+      {
+        "title": "Advance phone orders",
+        "description": "Record phone orders with customer name and scheduled pickup time so food is freshly packed on arrival."
+      },
+      {
+        "title": "Direct staff delivery",
+        "description": "Enter staff-managed home deliveries with customer address, contact phone and delivery boy assignment."
+      }
+    ],
+    "packagingSetup": [
+      {
+        "title": "Item-wise packaging fees",
+        "description": "Assign container charges to specific dishes like gravies or biryanis that require heavy-duty containers."
+      },
+      {
+        "title": "Flat order packaging fee",
+        "description": "Add a fixed packaging fee per parcel order to cover carry bags, disposable cutlery and paper napkins."
+      },
+      {
+        "title": "Customer name and token printing",
+        "description": "Print customer names and phone numbers on tickets to avoid parcel mix-ups during crowded pickup periods."
+      },
+      {
+        "title": "Bold kitchen packing tags",
+        "description": "Highlight takeaway labels on kitchen printers so line cooks pack food in disposable containers."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Enter parcel order details",
+        "description": "Select dishes, configure any customer spice instructions and verify automatic packaging charges."
+      },
+      {
+        "number": "02",
+        "title": "Print token and settle bill",
+        "description": "Collect payment via cash, UPI or card, and provide the customer with their numbered pickup receipt."
+      },
+      {
+        "number": "03",
+        "title": "Kitchen preparation and packing",
+        "description": "Cooks prepare the meal and seal dishes in disposable containers according to the printed ticket notes."
+      },
+      {
+        "number": "04",
+        "title": "Token call and customer handoff",
+        "description": "Staff match the parcel token to the customer receipt and hand over the completed food package."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a takeaway POS system?",
+        "answer": "A takeaway POS system is specialized software for managing restaurant parcel orders. It streamlines counter order taking, applies packaging fees, tracks customer pickup tokens and prints clear kitchen packing slips without dining table requirements."
+      },
+      {
+        "question": "Can I add automatic packaging charges for takeaway orders?",
+        "answer": "Yes. RestaBee allows you to set automated packaging fees either per item (such as liquid gravies) or as a flat charge per parcel order. These appear transparently on the customer tax invoice."
+      },
+      {
+        "question": "How does the system prevent parcel mix-ups during peak rush?",
+        "answer": "Every takeaway order generates a sequential token number printed on both the customer receipt and the kitchen packing slip. Staff can also print customer names and mobile numbers directly on the ticket."
+      },
+      {
+        "question": "Can I manage both dine-in and takeaway on the same POS register?",
+        "answer": "Yes. RestaBee handles dine-in tables, counter takeaway and staff-entered delivery orders in a unified point of sale register. Cashiers switch order types with a single tap."
+      },
+      {
+        "question": "Does this takeaway billing software support UPI QR code payments?",
+        "answer": "Yes. Cashiers can show a dynamic UPI QR code on screen or print a payment QR directly on the bill, allowing customers to pay in seconds using any UPI application."
+      },
+      {
+        "question": "Can staff take advance takeaway orders over the phone?",
+        "answer": "Yes. Staff can record phone orders, enter customer contact details, set expected pickup times and fire the ticket to the kitchen when preparation should start."
+      },
+      {
+        "question": "Can I see how much revenue came from takeaway versus dine-in?",
+        "answer": "Yes. RestaBee sales reports allow managers to filter revenue, item counts and packaging fees by order type, giving clear visibility into parcel counter performance."
+      }
+    ]
+  }
+}

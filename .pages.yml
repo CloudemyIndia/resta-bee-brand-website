@@ -73,6 +73,30 @@ content:
           - name: cafePosMenu
             label: Cafe POS menu screenshot description
             type: text
+          - name: qsrPosReports
+            label: QSR POS reports screenshot description
+            type: text
+          - name: qsrPosMenu
+            label: QSR POS menu screenshot description
+            type: text
+          - name: takeawayPosReports
+            label: Takeaway POS reports screenshot description
+            type: text
+          - name: takeawayPosMenu
+            label: Takeaway POS menu screenshot description
+            type: text
+          - name: cloudKitchenReports
+            label: Cloud kitchen POS reports screenshot description
+            type: text
+          - name: cloudKitchenMenu
+            label: Cloud kitchen POS menu screenshot description
+            type: text
+          - name: bakeryPosReports
+            label: Bakery POS reports screenshot description
+            type: text
+          - name: bakeryPosMenu
+            label: Bakery POS menu screenshot description
+            type: text
           - name: cashShiftPhone
             label: My Shift phone screenshot description
             type: text
@@ -1038,6 +1062,90 @@ content:
           - name: setupListLabel
             label: setupListLabel
             type: text
+          - name: comboKicker
+            label: comboKicker
+            type: text
+          - name: comboTitle
+            label: comboTitle
+            type: text
+          - name: comboDescription
+            label: comboDescription
+            type: text
+          - name: comboParagraphOne
+            label: comboParagraphOne
+            type: text
+          - name: comboParagraphTwo
+            label: comboParagraphTwo
+            type: text
+          - name: comboParagraphThree
+            label: comboParagraphThree
+            type: text
+          - name: comboListLabel
+            label: comboListLabel
+            type: text
+          - name: packagingKicker
+            label: packagingKicker
+            type: text
+          - name: packagingTitle
+            label: packagingTitle
+            type: text
+          - name: packagingDescription
+            label: packagingDescription
+            type: text
+          - name: packagingParagraphOne
+            label: packagingParagraphOne
+            type: text
+          - name: packagingParagraphTwo
+            label: packagingParagraphTwo
+            type: text
+          - name: packagingParagraphThree
+            label: packagingParagraphThree
+            type: text
+          - name: packagingListLabel
+            label: packagingListLabel
+            type: text
+          - name: brandKicker
+            label: brandKicker
+            type: text
+          - name: brandTitle
+            label: brandTitle
+            type: text
+          - name: brandDescription
+            label: brandDescription
+            type: text
+          - name: brandParagraphOne
+            label: brandParagraphOne
+            type: text
+          - name: brandParagraphTwo
+            label: brandParagraphTwo
+            type: text
+          - name: brandParagraphThree
+            label: brandParagraphThree
+            type: text
+          - name: brandListLabel
+            label: brandListLabel
+            type: text
+          - name: customOrderKicker
+            label: customOrderKicker
+            type: text
+          - name: customOrderTitle
+            label: customOrderTitle
+            type: text
+          - name: customOrderDescription
+            label: customOrderDescription
+            type: text
+          - name: customOrderParagraphOne
+            label: customOrderParagraphOne
+            type: text
+          - name: customOrderParagraphTwo
+            label: customOrderParagraphTwo
+            type: text
+          - name: customOrderParagraphThree
+            label: customOrderParagraphThree
+            type: text
+          - name: customOrderListLabel
+            label: customOrderListLabel
+            type: text
           - name: handoffKicker
             label: handoffKicker
             type: text
@@ -1798,6 +1906,190 @@ content:
                 type: string
               - name: answer
                 type: text
+      - name: qsrLists
+        label: QSR POS page content groups
+        type: object
+        fields:
+          - name: serviceTypes
+            label: QSR service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: comboSetup
+            label: QSR combo and modifier setup
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: QSR workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: QSR POS questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: takeawayLists
+        label: Takeaway POS page content groups
+        type: object
+        fields:
+          - name: serviceTypes
+            label: Takeaway service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: packagingSetup
+            label: Takeaway packaging setup
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Takeaway workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Takeaway POS questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: cloudKitchenLists
+        label: Cloud kitchen POS page content groups
+        type: object
+        fields:
+          - name: serviceTypes
+            label: Cloud kitchen service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: brandSetup
+            label: Cloud kitchen brand setup
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Cloud kitchen workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Cloud kitchen POS questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: bakeryLists
+        label: Bakery POS page content groups
+        type: object
+        fields:
+          - name: serviceTypes
+            label: Bakery service types
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: customOrders
+            label: Bakery custom orders setup
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Bakery workflow steps
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Bakery POS questions
+            type: object
+            list:
+              collapsible: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
       - name: tableLists
         label: Restaurant table management content groups
         type: object
@@ -2012,6 +2304,24 @@ content:
             type: text
           - name: href
             label: Existing route or homepage section link
+            type: string
+          - name: linkLabel
+            type: string
+      - name: solutionDirectory
+        label: Restaurant type solution cards
+        type: object
+        list:
+          collapsible: true
+        fields:
+          - name: title
+            type: string
+          - name: serviceType
+            label: Restaurant service type
+            type: string
+          - name: description
+            type: text
+          - name: href
+            label: Existing solution page route
             type: string
           - name: linkLabel
             type: string

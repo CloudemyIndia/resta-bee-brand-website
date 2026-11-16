@@ -71,6 +71,30 @@ const pages = defineCollection({
       workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
       faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
     }).optional(),
+    qsrLists: z.object({
+      serviceTypes: z.array(z.object({ title: z.string(), description: z.string() })),
+      comboSetup: z.array(z.object({ title: z.string(), description: z.string() })),
+      workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
+    takeawayLists: z.object({
+      serviceTypes: z.array(z.object({ title: z.string(), description: z.string() })),
+      packagingSetup: z.array(z.object({ title: z.string(), description: z.string() })),
+      workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
+    cloudKitchenLists: z.object({
+      serviceTypes: z.array(z.object({ title: z.string(), description: z.string() })),
+      brandSetup: z.array(z.object({ title: z.string(), description: z.string() })),
+      workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
+    bakeryLists: z.object({
+      serviceTypes: z.array(z.object({ title: z.string(), description: z.string() })),
+      customOrders: z.array(z.object({ title: z.string(), description: z.string() })),
+      workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
     cashLists: z.object({
       controls: z.array(z.object({ title: z.string(), description: z.string() })),
       workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
@@ -93,10 +117,20 @@ const pages = defineCollection({
       href: z.string().startsWith('/'),
       linkLabel: z.string(),
     })).optional(),
+    solutionDirectory: z.array(z.object({
+      title: z.string(),
+      serviceType: z.string(),
+      description: z.string(),
+      href: z.string().startsWith('/'),
+      linkLabel: z.string(),
+    })).optional(),
     faqs: z.array(z.object({ question: z.string(), answer: z.string() })).default([]),
     privacySections: z.array(z.object({ title: z.string(), paragraphs: z.array(z.string()) })).optional(),
     plans: z.array(z.object({ months: z.number(), price: z.string() })).optional(),
   }).superRefine((page, ctx) => {
+    if (page.pageId === 'solutions-index' && (!page.solutionDirectory || page.solutionDirectory.length < 1)) {
+      ctx.addIssue({ code: 'custom', path: ['solutionDirectory'], message: 'Solutions directory requires at least one linked solution page.' });
+    }
     if (page.pageId === 'kot-management') {
       if (!page.kotLists) {
         ctx.addIssue({ code: 'custom', path: ['kotLists'], message: 'KOT page requires workflow, ticket details, comparison rows and FAQs.' });
@@ -141,6 +175,38 @@ const pages = defineCollection({
       }
       if (!page.imageAlt?.cafePosMenu || !page.imageAlt?.cafePosReports) {
         ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Cafe POS page requires descriptive menu and reports screenshot alt text.' });
+      }
+    }
+    if (page.pageId === 'qsr-pos') {
+      if (!page.qsrLists || !page.qsrLists.serviceTypes.length || !page.qsrLists.comboSetup.length || !page.qsrLists.workflowSteps.length || !page.qsrLists.faqs.length) {
+        ctx.addIssue({ code: 'custom', path: ['qsrLists'], message: 'QSR POS page requires service types, combo setup, workflow steps and FAQs.' });
+      }
+      if (!page.imageAlt?.qsrPosMenu || !page.imageAlt?.qsrPosReports) {
+        ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'QSR POS page requires descriptive menu and reports screenshot alt text.' });
+      }
+    }
+    if (page.pageId === 'takeaway-pos') {
+      if (!page.takeawayLists || !page.takeawayLists.serviceTypes.length || !page.takeawayLists.packagingSetup.length || !page.takeawayLists.workflowSteps.length || !page.takeawayLists.faqs.length) {
+        ctx.addIssue({ code: 'custom', path: ['takeawayLists'], message: 'Takeaway POS page requires service types, packaging setup, workflow steps and FAQs.' });
+      }
+      if (!page.imageAlt?.takeawayPosMenu || !page.imageAlt?.takeawayPosReports) {
+        ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Takeaway POS page requires descriptive menu and reports screenshot alt text.' });
+      }
+    }
+    if (page.pageId === 'cloud-kitchen-pos') {
+      if (!page.cloudKitchenLists || !page.cloudKitchenLists.serviceTypes.length || !page.cloudKitchenLists.brandSetup.length || !page.cloudKitchenLists.workflowSteps.length || !page.cloudKitchenLists.faqs.length) {
+        ctx.addIssue({ code: 'custom', path: ['cloudKitchenLists'], message: 'Cloud kitchen POS page requires service types, brand setup, workflow steps and FAQs.' });
+      }
+      if (!page.imageAlt?.cloudKitchenMenu || !page.imageAlt?.cloudKitchenReports) {
+        ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Cloud kitchen POS page requires descriptive menu and reports screenshot alt text.' });
+      }
+    }
+    if (page.pageId === 'bakery-pos') {
+      if (!page.bakeryLists || !page.bakeryLists.serviceTypes.length || !page.bakeryLists.customOrders.length || !page.bakeryLists.workflowSteps.length || !page.bakeryLists.faqs.length) {
+        ctx.addIssue({ code: 'custom', path: ['bakeryLists'], message: 'Bakery POS page requires service types, custom orders, workflow steps and FAQs.' });
+      }
+      if (!page.imageAlt?.bakeryPosMenu || !page.imageAlt?.bakeryPosReports) {
+        ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Bakery POS page requires descriptive menu and reports screenshot alt text.' });
       }
     }
     if (page.pageId === 'restaurant-cash-management') {

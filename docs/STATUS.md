@@ -1,4 +1,9 @@
 # Implementation state
+## Solution pages and directory — verified 2026-11-16
+| Claim | Scope and executed falsification command |
+| --- | --- |
+| `/solutions/` is a CMS-editable directory hub for the five existing restaurant-type pages; its route renders with any non-empty CMS card list, while the production build gate checks all five destinations | Dev verified 2026-11-16: `ASTRO_TELEMETRY_DISABLED=1 npm run check && ASTRO_TELEMETRY_DISABLED=1 npm run build && curl -sS -o /tmp/solutions-final.html -w 'preview HTTP %{http_code}\n' http://127.0.0.1:4322/solutions/ && node -e "const fs=require('node:fs');const h=fs.readFileSync('/tmp/solutions-final.html','utf8');const count=(h.match(/class=\\\"solution-card\\\"/g)||[]).length;console.log('solution cards:',count);if(count!==5)process.exit(1)" && git diff --check` → 0 Astro diagnostics; 27 static routes built; CMS parity matches all 22 page entries and 3 blog entries; preview returned HTTP 200 with five cards; build verifier checks each solution route; sitemap includes 25 public URLs; `llms.txt` links the directory and five solution pages. Solution page keyword metrics: QSR (1,145 words, 12 primary matches / 1.048%, 4/4 supporting phrases); Takeaway (1,127 words, 8 / 0.710%, 4/4); Cloud Kitchen (1,107 words, 8 / 0.723%, 5/5); Bakery (1,158 words, 9 / 0.777%, 4/4). All 22 declared contrast pairs pass WCAG AA. The `/solutions/` hub has no page-specific target in the supplied keyword map; it acts as a navigation directory. Local Chrome reports no overflow at 520, 420, 375 or 360px, and its 375px render was visually reviewed. Local checks only; not deployed. See [decision 0059](decisions/0059-solution-pages-expansion.md). |
+
 ## Blog listing, content and CMS fields — verified 2026-11-12
 | Claim | Scope and executed falsification command |
 | --- | --- |

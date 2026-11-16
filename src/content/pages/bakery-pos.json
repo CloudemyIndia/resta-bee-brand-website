@@ -1,0 +1,162 @@
+{
+  "pageId": "bakery-pos",
+  "seo": {
+    "title": "Bakery POS Software for Counter Sales & Custom Orders | RestaBee",
+    "description": "Bakery POS software for retail counter sales, cake sizes, custom writing notes, advance order pickups and daily cash shifts. Built for bakery retail.",
+    "canonical": "https://restabee.com/solutions/bakery-pos/",
+    "keywords": [
+      "bakery pos software",
+      "bakery pos",
+      "bakery pos system",
+      "bakery billing software",
+      "pos for bakery"
+    ]
+  },
+  "imageAlt": {
+    "bakeryPosMenu": "RestaBee bakery POS screen showing cake sizes, custom decorating notes, packaged bakery goods and checkout controls; sample restaurant menu data.",
+    "bakeryPosReports": "RestaBee mobile sales report screen showing category sales and daily cashier shift totals for a selected reporting period; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Bakery POS",
+    "heroKicker": "RETAIL BAKERY AND CAKE SHOP POINT OF SALE",
+    "heroTitle": "A bakery POS software built for retail counters and custom cakes.",
+    "heroDescription": "Sell fresh breads and pastries at counter speed, configure cake sizes, record custom celebration messages and track advance pickups. RestaBee provides bakeries with clean, dependable bakery POS software.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Explore the bakery workflow",
+    "menuScreenLabel": "RestaBee POS order entry",
+    "menuScreenDataLabel": "Sample restaurant menu data",
+    "menuScreenCaption": "Retail counter items, cake size variants, custom notes and instant checkout on the POS screen.",
+    "overviewKicker": "RETAIL COUNTER EFFICIENCY",
+    "overviewTitle": "Keep bakery counter sales moving quickly.",
+    "overviewParagraphOne": "Bakeries manage two distinct sales workflows every day: fast retail sales of cookies, breads and pastries across the glass counter, alongside custom celebration cakes that require advance booking, size selection and specific decorating instructions.",
+    "overviewParagraphTwo": "A dedicated bakery pos software lets cashiers ring up over-the-counter baked items in seconds. Staff select items, choose portion sizes or weights, record cash or UPI payments and hand the customer a printed receipt without keeping the next customer waiting.",
+    "overviewParagraphThree": "RestaBee functions as an easy-to-use bakery pos system designed for retail bakeries, patisseries and cake shops. By combining quick counter billing with custom cake order tracking, your staff manage both walk-in sales and advance orders in one tidy register.",
+    "serviceKicker": "BAKERY SALES FORMATS",
+    "serviceTitle": "Tailored for retail bakeries and cake shops.",
+    "serviceDescription": "Manage ready-to-eat counter sales, advance celebration cake bookings and packaged confectioneries in one point of sale.",
+    "serviceListLabel": "Bakery POS sales formats",
+    "customOrderKicker": "CAKE SIZES AND CUSTOM NOTES",
+    "customOrderTitle": "Configure cake weights and custom writing.",
+    "customOrderDescription": "Offer standard cake sizes like 500g and 1kg, and record customized celebration messages directly on the order ticket.",
+    "customOrderParagraphOne": "Celebration cakes come in standard portion sizes, such as half kilogram, one kilogram or two kilograms. In this bakery billing software, cashiers tap a cake item to view its configured size variants, with the price updating automatically for each size.",
+    "customOrderParagraphTwo": "Special instructions like Happy Birthday Rahul or Eggless preparation stay attached to the order line. When staff punch an advance order, the bakery decorating counter receives a clear order ticket listing the cake flavor, weight, custom message and pickup date.",
+    "customOrderParagraphThree": "Clear custom order tickets prevent spelling errors on birthday cakes and ensure customer requests are followed precisely. This straightforward setup makes RestaBee a practical pos for bakery staff managing custom celebration orders.",
+    "customOrderListLabel": "Bakery menu configuration features",
+    "workflowKicker": "FROM SELECTION TO HANDOFF",
+    "workflowTitle": "The bakery sales and pickup cycle.",
+    "workflowDescription": "Follow a bakery sale from over-the-counter selection to custom cake booking and scheduled customer pickup.",
+    "workflowListLabel": "Bakery order workflow steps",
+    "handoffKicker": "STATION COORDINATION",
+    "handoffTitle": "Coordinate counter and decorating stations.",
+    "handoffParagraphOne": "In bakeries with an on-site pastry kitchen, ready items are picked directly from display shelves while custom cakes route to the decorating table. RestaBee routes custom cake tickets to the decorating station printer so pastry chefs prepare celebration cakes ahead of the scheduled pickup.",
+    "handoffParagraphTwo": "When the customer arrives to collect their cake, cashiers locate the advance order by customer name or token reference. The cashier verifies the completed cake, settles any remaining balance and marks the order collected.",
+    "handoffParagraphThree": "This dependable handoff makes RestaBee an effective bakery pos software for busy cake shops during weekend rush hours. Cashiers and decorators share order visibility, preventing misplaced pickup boxes.",
+    "reportKicker": "DAILY SALES AND SHIFT AUDIT",
+    "reportTitle": "Review daily sales and register balances.",
+    "reportDescription": "Track revenue by product category, monitor top-selling pastries and reconcile cashier shift drawers accurately at closing time with your bakery pos software.",
+    "reportScreenLabel": "RestaBee Reports · phone",
+    "reportScreenDataLabel": "Sample restaurant data",
+    "reportScreenCaption": "Category sales breakdowns and cashier shift totals in the RestaBee mobile report view.",
+    "platformKicker": "COUNTER READY PLATFORM",
+    "platformTitle": "Clear operational scope for retail bakeries.",
+    "platformDescription": "RestaBee bakery pos software focuses on retail counter billing, cake size variants, custom notes and cash shift management. Industrial ingredient batch formulation and raw dough manufacturing controls are not included.",
+    "menuLinkLabel": "See restaurant menu management",
+    "billingLinkLabel": "Explore restaurant billing",
+    "kdsLinkLabel": "See kitchen display systems",
+    "reportLinkLabel": "Explore sales reports",
+    "orderLinkLabel": "Explore order management",
+    "faqKicker": "BAKERY POS QUESTIONS",
+    "faqTitle": "Common questions about bakery billing software.",
+    "faqDescription": "Answers about cake size variants, custom messages, advance pickups and daily shift reconciliation.",
+    "ctaKicker": "SEE THE BAKERY WORKFLOW",
+    "ctaTitle": "Walk through a bakery order in RestaBee.",
+    "ctaDescription": "Review cake sizing, custom message recording, advance order tracking and daily sales reports with our product team.",
+    "demoCta": "Book a demo"
+  },
+  "bakeryLists": {
+    "serviceTypes": [
+      {
+        "title": "Counter retail sales",
+        "description": "Ring up fresh breads, pastries, cookies and packaged confectioneries with instant cash or UPI billing."
+      },
+      {
+        "title": "Advance custom cake booking",
+        "description": "Record scheduled orders for birthday and celebration cakes with customer name, message and pickup date."
+      },
+      {
+        "title": "Cafe and beverage counter",
+        "description": "Serve coffee, tea and snacks alongside bakery goods if your shop offers on-premise seating."
+      }
+    ],
+    "customOrders": [
+      {
+        "title": "Portion and weight variants",
+        "description": "Configure cake sizes like 500g, 1kg or 2kg with distinct pricing for each variant."
+      },
+      {
+        "title": "Custom message recording",
+        "description": "Capture custom celebration text and dietary preferences that print directly on the decorating ticket."
+      },
+      {
+        "title": "Scheduled pickup tracking",
+        "description": "Record customer pickup dates and phone numbers so orders are decorated and boxed before arrival."
+      },
+      {
+        "title": "Barcode and packaged item sales",
+        "description": "Scan or punch packaged goods like artisan cookies, rusks and chocolates with standard retail pricing."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Select bakery items",
+        "description": "Choose over-the-counter pastries or configure cake flavor, weight variant and custom writing notes."
+      },
+      {
+        "number": "02",
+        "title": "Record customer payment",
+        "description": "Accept cash, UPI QR scan or credit card and print a customer receipt with pickup details."
+      },
+      {
+        "number": "03",
+        "title": "Decorating and packaging",
+        "description": "Pastry cooks prepare custom cakes according to the printed slip and place boxed cakes in the pickup chiller."
+      },
+      {
+        "number": "04",
+        "title": "Customer collection and handoff",
+        "description": "Staff retrieve the boxed order by customer token or name, verify the item and hand over the cake."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a bakery POS software?",
+        "answer": "A bakery POS software is point of sale software designed for bakeries and cake shops. It combines rapid counter billing for retail baked goods with custom cake size selection, celebration message notes and advance order pickup tracking."
+      },
+      {
+        "question": "Can I configure cake sizes like half kg and one kg?",
+        "answer": "Yes. Menu items in the bakery pos software can have configured weight or portion variants, such as 500g and 1kg, each with its own price. Cashiers select the requested size during order entry."
+      },
+      {
+        "question": "Can cashiers enter custom writing for birthday cakes?",
+        "answer": "Yes. Staff can type custom celebration messages and notes (such as Happy Birthday Aisha or eggless) directly into the item line, which prints on the kitchen decorating slip."
+      },
+      {
+        "question": "Does RestaBee support advance orders for future pickup?",
+        "answer": "Yes. Staff can record advance orders with customer contact details and scheduled pickup dates so the pastry counter prepares celebration cakes ahead of time."
+      },
+      {
+        "question": "Does RestaBee manage industrial dough manufacturing or raw ingredient recipes?",
+        "answer": "No. RestaBee focuses on retail counter sales, cake sizing, custom order tracking, billing and cashier shifts. We do not provide factory batch manufacturing or raw ingredient BOM recipe management."
+      },
+      {
+        "question": "Can staff accept UPI QR code payments at the counter?",
+        "answer": "Yes. Cashiers can present a dynamic UPI QR code on the POS screen or print a payment QR code directly on the customer bill for fast digital payments."
+      },
+      {
+        "question": "How do managers reconcile cash at the end of a shift?",
+        "answer": "Cashiers perform a blind cash count at shift close. The manager compares physical cash against expected register totals to verify accuracy."
+      }
+    ]
+  }
+}

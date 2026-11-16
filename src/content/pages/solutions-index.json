@@ -1,0 +1,61 @@
+{
+  "pageId": "solutions-index",
+  "seo": {
+    "title": "Restaurant POS Solutions by Service Type | RestaBee",
+    "description": "Explore RestaBee POS solutions for cafes, quick service counters, takeaway restaurants, cloud kitchens and bakeries. Find the workflow that fits your team.",
+    "canonical": "https://restabee.com/solutions/",
+    "keywords": []
+  },
+  "copy": {
+    "breadcrumbLabel": "Solutions",
+    "heroKicker": "Solutions for restaurant service styles",
+    "heroTitle": "A POS workflow for the way you serve.",
+    "heroDescription": "Start with your service model. Explore how RestaBee supports order entry, preparation, billing and reporting across cafes, quick service counters, takeaway desks, cloud kitchens and bakeries.",
+    "directoryKicker": "Choose your restaurant type",
+    "directoryTitle": "Explore restaurant POS solutions.",
+    "directoryDescription": "Each solution page focuses on a service style and the work its team handles every day. Follow a route to see its menu setup, order handoffs and operating views.",
+    "workflowTitle": "The same connected workflow, shaped around service.",
+    "workflowDescription": "Teams can enter dine-in, takeaway and staff-entered delivery orders, send preparation details to the assigned station, and continue through bill preparation and collection. The pages below show how that workflow applies to different restaurant formats.",
+    "featuresLinkLabel": "Browse all product features",
+    "ctaTitle": "See the workflow that fits your restaurant.",
+    "ctaDescription": "Talk through your service style, outlet setup and the screens your team uses.",
+    "ctaLabel": "Book a demo"
+  },
+  "solutionDirectory": [
+    {
+      "title": "Cafe POS",
+      "serviceType": "Cafe counter and table service",
+      "description": "Set up drink sizes and add-ons, take counter or dine-in orders, route preparation details and review item sales.",
+      "href": "/solutions/cafe-pos/",
+      "linkLabel": "Explore Cafe POS"
+    },
+    {
+      "title": "QSR POS",
+      "serviceType": "Quick service counters",
+      "description": "Manage counter orders, combos and modifiers, then send items into the configured kitchen station workflow.",
+      "href": "/solutions/qsr-pos/",
+      "linkLabel": "Explore QSR POS"
+    },
+    {
+      "title": "Takeaway POS",
+      "serviceType": "Takeaway and parcel desks",
+      "description": "Record staff-entered takeaway orders, capture packaging charges where configured and carry the order through preparation and billing.",
+      "href": "/solutions/takeaway-pos/",
+      "linkLabel": "Explore Takeaway POS"
+    },
+    {
+      "title": "Cloud Kitchen POS",
+      "serviceType": "Delivery-focused kitchen teams",
+      "description": "Organise staff-entered delivery orders, menu choices, station handoffs and bill details across the kitchen workflow.",
+      "href": "/solutions/cloud-kitchen-pos/",
+      "linkLabel": "Explore Cloud Kitchen POS"
+    },
+    {
+      "title": "Bakery POS",
+      "serviceType": "Bakery counters and custom orders",
+      "description": "Handle counter sales, menu variants, cake notes and pickup details alongside preparation, billing and daily reporting.",
+      "href": "/solutions/bakery-pos/",
+      "linkLabel": "Explore Bakery POS"
+    }
+  ]
+}

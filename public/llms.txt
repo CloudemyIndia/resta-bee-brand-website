@@ -9,6 +9,7 @@ Use this guide to find the public product, feature, pricing and support pages. P
 - [Restaurant POS software](https://restabee.com/): How RestaBee connects restaurant orders, floor service, kitchen tickets and bills, with a product overview and demo request.
 - [Restaurant management software](https://restabee.com/restaurant-management-software/): The broader restaurant workspace for front-of-house, kitchen, cashier and owner operations.
 - [Features directory](https://restabee.com/features/): Browse the restaurant POS capabilities and open a dedicated page for each workflow.
+- [Restaurant POS solutions](https://restabee.com/solutions/): Choose a solution page for cafe, QSR, takeaway, cloud kitchen or bakery service.
 - [Restaurant POS capabilities](https://restabee.com/#capabilities): A concise view of the core workflows supported by the product.
 - [Pricing](https://restabee.com/pricing/): Public subscription terms for single-outlet and multi-outlet restaurants.
 - [Request a demo](https://restabee.com/#demo): Send RestaBee a restaurant enquiry.
@@ -26,6 +27,10 @@ Use this guide to find the public product, feature, pricing and support pages. P
 - [Restaurant cash management](https://restabee.com/features/restaurant-cash-management/): Opening floats, cash movements, shift counts and closing variance review.
 - [Restaurant sales reports](https://restabee.com/features/restaurant-sales-reports/): Issued sales, collections, item and category sales, discounts, taxes and shift activity.
 - [Cafe POS](https://restabee.com/solutions/cafe-pos/): Cafe counter and dine-in orders, menu choices, preparation, billing and sales reports.
+- [QSR POS](https://restabee.com/solutions/qsr-pos/): Quick service restaurant POS for fast-ordering counters, combos, modifiers, station KOT queues and rapid checkout.
+- [Takeaway POS](https://restabee.com/solutions/takeaway-pos/): Takeaway and parcel desk management, customer tokens, packaging charges, kitchen handoffs and express billing.
+- [Cloud kitchen POS](https://restabee.com/solutions/cloud-kitchen-pos/): Multi-brand delivery order management, brand menu publishing, station routing and packaging charges.
+- [Bakery POS](https://restabee.com/solutions/bakery-pos/): Retail bakery counter billing, cake sizes and custom decorating notes, advance order pickups and daily cash shifts.
 
 ## Educational guides and resources
 

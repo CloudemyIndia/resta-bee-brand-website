@@ -1,0 +1,140 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../components/Mark.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entry = await getEntry('pages', 'solutions-index');
+if (!entry) throw new Error('CMS content entry "solutions-index" is missing.');
+const { seo, copy, solutionDirectory } = entry.data;
+if (!solutionDirectory?.length) throw new Error('Solutions directory needs at least one solution card.');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Solutions', item: seo.canonical }
+    ]
+  }
+};
+---
+
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="solutions-page">
+    <nav class="solutions-breadcrumb container" aria-label="Breadcrumb">
+      <a href="/">Restaurant POS</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span>
+    </nav>
+
+    <section class="solutions-hero container" aria-labelledby="solutions-title">
+      <p class="solutions-kicker">{copy.heroKicker}</p>
+      <h1 id="solutions-title">{copy.heroTitle}</h1>
+      <p class="solutions-lede">{copy.heroDescription}</p>
+      <a class="button button-orange" href="/#demo">{copy.ctaLabel}<Mark /></a>
+    </section>
+
+    <section class="solutions-directory" aria-labelledby="solutions-directory-title">
+      <div class="container">
+        <header class="solutions-section-head">
+          <p class="solutions-kicker">{copy.directoryKicker}</p>
+          <h2 id="solutions-directory-title">{copy.directoryTitle}</h2>
+          <p>{copy.directoryDescription}</p>
+        </header>
+        <div class="solutions-grid">
+          {solutionDirectory.map((solution, index) => (
+            <article class="solution-card">
+              <span class="solution-number">{String(index + 1).padStart(2, '0')}</span>
+              <p class="solution-service-type">{solution.serviceType}</p>
+              <h3>{solution.title}</h3>
+              <p class="solution-description">{solution.description}</p>
+              <a href={solution.href}>{solution.linkLabel}<Mark /></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="solutions-workflow container" aria-labelledby="solutions-workflow-title">
+      <div>
+        <p class="solutions-kicker">One restaurant workflow</p>
+        <h2 id="solutions-workflow-title">{copy.workflowTitle}</h2>
+      </div>
+      <div class="solutions-workflow-copy">
+        <p>{copy.workflowDescription}</p>
+        <a class="text-link" href="/features/">{copy.featuresLinkLabel}<Mark /></a>
+      </div>
+    </section>
+
+    <section class="solutions-cta">
+      <div class="container solutions-cta-inner">
+        <div>
+          <p class="solutions-kicker">RestaBee restaurant POS</p>
+          <h2>{copy.ctaTitle}</h2>
+          <p>{copy.ctaDescription}</p>
+        </div>
+        <a class="button button-dark" href="/#demo">{copy.ctaLabel}<Mark /></a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+
+<style>
+  .solutions-page { color: var(--ink); }
+  .solutions-breadcrumb { display:flex; align-items:center; gap:12px; padding-top:24px; color:#62665d; font-size:13px; }
+  .solutions-breadcrumb a { text-decoration:underline; text-underline-offset:4px; }
+  .solutions-hero { padding-block:clamp(56px, 8vw, 108px) clamp(64px, 8vw, 100px); }
+  .solutions-kicker { color:#963b18; font-size:12px; font-weight:700; letter-spacing:.1em; line-height:1.45; text-transform:uppercase; }
+  .solutions-hero h1 { max-width:900px; margin-top:22px; font-size:clamp(44px, 7vw, 86px); line-height:1.02; letter-spacing:-.045em; }
+  .solutions-lede { max-width:740px; margin-top:24px; color:#50564d; font-size:clamp(18px, 2vw, 22px); line-height:1.65; }
+  .solutions-hero .button { margin-top:30px; }
+  .solutions-directory { padding-block:88px 100px; background:#f0eee6; }
+  .solutions-section-head { max-width:760px; }
+  .solutions-section-head h2,.solutions-workflow h2,.solutions-cta h2 { margin-top:16px; font-size:clamp(36px, 5vw, 62px); line-height:1.08; letter-spacing:-.035em; }
+  .solutions-section-head>p:last-child { margin-top:18px; color:#50564d; font-size:18px; line-height:1.65; }
+  .solutions-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:44px; }
+  .solution-card { display:flex; min-width:0; min-height:300px; flex-direction:column; align-items:flex-start; padding:26px; border:1px solid #dedfd5; border-radius:16px; background:#fffefa; }
+  .solution-number { color:#963b18; font-size:12px; font-weight:700; letter-spacing:.08em; }
+  .solution-service-type { margin-top:24px; color:#62665d; font-size:12px; line-height:1.5; }
+  .solution-card h3 { margin-top:8px; font-size:25px; line-height:1.2; letter-spacing:-.025em; }
+  .solution-description { margin-top:12px; color:#50564d; font-size:14px; line-height:1.65; }
+  .solution-card>a { display:inline-flex; align-items:center; gap:10px; margin-top:auto; padding-top:22px; color:#85310e; font-size:14px; font-weight:700; }
+  .solution-card>a .icon { width:17px; height:17px; }
+  .solutions-workflow { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:clamp(40px,8vw,110px); padding-block:96px; }
+  .solutions-workflow h2 { max-width:520px; }
+  .solutions-workflow-copy>p { color:#50564d; font-size:17px; line-height:1.75; }
+  .solutions-workflow-copy .text-link { margin-top:20px; color:#85310e; }
+  .solutions-cta { padding-block:78px; background:#252b24; color:#f7f5ec; }
+  .solutions-cta-inner { display:flex; align-items:center; justify-content:space-between; gap:40px; }
+  .solutions-cta .solutions-kicker { color:#ffbd8b; }
+  .solutions-cta h2 { max-width:700px; }
+  .solutions-cta-inner>div>p:last-child { margin-top:14px; color:#d6d9ce; font-size:16px; line-height:1.6; }
+  .solutions-cta .button { flex:none; }
+  @media (max-width:900px) { .solutions-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .solutions-workflow { grid-template-columns:1fr; gap:26px; } }
+  @media (max-width:640px) {
+    .solutions-breadcrumb { padding-top:18px; }
+    .solutions-hero { padding-block:44px 62px; }
+    .solutions-hero h1 { font-size:clamp(42px, 11.5vw, 60px); }
+    .solutions-lede { margin-top:18px; font-size:17px; }
+    .solutions-directory { padding-block:66px 72px; }
+    .solutions-section-head h2,.solutions-workflow h2,.solutions-cta h2 { font-size:clamp(34px, 9vw, 46px); }
+    .solutions-section-head>p:last-child { font-size:16px; }
+    .solutions-grid { grid-template-columns:minmax(0,1fr); gap:12px; margin-top:30px; }
+    .solution-card { min-height:250px; padding:23px; }
+    .solution-service-type { margin-top:18px; }
+    .solutions-workflow { gap:20px; padding-block:68px; }
+    .solutions-workflow-copy>p { font-size:15px; }
+    .solutions-cta { padding-block:62px; }
+    .solutions-cta-inner { align-items:flex-start; flex-direction:column; gap:26px; }
+    .solutions-cta-inner>div>p:last-child { font-size:15px; }
+    .solutions-cta .button { width:100%; justify-content:space-between; }
+  }
+</style>

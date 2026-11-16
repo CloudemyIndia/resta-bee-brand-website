@@ -1,0 +1,163 @@
+{
+  "pageId": "cloud-kitchen-pos",
+  "seo": {
+    "title": "Cloud Kitchen POS Software for Delivery Brands | RestaBee",
+    "description": "Cloud kitchen POS software for multi-brand delivery kitchens. Manage brand menus, staff order entry, station routing and packaging charges in RestaBee.",
+    "canonical": "https://restabee.com/solutions/cloud-kitchen-pos/",
+    "keywords": [
+      "cloud kitchen pos",
+      "pos for cloud kitchen",
+      "cloud kitchen pos system",
+      "cloud kitchen billing software",
+      "cloud kitchen management software",
+      "cloud kitchen software"
+    ]
+  },
+  "imageAlt": {
+    "cloudKitchenMenu": "RestaBee central menu management screen showing multi-brand catalog items, preparation station mapping and delivery pricing; sample restaurant menu data.",
+    "cloudKitchenReports": "RestaBee mobile sales report screen showing brand-wise sales totals and delivery order breakdowns for a selected reporting period; sample restaurant data."
+  },
+  "copy": {
+    "breadcrumbLabel": "Cloud Kitchen POS",
+    "heroKicker": "MULTI-BRAND DELIVERY KITCHEN SOFTWARE",
+    "heroTitle": "A cloud kitchen POS for multi-brand delivery.",
+    "heroDescription": "Run multiple virtual food brands from a single kitchen workspace. RestaBee provides multi-brand menu publishing, staff order entry, station routing and packaging charges without front-of-house floor complexity.",
+    "heroCta": "Book a demo",
+    "workflowCta": "Explore the cloud kitchen workflow",
+    "menuScreenLabel": "RestaBee Central Menu",
+    "menuScreenDataLabel": "Sample restaurant menu data",
+    "menuScreenCaption": "Multi-brand catalog management, station mapping and delivery menu configuration in RestaBee.",
+    "overviewKicker": "MULTI-BRAND EFFICIENCY",
+    "overviewTitle": "Operate multiple brands from one kitchen.",
+    "overviewParagraphOne": "Cloud kitchens operate without dining tables, waiting staff or physical customer menus. Instead, a single kitchen team often prepares meals for two, three or more virtual delivery brands from one set of cooking stations.",
+    "overviewParagraphTwo": "As practical cloud kitchen billing software, RestaBee organizes separate brand menus in one register. Order operators can select the active brand, punch ordered dishes, record delivery rider details and send tickets to designated kitchen stations without switching software accounts.",
+    "overviewParagraphThree": "RestaBee delivers an adaptable cloud kitchen pos system built for delivery-first food operators. By unifying brand menus, packaging fees and kitchen routing in one workspace, your cooking team avoids order confusion while owners track consolidated brand performance.",
+    "serviceKicker": "DELIVERY OPERATIONS MODEL",
+    "serviceTitle": "Tailored for ghost kitchens and virtual brands.",
+    "serviceDescription": "Manage staff-entered direct orders, phone deliveries and takeaway pickups across your cloud kitchen pos portfolio.",
+    "serviceListLabel": "Cloud kitchen operating formats",
+    "brandKicker": "MULTI-BRAND MENU PUBLISHING",
+    "brandTitle": "Keep menus, brands and stations organized.",
+    "brandDescription": "Organize individual brand catalogs, prices and item add-ons while sharing prep stations like tandoor, gravies or beverages.",
+    "brandParagraphOne": "A single kitchen might run a biryani brand, a burger brand and a dessert brand simultaneously. With this cloud kitchen management software, you can publish distinct menus for each brand while routing items to shared kitchen stations.",
+    "brandParagraphTwo": "When staff punch an order for the burger brand, beverage items route to the cold station and patties route to the grill. If an order comes in for the biryani brand, curries route to the hot range. Kitchen staff receive clear preparation slips that display both the brand name and the item details.",
+    "brandParagraphThree": "Central catalog management lets you update prices, adjust packaging fees or 86 sold-out ingredients across all brands in minutes, making RestaBee a versatile pos for cloud kitchen teams managing shared inventory.",
+    "brandListLabel": "Multi-brand management features",
+    "workflowKicker": "FROM ENTRY TO DISPATCH",
+    "workflowTitle": "The delivery preparation cycle.",
+    "workflowDescription": "Follow a delivery order from staff punch to kitchen routing, packaging verification and rider handoff.",
+    "workflowListLabel": "Cloud kitchen order workflow steps",
+    "handoffKicker": "STATION ROUTING AND DISPATCH",
+    "handoffTitle": "Coordinate multi-station kitchen prep.",
+    "handoffParagraphOne": "In high-volume delivery operations, orders arrive in waves during peak lunch and dinner hours. RestaBee routes items to station screens or thermal printers instantly so line cooks can begin preparation while the operator takes the next call.",
+    "handoffParagraphTwo": "The dispatch desk relies on clear ticket references to pack multiple food containers into insulated delivery bags. Each ticket lists the brand name, delivery order number, customer phone number and special packaging notes like extra sauce packets.",
+    "handoffParagraphThree": "This structured workflow makes RestaBee an effective cloud kitchen pos for teams with dedicated packing stations. Expeditors verify that every container matches the order slip before sealing the bag and handing it to the delivery rider.",
+    "reportKicker": "BRAND-WISE PERFORMANCE METRICS",
+    "reportTitle": "Compare sales across all virtual brands.",
+    "reportDescription": "Track revenue by brand, identify top-performing delivery items and review packaging fees across your whole kitchen operation.",
+    "reportScreenLabel": "RestaBee Reports · phone",
+    "reportScreenDataLabel": "Sample restaurant data",
+    "reportScreenCaption": "Consolidated brand sales reports and delivery order breakdowns in the RestaBee mobile app.",
+    "platformKicker": "HARDWARE AND SYSTEM BOUNDARIES",
+    "platformTitle": "Clear operational scope for delivery kitchens.",
+    "platformDescription": "RestaBee operates on standard desktop PCs, tablets and thermal printers. Orders are entered directly by kitchen staff; automated two-way aggregator API synchronization is not included.",
+    "menuLinkLabel": "See restaurant menu management",
+    "billingLinkLabel": "Explore restaurant billing",
+    "kdsLinkLabel": "See kitchen display systems",
+    "reportLinkLabel": "Explore sales reports",
+    "orderLinkLabel": "Explore order management",
+    "faqKicker": "CLOUD KITCHEN POS QUESTIONS",
+    "faqTitle": "Common questions about cloud kitchen management software.",
+    "faqDescription": "Answers about multi-brand menus, order entry, station routing and delivery boundaries.",
+    "ctaKicker": "SEE THE CLOUD KITCHEN WORKFLOW",
+    "ctaTitle": "Walk through multi-brand management in RestaBee.",
+    "ctaDescription": "Review brand menu creation, station routing, packaging charges and sales reports with our product team.",
+    "demoCta": "Book a demo"
+  },
+  "cloudKitchenLists": {
+    "serviceTypes": [
+      {
+        "title": "Staff-entered phone orders",
+        "description": "Enter customer phone orders with customer address, delivery notes, item choices and packaging charges."
+      },
+      {
+        "title": "Direct website and WhatsApp pickups",
+        "description": "Punch orders received through direct channels, print kitchen tickets and settle payment upon dispatch."
+      },
+      {
+        "title": "Takeaway counter parcels",
+        "description": "Process parcel orders for customers collecting directly from your cloud kitchen facility."
+      }
+    ],
+    "brandSetup": [
+      {
+        "title": "Multiple virtual brands",
+        "description": "Maintain separate menu catalogs, branding and price lists under one kitchen account."
+      },
+      {
+        "title": "Shared station KOT routing",
+        "description": "Route dishes from different brands to shared preparation stations like fryers, grills or drink counters."
+      },
+      {
+        "title": "Automated packaging fees",
+        "description": "Configure delivery packaging fees per item or order to cover insulated containers and meal boxes."
+      },
+      {
+        "title": "Delivery rider notes",
+        "description": "Record rider names, delivery vehicle tags or customer drop-off instructions directly on the order."
+      }
+    ],
+    "workflowSteps": [
+      {
+        "number": "01",
+        "title": "Select brand and enter order",
+        "description": "Choose the ordering brand, select requested dishes and add customer delivery address details."
+      },
+      {
+        "number": "02",
+        "title": "Station routing and ticket print",
+        "description": "Items route immediately to assigned kitchen stations marked with brand name and order token."
+      },
+      {
+        "number": "03",
+        "title": "Food preparation and packaging",
+        "description": "Cooks prepare dishes and pass containers to the packing table with brand-specific labels."
+      },
+      {
+        "number": "04",
+        "title": "Dispatch and rider handoff",
+        "description": "The expeditor verifies all items against the order slip, seals the bag and hands it to the rider."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What is a cloud kitchen POS?",
+        "answer": "A cloud kitchen POS is point of sale software designed for delivery-only food businesses. It supports multi-brand menu publishing, staff order entry, kitchen station routing and delivery packaging charges without dining floor tables."
+      },
+      {
+        "question": "Can I run multiple food brands from one RestaBee account?",
+        "answer": "Yes. RestaBee allows you to create separate brand menus while routing orders to shared preparation stations in the same kitchen facility."
+      },
+      {
+        "question": "Does RestaBee support automatic two-way Swiggy and Zomato order sync?",
+        "answer": "No. In RestaBee, delivery orders are entered by restaurant staff. We do not provide automated third-party aggregator API integration. Staff punch orders directly into the register to route tickets and maintain billing records."
+      },
+      {
+        "question": "How do kitchen cooks know which brand an item belongs to?",
+        "answer": "Every kitchen order ticket displays the virtual brand name prominently alongside the order number, item description and preparation notes."
+      },
+      {
+        "question": "Can I track sales separately for each virtual brand?",
+        "answer": "Yes. RestaBee sales reports allow managers to review revenue, item volumes and payment totals broken down by individual brand or across the entire kitchen."
+      },
+      {
+        "question": "Can I assign packaging charges to delivery orders?",
+        "answer": "Yes. You can configure packaging charges per dish or as a flat order fee to cover delivery boxes, tamper-evident seals and carry bags."
+      },
+      {
+        "question": "What hardware do I need to run this cloud kitchen software?",
+        "answer": "You can run RestaBee on standard desktop PCs, laptops, Android tablets or touch terminals connected to thermal kitchen receipt printers over your local network."
+      }
+    ]
+  }
+}

@@ -1,0 +1,213 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../../components/Mark.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+
+const entry = await getEntry('pages', 'cloud-kitchen-pos');
+if (!entry) throw new Error('CMS content entry "cloud-kitchen-pos" is missing.');
+const { seo, copy, cloudKitchenLists, imageAlt } = entry.data;
+if (!cloudKitchenLists?.serviceTypes.length || !cloudKitchenLists.brandSetup.length || !cloudKitchenLists.workflowSteps.length || !cloudKitchenLists.faqs.length || !imageAlt?.cloudKitchenMenu || !imageAlt?.cloudKitchenReports) {
+  throw new Error('Cloud kitchen POS page content is incomplete.');
+}
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web' },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Cloud Kitchen POS', item: seo.canonical }
+    ]
+  }
+};
+---
+
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="cloud-page">
+    <nav class="cloud-breadcrumb container" aria-label="Breadcrumb">
+      <a href="/">Restaurant POS</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span>
+    </nav>
+
+    <section class="cloud-hero container" aria-labelledby="cloud-title">
+      <div class="cloud-hero-copy">
+        <p class="cloud-kicker"><span aria-hidden="true"></span>{copy.heroKicker}</p>
+        <h1 id="cloud-title">{copy.heroTitle}</h1>
+        <p class="cloud-lede">{copy.heroDescription}</p>
+        <div class="cloud-actions">
+          <a class="button button-orange" href="/#demo">{copy.heroCta}<Mark /></a>
+          <a class="text-link" href="#cloud-workflow">{copy.workflowCta}<Mark name="down" /></a>
+        </div>
+      </div>
+      <figure class="cloud-screen">
+        <figcaption><span>{copy.menuScreenLabel}</span><span>{copy.menuScreenDataLabel}</span></figcaption>
+        <div class="cloud-monitor">
+          <div class="cloud-bezel">
+            <picture>
+              <source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-central-menu-mobile.webp" width="800" height="1656"/>
+              <img src="/pos-images/restabee-restaurant-pos-central-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.cloudKitchenMenu} fetchpriority="high" decoding="async"/>
+            </picture>
+          </div>
+          <div class="cloud-stand" aria-hidden="true"></div>
+        </div>
+        <p>{copy.menuScreenCaption}</p>
+      </figure>
+    </section>
+
+    <section class="cloud-overview container" aria-labelledby="cloud-overview-title">
+      <div>
+        <p class="cloud-kicker">{copy.overviewKicker}</p>
+        <h2 id="cloud-overview-title">{copy.overviewTitle}</h2>
+      </div>
+      <div class="cloud-copy">
+        <p>{copy.overviewParagraphOne}</p>
+        <p>{copy.overviewParagraphTwo}</p>
+        <p>{copy.overviewParagraphThree}</p>
+      </div>
+    </section>
+
+    <section class="cloud-services" aria-labelledby="cloud-service-title">
+      <div class="container">
+        <header class="cloud-section-head">
+          <p class="cloud-kicker">{copy.serviceKicker}</p>
+          <h2 id="cloud-service-title">{copy.serviceTitle}</h2>
+          <p>{copy.serviceDescription}</p>
+        </header>
+        <ul class="cloud-service-grid" aria-label={copy.serviceListLabel}>
+          {cloudKitchenLists.serviceTypes.map((item, index) => (
+            <li><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.description}</p></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="cloud-brands container" aria-labelledby="cloud-brand-title">
+      <div class="cloud-brand-heading">
+        <p class="cloud-kicker">{copy.brandKicker}</p>
+        <h2 id="cloud-brand-title">{copy.brandTitle}</h2>
+        <p>{copy.brandDescription}</p>
+      </div>
+      <div class="cloud-brand-copy">
+        <p>{copy.brandParagraphOne}</p>
+        <p>{copy.brandParagraphTwo}</p>
+        <p>{copy.brandParagraphThree}</p>
+      </div>
+      <ul class="cloud-setup-grid" aria-label={copy.brandListLabel}>
+        {cloudKitchenLists.brandSetup.map((item, index) => (
+          <li><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.description}</p></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="cloud-workflow" id="cloud-workflow" aria-labelledby="cloud-workflow-title">
+      <div class="container">
+        <header class="cloud-section-head">
+          <p class="cloud-kicker">{copy.workflowKicker}</p>
+          <h2 id="cloud-workflow-title">{copy.workflowTitle}</h2>
+          <p>{copy.workflowDescription}</p>
+        </header>
+        <ol class="cloud-workflow-list" aria-label={copy.workflowListLabel}>
+          {cloudKitchenLists.workflowSteps.map(step => (
+            <li><span>{step.number}</span><div><h3>{step.title}</h3><p>{step.description}</p></div></li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="cloud-handoff container" aria-labelledby="cloud-handoff-title">
+      <div class="cloud-handoff-heading">
+        <p class="cloud-kicker">{copy.handoffKicker}</p>
+        <h2 id="cloud-handoff-title">{copy.handoffTitle}</h2>
+      </div>
+      <div class="cloud-copy">
+        <p>{copy.handoffParagraphOne}</p>
+        <p>{copy.handoffParagraphTwo}</p>
+        <p>{copy.handoffParagraphThree}</p>
+        <a class="text-link" href="/features/kitchen-display-system/">{copy.kdsLinkLabel}<Mark /></a>
+        <a class="text-link" href="/features/multi-outlet-restaurant-management/">{copy.menuLinkLabel}<Mark /></a>
+        <a class="text-link" href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a>
+      </div>
+    </section>
+
+    <section class="cloud-reports">
+      <div class="container cloud-reports-inner">
+        <div>
+          <p class="cloud-kicker">{copy.reportKicker}</p>
+          <h2>{copy.reportTitle}</h2>
+          <p>{copy.reportDescription}</p>
+          <a class="text-link" href="/features/restaurant-sales-reports/">{copy.reportLinkLabel}<Mark /></a>
+        </div>
+        <figure class="cloud-report-screen">
+          <figcaption><span>{copy.reportScreenLabel}</span><span>{copy.reportScreenDataLabel}</span></figcaption>
+          <div class="cloud-phone-bezel">
+            <img src="/pos-images/restabee-pos-reports-mobile.webp" width="800" height="1656" alt={imageAlt.cloudKitchenReports} loading="lazy" decoding="async"/>
+          </div>
+          <p>{copy.reportScreenCaption}</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cloud-platform container" aria-labelledby="cloud-platform-title">
+      <div>
+        <p class="cloud-kicker">{copy.platformKicker}</p>
+        <h2 id="cloud-platform-title">{copy.platformTitle}</h2>
+        <p>{copy.platformDescription}</p>
+      </div>
+      <div class="cloud-platform-list" aria-label="Supported platforms">
+        <span>Desktop</span><i></i><span>Tablet</span><i></i><span>Phone</span>
+      </div>
+    </section>
+
+    <section class="cloud-related container" aria-label="Related restaurant POS features">
+      <a href="/features/restaurant-order-management/">{copy.orderLinkLabel}<Mark /></a>
+      <a href="/features/restaurant-menu-management/">{copy.menuLinkLabel}<Mark /></a>
+      <a href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a>
+    </section>
+
+    <section class="cloud-faq container" aria-labelledby="cloud-faq-title">
+      <div class="cloud-faq-intro">
+        <p class="cloud-kicker">{copy.faqKicker}</p>
+        <h2 id="cloud-faq-title">{copy.faqTitle}</h2>
+        <p>{copy.faqDescription}</p>
+      </div>
+      <div class="cloud-faq-list">
+        {cloudKitchenLists.faqs.map(({ question, answer }) => (
+          <details>
+            <summary>{question}<span aria-hidden="true">+</span></summary>
+            <p>{answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="cloud-cta">
+      <div class="container cloud-cta-inner">
+        <div>
+          <p class="cloud-kicker">{copy.ctaKicker}</p>
+          <h2>{copy.ctaTitle}</h2>
+          <p>{copy.ctaDescription}</p>
+        </div>
+        <a class="button button-orange" href="/#demo">{copy.demoCta}<Mark /></a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</SiteLayout>
+
+<style>
+.cloud-page{overflow:hidden}.cloud-breadcrumb{display:flex;align-items:center;gap:10px;padding-top:20px;font-size:12px;color:var(--muted)}.cloud-breadcrumb a{text-decoration:underline;text-decoration-color:#afb3a8;text-underline-offset:3px}.cloud-breadcrumb [aria-current=page]{color:var(--ink)}.cloud-kicker{display:flex;align-items:center;gap:10px;color:#963b18;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.cloud-kicker>span{width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.cloud-hero{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);gap:clamp(38px,6vw,82px);align-items:center;padding-block:66px 78px}.cloud-hero h1{max-width:620px;font-size:clamp(49px,5.3vw,72px);line-height:1.04;letter-spacing:-.045em;margin-top:20px}.cloud-lede{max-width:570px;margin-top:20px;color:#51574e;font-size:16px;line-height:1.8}.cloud-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap;margin-top:27px}.cloud-actions .button{gap:20px}.cloud-screen{min-width:0;padding:17px 18px 14px;border:1px solid #dedacd;border-radius:16px;background:#f1eee5;box-shadow:0 22px 46px -36px #252a2480}.cloud-screen figcaption,.cloud-report-screen figcaption{display:flex;justify-content:space-between;gap:14px;margin:0 0 16px;color:#4f554c;font-size:11px}.cloud-screen figcaption span:first-child,.cloud-report-screen figcaption span:first-child{font-weight:700;color:var(--ink)}.cloud-bezel{overflow:hidden;border:8px solid #252a24;border-radius:14px;background:#20231f;box-shadow:0 14px 26px -20px #252a2480}.cloud-bezel picture,.cloud-bezel img{display:block;width:100%;height:auto}.cloud-bezel img{border-radius:4px}.cloud-stand{width:28%;height:24px;margin:auto;background:linear-gradient(#c7c8c0,#8a8d84);clip-path:polygon(35% 0,65% 0,76% 82%,100% 82%,100% 100%,0 100%,0 82%,24% 82%)}.cloud-screen>p,.cloud-report-screen>p{padding-top:12px;color:#62665d;font-size:13px}
+.cloud-overview{display:grid;grid-template-columns:minmax(270px,.78fr) minmax(0,1.22fr);gap:clamp(40px,7vw,96px);padding-block:74px 86px;border-top:1px solid var(--line)}.cloud-overview h2,.cloud-section-head h2,.cloud-brands h2,.cloud-handoff h2,.cloud-reports h2,.cloud-platform h2,.cloud-faq h2,.cloud-cta h2{font-size:clamp(38px,4.7vw,60px);line-height:1.07;letter-spacing:-.04em;margin-top:17px}.cloud-copy p,.cloud-reports-inner>div>p:not(.cloud-kicker),.cloud-platform>div>p:last-child{color:#51574e;font-size:15px;line-height:1.8}.cloud-copy p+p{margin-top:13px}.cloud-services,.cloud-workflow{padding-block:82px 88px;background:#252b24;color:#f6f5ef}.cloud-section-head{max-width:760px}.cloud-services .cloud-kicker,.cloud-workflow .cloud-kicker{color:#ffb17d}.cloud-section-head>p:last-child{max-width:700px;color:#d0d4ca;font-size:15px;line-height:1.8;margin-top:15px}.cloud-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));list-style:none;margin-top:38px;border-top:1px solid #60665b;border-left:1px solid #60665b}.cloud-service-grid li{min-height:210px;padding:23px;border-right:1px solid #60665b;border-bottom:1px solid #60665b}.cloud-service-grid li>span,.cloud-setup-grid li>span,.cloud-workflow-list li>span{color:#ffb17d;font-size:11px;font-weight:700;letter-spacing:.08em}.cloud-service-grid h3{font-size:22px;margin-top:28px}.cloud-service-grid p,.cloud-setup-grid p,.cloud-workflow-list p{max-width:350px;color:#d0d4ca;font-size:13px;line-height:1.75;margin-top:10px}.cloud-brands{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);gap:clamp(38px,7vw,92px);padding-block:86px}.cloud-brand-heading>p:last-child{color:#51574e;font-size:15px;line-height:1.8;margin-top:17px}.cloud-setup-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;margin-top:4px;border-top:1px solid var(--line)}.cloud-setup-grid li{min-height:185px;padding:20px 20px 18px 0;border-right:1px solid var(--line)}.cloud-setup-grid li+li{padding-left:20px}.cloud-setup-grid li:last-child{border-right:0}.cloud-setup-grid li>span{color:#963b18}.cloud-setup-grid h3{font-size:19px;line-height:1.3;margin-top:18px}.cloud-setup-grid p{color:#51574e;font-size:13px;margin-top:9px}.cloud-workflow-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));list-style:none;margin-top:39px;border-top:1px solid #60665b}.cloud-workflow-list li{min-height:195px;padding:21px 20px 0 0;border-right:1px solid #60665b}.cloud-workflow-list li+li{padding-left:21px}.cloud-workflow-list li:last-child{border-right:0}.cloud-workflow-list h3{font-size:20px;line-height:1.25;margin-top:25px}.cloud-handoff{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(40px,7vw,95px);padding-block:86px}.cloud-handoff h2{max-width:600px}.cloud-handoff .cloud-copy .text-link{display:flex;width:max-content;margin-top:17px}.cloud-reports{padding-block:72px;background:#e8ecdf}.cloud-reports-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.48fr);gap:clamp(38px,7vw,90px);align-items:center}.cloud-reports h2{max-width:620px}.cloud-reports-inner>div>p:not(.cloud-kicker){max-width:720px;margin-top:18px;color:#42493f}.cloud-reports-inner .text-link{display:inline-flex;margin-top:20px;color:#783516;font-weight:700}.cloud-report-screen{max-width:330px;justify-self:center;padding:15px;border:1px solid #d5d9cc;border-radius:16px;background:#f7f8f2}.cloud-report-screen figcaption{font-size:10px;margin-bottom:13px}.cloud-phone-bezel{max-width:210px;margin-inline:auto;padding:6px;border:3px solid #252a24;border-radius:27px;background:#20231f}.cloud-phone-bezel img{display:block;width:100%;height:auto;border-radius:19px}.cloud-platform{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;padding-block:82px}.cloud-platform h2{max-width:620px}.cloud-platform>div>p:last-child{max-width:700px;margin-top:16px}.cloud-platform-list{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:13px;font-weight:700}.cloud-platform-list i{width:4px;height:4px;border-radius:50%;background:#963b18}.cloud-related{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-block:26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.cloud-related a{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#85310e;font-size:13px;font-weight:700;text-decoration:none}.cloud-faq{display:grid;grid-template-columns:minmax(230px,.72fr) minmax(0,1.28fr);gap:clamp(36px,7vw,88px);padding-block:82px}.cloud-faq-intro>p:last-child{color:#51574e;font-size:14px;line-height:1.75;margin-top:15px}.cloud-faq-list details{border-top:1px solid var(--line)}.cloud-faq-list details:last-child{border-bottom:1px solid var(--line)}.cloud-faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:64px;cursor:pointer;list-style:none;font-size:14px;line-height:1.5;font-weight:650}.cloud-faq-list summary::-webkit-details-marker{display:none}.cloud-faq-list summary span{font-size:24px;font-weight:400;color:#963b18;flex:none;transition:transform .18s}.cloud-faq-list details[open] summary span{transform:rotate(45deg)}.cloud-faq-list details>p{padding:0 35px 19px 0;color:#51574e;font-size:13px;line-height:1.8}.cloud-cta{padding-block:62px;background:#f0caa8}.cloud-cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.cloud-cta .cloud-kicker{color:#783516}.cloud-cta h2{max-width:700px}.cloud-cta-inner>div>p:last-child{max-width:570px;color:#493e35;font-size:14px;line-height:1.75;margin-top:14px}.cloud-cta .button{flex:none}
+@media(max-width:1050px){.cloud-service-grid{grid-template-columns:1fr}.cloud-service-grid li{min-height:0}.cloud-service-grid h3{margin-top:16px}.cloud-setup-grid{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:15px}.cloud-setup-grid li:nth-child(2){border-right:0}.cloud-setup-grid li:nth-child(3){padding-left:0}.cloud-setup-grid li{min-height:0}.cloud-workflow-list{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:25px}.cloud-workflow-list li:nth-child(2){border-right:0}.cloud-workflow-list li:nth-child(3){padding-left:0}.cloud-workflow-list li{min-height:165px}}
+@media(max-width:950px){.cloud-hero{grid-template-columns:1fr;padding-block:56px 66px}.cloud-hero-copy{max-width:750px}.cloud-screen{max-width:850px;width:100%;margin-inline:auto}.cloud-overview,.cloud-brands,.cloud-handoff{grid-template-columns:1fr;gap:30px}.cloud-overview{padding-block:60px}.cloud-brands,.cloud-handoff{padding-block:65px}.cloud-reports-inner{grid-template-columns:minmax(0,1fr) minmax(220px,.5fr);gap:32px}.cloud-platform{grid-template-columns:1fr;gap:25px}}
+@media(max-width:700px){.cloud-breadcrumb{padding-top:14px;font-size:10px;gap:7px}.cloud-hero{padding-block:43px 54px;gap:26px}.cloud-hero h1{font-size:clamp(42px,11vw,58px);margin-top:17px}.cloud-lede{font-size:14px;margin-top:16px}.cloud-actions{display:grid;grid-template-columns:1fr;gap:13px;margin-top:22px}.cloud-actions .button{width:100%;justify-content:space-between}.cloud-screen{padding:13px 11px 12px;border-radius:13px}.cloud-screen figcaption,.cloud-report-screen figcaption{font-size:9px;gap:8px;margin-bottom:11px}.cloud-bezel{max-width:380px;margin-inline:auto;padding:6px;border-width:2px;border-radius:22px}.cloud-bezel img{border-radius:14px}.cloud-stand{display:none}.cloud-screen>p,.cloud-report-screen>p{font-size:12px}.cloud-overview{padding-block:52px 59px;gap:22px}.cloud-overview h2,.cloud-section-head h2,.cloud-brands h2,.cloud-handoff h2,.cloud-reports h2,.cloud-platform h2,.cloud-faq h2,.cloud-cta h2{font-size:clamp(35px,9vw,46px)}.cloud-copy p,.cloud-brand-heading>p:last-child,.cloud-reports-inner>div>p:not(.cloud-kicker),.cloud-platform>div>p:last-child{font-size:14px}.cloud-services,.cloud-workflow{padding-block:59px 64px}.cloud-section-head>p:last-child{font-size:14px}.cloud-service-grid{margin-top:27px}.cloud-service-grid li{padding:18px}.cloud-service-grid h3{font-size:19px;margin-top:13px}.cloud-service-grid p,.cloud-setup-grid p,.cloud-workflow-list p{font-size:13px}.cloud-brands,.cloud-handoff{padding-block:59px;gap:24px}.cloud-setup-grid{grid-template-columns:1fr;margin-top:0;row-gap:0}.cloud-setup-grid li,.cloud-setup-grid li+li{padding:17px 0;border-right:0;border-bottom:1px solid var(--line)}.cloud-setup-grid li:last-child{border-bottom:0}.cloud-setup-grid h3{font-size:18px;margin-top:10px}.cloud-workflow-list{grid-template-columns:1fr;margin-top:28px;row-gap:0}.cloud-workflow-list li,.cloud-workflow-list li+li{min-height:0;padding:17px 0;border-right:0;border-bottom:1px solid #60665b}.cloud-workflow-list li:last-child{border-bottom:0}.cloud-workflow-list h3{font-size:19px;margin-top:10px}.cloud-reports{padding-block:59px}.cloud-reports-inner{grid-template-columns:1fr;gap:30px}.cloud-report-screen{max-width:310px;width:100%;margin-top:9px}.cloud-platform{padding-block:62px;gap:23px}.cloud-platform-list{gap:8px;font-size:12px}.cloud-related{grid-template-columns:1fr;gap:0;padding-block:10px}.cloud-related a{padding:14px 0;border-bottom:1px solid var(--line)}.cloud-related a:last-child{border-bottom:0}.cloud-faq{grid-template-columns:1fr;gap:21px;padding-block:59px}.cloud-faq-list summary{min-height:61px;font-size:13px}.cloud-faq-list details>p{font-size:12px}.cloud-cta{padding-block:50px}.cloud-cta-inner{display:grid;grid-template-columns:1fr;gap:22px}.cloud-cta-inner>div>p:last-child{font-size:13px}.cloud-cta .button{width:100%;justify-content:space-between}}
+@media(prefers-reduced-motion:reduce){.cloud-faq-list summary span{transition:none}.cloud-faq-list details[open] summary span{transform:none}}
+</style>
