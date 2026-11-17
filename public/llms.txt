@@ -22,6 +22,8 @@ Use this guide to find the public product, feature, pricing and support pages. P
 - [Kitchen order ticket system](https://restabee.com/features/kot-management/): Preparation tickets, station routing, order instructions, amendments and ticket progress.
 - [Kitchen display system](https://restabee.com/features/kitchen-display-system/): Digital kitchen queues for new, preparing and ready items, including station and partial-quantity progress.
 - [Restaurant billing software](https://restabee.com/features/restaurant-billing-software/): Bill preparation and issue, configured tax, discounts, payment records and outstanding balances.
+- [Split bills](https://restabee.com/features/split-billing/): Arrange eligible draft orders into separate guest checks or record mixed Cash, UPI and card collections on one issued bill.
+- [Restaurant GST billing](https://restabee.com/features/restaurant-gst-billing/): Configure outlet tax profiles and invoice details for regular or composition billing, with GSTIN fields and compatible bill printing.
 - [Restaurant menu management software](https://restabee.com/features/restaurant-menu-management/): Shared menu catalog, review and publication, with outlet-specific menu management.
 - [Multi-outlet restaurant management](https://restabee.com/features/multi-outlet-restaurant-management/): Central menu releases, outlet access and outlet-scoped reporting for restaurant groups.
 - [Restaurant cash management](https://restabee.com/features/restaurant-cash-management/): Opening floats, cash movements, shift counts and closing variance review.

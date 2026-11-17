@@ -116,6 +116,12 @@ content:
           - name: kitchenQueue
             label: Kitchen queue screenshot description
             type: text
+          - name: splitBillingScreen
+            label: Split billing POS screenshot description
+            type: text
+          - name: gstBillingScreen
+            label: GST billing POS screenshot description
+            type: text
           - name: kotKitchenQueue
             label: Kitchen order ticket screenshot description
             type: text
@@ -1500,6 +1506,90 @@ content:
           - name: closingEmailLabel
             label: Privacy contact email link
             type: string
+          - name: allocationDescription
+            label: Allocation description
+            type: text
+          - name: allocationParagraphOne
+            label: Allocation paragraph one
+            type: text
+          - name: allocationParagraphTwo
+            label: Allocation paragraph two
+            type: text
+          - name: allocationTitle
+            label: Allocation title
+            type: text
+          - name: customerParagraphOne
+            label: Customer paragraph one
+            type: text
+          - name: customerParagraphTwo
+            label: Customer paragraph two
+            type: text
+          - name: customerTitle
+            label: Customer title
+            type: text
+          - name: distinctionKicker
+            label: Distinction kicker
+            type: text
+          - name: distinctionTitle
+            label: Distinction title
+            type: text
+          - name: groupParagraphOne
+            label: Group paragraph one
+            type: text
+          - name: groupParagraphTwo
+            label: Group paragraph two
+            type: text
+          - name: groupTitle
+            label: Group title
+            type: text
+          - name: gstLinkLabel
+            label: Gst link label
+            type: text
+          - name: invoiceDescription
+            label: Invoice description
+            type: text
+          - name: invoiceTitle
+            label: Invoice title
+            type: text
+          - name: regimeKicker
+            label: Regime kicker
+            type: text
+          - name: regimeParagraphOne
+            label: Regime paragraph one
+            type: text
+          - name: regimeParagraphTwo
+            label: Regime paragraph two
+            type: text
+          - name: regimeTitle
+            label: Regime title
+            type: text
+          - name: sourceDescription
+            label: Source description
+            type: text
+          - name: sourceTitle
+            label: Source title
+            type: text
+          - name: splitLinkLabel
+            label: Split link label
+            type: text
+          - name: tenderParagraphOne
+            label: Tender paragraph one
+            type: text
+          - name: tenderParagraphTwo
+            label: Tender paragraph two
+            type: text
+          - name: tenderTitle
+            label: Tender title
+            type: text
+          - name: thermalParagraphOne
+            label: Thermal paragraph one
+            type: text
+          - name: thermalParagraphTwo
+            label: Thermal paragraph two
+            type: text
+          - name: thermalTitle
+            label: Thermal title
+            type: text
       - name: faqs
         label: Frequently asked questions
         type: object
@@ -1564,6 +1654,92 @@ content:
               - name: title
                 type: string
               - name: description
+                type: text
+      - name: splitLists
+        label: Split bills page content
+        type: object
+        fields:
+          - name: distinctions
+            label: Split checks and payments
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: workflowSteps
+            label: Split check workflow
+            type: object
+            list: true
+            fields:
+              - name: number
+                type: string
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: paymentMethods
+            label: Payment methods
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: faqs
+            label: Split billing questions
+            type: object
+            list: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
+                type: text
+      - name: gstLists
+        label: GST billing page content
+        type: object
+        fields:
+          - name: regimes
+            label: GST registration comparisons
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: rateLabel
+                type: string
+              - name: description
+                type: text
+              - name: document
+                type: string
+          - name: invoiceFields
+            label: Invoice details
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: description
+                type: text
+          - name: sources
+            label: Official GST references
+            type: object
+            list: true
+            fields:
+              - name: title
+                type: string
+              - name: url
+                type: string
+          - name: faqs
+            label: GST billing questions
+            type: object
+            list: true
+            fields:
+              - name: question
+                type: string
+              - name: answer
                 type: text
       - name: copyLists
         label: Page lists and cards

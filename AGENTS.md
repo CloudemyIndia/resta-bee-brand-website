@@ -34,6 +34,8 @@ Public product marketing and demo acquisition for restaurant operators.
 - [Blog navigation and related guide links](docs/decisions/0057-blog-navigation-and-related-guide-links.md): records the user-approved main-navigation override and educational links from related feature and pricing pages.
 - [Blog imagery and print checklist](docs/decisions/0058-blog-images-and-print-checklist.md): keeps blog imagery custom, smaller and unframed, and removes the print-only checklist UI.
 - [Solution pages expansion](docs/decisions/0059-solution-pages-expansion.md): Phase 2A vertical solution pages (QSR, Takeaway, Cloud Kitchen, Bakery) with SEO, CMS parity, and responsive screenshots.
+- [Phase 2B split billing](docs/decisions/0060-phase-2b-split-billing.md): separates draft item/quantity check allocation from mixed tender payment on one issued bill.
+- [Phase 2B restaurant GST billing](docs/decisions/0061-phase-2b-restaurant-gst-billing.md): distinguishes regular tax invoices and composition bills of supply using linked CBIC sources.
 - [SEO page expansion](docs/decisions/0030-seo-page-expansion.md): intent-specific page sequence and the continuing rule not to move or trim homepage sections before review; its temporary copy hold is superseded by decision 0032.
 - [CMS-ready Astro content](docs/decisions/0031-cms-ready-astro-content.md): keep page composition in Astro and model editor-controlled content with validated collections.
 - [Homepage copy and CMS migration](docs/decisions/0032-homepage-copy-and-cms-migration.md): current subscription wording, keyword-led homepage corrections, and the partial supersession of decision 0030’s copy hold.

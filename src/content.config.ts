@@ -29,6 +29,18 @@ const pages = defineCollection({
       serviceTypes: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
       details: z.array(z.object({ letter: z.string(), title: z.string(), description: z.string() })),
     }).optional(),
+    splitLists: z.object({
+      distinctions: z.array(z.object({ title: z.string(), description: z.string() })),
+      workflowSteps: z.array(z.object({ number: z.string(), title: z.string(), description: z.string() })),
+      paymentMethods: z.array(z.object({ title: z.string(), description: z.string() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
+    gstLists: z.object({
+      regimes: z.array(z.object({ title: z.string(), rateLabel: z.string(), description: z.string(), document: z.string() })),
+      invoiceFields: z.array(z.object({ title: z.string(), description: z.string() })),
+      sources: z.array(z.object({ title: z.string(), url: z.url() })),
+      faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+    }).optional(),
     pricing: z.object({ multiOutletAnnualPerOutlet: z.string(), minimumOutlets: z.number(), exampleOutlets: z.array(z.number()) }).optional(),
     pricingLists: z.object({ includedFeatures: z.array(z.string()), separatelyQuoted: z.array(z.string()), boundaries: z.array(z.object({ number: z.string(), kind: z.enum(['text', 'list']), title: z.string(), description: z.string() })).optional() }).optional(),
     kitchenLists: z.object({
@@ -232,6 +244,12 @@ const pages = defineCollection({
       if (!page.imageAlt?.managementPillarDesktop || !page.imageAlt?.managementPillarFloor || !page.imageAlt?.managementPillarKitchen) {
         ctx.addIssue({ code: 'custom', path: ['imageAlt'], message: 'Restaurant management pillar requires descriptions for its POS, floor and kitchen screenshots.' });
       }
+    }
+    if (page.pageId === 'split-billing' && (!page.splitLists || page.splitLists.distinctions.length < 2 || page.splitLists.workflowSteps.length < 3 || page.splitLists.paymentMethods.length < 2 || page.splitLists.faqs.length < 4 || !page.imageAlt?.splitBillingScreen)) {
+      ctx.addIssue({ code: 'custom', path: ['splitLists'], message: 'Split billing page requires split-vs-payment distinctions, workflow, tender methods, FAQs and a product screenshot description.' });
+    }
+    if (page.pageId === 'restaurant-gst-billing' && (!page.gstLists || page.gstLists.regimes.length < 2 || page.gstLists.invoiceFields.length < 3 || page.gstLists.sources.length < 2 || page.gstLists.faqs.length < 4 || !page.imageAlt?.gstBillingScreen)) {
+      ctx.addIssue({ code: 'custom', path: ['gstLists'], message: 'GST billing page requires regime comparisons, invoice fields, official sources, FAQs and a product screenshot description.' });
     }
   }),
 });

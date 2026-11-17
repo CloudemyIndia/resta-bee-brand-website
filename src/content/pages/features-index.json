@@ -54,13 +54,29 @@
     {
       "number": "03",
       "category": "orders",
+      "title": "Split bills",
+      "description": "Arrange eligible order items into separate guest checks, or record mixed Cash, UPI and card collections against one bill.",
+      "href": "/features/split-billing/",
+      "linkLabel": "Explore split bills"
+    },
+    {
+      "number": "04",
+      "category": "orders",
+      "title": "Restaurant GST billing",
+      "description": "Configure tax profiles, invoice identity and customer GSTIN details for bill preparation and compatible printing.",
+      "href": "/features/restaurant-gst-billing/",
+      "linkLabel": "Explore GST billing"
+    },
+    {
+      "number": "05",
+      "category": "orders",
       "title": "Floor and table service",
       "description": "See table status, active parties and service details together. Open the floor view for table availability, reservations, waiting parties and table-side order context.",
       "href": "/features/restaurant-table-management/",
       "linkLabel": "Explore table management"
     },
     {
-      "number": "04",
+      "number": "06",
       "category": "orders",
       "title": "Table QR ordering",
       "description": "Guests scan a table QR code to browse the menu and send their selection. Staff review each order before it moves into preparation.",
@@ -68,7 +84,7 @@
       "linkLabel": "Explore table QR ordering"
     },
     {
-      "number": "05",
+      "number": "07",
       "category": "kitchen",
       "title": "Kitchen order tickets",
       "description": "Route ordered items to their preparation station with quantities, table details and instructions. Keep ticket amendments and print-queue activity connected to the order.",
@@ -76,7 +92,7 @@
       "linkLabel": "Explore kitchen order tickets"
     },
     {
-      "number": "06",
+      "number": "08",
       "category": "kitchen",
       "title": "Kitchen display system",
       "description": "Give kitchen teams a live queue for new, preparing and ready items. Update item progress and keep pickup status visible across preparation stages.",
@@ -84,7 +100,7 @@
       "linkLabel": "Explore the kitchen display"
     },
     {
-      "number": "07",
+      "number": "09",
       "category": "kitchen",
       "title": "Menu management",
       "description": "Maintain menu items, variants, choices, categories and preparation stations in a central catalog. Review menu changes and apply them to selected outlets.",
@@ -92,7 +108,7 @@
       "linkLabel": "Explore menu management"
     },
     {
-      "number": "08",
+      "number": "10",
       "category": "management",
       "title": "Multi-outlet operations",
       "description": "Coordinate menu releases, outlet access and sales reporting across locations. Keep central decisions visible alongside outlet-level menus and assigned permissions.",
@@ -100,7 +116,7 @@
       "linkLabel": "Explore multi-outlet POS"
     },
     {
-      "number": "09",
+      "number": "11",
       "category": "management",
       "title": "Cash shifts and drawer activity",
       "description": "Open a shift with a recorded float, log cash movements, then review the closing count and any variance in My Shift.",
@@ -108,7 +124,7 @@
       "linkLabel": "Explore cash shift management"
     },
     {
-      "number": "10",
+      "number": "12",
       "category": "management",
       "title": "Team roles and access",
       "description": "Assign people access to the restaurant tasks they perform. Keep operational screens and reporting scope aligned with each person’s permitted work.",
@@ -116,7 +132,7 @@
       "linkLabel": "See team access features"
     },
     {
-      "number": "11",
+      "number": "13",
       "category": "orders",
       "title": "Cafe POS",
       "description": "Set up drink variants and modifiers, take counter or dine-in orders, route items for preparation and review item sales.",
@@ -124,7 +140,7 @@
       "linkLabel": "Explore Cafe POS"
     },
     {
-      "number": "12",
+      "number": "14",
       "category": "management",
       "title": "Restaurant sales reports",
       "description": "Review issued sales, collections, item and category performance, discounts, taxes and shift activity by the available date and outlet scope.",
@@ -132,7 +148,7 @@
       "linkLabel": "Explore restaurant sales reports"
     },
     {
-      "number": "13",
+      "number": "15",
       "category": "management",
       "title": "Restaurant management software",
       "description": "See how order entry, floor service, kitchen workflows, menu control, billing and reporting connect across a restaurant day.",

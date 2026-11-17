@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../../components/Mark.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import '../../../styles/commercial-feature.css';
+
+const entry = await getEntry('pages', 'restaurant-gst-billing');
+if (!entry) throw new Error('CMS content entry "restaurant-gst-billing" is missing.');
+const { seo, copy, gstLists, imageAlt } = entry.data;
+if (!gstLists || gstLists.regimes.length < 2 || gstLists.invoiceFields.length < 3 || gstLists.sources.length < 2 || gstLists.faqs.length < 4 || !imageAlt?.gstBillingScreen) throw new Error('Restaurant GST billing page content is incomplete.');
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web, Android, iOS, macOS, Windows' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Features', item: 'https://restabee.com/features/' },
+    { '@type': 'ListItem', position: 3, name: 'Restaurant GST billing', item: seo.canonical },
+  ] },
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="commercial-page gst-page">
+    <nav class="commercial-breadcrumb container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><a href="/features/">Features</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span></nav>
+    <section class="commercial-hero container" aria-labelledby="gst-title">
+      <div class="commercial-hero-copy"><p class="commercial-kicker"><span aria-hidden="true"></span>{copy.heroKicker}</p><h1 id="gst-title">{copy.heroTitle}</h1><p class="commercial-lede">{copy.heroDescription}</p><div class="commercial-actions"><a class="button button-orange" href="/#demo">{copy.heroCta}<Mark /></a><a class="text-link" href="#gst-regimes">{copy.workflowCta}<Mark name="down" /></a></div></div>
+      <figure class="commercial-screen"><figcaption><strong>{copy.screenLabel}</strong><span>{copy.screenDataLabel}</span></figcaption><div class="commercial-bezel"><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656"/><source media="(max-width: 1100px)" srcset="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656"/><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.gstBillingScreen} fetchpriority="high" decoding="async"/></picture></div><p>{copy.screenCaption}</p></figure>
+    </section>
+    <section class="commercial-overview container" aria-labelledby="gst-overview-title"><div><p class="commercial-kicker">{copy.overviewKicker}</p><h2 id="gst-overview-title">{copy.overviewTitle}</h2></div><div><p>{copy.overviewParagraphOne}</p><p>{copy.overviewParagraphTwo}</p></div></section>
+    <section class="commercial-compare" id="gst-regimes" aria-labelledby="gst-regime-title"><div class="container"><header class="commercial-section-head"><p class="commercial-kicker">{copy.regimeKicker}</p><h2 id="gst-regime-title">{copy.regimeTitle}</h2><p>{copy.regimeParagraphOne}</p><p>{copy.regimeParagraphTwo}</p></header><div class="commercial-card-grid gst-regime-grid">{gstLists.regimes.map((item, index) => <article class="commercial-card"><span class="commercial-card-index">0{index + 1}</span><h3>{item.title}</h3><strong class="gst-rate-label">{item.rateLabel}</strong><p>{item.description}</p><span class="gst-document">Document: {item.document}</span></article>)}</div></div></section>
+    <section class="commercial-detail container" aria-labelledby="gst-invoice-title"><div class="commercial-detail-heading"><p class="commercial-kicker">Invoice preparation</p><h2 id="gst-invoice-title">{copy.invoiceTitle}</h2></div><div class="commercial-detail-copy"><p>{copy.invoiceDescription}</p><ul class="gst-field-list">{gstLists.invoiceFields.map((item) => <li><h3>{item.title}</h3><p>{item.description}</p></li>)}</ul></div></section>
+    <section class="commercial-dark gst-print" aria-labelledby="gst-print-title"><div class="container gst-print-grid"><div><p class="commercial-kicker">Bill printing</p><h2 id="gst-print-title">{copy.thermalTitle}</h2><p>{copy.thermalParagraphOne}</p><p>{copy.thermalParagraphTwo}</p></div><aside class="gst-print-note"><span>Check before issue</span><ul><li>Outlet registration and document type</li><li>Tax profile and component display</li><li>Customer GSTIN and address, when supplied</li><li>Thermal print legibility on the chosen paper</li></ul></aside></div></section>
+    <section class="commercial-detail container gst-customer" aria-labelledby="gst-customer-title"><div class="commercial-detail-heading"><p class="commercial-kicker">Business customer invoice</p><h2 id="gst-customer-title">{copy.customerTitle}</h2></div><div class="commercial-detail-copy"><p>{copy.customerParagraphOne}</p><p>{copy.customerParagraphTwo}</p></div></section>
+    <section class="commercial-workflow" aria-labelledby="gst-workflow-title"><div class="container commercial-scope-grid"><div><p class="commercial-kicker">Outlet setup and bill review</p><h2 id="gst-workflow-title">{copy.workflowTitle}</h2></div><div><p>{copy.workflowDescription}</p><p>{copy.scopeParagraphOne}</p><p>{copy.scopeParagraphTwo}</p><div class="commercial-related"><a class="text-link" href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a><a class="text-link" href="/features/split-billing/">{copy.splitLinkLabel}<Mark /></a></div></div></div></section>
+    <section class="commercial-official container" aria-labelledby="gst-sources-title"><div><p class="commercial-kicker">Reference material</p><h2 id="gst-sources-title">{copy.sourceTitle}</h2><p>{copy.sourceDescription}</p></div><ul>{gstLists.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}<Mark /></a></li>)}</ul></section>
+    <section class="commercial-faq container" aria-labelledby="gst-faq-title"><div class="commercial-faq-intro"><p class="commercial-kicker">{copy.faqKicker}</p><h2 id="gst-faq-title">{copy.faqTitle}</h2><p>{copy.faqDescription}</p></div><div class="commercial-faq-list">{gstLists.faqs.map(({question, answer}) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section class="commercial-cta"><div class="container commercial-cta-inner"><div><p class="commercial-kicker">{copy.ctaKicker}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaDescription}</p></div><a class="button button-orange" href="/#demo">{copy.demoCta}<Mark /></a></div></section>
+  </main>
+  <SiteFooter />
+</SiteLayout>

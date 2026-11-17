@@ -1,0 +1,47 @@
+---
+import { getEntry } from 'astro:content';
+import Mark from '../../../components/Mark.astro';
+import SiteFooter from '../../../components/SiteFooter.astro';
+import SiteHeader from '../../../components/SiteHeader.astro';
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+import '../../../styles/commercial-feature.css';
+
+const entry = await getEntry('pages', 'split-billing');
+if (!entry) throw new Error('CMS content entry "split-billing" is missing.');
+const { seo, copy, splitLists, imageAlt } = entry.data;
+if (!splitLists || splitLists.distinctions.length < 2 || splitLists.workflowSteps.length < 3 || splitLists.paymentMethods.length < 2 || splitLists.faqs.length < 4 || !imageAlt?.splitBillingScreen) throw new Error('Split billing page content is incomplete.');
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: seo.title,
+  url: seo.canonical,
+  description: seo.description,
+  isPartOf: { '@type': 'WebSite', name: 'RestaBee', url: 'https://restabee.com/' },
+  about: { '@type': 'SoftwareApplication', name: 'RestaBee', applicationCategory: 'BusinessApplication', operatingSystem: 'Web, Android, iOS, macOS, Windows' },
+  breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Restaurant POS', item: 'https://restabee.com/' },
+    { '@type': 'ListItem', position: 2, name: 'Features', item: 'https://restabee.com/features/' },
+    { '@type': 'ListItem', position: 3, name: 'Split bills', item: seo.canonical },
+  ] },
+};
+---
+<SiteLayout title={seo.title} description={seo.description} canonical={seo.canonical} schema={schema}>
+  <SiteHeader />
+  <main id="main" class="commercial-page split-page">
+    <nav class="commercial-breadcrumb container" aria-label="Breadcrumb"><a href="/">Restaurant POS</a><span aria-hidden="true">/</span><a href="/features/">Features</a><span aria-hidden="true">/</span><span aria-current="page">{copy.breadcrumbLabel}</span></nav>
+    <section class="commercial-hero container" aria-labelledby="split-title">
+      <div class="commercial-hero-copy"><p class="commercial-kicker"><span aria-hidden="true"></span>{copy.heroKicker}</p><h1 id="split-title">{copy.heroTitle}</h1><p class="commercial-lede">{copy.heroDescription}</p><div class="commercial-actions"><a class="button button-orange" href="/#demo">{copy.heroCta}<Mark /></a><a class="text-link" href="#split-workflow">{copy.workflowCta}<Mark name="down" /></a></div></div>
+      <figure class="commercial-screen"><figcaption><strong>{copy.screenLabel}</strong><span>{copy.screenDataLabel}</span></figcaption><div class="commercial-bezel"><picture><source media="(max-width: 700px)" srcset="/pos-images/restabee-restaurant-pos-menu-mobile.webp" width="800" height="1656"/><source media="(max-width: 1100px)" srcset="/pos-images/restabee-restaurant-pos-menu-tablet.webp" width="2522" height="1656"/><img src="/pos-images/restabee-restaurant-pos-menu-desktop.webp" width="2910" height="1656" alt={imageAlt.splitBillingScreen} fetchpriority="high" decoding="async"/></picture></div><p>{copy.screenCaption}</p></figure>
+    </section>
+    <section class="commercial-overview container" aria-labelledby="split-overview-title"><div><p class="commercial-kicker">{copy.overviewKicker}</p><h2 id="split-overview-title">{copy.overviewTitle}</h2></div><div><p>{copy.overviewParagraphOne}</p><p>{copy.overviewParagraphTwo}</p></div></section>
+    <section class="commercial-compare" aria-labelledby="split-distinction-title"><div class="container"><header class="commercial-section-head"><p class="commercial-kicker">{copy.distinctionKicker}</p><h2 id="split-distinction-title">{copy.distinctionTitle}</h2><p>{copy.allocationParagraphOne}</p><p>{copy.allocationParagraphTwo}</p></header><div class="commercial-card-grid">{splitLists.distinctions.map((item, index) => <article class="commercial-card"><span class="commercial-card-index">0{index + 1}</span><h3>{item.title}</h3><p>{item.description}</p></article>)}</div></div></section>
+    <section class="commercial-detail container" aria-labelledby="split-allocation-title"><div class="commercial-detail-heading"><p class="commercial-kicker">{copy.allocationTitle}</p><h2 id="split-allocation-title">Split by item, then review every check.</h2></div><div class="commercial-detail-copy"><p>{copy.allocationDescription}</p><p>{copy.groupParagraphOne}</p><p>{copy.groupParagraphTwo}</p></div></section>
+    <section class="commercial-dark" id="split-workflow" aria-labelledby="split-workflow-title"><div class="container"><header class="commercial-section-head"><p class="commercial-kicker">Check arrangement</p><h2 id="split-workflow-title">{copy.workflowTitle}</h2><p>{copy.workflowDescription}</p></header><ol class="commercial-steps">{splitLists.workflowSteps.map((step) => <li><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></li>)}</ol></div></section>
+    <section class="commercial-tenders container" aria-labelledby="split-tenders-title"><div><p class="commercial-kicker">One bill, several collections</p><h2 id="split-tenders-title">{copy.tenderTitle}</h2><p>{copy.tenderParagraphOne}</p><p>{copy.tenderParagraphTwo}</p></div><ul class="commercial-tender-list" aria-label="Payment methods available in the collection workflow">{splitLists.paymentMethods.map((item) => <li><h3>{item.title}</h3><p>{item.description}</p></li>)}</ul></section>
+    <section class="commercial-scope"><div class="container commercial-scope-grid"><div><p class="commercial-kicker">Billing history</p><h2>{copy.scopeTitle}</h2></div><div><p>{copy.scopeParagraphOne}</p><p>{copy.scopeParagraphTwo}</p><div class="commercial-related"><a class="text-link" href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a><a class="text-link" href="/features/restaurant-gst-billing/">{copy.gstLinkLabel}<Mark /></a></div></div></div></section>
+    <section class="commercial-faq container" aria-labelledby="split-faq-title"><div class="commercial-faq-intro"><p class="commercial-kicker">{copy.faqKicker}</p><h2 id="split-faq-title">{copy.faqTitle}</h2><p>{copy.faqDescription}</p></div><div class="commercial-faq-list">{splitLists.faqs.map(({question, answer}) => <details><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section class="commercial-sources container" aria-labelledby="split-links-title"><h2 id="split-links-title">Related restaurant POS workflows</h2><p>Explore the broader billing workflow and the tax details staff review before issuing a bill.</p><div class="commercial-related"><a class="text-link" href="/features/restaurant-billing-software/">{copy.billingLinkLabel}<Mark /></a><a class="text-link" href="/features/restaurant-gst-billing/">{copy.gstLinkLabel}<Mark /></a></div></section>
+    <section class="commercial-cta"><div class="container commercial-cta-inner"><div><p class="commercial-kicker">{copy.ctaKicker}</p><h2>{copy.ctaTitle}</h2><p>{copy.ctaDescription}</p></div><a class="button button-orange" href="/#demo">{copy.demoCta}<Mark /></a></div></section>
+  </main>
+  <SiteFooter />
+</SiteLayout>

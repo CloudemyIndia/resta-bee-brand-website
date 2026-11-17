@@ -1,0 +1,82 @@
+{
+  "pageId": "split-billing",
+  "seo": {
+    "title": "Split Bills in a Restaurant POS | RestaBee",
+    "description": "Split bills by item or quantity, prepare separate guest checks and record Cash, UPI or card payments in RestaBee restaurant billing.",
+    "canonical": "https://restabee.com/features/split-billing/",
+    "keywords": ["split bills", "split bills app", "restaurant split bill", "split payment restaurant", "split bill restaurant pos"]
+  },
+  "copy": {
+    "breadcrumbLabel": "Split bills",
+    "heroKicker": "Restaurant bill splitting",
+    "heroTitle": "Split bills by guest, item or quantity.",
+    "heroDescription": "RestaBee helps restaurant teams arrange eligible draft orders into separate guest checks, then issue each check and record its payment. Keep item allocation and tender collection clear through the close of a table.",
+    "heroCta": "See split billing in a demo",
+    "workflowCta": "How split checks work",
+    "screenLabel": "RestaBee POS order entry",
+    "screenDataLabel": "Sample restaurant data",
+    "screenCaption": "Order entry and collection controls in the RestaBee POS.",
+    "overviewKicker": "Two different billing actions",
+    "overviewTitle": "Split the order. Or split the payment.",
+    "overviewParagraphOne": "Guests often use “split the bill” to mean two different things. They may want the ordered items divided into separate bills, or they may want to pay one bill using more than one method. RestaBee handles these as separate steps, so each guest check and each collection can be reviewed on its own.",
+    "overviewParagraphTwo": "With item allocation, staff arrange eligible, unissued order items into draft checks. With a split payment, the issued bill stays one bill while staff record separate collections, such as part Cash and part UPI. Choosing the right action keeps restaurant split bill records easier to follow at the table and later in billing history.",
+    "distinctionKicker": "Choose the right split",
+    "distinctionTitle": "Separate guest checks from mixed tenders.",
+    "allocationParagraphOne": "A split check changes which items belong to each guest bill before issue. Staff can allocate item lines, including quantities when a party shares the same dish. Each eligible draft check can then be reviewed and issued through the billing workflow. This is useful when diners want to pay for their own order or when a group needs a clear division of dishes.",
+    "allocationParagraphTwo": "A split payment records how one issued bill is collected. For example, one guest may pay part in Cash and the remaining amount by UPI. The bill and its item list stay together while the collection record shows each tender. A split payment does not divide the order into guest bills.",
+    "allocationTitle": "Item-wise splits keep each check accountable.",
+    "allocationDescription": "Allocate the order before issuing the bills. Review the quantities and totals on each draft check, then issue them individually. The original order retains its relationship to the checks, giving the team a traceable view of the table’s billing activity.",
+    "groupTitle": "Group checks for a shared table.",
+    "groupParagraphOne": "When a table party has more than one order, staff can review the party’s eligible orders together and arrange separate guest checks. Keep the table context visible while dividing the items, so the team can answer questions without losing the link to the party. Each check shows its own allocated items and amount before the cashier issues it.",
+    "groupParagraphTwo": "A practical group-check example is a table where one guest pays for two dishes, another takes a shared starter and a main course, and the remaining guests settle their own items. Staff can organize the check arrangement around those choices. Any items that remain shared can stay together on the selected check, with the allocation reviewed before issue.",
+    "tenderTitle": "Record Cash, UPI and card on the same bill.",
+    "tenderParagraphOne": "If the guests have agreed on a single bill, the cashier can record multiple payment methods against that bill. RestaBee supports Cash, UPI and card collection entries, including mixed and partial collection. The payment record shows what was collected by each method and what balance remains, where applicable.",
+    "tenderParagraphTwo": "For example, a guest can pay ₹500 in Cash and the remaining amount by UPI. Staff record each tender in the collection workflow and review the balance against the issued bill. UPI and card entries follow the staff verification workflow, with any bank, payment-network or terminal reconciliation handled through the merchant’s configured process.",
+    "workflowTitle": "A clear route from order to separate checks.",
+    "workflowDescription": "Use the same sequence for a table split: review the order, arrange the draft checks, confirm the allocation and issue each bill through the authorized billing workflow.",
+    "scopeTitle": "What stays together in the record.",
+    "scopeParagraphOne": "Each issued bill keeps its own items, captured amounts, tax allocation and document number. The draft arrangement must be resolved before editing an order or applying some later changes. Once a bill is issued, it follows the separate correction workflow. This protects the connection between the items reviewed and the document created.",
+    "scopeParagraphTwo": "RestaBee split bills are designed for restaurant order and invoice workflows. A split bills workflow lets staff review each guest allocation before issue. The team controls how shared items are assigned, while the server validates the selected draft check and order versions as the action is completed.",
+    "billingLinkLabel": "Explore restaurant billing software",
+    "gstLinkLabel": "See restaurant GST billing details",
+    "faqKicker": "Split bill questions",
+    "faqTitle": "Answers for the cashier and the table team.",
+    "faqDescription": "A restaurant split bill can mean separate item checks or multiple payment methods on one bill. Here is how the two workflows differ.",
+    "ctaKicker": "RestaBee restaurant billing",
+    "ctaTitle": "See split bills in your table workflow.",
+    "ctaDescription": "Review guest checks, mixed payments and the order history in a guided RestaBee POS demo.",
+    "demoCta": "Book a demo"
+  },
+  "splitLists": {
+    "distinctions": [
+      { "title": "Split the order into guest checks", "description": "Allocate eligible item lines or quantities to separate draft checks before the bills are issued." },
+      { "title": "Split the payment across tenders", "description": "Keep one issued bill together while recording multiple collection methods, such as Cash plus UPI." }
+    ],
+    "workflowSteps": [
+      { "number": "01", "title": "Review the table order", "description": "Confirm the orders and item quantities included in the party’s eligible draft check arrangement." },
+      { "number": "02", "title": "Allocate items and quantities", "description": "Arrange the items across guest checks and review each draft before confirming the split." },
+      { "number": "03", "title": "Issue each guest bill", "description": "Authorized staff issue the checks individually, with their allocated items and amounts preserved." },
+      { "number": "04", "title": "Record the collection", "description": "Collect each bill in one tender or record mixed methods and any remaining balance." }
+    ],
+    "paymentMethods": [
+      { "title": "Cash", "description": "Record the amount received in cash and keep the collection linked to its issued bill." },
+      { "title": "UPI", "description": "Enter and verify a UPI collection through the staff workflow, then reconcile it through the merchant’s configured payment process." },
+      { "title": "Card", "description": "Record the card collection amount as a tender entry alongside other methods when the bill is paid in parts." }
+    ],
+    "faqs": [
+      { "question": "How does a restaurant split bill work in RestaBee?", "answer": "Staff arrange eligible unissued order items into draft guest checks, review the allocation and issue each check through the billing workflow." },
+      { "question": "Can staff split one dish by quantity between guests?", "answer": "Eligible item quantities can be allocated across draft checks. Staff review the resulting checks before issuing them." },
+      { "question": "Does split payment create separate guest bills?", "answer": "No. Split payment records multiple collection methods against one issued bill. Item-wise split checks create separate bills before issue." },
+      { "question": "Can a restaurant bill be paid with Cash and UPI?", "answer": "Yes. Staff can record mixed and partial Cash, UPI or card collections against the issued bill and review any remaining balance." },
+      { "question": "Can group orders at a table be arranged into guest checks?", "answer": "Staff can arrange eligible orders from a table party into separate draft checks, review each allocation and issue the checks individually." },
+      { "question": "Can staff edit an order after arranging split checks?", "answer": "Some order edits and discounts require the active draft check arrangement to be resolved first. Issued bills use the separate correction workflow." },
+      { "question": "Can an issued invoice be split later?", "answer": "The split check workflow applies before issue. Issued bills are handled through their correction workflow, which preserves the original record." },
+      { "question": "What is a split bills app for restaurants?", "answer": "A split bills app for restaurants helps staff divide eligible order items into guest checks or record separate tender collections on one bill. RestaBee supports both workflows and keeps them distinct. For a restaurant split payment, staff record each tender against the same issued bill." },
+      { "question": "What should a restaurant POS split bill workflow show?", "answer": "A restaurant POS split bill workflow should show the items and quantities assigned to each draft check before issue, then keep the issued bills linked to the original order." }
+    ]
+  },
+  "imageAlt": {
+    "splitBillingScreen": "RestaBee restaurant POS order entry screen showing the menu grid, order items and payment collection controls."
+  },
+  "faqs": []
+}
